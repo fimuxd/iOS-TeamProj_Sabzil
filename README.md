@@ -1,4 +1,4 @@
-# TEAM PROJECT <img src="/Users/B.Park/iOS-TeamProj_PLOT/Plot/Plot/Assets.xcassets/logo_color.imageset/logo_color.png" width="70" align="right">
+# TEAM PROJECT <img src="https://github.com/fimuxd/iOS-TeamProj_PLOT/blob/Boyoung-PARK/for%20MD/logo%20for%20md.png?raw=true" width="70" align="right">
 
 <p>
 
@@ -21,13 +21,13 @@
 - 관심있는 작품 또는 이미 관람한 작품에 대해 별점 및 코멘트를 남기고 공유할 수 있습니다.
 - 등록한 별점과 코멘트를 통해 취향분석을 하며, 이를 기반으로 작품 추천을 받을 수 있습니다.
 
-###### > 참조서비스: <img src="/Users/B.Park/iOS-TeamProj_PLOT/for MD/watcha logo.png" width="25"> [WATCHA - Movie & TV series Recommendation](https://itunes.apple.com/us/app/watcha-movie-tv-series-recommendation/id644185507?mt=8)
+###### > 참조서비스: <img src="https://github.com/fimuxd/iOS-TeamProj_PLOT/blob/Boyoung-PARK/for%20MD/watcha%20logo.png?raw=true" width="25"> [WATCHA - Movie & TV series Recommendation](https://itunes.apple.com/us/app/watcha-movie-tv-series-recommendation/id644185507?mt=8)
 
 ## Concept
 
-1. Required Data: [here](/Users/B.Park/iOS-TeamProj_PLOT/for MD/필요 데이터.pdf)
-2. iOS Screen Transition Specification: [here](/Users/B.Park/iOS-TeamProj_PLOT/for MD/iOS Team Project.pdf)
-3. UI Reference: [here](/Users/B.Park/iOS-TeamProj_PLOT/레퍼런스)
+1. Required Data: [here](https://github.com/fimuxd/iOS-TeamProj_PLOT/blob/Boyoung-PARK/for%20MD/필요%20데이터.pdf)
+2. iOS Screen Transition Specification: [here](https://github.com/fimuxd/iOS-TeamProj_PLOT/blob/Boyoung-PARK/for%20MD/iOS%20Team%20Project.pdf)
+3. UI Reference: [here](https://github.com/fimuxd/iOS-TeamProj_PLOT/tree/Boyoung-PARK/레퍼런스)
 
 ## Contact Us
 
