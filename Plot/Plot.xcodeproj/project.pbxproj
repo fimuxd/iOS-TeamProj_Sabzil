@@ -67,17 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				D897BE091F2F1E7D001048AC /* Main.storyboard */,
-				D897BE171F2F2655001048AC /* mainTabbarController.swift */,
 				D897BE191F2F269F001048AC /* HomeViewController.swift */,
 				D897BE051F2F1E7D001048AC /* AppDelegate.swift */,
 				D897BE0C1F2F1E7D001048AC /* Assets.xcassets */,
-				D897BE1F1F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png */,
-				D897BE0E1F2F1E7D001048AC /* LaunchScreen.storyboard */,
-				D897BE231F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png */,
+				D897BE171F2F2655001048AC /* mainTabbarController.swift */,
 				D897BE1B1F2F277F001048AC /* MainCustomCell.swift */,
 				D897BE1C1F2F277F001048AC /* MainCustomCell.xib */,
-				D897BE111F2F1E7D001048AC /* Info.plist */,
 				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
+				D897BE0E1F2F1E7D001048AC /* LaunchScreen.storyboard */,
+				D897BE111F2F1E7D001048AC /* Info.plist */,
+				D897BE231F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png */,
+				D897BE1F1F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png */,
 			);
 			path = Plot;
 			sourceTree = "<group>";
@@ -323,6 +323,7 @@
 				D897BE161F2F1E7D001048AC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

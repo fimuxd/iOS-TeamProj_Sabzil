@@ -10,6 +10,10 @@ import UIKit
 
 class MainCustomCell: UITableViewCell {
     
+    /*******************************************/
+    // MARK: -  Outlet                         //
+    /*******************************************/
+    
     @IBOutlet weak var mainPosterImg: UIImageView!
     @IBOutlet weak var scoreFirstStar: UIImageView!
     @IBOutlet weak var scoreSecondStar: UIImageView!
@@ -31,14 +35,12 @@ class MainCustomCell: UITableViewCell {
     }
     
     
-
+    /*******************************************/
+    // MARK: -  Life Cycle                     //
+    /*******************************************/
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        localLabel.text = "서울"
-        mainTitleLabel.text = "메인타이틀 텍스트 전시이름이들어갑니다"
-        exhibitionTerm.text = "2017. 07. 08~ 2017. 08. 09"
-        museumName.text = "디뮤지엄"
         // Initialization code
     }
 
