@@ -13,7 +13,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mainTableView.register(UINib(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
+        
+        let mainTableViewCell:UINib = UINib(nibName: "MainCustomCell", bundle: nil)
+        
+        self.mainTableView.register(mainTableViewCell, forCellReuseIdentifier: "mainCustomCell")
         // Do any additional setup after loading the view.
     }
 
@@ -23,7 +26,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "MainCustomCell", for: indexPath) as! MainCustomCell
+        let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
         return cell
     }
     
