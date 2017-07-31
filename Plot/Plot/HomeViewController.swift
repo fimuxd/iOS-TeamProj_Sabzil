@@ -51,6 +51,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 10
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 174
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailViewController:DetailViewController = storyboard?.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
     
     /*******************************************/
     // MARK: - Func                            //

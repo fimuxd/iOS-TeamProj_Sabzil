@@ -24,62 +24,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="173"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="스크린샷 2017-07-31 오후 7.43.24.png" translatesAutoresizingMaskIntoConstraints="NO" id="PUj-Je-zZU">
-                        <rect key="frame" x="16" y="8" width="114" height="157"/>
+                        <rect key="frame" x="16" y="8" width="118" height="157"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="PUj-Je-zZU" secondAttribute="height" multiplier="57:79" id="w9h-Ns-giv"/>
+                            <constraint firstAttribute="width" secondItem="PUj-Je-zZU" secondAttribute="height" multiplier="3:4" id="w9h-Ns-giv"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luh-Iy-9PZ" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                        <rect key="frame" x="146" y="8" width="30" height="18"/>
+                        <rect key="frame" x="150" y="8" width="30" height="18"/>
                         <color key="backgroundColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="KBX-uC-UuR"/>
                             <constraint firstAttribute="height" constant="18" id="fca-HA-bd1"/>
                         </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="평점">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HABITATS By 8 CREATOR " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hf-gm-2vA">
-                        <rect key="frame" x="146" y="29" width="166" height="45.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                        <rect key="frame" x="150" y="29" width="162" height="45.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0000. 00. 00 ~ 0000. 00. 00 " lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2L-Q0-wpT">
-                        <rect key="frame" x="146" y="82.5" width="166" height="15"/>
+                        <rect key="frame" x="150" y="82.5" width="162" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.62392925126903553" green="0.62392925126903553" blue="0.62392925126903553" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대림미술관" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G0-g8-efw">
-                        <rect key="frame" x="146" y="99.5" width="52" height="15"/>
+                        <rect key="frame" x="150" y="99.5" width="52" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nomal_star" translatesAutoresizingMaskIntoConstraints="NO" id="4gf-ZD-mP5">
-                        <rect key="frame" x="178" y="12" width="11" height="11"/>
+                        <rect key="frame" x="182" y="12" width="11" height="11"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="11" id="bUd-Cy-jUg"/>
                             <constraint firstAttribute="width" secondItem="4gf-ZD-mP5" secondAttribute="height" multiplier="1:1" id="zxc-26-dzW"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected_star" translatesAutoresizingMaskIntoConstraints="NO" id="aDp-3q-goN">
-                        <rect key="frame" x="146" y="151" width="14" height="14"/>
+                        <rect key="frame" x="150" y="151" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="6Ke-qc-3Uk"/>
                             <constraint firstAttribute="width" secondItem="aDp-3q-goN" secondAttribute="height" multiplier="1:1" id="Rwn-mC-7Qo"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected_star" translatesAutoresizingMaskIntoConstraints="NO" id="CHk-3l-YiE">
-                        <rect key="frame" x="211" y="151" width="14" height="14"/>
+                        <rect key="frame" x="215" y="151" width="14" height="14"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="CHk-3l-YiE" secondAttribute="height" multiplier="1:1" id="jlv-jX-mw6"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj0-WQ-flQ">
-                        <rect key="frame" x="227" y="145" width="32" height="26"/>
+                        <rect key="frame" x="231" y="145" width="32" height="26"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="코멘트">
                             <color key="titleColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -89,7 +90,7 @@
                         </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZgO-0O-zZH">
-                        <rect key="frame" x="163" y="145" width="32" height="26"/>
+                        <rect key="frame" x="167" y="145" width="32" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="VJz-dR-CjL"/>
                         </constraints>
@@ -102,33 +103,33 @@
                         </connections>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nomal_star" translatesAutoresizingMaskIntoConstraints="NO" id="jmO-hI-Kfi">
-                        <rect key="frame" x="190" y="12" width="11" height="11"/>
+                        <rect key="frame" x="194" y="12" width="11" height="11"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="11" id="hMl-DQ-JLn"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nomal_star" translatesAutoresizingMaskIntoConstraints="NO" id="YMj-mU-aKc">
-                        <rect key="frame" x="202" y="12" width="11" height="11"/>
+                        <rect key="frame" x="206" y="12" width="11" height="11"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="11" id="ty7-V3-wJ0"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nomal_star" translatesAutoresizingMaskIntoConstraints="NO" id="Mcc-4H-Skx">
-                        <rect key="frame" x="215" y="12" width="11" height="11"/>
+                        <rect key="frame" x="219" y="12" width="11" height="11"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="11" id="kxN-qX-p75"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nomal_star" translatesAutoresizingMaskIntoConstraints="NO" id="MuS-5Q-x9d">
-                        <rect key="frame" x="227" y="12" width="11" height="11"/>
+                        <rect key="frame" x="231" y="12" width="11" height="11"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="11" id="LeZ-c9-MA7"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdW-Nb-m0R">
-                        <rect key="frame" x="106" y="152" width="24" height="11"/>
+                        <rect key="frame" x="103" y="148.5" width="31" height="14.5"/>
                         <color key="backgroundColor" white="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>

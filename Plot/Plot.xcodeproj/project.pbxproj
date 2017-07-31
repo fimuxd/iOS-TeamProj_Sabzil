@@ -18,6 +18,8 @@
 		D897BE201F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png in Resources */ = {isa = PBXBuildFile; fileRef = D897BE1F1F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png */; };
 		D897BE221F2F2E7C001048AC /* CustomButton_Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */; };
 		D897BE241F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png in Resources */ = {isa = PBXBuildFile; fileRef = D897BE231F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png */; };
+		D897BE261F2F5405001048AC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE251F2F5405001048AC /* DetailViewController.swift */; };
+		D897BE281F2F56A9001048AC /* [Plot] Detail_Info_View.png in Resources */ = {isa = PBXBuildFile; fileRef = D897BE271F2F56A9001048AC /* [Plot] Detail_Info_View.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		D897BE1F1F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "스크린샷 2017-07-31 오후 5.55.44.png"; sourceTree = "<group>"; };
 		D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton_Round.swift; sourceTree = "<group>"; };
 		D897BE231F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "스크린샷 2017-07-31 오후 7.43.24.png"; sourceTree = "<group>"; };
+		D897BE251F2F5405001048AC /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D897BE271F2F56A9001048AC /* [Plot] Detail_Info_View.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "[Plot] Detail_Info_View.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,7 @@
 			children = (
 				D897BE091F2F1E7D001048AC /* Main.storyboard */,
 				D897BE191F2F269F001048AC /* HomeViewController.swift */,
+				D897BE251F2F5405001048AC /* DetailViewController.swift */,
 				D897BE051F2F1E7D001048AC /* AppDelegate.swift */,
 				D897BE0C1F2F1E7D001048AC /* Assets.xcassets */,
 				D897BE171F2F2655001048AC /* mainTabbarController.swift */,
@@ -76,6 +81,7 @@
 				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
 				D897BE0E1F2F1E7D001048AC /* LaunchScreen.storyboard */,
 				D897BE111F2F1E7D001048AC /* Info.plist */,
+				D897BE271F2F56A9001048AC /* [Plot] Detail_Info_View.png */,
 				D897BE231F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png */,
 				D897BE1F1F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png */,
 			);
@@ -142,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D897BE101F2F1E7D001048AC /* LaunchScreen.storyboard in Resources */,
+				D897BE281F2F56A9001048AC /* [Plot] Detail_Info_View.png in Resources */,
 				D897BE201F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png in Resources */,
 				D897BE0D1F2F1E7D001048AC /* Assets.xcassets in Resources */,
 				D897BE241F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png in Resources */,
@@ -160,6 +167,7 @@
 				D897BE181F2F2655001048AC /* mainTabbarController.swift in Sources */,
 				D897BE061F2F1E7D001048AC /* AppDelegate.swift in Sources */,
 				D897BE1A1F2F269F001048AC /* HomeViewController.swift in Sources */,
+				D897BE261F2F5405001048AC /* DetailViewController.swift in Sources */,
 				D897BE221F2F2E7C001048AC /* CustomButton_Round.swift in Sources */,
 				D897BE1D1F2F277F001048AC /* MainCustomCell.swift in Sources */,
 			);
