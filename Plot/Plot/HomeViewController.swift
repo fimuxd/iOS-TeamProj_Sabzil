@@ -20,7 +20,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     /*******************************************/
     // MARK: -  Life Cycle                     //
     /*******************************************/
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presentLoginVC()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
@@ -60,19 +64,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     
+
     /*******************************************/
     // MARK: - Func                            //
     /*******************************************/
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func presentLoginVC(){
+        if !UserDefaults.standard.bool(forKey: "LoginTest"){
+            let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            present(loginVC, animated: true, completion: nil)
+        }
+    }
     
 }
