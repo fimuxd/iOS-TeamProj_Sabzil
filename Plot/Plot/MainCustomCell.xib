@@ -29,14 +29,13 @@
                             <constraint firstAttribute="width" secondItem="PUj-Je-zZU" secondAttribute="height" multiplier="57:79" id="w9h-Ns-giv"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luh-Iy-9PZ" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Luh-Iy-9PZ" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
                         <rect key="frame" x="146" y="8" width="30" height="18"/>
                         <color key="backgroundColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="KBX-uC-UuR"/>
                             <constraint firstAttribute="height" constant="18" id="fca-HA-bd1"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <state key="normal" title="평점">
                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
@@ -196,11 +195,6 @@
             </connections>
             <point key="canvasLocation" x="18" y="-17"/>
         </tableViewCell>
-        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ude-DM-uH6">
-            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <state key="normal" title="Button"/>
-        </button>
     </objects>
     <resources>
         <image name="nomal_star" width="20" height="19"/>
