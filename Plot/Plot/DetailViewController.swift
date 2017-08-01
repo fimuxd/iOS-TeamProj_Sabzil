@@ -8,11 +8,23 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    /*******************************************/
+    // MARK: -  Outlet                         //
+    /*******************************************/
+    
+    @IBOutlet weak var commentTableView: UITableView!
+    
+    
+    /*******************************************/
+    // MARK: -  Life Cycle                     //
+    /*******************************************/
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +33,16 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /*******************************************/
+    // MARK: -  Table View                     //
+    /*******************************************/
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
 
     /*
     // MARK: - Navigation

@@ -10,12 +10,6 @@ import UIKit
 
 class CustomButton_Round: UIButton {
     
-    
-    
-    /*******************************************/
-    // MARK: -  Life Cycle                     //
-    /*******************************************/
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         
