@@ -23,7 +23,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "MainCustomCell", for: indexPath) as! MainCustomCell
+        let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
         return cell
     }
     
