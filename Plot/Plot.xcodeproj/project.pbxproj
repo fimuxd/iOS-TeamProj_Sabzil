@@ -106,11 +106,11 @@
 				D897BE0C1F2F1E7D001048AC /* Assets.xcassets */,
 				D897BE1B1F2F277F001048AC /* MainCustomCell.swift */,
 				D897BE1C1F2F277F001048AC /* MainCustomCell.xib */,
-<<<<<<< HEAD
+
 				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
 				6AD625B31F2F616C00A21485 /* DataCenter_B */,
 				D897BE111F2F1E7D001048AC /* Info.plist */,
-=======
+
 				D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */,
 				D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */,
 				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
@@ -120,7 +120,7 @@
 				D897BE231F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png */,
 				D897BE1F1F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png */,
 				D897BE2D1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg */,
->>>>>>> joe
+
 			);
 			path = Plot;
 			sourceTree = "<group>";
