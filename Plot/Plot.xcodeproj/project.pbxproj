@@ -31,6 +31,8 @@
 		D897BE3A1F305C69001048AC /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE391F305C69001048AC /* MyPageViewController.swift */; };
 		D897BE3D1F30AACF001048AC /* RankListCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE3B1F30AACF001048AC /* RankListCustomCell.swift */; };
 		D897BE3E1F30AACF001048AC /* RankListCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D897BE3C1F30AACF001048AC /* RankListCustomCell.xib */; };
+		D897BE4A1F30D207001048AC /* Sectionheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE481F30D207001048AC /* Sectionheader.swift */; };
+		D897BE4B1F30D207001048AC /* Sectionheader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D897BE491F30D207001048AC /* Sectionheader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		D897BE391F305C69001048AC /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		D897BE3B1F30AACF001048AC /* RankListCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankListCustomCell.swift; sourceTree = "<group>"; };
 		D897BE3C1F30AACF001048AC /* RankListCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankListCustomCell.xib; sourceTree = "<group>"; };
+		D897BE481F30D207001048AC /* Sectionheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sectionheader.swift; sourceTree = "<group>"; };
+		D897BE491F30D207001048AC /* Sectionheader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Sectionheader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,14 +115,8 @@
 				D897BE391F305C69001048AC /* MyPageViewController.swift */,
 				D897BE051F2F1E7D001048AC /* AppDelegate.swift */,
 				D897BE0C1F2F1E7D001048AC /* Assets.xcassets */,
-				D897BE1B1F2F277F001048AC /* MainCustomCell.swift */,
-				D897BE1C1F2F277F001048AC /* MainCustomCell.xib */,
 				6AD625B31F2F616C00A21485 /* DataCenter_B */,
-				D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */,
-				D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */,
-				D897BE3B1F30AACF001048AC /* RankListCustomCell.swift */,
-				D897BE3C1F30AACF001048AC /* RankListCustomCell.xib */,
-				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
+				D897BE3F1F30CCA3001048AC /* CustomFile */,
 				D897BE0E1F2F1E7D001048AC /* LaunchScreen.storyboard */,
 				D897BE111F2F1E7D001048AC /* Info.plist */,
 				D897BE271F2F56A9001048AC /* [Plot] Detail_Info_View.png */,
@@ -127,6 +125,22 @@
 				D897BE2D1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg */,
 			);
 			path = Plot;
+			sourceTree = "<group>";
+		};
+		D897BE3F1F30CCA3001048AC /* CustomFile */ = {
+			isa = PBXGroup;
+			children = (
+				D897BE481F30D207001048AC /* Sectionheader.swift */,
+				D897BE491F30D207001048AC /* Sectionheader.xib */,
+				D897BE1B1F2F277F001048AC /* MainCustomCell.swift */,
+				D897BE1C1F2F277F001048AC /* MainCustomCell.xib */,
+				D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */,
+				D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */,
+				D897BE3B1F30AACF001048AC /* RankListCustomCell.swift */,
+				D897BE3C1F30AACF001048AC /* RankListCustomCell.xib */,
+				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
+			);
+			name = CustomFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +207,7 @@
 				D897BE281F2F56A9001048AC /* [Plot] Detail_Info_View.png in Resources */,
 				D897BE201F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png in Resources */,
 				D897BE321F2F9448001048AC /* UserCommentCustomCell.xib in Resources */,
+				D897BE4B1F30D207001048AC /* Sectionheader.xib in Resources */,
 				D897BE3E1F30AACF001048AC /* RankListCustomCell.xib in Resources */,
 				D897BE0D1F2F1E7D001048AC /* Assets.xcassets in Resources */,
 				D897BE241F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png in Resources */,
@@ -213,6 +228,7 @@
 				D897BE341F303D92001048AC /* SearchViewController.swift in Sources */,
 				D897BE181F2F2655001048AC /* mainTabbarController.swift in Sources */,
 				6AD625BB1F30342E00A21485 /* DataCenter.swift in Sources */,
+				D897BE4A1F30D207001048AC /* Sectionheader.swift in Sources */,
 				D897BE2C1F2F8276001048AC /* SignUpViewController.swift in Sources */,
 				D897BE061F2F1E7D001048AC /* AppDelegate.swift in Sources */,
 				D897BE1A1F2F269F001048AC /* HomeViewController.swift in Sources */,
