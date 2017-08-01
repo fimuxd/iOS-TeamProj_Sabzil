@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6AD625AC1F2F613100A21485 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD625AB1F2F613100A21485 /* Datas.swift */; };
+		6AD625B01F2F614400A21485 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD625AF1F2F614400A21485 /* DataCenter.swift */; };
+		6AD625B21F2F615500A21485 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD625B11F2F615500A21485 /* Constants.swift */; };
 		D897BE061F2F1E7D001048AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE051F2F1E7D001048AC /* AppDelegate.swift */; };
 		D897BE0B1F2F1E7D001048AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D897BE091F2F1E7D001048AC /* Main.storyboard */; };
 		D897BE0D1F2F1E7D001048AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D897BE0C1F2F1E7D001048AC /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6AD625AB1F2F613100A21485 /* Datas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
+		6AD625AF1F2F614400A21485 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
+		6AD625B11F2F615500A21485 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D897BE021F2F1E7D001048AC /* Plot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D897BE051F2F1E7D001048AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D897BE0A1F2F1E7D001048AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +67,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AD625B31F2F616C00A21485 /* DataCenter_B */ = {
+			isa = PBXGroup;
+			children = (
+				6AD625AF1F2F614400A21485 /* DataCenter.swift */,
+				6AD625AB1F2F613100A21485 /* Datas.swift */,
+				6AD625B11F2F615500A21485 /* Constants.swift */,
+			);
+			name = DataCenter_B;
+			sourceTree = "<group>";
+		};
 		D897BDF91F2F1E7D001048AC = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +106,11 @@
 				D897BE0C1F2F1E7D001048AC /* Assets.xcassets */,
 				D897BE1B1F2F277F001048AC /* MainCustomCell.swift */,
 				D897BE1C1F2F277F001048AC /* MainCustomCell.xib */,
+
+				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
+				6AD625B31F2F616C00A21485 /* DataCenter_B */,
+				D897BE111F2F1E7D001048AC /* Info.plist */,
+
 				D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */,
 				D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */,
 				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
@@ -99,6 +120,7 @@
 				D897BE231F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png */,
 				D897BE1F1F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png */,
 				D897BE2D1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg */,
+
 			);
 			path = Plot;
 			sourceTree = "<group>";
@@ -135,6 +157,7 @@
 				TargetAttributes = {
 					D897BE011F2F1E7D001048AC = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = NN7QXHC8A3;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -185,11 +208,14 @@
 				D897BE181F2F2655001048AC /* mainTabbarController.swift in Sources */,
 				D897BE2C1F2F8276001048AC /* SignUpViewController.swift in Sources */,
 				D897BE061F2F1E7D001048AC /* AppDelegate.swift in Sources */,
+				6AD625AC1F2F613100A21485 /* Datas.swift in Sources */,
 				D897BE1A1F2F269F001048AC /* HomeViewController.swift in Sources */,
 				D897BE311F2F9448001048AC /* UserCommentCustomCell.swift in Sources */,
 				D897BE261F2F5405001048AC /* DetailViewController.swift in Sources */,
 				D897BE221F2F2E7C001048AC /* CustomButton_Round.swift in Sources */,
+				6AD625B01F2F614400A21485 /* DataCenter.swift in Sources */,
 				D897BE1D1F2F277F001048AC /* MainCustomCell.swift in Sources */,
+				6AD625B21F2F615500A21485 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +338,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN7QXHC8A3;
 				INFOPLIST_FILE = Plot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -325,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = NN7QXHC8A3;
 				INFOPLIST_FILE = Plot/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
