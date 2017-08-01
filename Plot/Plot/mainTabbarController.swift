@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  mainTabbarController.swift
 //  Plot
 //
 //  Created by joe on 2017. 7. 31..
@@ -8,27 +8,17 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var mainTableView: UITableView!
+class mainTabbarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mainTableView.register(UINib(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
+        
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "MainCustomCell", for: indexPath) as! MainCustomCell
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
     }
     
 
