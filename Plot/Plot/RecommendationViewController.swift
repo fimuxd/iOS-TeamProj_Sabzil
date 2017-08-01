@@ -1,33 +1,30 @@
 //
-//  DetailViewController.swift
+//  RecommendationViewController.swift
 //  Plot
 //
-//  Created by joe on 2017. 7. 31..
+//  Created by joe on 2017. 8. 1..
 //  Copyright © 2017년 joe. All rights reserved.
 //
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RecommendationViewController: UIViewController, UITableViewDataSource,UITableViewDelegate {
     
     /*******************************************/
     // MARK: -  Outlet                         //
     /*******************************************/
-    
-    @IBOutlet weak var commentTableView: UITableView!
-    
+    @IBOutlet weak var recommendTableView: UITableView!
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
     /*******************************************/
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.commentTableView.delegate = self
-        self.commentTableView.dataSource = self
-        self.commentTableView.register(UINib(nibName: "UserCommentCustomCell", bundle: nil), forCellReuseIdentifier: "UserCommentCustomCell")
-        
+        self.recommendTableView.delegate = self
+        self.recommendTableView.dataSource = self
+        self.recommendTableView.register(UINib(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
+
         // Do any additional setup after loading the view.
     }
 
@@ -39,26 +36,19 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /*******************************************/
     // MARK: -  Table View                     //
     /*******************************************/
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UserCommentCustomCell = tableView.dequeueReusableCell(withIdentifier: "UserCommentCustomCell", for: indexPath) as! UserCommentCustomCell
+        let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 10
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 174
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

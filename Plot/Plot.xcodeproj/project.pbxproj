@@ -26,6 +26,8 @@
 		D897BE2E1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D897BE2D1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg */; };
 		D897BE311F2F9448001048AC /* UserCommentCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */; };
 		D897BE321F2F9448001048AC /* UserCommentCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */; };
+		D897BE341F303D92001048AC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE331F303D92001048AC /* SearchViewController.swift */; };
+		D897BE361F303ED8001048AC /* RecommendationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE351F303ED8001048AC /* RecommendationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		D897BE2D1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg"; sourceTree = "<group>"; };
 		D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCommentCustomCell.swift; sourceTree = "<group>"; };
 		D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCommentCustomCell.xib; sourceTree = "<group>"; };
+		D897BE331F303D92001048AC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D897BE351F303ED8001048AC /* RecommendationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +100,9 @@
 				D897BE251F2F5405001048AC /* DetailViewController.swift */,
 				D897BE291F2F8242001048AC /* LoginViewController.swift */,
 				D897BE2B1F2F8276001048AC /* SignUpViewController.swift */,
+				D897BE351F303ED8001048AC /* RecommendationViewController.swift */,
 				D897BE051F2F1E7D001048AC /* AppDelegate.swift */,
+				D897BE331F303D92001048AC /* SearchViewController.swift */,
 				D897BE0C1F2F1E7D001048AC /* Assets.xcassets */,
 				D897BE1B1F2F277F001048AC /* MainCustomCell.swift */,
 				D897BE1C1F2F277F001048AC /* MainCustomCell.xib */,
@@ -194,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D897BE2A1F2F8242001048AC /* LoginViewController.swift in Sources */,
+				D897BE341F303D92001048AC /* SearchViewController.swift in Sources */,
 				D897BE181F2F2655001048AC /* mainTabbarController.swift in Sources */,
 				6AD625BB1F30342E00A21485 /* DataCenter.swift in Sources */,
 				D897BE2C1F2F8276001048AC /* SignUpViewController.swift in Sources */,
@@ -201,6 +208,7 @@
 				D897BE1A1F2F269F001048AC /* HomeViewController.swift in Sources */,
 				D897BE311F2F9448001048AC /* UserCommentCustomCell.swift in Sources */,
 				D897BE261F2F5405001048AC /* DetailViewController.swift in Sources */,
+				D897BE361F303ED8001048AC /* RecommendationViewController.swift in Sources */,
 				D897BE221F2F2E7C001048AC /* CustomButton_Round.swift in Sources */,
 				D897BE1D1F2F277F001048AC /* MainCustomCell.swift in Sources */,
 			);

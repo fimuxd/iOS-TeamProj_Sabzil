@@ -19,6 +19,12 @@ class CustomButton_Round: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        if self.tag == 1 {
+            self.layer.cornerRadius = self.frame.size.height / 2
+            self.layer.borderColor = UIColor.init(red: 31/255, green: 208/255, blue: 255/255, alpha: 1).cgColor
+            self.layer.borderWidth = 1
+        }
+        
         self.layer.cornerRadius = self.frame.size.height / 2
         
     }
