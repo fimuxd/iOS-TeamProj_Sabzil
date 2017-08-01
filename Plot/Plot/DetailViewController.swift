@@ -1,5 +1,5 @@
 //
-//  mainTabbarController.swift
+//  DetailViewController.swift
 //  Plot
 //
 //  Created by joe on 2017. 7. 31..
@@ -8,12 +8,11 @@
 
 import UIKit
 
-class mainTabbarController: UITabBarController {
-    
+class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -22,8 +21,6 @@ class mainTabbarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-      
-
 
     /*
     // MARK: - Navigation
