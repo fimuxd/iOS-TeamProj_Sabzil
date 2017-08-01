@@ -585,7 +585,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xI9-Mh-WFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2306" y="-509"/>
+            <point key="canvasLocation" x="2201" y="-509"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="hBp-WG-hlH">
@@ -869,7 +869,7 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDV-ZG-nV3" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                                        <rect key="frame" x="53.5" y="128" width="252" height="36"/>
+                                                        <rect key="frame" x="53.5" y="136" width="252" height="36"/>
                                                         <color key="backgroundColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="1v8-EL-vbO"/>
@@ -882,7 +882,7 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yTa-KG-eoy" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                                        <rect key="frame" x="53.5" y="180" width="252" height="36"/>
+                                                        <rect key="frame" x="53.5" y="188" width="252" height="36"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="JnU-cb-Dsd"/>
@@ -895,13 +895,13 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEQ-wg-VgH">
-                                                        <rect key="frame" x="249" y="224" width="56.5" height="18"/>
+                                                        <rect key="frame" x="249" y="232" width="56.5" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="계정이 없다면 여기서 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZBl-Jd-6Cg">
-                                                        <rect key="frame" x="53.5" y="224" width="129" height="18"/>
+                                                        <rect key="frame" x="53.5" y="232" width="129" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -925,7 +925,7 @@
                                                     <constraint firstItem="ZBl-Jd-6Cg" firstAttribute="leading" secondItem="yTa-KG-eoy" secondAttribute="leading" id="gZU-c6-v5p"/>
                                                     <constraint firstItem="TPp-pD-3ZL" firstAttribute="centerX" secondItem="xw6-xU-EE7" secondAttribute="centerX" id="hls-gr-8Se"/>
                                                     <constraint firstAttribute="width" constant="360" id="lhV-4j-4qw"/>
-                                                    <constraint firstItem="bDV-ZG-nV3" firstAttribute="top" secondItem="TPp-pD-3ZL" secondAttribute="bottom" constant="8" id="lmt-en-24n"/>
+                                                    <constraint firstItem="bDV-ZG-nV3" firstAttribute="top" secondItem="TPp-pD-3ZL" secondAttribute="bottom" constant="16" id="lmt-en-24n"/>
                                                     <constraint firstAttribute="height" constant="300" id="ndM-Qx-JRP"/>
                                                     <constraint firstItem="TPp-pD-3ZL" firstAttribute="top" secondItem="xw6-xU-EE7" secondAttribute="bottom" id="nit-Qf-Zz9"/>
                                                     <constraint firstItem="ZBl-Jd-6Cg" firstAttribute="top" secondItem="yTa-KG-eoy" secondAttribute="bottom" constant="8" id="qjH-sl-Qdo"/>
@@ -942,7 +942,7 @@
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lM7-iD-bhX">
-                                                <rect key="frame" x="192" y="427" width="62.5" height="32"/>
+                                                <rect key="frame" x="192" y="435" width="62.5" height="32"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                                 <state key="normal" title="회원가입">
                                                     <color key="titleColor" red="0.20000000000000001" green="0.80000000000000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>

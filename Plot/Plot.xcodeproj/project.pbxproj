@@ -23,6 +23,8 @@
 		D897BE2A1F2F8242001048AC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE291F2F8242001048AC /* LoginViewController.swift */; };
 		D897BE2C1F2F8276001048AC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE2B1F2F8276001048AC /* SignUpViewController.swift */; };
 		D897BE2E1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D897BE2D1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg */; };
+		D897BE311F2F9448001048AC /* UserCommentCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */; };
+		D897BE321F2F9448001048AC /* UserCommentCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		D897BE291F2F8242001048AC /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D897BE2B1F2F8276001048AC /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D897BE2D1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg"; sourceTree = "<group>"; };
+		D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCommentCustomCell.swift; sourceTree = "<group>"; };
+		D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCommentCustomCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,15 +81,17 @@
 			isa = PBXGroup;
 			children = (
 				D897BE091F2F1E7D001048AC /* Main.storyboard */,
+				D897BE171F2F2655001048AC /* mainTabbarController.swift */,
 				D897BE191F2F269F001048AC /* HomeViewController.swift */,
 				D897BE251F2F5405001048AC /* DetailViewController.swift */,
 				D897BE291F2F8242001048AC /* LoginViewController.swift */,
 				D897BE2B1F2F8276001048AC /* SignUpViewController.swift */,
 				D897BE051F2F1E7D001048AC /* AppDelegate.swift */,
 				D897BE0C1F2F1E7D001048AC /* Assets.xcassets */,
-				D897BE171F2F2655001048AC /* mainTabbarController.swift */,
 				D897BE1B1F2F277F001048AC /* MainCustomCell.swift */,
 				D897BE1C1F2F277F001048AC /* MainCustomCell.xib */,
+				D897BE2F1F2F9448001048AC /* UserCommentCustomCell.swift */,
+				D897BE301F2F9448001048AC /* UserCommentCustomCell.xib */,
 				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
 				D897BE0E1F2F1E7D001048AC /* LaunchScreen.storyboard */,
 				D897BE111F2F1E7D001048AC /* Info.plist */,
@@ -159,6 +165,7 @@
 				D897BE101F2F1E7D001048AC /* LaunchScreen.storyboard in Resources */,
 				D897BE281F2F56A9001048AC /* [Plot] Detail_Info_View.png in Resources */,
 				D897BE201F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png in Resources */,
+				D897BE321F2F9448001048AC /* UserCommentCustomCell.xib in Resources */,
 				D897BE0D1F2F1E7D001048AC /* Assets.xcassets in Resources */,
 				D897BE241F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png in Resources */,
 				D897BE0B1F2F1E7D001048AC /* Main.storyboard in Resources */,
@@ -179,6 +186,7 @@
 				D897BE2C1F2F8276001048AC /* SignUpViewController.swift in Sources */,
 				D897BE061F2F1E7D001048AC /* AppDelegate.swift in Sources */,
 				D897BE1A1F2F269F001048AC /* HomeViewController.swift in Sources */,
+				D897BE311F2F9448001048AC /* UserCommentCustomCell.swift in Sources */,
 				D897BE261F2F5405001048AC /* DetailViewController.swift in Sources */,
 				D897BE221F2F2E7C001048AC /* CustomButton_Round.swift in Sources */,
 				D897BE1D1F2F277F001048AC /* MainCustomCell.swift in Sources */,
