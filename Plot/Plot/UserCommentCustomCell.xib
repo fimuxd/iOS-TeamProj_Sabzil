@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="117.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PpO-UF-h2b">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 1" translatesAutoresizingMaskIntoConstraints="NO" id="PpO-UF-h2b">
                         <rect key="frame" x="8" y="8" width="59" height="59"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="59" id="8fw-vT-ryI"/>
@@ -107,6 +107,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Rectangle 1" width="91" height="91"/>
         <image name="selected_star" width="20" height="19"/>
     </resources>
 </document>
