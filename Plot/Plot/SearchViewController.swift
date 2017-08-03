@@ -80,22 +80,22 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("요걸로 검색됨 \(searchText)")
         //이게 빈칸이면, 저장됐던 검색어가 뜬다
+        print(isSearchBtnClicked,isdidChangeText,isBeginEditing)
         isBeginEditing = false
         isdidChangeText = true
         isSearchBtnClicked = false
-        print(isSearchBtnClicked,isdidChangeText,isBeginEditing)
         rankingTableView.reloadData()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         print("다시 랭킹뷰로 이동")
+        print(isSearchBtnClicked,isdidChangeText,isBeginEditing)
         searchBar.showsCancelButton = false
         searchBar.text = ""
         view.endEditing(true)
         isBeginEditing = false
         isdidChangeText = false
         isSearchBtnClicked = false
-        print(isSearchBtnClicked,isdidChangeText,isBeginEditing)
         rankingTableView.reloadData()
     }
     
