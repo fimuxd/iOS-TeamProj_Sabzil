@@ -33,6 +33,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /*******************************************/
     // MARK: -  LifeCycle                      //
     /*******************************************/
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -263,6 +267,23 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         return 4
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if isBeginEditing {
+            
+        } else if isdidChangeText {
+            
+        } else if isSearchBtnClicked {
+ 
+        } else {
+            let rankingViewController:RankingViewController = storyboard?.instantiateViewController(withIdentifier: "RankingViewController") as! RankingViewController
+            self.navigationController?.pushViewController(rankingViewController, animated: true)
+        }
+        
+    }
+    
+
     
     /*******************************************/
     // MARK: -  Func                           //

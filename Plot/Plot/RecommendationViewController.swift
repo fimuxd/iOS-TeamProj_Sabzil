@@ -57,6 +57,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
         return 174
     }
     
+    
     /*******************************************/
     // MARK: -  CollectionView                 //
     /*******************************************/
@@ -88,14 +89,6 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
-    }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
-    }
     
     
 }
