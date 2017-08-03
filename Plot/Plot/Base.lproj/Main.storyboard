@@ -271,269 +271,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kF-v5-BVJ">
-                                            <rect key="frame" x="16" y="28" width="30" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                            <state key="normal" title="장르">
-                                                <color key="titleColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yVo-Zz-y7e" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="68" width="60" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="Vvj-2s-3ce"/>
-                                                <constraint firstAttribute="width" constant="60" id="wnJ-BE-Ml1"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="미술">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XIB-G9-XK6" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="170" width="45" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="7TV-bG-DHm"/>
-                                                <constraint firstAttribute="width" constant="45" id="KhV-Oq-kPA"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="서울">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNk-Lq-kd0" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="69" y="170" width="45" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="9h2-wt-pK6"/>
-                                                <constraint firstAttribute="width" constant="45" id="yJg-sg-soa"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="부산">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acv-w5-WRa" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="122" y="170" width="45" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="AUD-1y-1xZ"/>
-                                                <constraint firstAttribute="width" constant="45" id="cf6-DA-gaM"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="광주">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zn1-aJ-RHN" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="84" y="68" width="60" height="25"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="사진">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lje-zA-UWQ" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="152" y="68" width="60" height="25"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="영상">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGY-xB-37s" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="220" y="68" width="60" height="25"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="공예">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FN2-vP-OH9" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="101" width="60" height="25"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="조각">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aId-cy-1A2" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="84" y="101" width="60" height="25"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="설치">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrB-HW-EJT" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="152" y="101" width="60" height="25"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="기타">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LrG-cA-elH">
-                                            <rect key="frame" x="19" y="59" width="337.5" height="1"/>
-                                            <color key="backgroundColor" red="0.91491513319999995" green="0.91491513319999995" blue="0.91491513319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="9CM-sS-Wk7"/>
-                                            </constraints>
-                                        </view>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YaU-5N-7y8">
-                                            <rect key="frame" x="16" y="130" width="49" height="29"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                                            <state key="normal" title="전시지역">
-                                                <color key="titleColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9f-bY-ese">
-                                            <rect key="frame" x="19" y="161" width="337.5" height="1"/>
-                                            <color key="backgroundColor" red="0.91491513319999995" green="0.91491513319999995" blue="0.91491513319999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="1" id="1sE-G9-RFJ"/>
-                                            </constraints>
-                                        </view>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tmR-lh-yIB" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="175" y="170" width="45" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="45" id="hCi-m0-hpj"/>
-                                                <constraint firstAttribute="height" constant="25" id="mOv-NW-QGC"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="대구">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zVX-Oa-zI0" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="228" y="170" width="45" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="197-Ft-QdY"/>
-                                                <constraint firstAttribute="width" constant="45" id="xrc-Ia-kdv"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="대전">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRZ-P3-qin" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="16" y="203" width="60" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="UwX-U3-dsd"/>
-                                                <constraint firstAttribute="height" constant="25" id="ZLG-VL-oJV"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="경기도">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cto-Mz-oa6" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="84" y="203" width="60" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="Nex-sF-Bb7"/>
-                                                <constraint firstAttribute="width" constant="60" id="g8X-Vl-TzL"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="경상도">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhs-ie-73y" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="152" y="203" width="60" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="gWN-5m-lDQ"/>
-                                                <constraint firstAttribute="width" constant="60" id="tdk-yz-M8D"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="강원도">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5l-4T-n1J" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="220" y="203" width="60" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="GJi-Qz-PQM"/>
-                                                <constraint firstAttribute="height" constant="25" id="jsM-Gc-9Uj"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="충청도">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ao-8j-XsV" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="288" y="203" width="60" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="25" id="6CY-dX-2he"/>
-                                                <constraint firstAttribute="width" constant="60" id="svo-oo-6aR"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="전라도">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg9-As-c2A" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                                            <rect key="frame" x="279" y="170" width="60" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="60" id="gff-Cw-moh"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <state key="normal" title="제주도">
-                                                <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </state>
-                                        </button>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="w7z-Yl-PKG">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <collectionViewLayout key="collectionViewLayout" id="JAY-Pm-O5E"/>
+                                            <cells>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TAGCell" id="FHD-u6-fJM" customClass="TagCustomCell" customModule="Plot" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                    </view>
+                                                </collectionViewCell>
+                                            </cells>
+                                        </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstItem="rRZ-P3-qin" firstAttribute="top" secondItem="XIB-G9-XK6" secondAttribute="bottom" constant="8" id="0mg-Fj-xfl"/>
-                                        <constraint firstItem="XIB-G9-XK6" firstAttribute="top" secondItem="Y9f-bY-ese" secondAttribute="bottom" constant="8" id="1uD-Od-puu"/>
-                                        <constraint firstItem="TrB-HW-EJT" firstAttribute="height" secondItem="yVo-Zz-y7e" secondAttribute="height" id="2R8-Ha-1if"/>
-                                        <constraint firstItem="9Ao-8j-XsV" firstAttribute="centerY" secondItem="L5l-4T-n1J" secondAttribute="centerY" id="2cq-dn-ku9"/>
-                                        <constraint firstItem="yVo-Zz-y7e" firstAttribute="leading" secondItem="VNM-Yb-w1T" secondAttribute="leading" constant="16" id="3K8-0K-qM8"/>
-                                        <constraint firstItem="lje-zA-UWQ" firstAttribute="centerY" secondItem="Zn1-aJ-RHN" secondAttribute="centerY" id="4k0-0E-PLf"/>
-                                        <constraint firstItem="XIB-G9-XK6" firstAttribute="leading" secondItem="VNM-Yb-w1T" secondAttribute="leading" constant="16" id="5Q2-9g-qRE"/>
-                                        <constraint firstItem="L5l-4T-n1J" firstAttribute="leading" secondItem="Jhs-ie-73y" secondAttribute="trailing" constant="8" id="5xI-oa-o7X"/>
-                                        <constraint firstItem="dg9-As-c2A" firstAttribute="height" secondItem="zVX-Oa-zI0" secondAttribute="height" id="6Yc-zO-mod"/>
-                                        <constraint firstItem="Zn1-aJ-RHN" firstAttribute="leading" secondItem="yVo-Zz-y7e" secondAttribute="trailing" constant="8" id="89B-oB-ZOH"/>
-                                        <constraint firstItem="dg9-As-c2A" firstAttribute="centerY" secondItem="zVX-Oa-zI0" secondAttribute="centerY" id="8tq-kv-KA7"/>
-                                        <constraint firstItem="YGY-xB-37s" firstAttribute="height" secondItem="yVo-Zz-y7e" secondAttribute="height" id="AxE-dH-dp1"/>
-                                        <constraint firstItem="FN2-vP-OH9" firstAttribute="top" secondItem="yVo-Zz-y7e" secondAttribute="bottom" constant="8" id="BUV-lm-4DD"/>
-                                        <constraint firstItem="L5l-4T-n1J" firstAttribute="centerY" secondItem="Jhs-ie-73y" secondAttribute="centerY" id="G36-jz-1lj"/>
-                                        <constraint firstItem="Y9f-bY-ese" firstAttribute="leading" secondItem="LrG-cA-elH" secondAttribute="leading" id="IHn-NH-cYE"/>
-                                        <constraint firstItem="zVX-Oa-zI0" firstAttribute="centerY" secondItem="tmR-lh-yIB" secondAttribute="centerY" id="LCC-y4-Xdc"/>
-                                        <constraint firstItem="0kF-v5-BVJ" firstAttribute="leading" secondItem="VNM-Yb-w1T" secondAttribute="leading" constant="16" id="LHz-lW-fal"/>
-                                        <constraint firstItem="LrG-cA-elH" firstAttribute="top" secondItem="0kF-v5-BVJ" secondAttribute="bottom" constant="2" id="Opj-Jh-J4j"/>
-                                        <constraint firstItem="yVo-Zz-y7e" firstAttribute="top" secondItem="LrG-cA-elH" secondAttribute="bottom" constant="8" id="Pqm-hv-hwt"/>
-                                        <constraint firstItem="YGY-xB-37s" firstAttribute="leading" secondItem="lje-zA-UWQ" secondAttribute="trailing" constant="8" id="QWM-J3-Cx9"/>
-                                        <constraint firstItem="Y9f-bY-ese" firstAttribute="top" secondItem="YaU-5N-7y8" secondAttribute="bottom" constant="2" id="RVb-WN-dnX"/>
-                                        <constraint firstItem="tmR-lh-yIB" firstAttribute="centerY" secondItem="Acv-w5-WRa" secondAttribute="centerY" id="Rms-0J-ze5"/>
-                                        <constraint firstItem="Zn1-aJ-RHN" firstAttribute="width" secondItem="yVo-Zz-y7e" secondAttribute="width" id="RnC-Sg-ET5"/>
-                                        <constraint firstItem="YaU-5N-7y8" firstAttribute="top" secondItem="FN2-vP-OH9" secondAttribute="bottom" constant="4" id="RsM-B7-vZ7"/>
-                                        <constraint firstItem="aId-cy-1A2" firstAttribute="height" secondItem="yVo-Zz-y7e" secondAttribute="height" id="SAM-0I-dLC"/>
-                                        <constraint firstItem="YaU-5N-7y8" firstAttribute="leading" secondItem="VNM-Yb-w1T" secondAttribute="leading" constant="16" id="TEt-jz-hrl"/>
-                                        <constraint firstItem="TrB-HW-EJT" firstAttribute="centerY" secondItem="aId-cy-1A2" secondAttribute="centerY" id="TFn-bm-e9k"/>
-                                        <constraint firstItem="FN2-vP-OH9" firstAttribute="leading" secondItem="yVo-Zz-y7e" secondAttribute="leading" id="ULz-Dw-irK"/>
-                                        <constraint firstItem="Acv-w5-WRa" firstAttribute="centerY" secondItem="FNk-Lq-kd0" secondAttribute="centerY" id="V5U-9F-oLs"/>
-                                        <constraint firstItem="FN2-vP-OH9" firstAttribute="height" secondItem="yVo-Zz-y7e" secondAttribute="height" id="Vgx-NA-r0X"/>
-                                        <constraint firstItem="Y9f-bY-ese" firstAttribute="trailing" secondItem="LrG-cA-elH" secondAttribute="trailing" id="WtY-5D-x6g"/>
-                                        <constraint firstItem="Jhs-ie-73y" firstAttribute="leading" secondItem="Cto-Mz-oa6" secondAttribute="trailing" constant="8" id="XAe-ag-YNU"/>
-                                        <constraint firstItem="Cto-Mz-oa6" firstAttribute="leading" secondItem="rRZ-P3-qin" secondAttribute="trailing" constant="8" id="XAg-z5-2To"/>
-                                        <constraint firstItem="9Ao-8j-XsV" firstAttribute="leading" secondItem="L5l-4T-n1J" secondAttribute="trailing" constant="8" id="XrZ-Vc-NOA"/>
-                                        <constraint firstItem="Zn1-aJ-RHN" firstAttribute="centerY" secondItem="yVo-Zz-y7e" secondAttribute="centerY" id="ZyZ-jg-NiN"/>
-                                        <constraint firstItem="TrB-HW-EJT" firstAttribute="leading" secondItem="aId-cy-1A2" secondAttribute="trailing" constant="8" id="aFP-gL-PfN"/>
-                                        <constraint firstItem="Acv-w5-WRa" firstAttribute="leading" secondItem="FNk-Lq-kd0" secondAttribute="trailing" constant="8" id="b7W-yk-44d"/>
-                                        <constraint firstItem="Cto-Mz-oa6" firstAttribute="centerY" secondItem="rRZ-P3-qin" secondAttribute="centerY" id="bwp-bA-ThE"/>
-                                        <constraint firstItem="aId-cy-1A2" firstAttribute="centerY" secondItem="FN2-vP-OH9" secondAttribute="centerY" id="cTH-mr-mW9"/>
-                                        <constraint firstItem="aId-cy-1A2" firstAttribute="width" secondItem="yVo-Zz-y7e" secondAttribute="width" id="cfS-mr-dPZ"/>
-                                        <constraint firstItem="FNk-Lq-kd0" firstAttribute="centerY" secondItem="XIB-G9-XK6" secondAttribute="centerY" id="cmM-YC-3jD"/>
-                                        <constraint firstItem="rRZ-P3-qin" firstAttribute="leading" secondItem="XIB-G9-XK6" secondAttribute="leading" id="dzY-pU-bW5"/>
-                                        <constraint firstItem="0kF-v5-BVJ" firstAttribute="top" secondItem="VNM-Yb-w1T" secondAttribute="top" constant="28" id="e3k-cW-0np"/>
-                                        <constraint firstItem="LrG-cA-elH" firstAttribute="centerX" secondItem="VNM-Yb-w1T" secondAttribute="centerX" id="elS-Ip-xnx"/>
-                                        <constraint firstItem="YGY-xB-37s" firstAttribute="width" secondItem="yVo-Zz-y7e" secondAttribute="width" id="fM9-ER-1vC"/>
-                                        <constraint firstItem="lje-zA-UWQ" firstAttribute="width" secondItem="yVo-Zz-y7e" secondAttribute="width" id="fgt-fw-ed2"/>
-                                        <constraint firstItem="TrB-HW-EJT" firstAttribute="width" secondItem="yVo-Zz-y7e" secondAttribute="width" id="iZK-CY-ydX"/>
-                                        <constraint firstItem="lje-zA-UWQ" firstAttribute="leading" secondItem="Zn1-aJ-RHN" secondAttribute="trailing" constant="8" id="izf-1c-2UX"/>
-                                        <constraint firstItem="FNk-Lq-kd0" firstAttribute="leading" secondItem="XIB-G9-XK6" secondAttribute="trailing" constant="8" id="mD6-DG-M7c"/>
-                                        <constraint firstItem="Zn1-aJ-RHN" firstAttribute="height" secondItem="yVo-Zz-y7e" secondAttribute="height" id="pYM-Kh-LzA"/>
-                                        <constraint firstItem="zVX-Oa-zI0" firstAttribute="leading" secondItem="tmR-lh-yIB" secondAttribute="trailing" constant="8" id="qVE-Fe-Cb2"/>
-                                        <constraint firstItem="Jhs-ie-73y" firstAttribute="centerY" secondItem="Cto-Mz-oa6" secondAttribute="centerY" id="qfK-Hs-Pnt"/>
-                                        <constraint firstItem="FN2-vP-OH9" firstAttribute="width" secondItem="yVo-Zz-y7e" secondAttribute="width" id="qie-RU-1iF"/>
-                                        <constraint firstItem="tmR-lh-yIB" firstAttribute="leading" secondItem="Acv-w5-WRa" secondAttribute="trailing" constant="8" id="s71-t5-7EV"/>
-                                        <constraint firstItem="dg9-As-c2A" firstAttribute="leading" secondItem="zVX-Oa-zI0" secondAttribute="trailing" constant="6" id="vtH-n3-axu"/>
-                                        <constraint firstItem="aId-cy-1A2" firstAttribute="leading" secondItem="FN2-vP-OH9" secondAttribute="trailing" constant="8" id="xOE-ob-jKZ"/>
-                                        <constraint firstItem="YGY-xB-37s" firstAttribute="centerY" secondItem="lje-zA-UWQ" secondAttribute="centerY" id="xfl-s2-GoQ"/>
-                                        <constraint firstItem="LrG-cA-elH" firstAttribute="width" secondItem="VNM-Yb-w1T" secondAttribute="width" multiplier="0.9" id="yJd-ln-o7C"/>
-                                        <constraint firstItem="lje-zA-UWQ" firstAttribute="height" secondItem="yVo-Zz-y7e" secondAttribute="height" id="zRz-I9-V3U"/>
+                                        <constraint firstItem="w7z-Yl-PKG" firstAttribute="leading" secondItem="VNM-Yb-w1T" secondAttribute="leading" id="9x1-wK-rXQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="w7z-Yl-PKG" secondAttribute="bottom" id="Fcb-LN-M4b"/>
+                                        <constraint firstAttribute="trailing" secondItem="w7z-Yl-PKG" secondAttribute="trailing" id="YzB-F0-vyz"/>
+                                        <constraint firstItem="w7z-Yl-PKG" firstAttribute="top" secondItem="VNM-Yb-w1T" secondAttribute="top" id="fac-iQ-cpG"/>
                                     </constraints>
                                 </view>
                                 <prototypes>
@@ -559,11 +318,12 @@
                     <tabBarItem key="tabBarItem" title="Item" id="GLj-3k-V6K"/>
                     <connections>
                         <outlet property="recommendTableView" destination="D8A-BM-54T" id="deD-h1-tuo"/>
+                        <outlet property="tagCollectionView" destination="w7z-Yl-PKG" id="LX8-bn-q81"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pi0-NU-PPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343" y="278"/>
+            <point key="canvasLocation" x="-332" y="278"/>
         </scene>
         <!--Item 2-->
         <scene sceneID="k9T-Y9-R5o">
