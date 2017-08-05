@@ -36,7 +36,20 @@
 		D897BE3E1F30AACF001048AC /* RankListCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D897BE3C1F30AACF001048AC /* RankListCustomCell.xib */; };
 		D897BE4A1F30D207001048AC /* Sectionheader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE481F30D207001048AC /* Sectionheader.swift */; };
 		D897BE4B1F30D207001048AC /* Sectionheader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D897BE491F30D207001048AC /* Sectionheader.xib */; };
+<<<<<<< HEAD
+		D8B84C2A1F33947E002D0D70 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B84C291F33947E002D0D70 /* RankingViewController.swift */; };
+		D8B84C2F1F3394F0002D0D70 /* RankingCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B84C2D1F3394F0002D0D70 /* RankingCustomCell.swift */; };
+		D8B84C301F3394F0002D0D70 /* RankingCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B84C2E1F3394F0002D0D70 /* RankingCustomCell.xib */; };
+		D8E44BC11F32213E00C159FD /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E44BBF1F32213E00C159FD /* SearchResultCell.swift */; };
+		D8E44BC21F32213E00C159FD /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E44BC01F32213E00C159FD /* SearchResultCell.xib */; };
+		D8E44BC51F3235E100C159FD /* FooterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E44BC31F3235E100C159FD /* FooterCell.swift */; };
+		D8E44BC61F3235E100C159FD /* FooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E44BC41F3235E100C159FD /* FooterCell.xib */; };
+		D8E44BC91F32FD5C00C159FD /* TagCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E44BC71F32FD5C00C159FD /* TagCustomCell.swift */; };
+		D8E44BCA1F32FD5C00C159FD /* TagCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E44BC81F32FD5C00C159FD /* TagCustomCell.xib */; };
+		D8F01DB31F34596A0072A1C5 /* TagViewlayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F01DB21F34596A0072A1C5 /* TagViewlayout.swift */; };
+=======
 		F8DD5EF44663A37BC3608C34 /* Pods_Plot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B49C54C226ADBA0F6204BEA9 /* Pods_Plot.framework */; };
+>>>>>>> 5debcccd4d934d1de53dbb0ce2703046e1444723
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +87,16 @@
 		D897BE3C1F30AACF001048AC /* RankListCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankListCustomCell.xib; sourceTree = "<group>"; };
 		D897BE481F30D207001048AC /* Sectionheader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sectionheader.swift; sourceTree = "<group>"; };
 		D897BE491F30D207001048AC /* Sectionheader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Sectionheader.xib; sourceTree = "<group>"; };
+		D8B84C291F33947E002D0D70 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		D8B84C2D1F3394F0002D0D70 /* RankingCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingCustomCell.swift; sourceTree = "<group>"; };
+		D8B84C2E1F3394F0002D0D70 /* RankingCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankingCustomCell.xib; sourceTree = "<group>"; };
+		D8E44BBF1F32213E00C159FD /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		D8E44BC01F32213E00C159FD /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		D8E44BC31F3235E100C159FD /* FooterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FooterCell.swift; sourceTree = "<group>"; };
+		D8E44BC41F3235E100C159FD /* FooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterCell.xib; sourceTree = "<group>"; };
+		D8E44BC71F32FD5C00C159FD /* TagCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCustomCell.swift; sourceTree = "<group>"; };
+		D8E44BC81F32FD5C00C159FD /* TagCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCustomCell.xib; sourceTree = "<group>"; };
+		D8F01DB21F34596A0072A1C5 /* TagViewlayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewlayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +164,7 @@
 				D897BE191F2F269F001048AC /* HomeViewController.swift */,
 				D897BE251F2F5405001048AC /* DetailViewController.swift */,
 				D897BE331F303D92001048AC /* SearchViewController.swift */,
+				D8B84C291F33947E002D0D70 /* RankingViewController.swift */,
 				D897BE291F2F8242001048AC /* LoginViewController.swift */,
 				D897BE2B1F2F8276001048AC /* SignUpViewController.swift */,
 				D897BE351F303ED8001048AC /* RecommendationViewController.swift */,
@@ -150,6 +174,7 @@
 				6AD625B31F2F616C00A21485 /* DataCenter_B */,
 				D897BE3F1F30CCA3001048AC /* CustomFile */,
 				D897BE0E1F2F1E7D001048AC /* LaunchScreen.storyboard */,
+				D8F01DB21F34596A0072A1C5 /* TagViewlayout.swift */,
 				D897BE111F2F1E7D001048AC /* Info.plist */,
 				6A983D0A1F35989800876DC0 /* GoogleService-Info.plist */,
 				D897BE271F2F56A9001048AC /* [Plot] Detail_Info_View.png */,
@@ -163,6 +188,12 @@
 		D897BE3F1F30CCA3001048AC /* CustomFile */ = {
 			isa = PBXGroup;
 			children = (
+				D8B84C2D1F3394F0002D0D70 /* RankingCustomCell.swift */,
+				D8B84C2E1F3394F0002D0D70 /* RankingCustomCell.xib */,
+				D8E44BC71F32FD5C00C159FD /* TagCustomCell.swift */,
+				D8E44BC81F32FD5C00C159FD /* TagCustomCell.xib */,
+				D8E44BBF1F32213E00C159FD /* SearchResultCell.swift */,
+				D8E44BC01F32213E00C159FD /* SearchResultCell.xib */,
 				D897BE481F30D207001048AC /* Sectionheader.swift */,
 				D897BE491F30D207001048AC /* Sectionheader.xib */,
 				D897BE1B1F2F277F001048AC /* MainCustomCell.swift */,
@@ -172,6 +203,8 @@
 				D897BE3B1F30AACF001048AC /* RankListCustomCell.swift */,
 				D897BE3C1F30AACF001048AC /* RankListCustomCell.xib */,
 				D897BE211F2F2E7C001048AC /* CustomButton_Round.swift */,
+				D8E44BC31F3235E100C159FD /* FooterCell.swift */,
+				D8E44BC41F3235E100C159FD /* FooterCell.xib */,
 			);
 			name = CustomFile;
 			sourceTree = "<group>";
@@ -241,7 +274,9 @@
 			files = (
 				D897BE101F2F1E7D001048AC /* LaunchScreen.storyboard in Resources */,
 				D897BE281F2F56A9001048AC /* [Plot] Detail_Info_View.png in Resources */,
+				D8B84C301F3394F0002D0D70 /* RankingCustomCell.xib in Resources */,
 				D897BE201F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png in Resources */,
+				D8E44BCA1F32FD5C00C159FD /* TagCustomCell.xib in Resources */,
 				D897BE321F2F9448001048AC /* UserCommentCustomCell.xib in Resources */,
 				D897BE4B1F30D207001048AC /* Sectionheader.xib in Resources */,
 				6A983D0B1F35989900876DC0 /* GoogleService-Info.plist in Resources */,
@@ -250,7 +285,9 @@
 				D897BE241F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png in Resources */,
 				D897BE0B1F2F1E7D001048AC /* Main.storyboard in Resources */,
 				D897BE2E1F2F8BC6001048AC /* Paul_Gauguin_Vincet Van Gogh(아트앤팁)2.jpg in Resources */,
+				D8E44BC21F32213E00C159FD /* SearchResultCell.xib in Resources */,
 				D897BE1E1F2F277F001048AC /* MainCustomCell.xib in Resources */,
+				D8E44BC61F3235E100C159FD /* FooterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,9 +347,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D897BE2A1F2F8242001048AC /* LoginViewController.swift in Sources */,
+				D8F01DB31F34596A0072A1C5 /* TagViewlayout.swift in Sources */,
 				D897BE341F303D92001048AC /* SearchViewController.swift in Sources */,
 				D897BE181F2F2655001048AC /* mainTabbarController.swift in Sources */,
+				D8E44BC51F3235E100C159FD /* FooterCell.swift in Sources */,
 				6AD625BB1F30342E00A21485 /* DataCenter.swift in Sources */,
+				D8E44BC91F32FD5C00C159FD /* TagCustomCell.swift in Sources */,
 				D897BE4A1F30D207001048AC /* Sectionheader.swift in Sources */,
 				D897BE2C1F2F8276001048AC /* SignUpViewController.swift in Sources */,
 				D897BE061F2F1E7D001048AC /* AppDelegate.swift in Sources */,
@@ -322,9 +362,12 @@
 				D897BE3D1F30AACF001048AC /* RankListCustomCell.swift in Sources */,
 				D897BE311F2F9448001048AC /* UserCommentCustomCell.swift in Sources */,
 				D897BE261F2F5405001048AC /* DetailViewController.swift in Sources */,
+				D8B84C2F1F3394F0002D0D70 /* RankingCustomCell.swift in Sources */,
 				D897BE361F303ED8001048AC /* RecommendationViewController.swift in Sources */,
 				D897BE221F2F2E7C001048AC /* CustomButton_Round.swift in Sources */,
+				D8B84C2A1F33947E002D0D70 /* RankingViewController.swift in Sources */,
 				D897BE1D1F2F277F001048AC /* MainCustomCell.swift in Sources */,
+				D8E44BC11F32213E00C159FD /* SearchResultCell.swift in Sources */,
 				6AD625BF1F30BC8600A21485 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
