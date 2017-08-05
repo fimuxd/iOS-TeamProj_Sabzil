@@ -44,6 +44,7 @@
 		D8E44BC61F3235E100C159FD /* FooterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E44BC41F3235E100C159FD /* FooterCell.xib */; };
 		D8E44BC91F32FD5C00C159FD /* TagCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E44BC71F32FD5C00C159FD /* TagCustomCell.swift */; };
 		D8E44BCA1F32FD5C00C159FD /* TagCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E44BC81F32FD5C00C159FD /* TagCustomCell.xib */; };
+		D8F01DB31F34596A0072A1C5 /* TagViewlayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F01DB21F34596A0072A1C5 /* TagViewlayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		D8E44BC41F3235E100C159FD /* FooterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FooterCell.xib; sourceTree = "<group>"; };
 		D8E44BC71F32FD5C00C159FD /* TagCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagCustomCell.swift; sourceTree = "<group>"; };
 		D8E44BC81F32FD5C00C159FD /* TagCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TagCustomCell.xib; sourceTree = "<group>"; };
+		D8F01DB21F34596A0072A1C5 /* TagViewlayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewlayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				6AD625B31F2F616C00A21485 /* DataCenter_B */,
 				D897BE3F1F30CCA3001048AC /* CustomFile */,
 				D897BE0E1F2F1E7D001048AC /* LaunchScreen.storyboard */,
+				D8F01DB21F34596A0072A1C5 /* TagViewlayout.swift */,
 				D897BE111F2F1E7D001048AC /* Info.plist */,
 				D897BE271F2F56A9001048AC /* [Plot] Detail_Info_View.png */,
 				D897BE231F2F4161001048AC /* 스크린샷 2017-07-31 오후 7.43.24.png */,
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D897BE2A1F2F8242001048AC /* LoginViewController.swift in Sources */,
+				D8F01DB31F34596A0072A1C5 /* TagViewlayout.swift in Sources */,
 				D897BE341F303D92001048AC /* SearchViewController.swift in Sources */,
 				D897BE181F2F2655001048AC /* mainTabbarController.swift in Sources */,
 				D8E44BC51F3235E100C159FD /* FooterCell.swift in Sources */,
