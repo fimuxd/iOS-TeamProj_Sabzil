@@ -7,30 +7,3 @@
 //
 
 import Foundation
-
-class DataCenter {
-    static let default:DataCenter = DataCenter()
-    
-    private var userDatas:[UserData]!
-    private var exhibitDatas:[ExhibitionData]!
-    
-    var userDataList:[UserData] {
-        get {
-            return userDataArray
-        }
-    }
-    
-    var exhibitList:[ExhibitionData] {
-        get {
-            return exhibitDataArray
-        }
-    }
-    
-    private init() {
-        loadFromBundle()
-    }
-    
-    private func loadFromBundle() {
-        let bundlePath:String = Bundle.main.path(forResource: )
-    }
-}
