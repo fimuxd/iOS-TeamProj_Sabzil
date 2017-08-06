@@ -11,35 +11,34 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCustomCell" id="gTV-IL-0wX" customClass="TagCustomCell" customModule="Plot" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="68" height="28"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="68" height="28"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTr-A6-hbH" customClass="CustomButton_Round" customModule="Plot" customModuleProvider="target">
-                        <rect key="frame" x="12.5" y="-0.5" width="43" height="29"/>
-                        <constraints>
-                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="L1v-Tw-DNt"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="caF-EC-Bvr"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <state key="normal" title="Button">
-                            <color key="titleColor" red="0.1215686275" green="0.81568627449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </state>
-                    </button>
-                </subviews>
-            </view>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TagCustomCell" customModule="Plot" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="234" height="49"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyM-4D-IIu">
+                    <rect key="frame" x="8" y="4" width="218" height="41"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="0Vl-mg-QOb"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="jm4-Py-nwV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="jTr-A6-hbH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="3NE-rs-7Ns"/>
-                <constraint firstItem="jTr-A6-hbH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Kuq-Mn-fK0"/>
+                <constraint firstItem="DyM-4D-IIu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="Ad2-y6-4yh"/>
+                <constraint firstAttribute="bottom" secondItem="DyM-4D-IIu" secondAttribute="bottom" constant="4" id="NCz-N8-aEA"/>
+                <constraint firstItem="DyM-4D-IIu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="OLH-Go-3to"/>
+                <constraint firstAttribute="trailing" secondItem="DyM-4D-IIu" secondAttribute="trailing" constant="8" id="fDR-ox-d6N"/>
             </constraints>
-            <size key="customSize" width="68" height="28"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="tagBtn" destination="jTr-A6-hbH" id="Tuf-JI-Fld"/>
+                <outlet property="tagName" destination="DyM-4D-IIu" id="MY5-7i-enh"/>
+                <outlet property="tagNameMaxWidthConstraint" destination="0Vl-mg-QOb" id="UVZ-M2-JkB"/>
             </connections>
-            <point key="canvasLocation" x="-86" y="-32"/>
-        </collectionViewCell>
+            <point key="canvasLocation" x="-38" y="-177.5"/>
+        </view>
     </objects>
 </document>

@@ -21,6 +21,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: -  Life Cycle                     //
     /*******************************************/
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
