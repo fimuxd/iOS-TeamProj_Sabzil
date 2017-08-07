@@ -247,6 +247,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="cS8-Us-sCy"/>
+                    <connections>
+                        <outlet property="collectionView" destination="oIv-O3-LHp" id="wSc-9g-1wt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofv-bl-8fY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

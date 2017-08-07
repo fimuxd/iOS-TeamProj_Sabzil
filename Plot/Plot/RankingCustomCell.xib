@@ -42,6 +42,10 @@
                 <constraint firstItem="RXi-tJ-99J" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="Kde-Sh-Noo"/>
             </constraints>
             <size key="customSize" width="100" height="143"/>
+            <connections>
+                <outlet property="posterImage" destination="RXi-tJ-99J" id="Tl2-Tc-6ZD"/>
+                <outlet property="rankImage" destination="upL-lM-F3S" id="FhE-Ty-8df"/>
+            </connections>
             <point key="canvasLocation" x="50" y="0.5"/>
         </collectionViewCell>
     </objects>
