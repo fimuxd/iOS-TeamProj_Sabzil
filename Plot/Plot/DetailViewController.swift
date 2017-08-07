@@ -8,14 +8,16 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     /*******************************************/
-    // MARK: -  Outlet                         //
+    // MARK: -  Outlet & Property              //
     /*******************************************/
     
     @IBOutlet weak var commentTableView: UITableView!
+    var userLikesExhi:[String] = []
     
+    @IBOutlet weak var posterCollectionView: UICollectionView!
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -33,7 +35,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.commentTableView.dataSource = self
         self.commentTableView.register(UINib(nibName: "UserCommentCustomCell", bundle: nil), forCellReuseIdentifier: "UserCommentCustomCell")
         
-        // Do any additional setup after loading the view.
+       self.posterCollectionView.delegate = self
+        self.posterCollectionView.dataSource = self
+        self.posterCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,14 +61,25 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    /*******************************************/
+    // MARK: -  CollectionView                 //
+    /*******************************************/
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize.init(width: 150, height: 150 * 4/3)
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:RankingCustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCustomCell", for: indexPath) as! RankingCustomCell
+        cell.rankImage.isHidden = true
+        return cell
+    }
+    
 
 }

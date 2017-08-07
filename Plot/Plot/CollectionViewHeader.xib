@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KK8-SS-XVk">
-                        <rect key="frame" x="0.0" y="4" width="214" height="42"/>
+                        <rect key="frame" x="8" y="4" width="206" height="42"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -29,7 +29,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="KK8-SS-XVk" secondAttribute="trailing" constant="16" id="DLr-DE-OE6"/>
                 <constraint firstAttribute="bottom" secondItem="KK8-SS-XVk" secondAttribute="bottom" constant="4" id="UcJ-C8-Wj7"/>
-                <constraint firstItem="KK8-SS-XVk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="bP5-mR-cUg"/>
+                <constraint firstItem="KK8-SS-XVk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="bP5-mR-cUg"/>
                 <constraint firstItem="KK8-SS-XVk" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="gwg-Fx-Nhm"/>
             </constraints>
             <size key="customSize" width="230" height="50"/>

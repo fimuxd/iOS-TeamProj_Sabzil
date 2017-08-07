@@ -154,6 +154,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
             header.headerName.text! = "장르"
         }else {
             header.headerName.text! = "지역"
+    
         }
         
         
