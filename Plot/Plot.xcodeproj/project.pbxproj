@@ -11,6 +11,8 @@
 		6AD625BB1F30342E00A21485 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD625BA1F30342E00A21485 /* DataCenter.swift */; };
 		6AD625BD1F30BC7C00A21485 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD625BC1F30BC7C00A21485 /* Datas.swift */; };
 		6AD625BF1F30BC8600A21485 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AD625BE1F30BC8600A21485 /* Constants.swift */; };
+		6ADF8C941F38481100946687 /* DataTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADF8C931F38481100946687 /* DataTestViewController.swift */; };
+		6ADF8C961F384B2100946687 /* DataTestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6ADF8C951F384B2100946687 /* DataTestStoryboard.storyboard */; };
 		D897BE061F2F1E7D001048AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D897BE051F2F1E7D001048AC /* AppDelegate.swift */; };
 		D897BE0B1F2F1E7D001048AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D897BE091F2F1E7D001048AC /* Main.storyboard */; };
 		D897BE0D1F2F1E7D001048AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D897BE0C1F2F1E7D001048AC /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 		6AD625BA1F30342E00A21485 /* DataCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		6AD625BC1F30BC7C00A21485 /* Datas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
 		6AD625BE1F30BC8600A21485 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6ADF8C931F38481100946687 /* DataTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTestViewController.swift; sourceTree = "<group>"; };
+		6ADF8C951F384B2100946687 /* DataTestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DataTestStoryboard.storyboard; sourceTree = "<group>"; };
 		B49C54C226ADBA0F6204BEA9 /* Pods_Plot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D897BE021F2F1E7D001048AC /* Plot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D897BE051F2F1E7D001048AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				6AD625BA1F30342E00A21485 /* DataCenter.swift */,
+				6ADF8C951F384B2100946687 /* DataTestStoryboard.storyboard */,
+				6ADF8C931F38481100946687 /* DataTestViewController.swift */,
 				6AD625BC1F30BC7C00A21485 /* Datas.swift */,
 				6AD625BE1F30BC8600A21485 /* Constants.swift */,
 			);
@@ -272,6 +278,7 @@
 				D897BE101F2F1E7D001048AC /* LaunchScreen.storyboard in Resources */,
 				D897BE281F2F56A9001048AC /* [Plot] Detail_Info_View.png in Resources */,
 				D8B84C301F3394F0002D0D70 /* RankingCustomCell.xib in Resources */,
+				6ADF8C961F384B2100946687 /* DataTestStoryboard.storyboard in Resources */,
 				D897BE201F2F2825001048AC /* 스크린샷 2017-07-31 오후 5.55.44.png in Resources */,
 				D8E44BCA1F32FD5C00C159FD /* TagCustomCell.xib in Resources */,
 				D897BE321F2F9448001048AC /* UserCommentCustomCell.xib in Resources */,
@@ -359,6 +366,7 @@
 				D897BE3D1F30AACF001048AC /* RankListCustomCell.swift in Sources */,
 				D897BE311F2F9448001048AC /* UserCommentCustomCell.swift in Sources */,
 				D897BE261F2F5405001048AC /* DetailViewController.swift in Sources */,
+				6ADF8C941F38481100946687 /* DataTestViewController.swift in Sources */,
 				D8B84C2F1F3394F0002D0D70 /* RankingCustomCell.swift in Sources */,
 				D897BE361F303ED8001048AC /* RecommendationViewController.swift in Sources */,
 				D897BE221F2F2E7C001048AC /* CustomButton_Round.swift in Sources */,
