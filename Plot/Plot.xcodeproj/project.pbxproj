@@ -47,6 +47,7 @@
 		D8B4D7E21F38472500AB1AD3 /* StarPointPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4D7E11F38472500AB1AD3 /* StarPointPopup.swift */; };
 		D8B4D7E41F384E2D00AB1AD3 /* CommentPopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B4D7E31F384E2D00AB1AD3 /* CommentPopup.xib */; };
 		D8B4D7E61F384E3F00AB1AD3 /* CommentPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4D7E51F384E3F00AB1AD3 /* CommentPopup.swift */; };
+		D8B4D7E81F3A045200AB1AD3 /* Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B4D7E71F3A045200AB1AD3 /* Popup.swift */; };
 		D8B84C2A1F33947E002D0D70 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B84C291F33947E002D0D70 /* RankingViewController.swift */; };
 		D8B84C2F1F3394F0002D0D70 /* RankingCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B84C2D1F3394F0002D0D70 /* RankingCustomCell.swift */; };
 		D8B84C301F3394F0002D0D70 /* RankingCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B84C2E1F3394F0002D0D70 /* RankingCustomCell.xib */; };
@@ -104,6 +105,7 @@
 		D8B4D7E11F38472500AB1AD3 /* StarPointPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarPointPopup.swift; sourceTree = "<group>"; };
 		D8B4D7E31F384E2D00AB1AD3 /* CommentPopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentPopup.xib; sourceTree = "<group>"; };
 		D8B4D7E51F384E3F00AB1AD3 /* CommentPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentPopup.swift; sourceTree = "<group>"; };
+		D8B4D7E71F3A045200AB1AD3 /* Popup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Popup.swift; sourceTree = "<group>"; };
 		D8B84C291F33947E002D0D70 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
 		D8B84C2D1F3394F0002D0D70 /* RankingCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingCustomCell.swift; sourceTree = "<group>"; };
 		D8B84C2E1F3394F0002D0D70 /* RankingCustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RankingCustomCell.xib; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				D897BE191F2F269F001048AC /* HomeViewController.swift */,
 				D897BE251F2F5405001048AC /* DetailViewController.swift */,
 				D897BE331F303D92001048AC /* SearchViewController.swift */,
+				D8B4D7E71F3A045200AB1AD3 /* Popup.swift */,
 				D8B84C291F33947E002D0D70 /* RankingViewController.swift */,
 				D897BE291F2F8242001048AC /* LoginViewController.swift */,
 				D897BE2B1F2F8276001048AC /* SignUpViewController.swift */,
@@ -396,6 +399,7 @@
 				D897BE2C1F2F8276001048AC /* SignUpViewController.swift in Sources */,
 				D897BE061F2F1E7D001048AC /* AppDelegate.swift in Sources */,
 				6AD625BD1F30BC7C00A21485 /* Datas.swift in Sources */,
+				D8B4D7E81F3A045200AB1AD3 /* Popup.swift in Sources */,
 				D897BE1A1F2F269F001048AC /* HomeViewController.swift in Sources */,
 				D897BE3A1F305C69001048AC /* MyPageViewController.swift in Sources */,
 				D897BE3D1F30AACF001048AC /* RankListCustomCell.swift in Sources */,
