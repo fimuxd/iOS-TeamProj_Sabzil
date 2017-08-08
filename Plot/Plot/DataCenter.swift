@@ -8,11 +8,12 @@
 
 import Foundation
 import Firebase
+import SwiftyJSON
 
 class DataCenter {
     static let sharedData = DataCenter()
     
-    var databaseReference:DatabaseReference!
+    //    var databaseReference:DatabaseReference
     var exhibitionData:ExhibitionData?
     var userData:UserData?
     
@@ -38,39 +39,66 @@ class DataCenter {
     //        })
     //    }
     
-    func getExhibitionData(id:Int) {
+    func getExhibitionData(id:String) {
         
-        /* Firebase 문서 예제
-         [데이터 한번 읽기]
-         한 번만 호출되고 즉시 삭제되는 콜백이 필요한 경우가 있습니다. 이후에 변경되지 않는 UI 요소를 초기화할 때가 그 예입니다. 이러한 경우 observeSingleEventOfType 메소드를 사용하면 시나리오가 단순해집니다. 이렇게 추가된 이벤트 콜백은 한 번 호출된 후 다시 호출되지 않습니다.
-         
-         이 방법은 한 번 로드된 후 자주 변경되지 않거나 능동적으로 수신 대기할 필요가 없는 데이터에 유용합니다. 예를 들어 위 예제의 블로깅 앱에서는 사용자가 새 게시물을 작성하기 시작할 때 이 메소드로 사용자의 프로필을 로드합니다.
-         
-         let userID = FIRAuth.auth()?.currentUser?.uid
-         ref.child("users").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-         // Get user value
-         let username = snapshot.value!["username"] as! String
-         let user = User.init(username: username)
-         
-         // ...
-         }) { (error) in
-         print(error.localizedDescription)
-         }
-         
-         */
-
-        var sellectedExhibitionRef:DatabaseReference = self.databaseReference.child("ExhibitionData")
+        Database.database().reference().child("ExhibitionData").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
+            //ExhibitionData 를 가져옵니다.
+            guard let selectedExhibitionJson = snapshot.value as? [String:Any] else {return}
+            
+//            print(selectedExhibitionJson)
+            
+            //JSON 형태의 ExhibitionData를 ExhibitionData_[String:Any] 구조체로 파싱
+            
+            let id:Int = selectedExhibitionJson[Constants.exhibition_ID] as! Int
+            let title:String = selectedExhibitionJson[Constants.exhibition_Title] as! String
+            let artist:String = selectedExhibitionJson[Constants.exhibition_Artist] as! String
+            let admission:Int = selectedExhibitionJson[Constants.exhibition_Admission] as! Int
+            let detail:String = selectedExhibitionJson[Constants.exhibition_Detail] as! String
+            let likesFromUser:Int = selectedExhibitionJson[Constants.exhibition_LikesFromUser] as! Int
+            let starPointFromUser:Int = selectedExhibitionJson[Constants.exhibition_StarPointFromUser] as! Int
+            let genre:Genre = Genre(rawValue: selectedExhibitionJson[Constants.exhibition_Genre] as! String)!
+            let district:District = District(rawValue: selectedExhibitionJson[Constants.exhibition_District] as! String)!
+            var placeData:[Place] = []
+            var imgURL:[Image] = []
+            var commentsFromUser:[Comment] = []
+            var periodData:[Period] = []
+            var workingHourData:[WorkingHours] = []
+            
+            guard let tempPlaceData:[[String:String]] = selectedExhibitionJson[Constants.exhibition_PlaceData] as? [[String:String]],
+                let tempImageData:[[String:Any]] = selectedExhibitionJson[Constants.exhibition_ImgURL] as? [[String:Any]],
+                let tempCommentsData:[[String:Any]] = selectedExhibitionJson[Constants.exhibition_CommentsFromUser] as? [[String:Any]],
+                let tempPeriodData:[[String:String]] = selectedExhibitionJson[Constants.exhibition_Period] as? [[String:String]],
+                let tempWorkingHourData:[[String:String]] = selectedExhibitionJson[Constants.exhibition_WorkingHours] as? [[String:String]] else {return}
+            
+            for place in tempPlaceData {
+                placeData.append(Place.init(data: place))
+            }
+            for image in tempImageData {
+                imgURL.append(Image.init(data: image))
+            }
+            for comment in tempCommentsData {
+                commentsFromUser.append(Comment.init(data: comment))
+            }
+            for period in tempPeriodData {
+                periodData.append(Period.init(data: period))
+            }
+            for workingHour in tempWorkingHourData {
+                workingHourData.append(WorkingHours.init(data: workingHour))
+            }
+            
+            
+//            var dataFromJSON:[String:Any] = [Constants.]
+            
         
-        sellectedExhibitionRef.child("0").observeSingleEvent(of: .value, with: { (snapshot) in
-            //ExhibitionData 를 가져옵니다. 
-            let selectedExhibitionData = snapshot.value!["exhibition_Title"] as! String
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-//        print(sellectedExhibitionData)
-        
-        
+    }) { (error) in
+    print(error.localizedDescription)
     }
+    
+    
+    
+    
+    
+    
+}
 }
 
