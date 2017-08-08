@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-sS-Xjm">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTj-sS-Xjm" userLabel="commentPopup">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전시 제목" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzT-g5-I65">
@@ -24,7 +24,7 @@
                             <color key="textColor" red="0.44602633250000001" green="0.44602633250000001" blue="0.44602633250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k2B-fj-bfZ">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k2B-fj-bfZ">
                             <rect key="frame" x="0.0" y="40" width="375" height="1"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             <constraints>
@@ -69,10 +69,12 @@
                         <constraint firstItem="KKn-YZ-MI7" firstAttribute="top" secondItem="jFV-gd-LGQ" secondAttribute="bottom" constant="8" id="59n-Vm-oVv"/>
                         <constraint firstItem="mzT-g5-I65" firstAttribute="top" secondItem="JTj-sS-Xjm" secondAttribute="top" constant="8" id="66F-An-DKy"/>
                         <constraint firstItem="KKn-YZ-MI7" firstAttribute="leading" secondItem="JTj-sS-Xjm" secondAttribute="leading" constant="8" id="6j0-9M-I20"/>
+                        <constraint firstItem="k2B-fj-bfZ" firstAttribute="width" secondItem="JTj-sS-Xjm" secondAttribute="width" id="7WD-Qx-4Wn"/>
                         <constraint firstItem="T1h-uQ-nay" firstAttribute="centerY" secondItem="Zwx-xE-deK" secondAttribute="centerY" id="EAc-LC-okf"/>
                         <constraint firstItem="jFV-gd-LGQ" firstAttribute="centerX" secondItem="JTj-sS-Xjm" secondAttribute="centerX" id="F2c-OZ-EiQ"/>
                         <constraint firstItem="Zwx-xE-deK" firstAttribute="leading" secondItem="JTj-sS-Xjm" secondAttribute="leading" constant="8" id="FPi-uU-sPl"/>
                         <constraint firstItem="k2B-fj-bfZ" firstAttribute="top" secondItem="awd-oy-8n5" secondAttribute="bottom" constant="8" id="IyU-Ta-SB5"/>
+                        <constraint firstItem="k2B-fj-bfZ" firstAttribute="centerX" secondItem="JTj-sS-Xjm" secondAttribute="centerX" id="Jrh-PL-h2V"/>
                         <constraint firstItem="awd-oy-8n5" firstAttribute="top" secondItem="JTj-sS-Xjm" secondAttribute="top" constant="8" id="KLi-qZ-1bI"/>
                         <constraint firstItem="jFV-gd-LGQ" firstAttribute="top" secondItem="k2B-fj-bfZ" secondAttribute="bottom" constant="40" id="MQs-xK-gY3"/>
                         <constraint firstItem="dEF-xS-LXs" firstAttribute="top" secondItem="JTj-sS-Xjm" secondAttribute="top" constant="8" id="O7b-09-5Xw"/>
