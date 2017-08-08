@@ -17,7 +17,7 @@ struct Constants {
     static let user_Name:String = "user_Name"                           //유저명
     static let user_LikesExhibitions:String = "user_LikesExhibitions"   //좋아요; Exibition의 ID값을 Array로 저장
     static let user_StarPoints:String = "user_StarPoints"               //별점
-    static let user_Comments:String = "user_Comments:String"            //후기
+    static let user_Comments:String = "user_Comments"                   //후기
     
     // - B. ExhibitionData 부분
     static let exhibition_ID:String = "exhibition_ID"                               //기본적으로 부여되는 ID 값
@@ -34,7 +34,8 @@ struct Constants {
     static let exhibition_CommentsFromUser:String = "exhibition_CommentsFromUser"   //후기
     static let exhibition_Period:String = "exhibition_Period"                       //전시기간
     static let exhibition_WorkingHours:String = "exhibition_WorkingHours"           //관람시간
-    // - C. 하위 Dictionary 부분
+    
+    // - C. 하위 dictionary 부분
     static let starPoint_ID:String = "starPoint_ID"                     //기본적으로 부여되는 ID 값
     static let starPoint_exhibitionID:String = "starPoint_exhibitionID" //별점을 준 전시ID
     static let starPoint_Point:String = "starPoint_Point"               //별점
@@ -50,10 +51,10 @@ struct Constants {
     static let image_PosterURL:String = "image_PosterURL"           //메인포스터
     static let image_DetailImages:String = "image_DetailImages"     //디테일포스터 Array
     
-    static let period_StartDate:String = "period_StartDate"
-    static let period_EndData:String = "period_EndData"
+    static let period_StartDate:String = "period_StartDate"     //전시기간_시작날짜
+    static let period_EndData:String = "period_EndData"         //전시기간_종료날짜
     
-    static let workingHours_StartTime:String = "workingHours_StartTime"
-    static let workingHours_EndTime:String = "workingHours_EndTime"
+    static let workingHours_StartTime:String = "workingHours_StartTime"     //전시시간_시작시간
+    static let workingHours_EndTime:String = "workingHours_EndTime"         //전시시간_종료시간
     
 }

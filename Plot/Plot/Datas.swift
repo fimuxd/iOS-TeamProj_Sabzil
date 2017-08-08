@@ -15,32 +15,71 @@ struct UserData {
     let password:String                    //비밀번호
     let profileImgURL:String               //프로필사진 URL
     let name:String                        //유저명
-    let likesExhibitions:[Int]             //좋아요; Exhibition의 ID값을 Array로 저장
-    let starPoints:[StarPoint]             //별점
-    let comments:[Comment]                 //후기
+    var likesExhibitions:[Int]             //좋아요; Exhibition의 ID값을 Array로 저장
+    var starPoints:[StarPoint]             //별점
+    var comments:[Comment]                 //후기
     
     var dictionary:[String:Any] {
         get{
             //likesExhibitions 채워놓을 곳
-            
+            var tempLikesExhibitions:[Int] = []
+            for exhibitionID in likesExhibitions {
+                tempLikesExhibitions.append(exhibitionID) //TODO: 강사님께 물어볼 것 - 이 것 어떻게 처리해야 하는지.
+            }
             
             //starPoints
+            var tempStarPoints:[[String:Any]] = []
+            for stars in starPoints {
+                tempStarPoints.append(stars.dictionary)
+            }
             
             //comments
-            
+            var tempComments:[[String:Any]] = []
+            for note in comments {
+                tempComments.append(note.dictionary)
+            }
             
             return [Constants.user_ID:self.id,
                     Constants.user_Email:self.email,
                     Constants.user_Password:self.password,
                     Constants.user_ProfileImgURL:self.profileImgURL,
                     Constants.user_Name:self.name,
-                    Constants.user_LikesExhibitions:self.likesExhibitions,
-                    Constants.user_Comments:self.comments]
+                    Constants.user_LikesExhibitions:tempLikesExhibitions,
+                    Constants.user_StarPoints:tempStarPoints,
+                    Constants.user_Comments:tempComments]
         }
     }
     
     //init 할 부분
+    init(dictionary:[String:Any]) {
+        self.id = dictionary[Constants.user_ID] as! Int
+        self.email = dictionary[Constants.user_Email] as! String
+        self.password = dictionary[Constants.user_Password] as! String
+        self.profileImgURL = dictionary[Constants.user_ProfileImgURL] as! String
+        self.name = dictionary[Constants.user_Name] as! String
+        self.likesExhibitions = []
+        self.starPoints = []
+        self.comments = []
+        
+        guard let likesExhibitionContainer:[Int] = dictionary[Constants.user_LikesExhibitions] as? [Int],
+            let starPointsContainer:[[String:Any]] = dictionary[Constants.user_StarPoints] as? [[String:Any]],
+            let commentsContainer:[[String:Any]] = dictionary[Constants.user_Comments] as? [[String:Any]]
+            else { return }
+        
+        for exhibitionID in likesExhibitionContainer {
+            likesExhibitions.append(exhibitionID) //TODO: 강사님께 물어볼 것 - 이 것 어떻게 처리해야 하는지.
+        }
+        
+        for stars in starPointsContainer {
+            starPoints.append(StarPoint.init(data: stars))
+        }
+        
+        for note in commentsContainer {
+            comments.append(Comment.init(data: note))
+        }
+    }
 }
+
 
 struct StarPoint {
     let id:Int                              //기본적으로 부여되는 ID 값
@@ -92,25 +131,26 @@ enum Point:Double {
     case OnePointFiveStar = 1.5
     case OneStar = 1
     case HalfStar = 0.5
+    case Zero = 0
 }
 
 
 //-----ExhibitionData
 struct ExhibitionData {
-    let id:Int                        //기본적으로 부여되는 ID 값
-    let title:String                  //전시제목
-    let artist:String                 //전시주체(작가/단체)
-    let admission:Int                 //관람료
-    let detail:String                 //작품설명
-    let likesFromUser:Int             //좋아요; 유저가 부여한 좋아요 갯수
-    let starPointFromUser:Int         //별점; 유저가 부여한 별점의 평균
-    let genre:Genre                   //장르
-    let district:District             //전시지역
-    var placeData:[Place]             //전시장소
-    var imgURL:[Image]                //전시이미지
-    var commentsFromUser:[Comment]     //후기
-    var periodData:[Period]               //전시기간
-    var workingHourData:[WorkingHours]                 //관람시간
+    let id:Int                          //기본적으로 부여되는 ID 값
+    let title:String                    //전시제목
+    let artist:String                   //전시주체(작가/단체)
+    let admission:Int                   //관람료
+    let detail:String                   //작품설명
+    let likesFromUser:Int               //좋아요; 유저가 부여한 좋아요 갯수
+    let starPointFromUser:Int           //별점; 유저가 부여한 별점의 평균
+    let genre:Genre                     //장르
+    let district:District               //전시지역
+    var placeData:[Place]               //전시장소
+    var imgURL:[Image]                  //전시이미지
+    var commentsFromUser:[Comment]      //후기
+    var periodData:[Period]             //전시기간
+    var workingHourData:[WorkingHours]  //관람시간
     
     var dictionary:[String:Any] {
         get{
