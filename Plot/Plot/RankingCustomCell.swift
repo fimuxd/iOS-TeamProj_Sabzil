@@ -10,6 +10,9 @@ import UIKit
 
 class RankingCustomCell: UICollectionViewCell {
 
+    @IBOutlet weak var rankImage: UIImageView!
+    @IBOutlet weak var posterImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
