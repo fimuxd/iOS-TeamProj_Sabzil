@@ -32,8 +32,12 @@ class MainCustomCell: UITableViewCell {
     }
     
     @IBAction func clickedComentBtn(_ sender: UIButton) {
+        
     }
     
+    @IBAction func starPointBtnClicked(_ sender: UIButton) {
+        
+    }
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -49,5 +53,10 @@ class MainCustomCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    /*******************************************/
+    // MARK: -  Func                           //
+    /*******************************************/
+    
     
 }
