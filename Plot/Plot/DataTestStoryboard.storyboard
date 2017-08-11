@@ -36,10 +36,15 @@
                                     <action selector="searchButtonAction:" destination="rYf-fw-1yd" eventType="touchUpInside" id="S76-0B-Wng"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JPg-vm-cTA">
+                                <rect key="frame" x="67" y="303" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="JPg-vm-cTA" id="9z4-Ta-nlN"/>
                         <outlet property="inputTextField" destination="Ogh-Lq-VKO" id="qhm-8Q-u0K"/>
                     </connections>
                 </viewController>

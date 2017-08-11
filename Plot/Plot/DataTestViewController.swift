@@ -11,18 +11,21 @@ import UIKit
 class DataTestViewController: UIViewController {
 
     @IBOutlet weak var inputTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
     @IBAction func searchButtonAction(_ sender: UIButton) {
         guard let realIntText = self.inputTextField.text else {return}
+        
         DataCenter.sharedData.getExhibitionData(id: realIntText)
+        
+        
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-    }
 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         

@@ -52,7 +52,7 @@ struct Constants {
     static let image_DetailImages:String = "image_DetailImages"     //디테일포스터 Array
     
     static let period_StartDate:String = "period_StartDate"     //전시기간_시작날짜
-    static let period_EndData:String = "period_EndData"         //전시기간_종료날짜
+    static let period_EndDate:String = "period_EndDate"         //전시기간_종료날짜
     
     static let workingHours_StartTime:String = "workingHours_StartTime"     //전시시간_시작시간
     static let workingHours_EndTime:String = "workingHours_EndTime"         //전시시간_종료시간
