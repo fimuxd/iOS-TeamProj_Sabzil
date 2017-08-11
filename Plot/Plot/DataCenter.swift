@@ -17,7 +17,6 @@ class DataCenter {
     var exhibitionData:ExhibitionData?
     var userData:UserData?
     
-    
     //    var isLogin:Bool = false
     //    var userData:UserData?
     //    private func requestIsLogin() -> Bool {
@@ -41,64 +40,103 @@ class DataCenter {
     
     func getExhibitionData(id:String) {
         
-        Database.database().reference().child("ExhibitionData").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
+        let ref = Database.database().reference().child("ExhibitionData").child(id)
+        
+        
+        
+        ref.observeSingleEvent(of: .value, with: { (snapshot) in
             //ExhibitionData 를 가져옵니다.
-            guard let selectedExhibitionJson = snapshot.value as? [String:Any] else {return}
+            guard let json = snapshot.value as? [String:Any] else {return}
             
-//            print(selectedExhibitionJson)
+            //            print(selectedExhibitionJson)
             
             //JSON 형태의 ExhibitionData를 ExhibitionData_[String:Any] 구조체로 파싱
             
-            let id:Int = selectedExhibitionJson[Constants.exhibition_ID] as! Int
-            let title:String = selectedExhibitionJson[Constants.exhibition_Title] as! String
-            let artist:String = selectedExhibitionJson[Constants.exhibition_Artist] as! String
-            let admission:Int = selectedExhibitionJson[Constants.exhibition_Admission] as! Int
-            let detail:String = selectedExhibitionJson[Constants.exhibition_Detail] as! String
-            let likesFromUser:Int = selectedExhibitionJson[Constants.exhibition_LikesFromUser] as! Int
-            let starPointFromUser:Int = selectedExhibitionJson[Constants.exhibition_StarPointFromUser] as! Int
-            let genre:Genre = Genre(rawValue: selectedExhibitionJson[Constants.exhibition_Genre] as! String)!
-            let district:District = District(rawValue: selectedExhibitionJson[Constants.exhibition_District] as! String)!
-            var placeData:[Place] = []
-            var imgURL:[Image] = []
-            var commentsFromUser:[Comment] = []
-            var periodData:[Period] = []
-            var workingHourData:[WorkingHours] = []
-            
-            guard let tempPlaceData:[[String:String]] = selectedExhibitionJson[Constants.exhibition_PlaceData] as? [[String:String]],
-                let tempImageData:[[String:Any]] = selectedExhibitionJson[Constants.exhibition_ImgURL] as? [[String:Any]],
-                let tempCommentsData:[[String:Any]] = selectedExhibitionJson[Constants.exhibition_CommentsFromUser] as? [[String:Any]],
-                let tempPeriodData:[[String:String]] = selectedExhibitionJson[Constants.exhibition_Period] as? [[String:String]],
-                let tempWorkingHourData:[[String:String]] = selectedExhibitionJson[Constants.exhibition_WorkingHours] as? [[String:String]] else {return}
-            
-            for place in tempPlaceData {
-                placeData.append(Place.init(data: place))
-            }
-            for image in tempImageData {
-                imgURL.append(Image.init(data: image))
-            }
-            for comment in tempCommentsData {
-                commentsFromUser.append(Comment.init(data: comment))
-            }
-            for period in tempPeriodData {
-                periodData.append(Period.init(data: period))
-            }
-            for workingHour in tempWorkingHourData {
-                workingHourData.append(WorkingHours.init(data: workingHour))
-            }
+            let id:Int = json[Constants.exhibition_ID] as! Int
+            let title:String = json[Constants.exhibition_Title] as! String
+            let artist:String = json[Constants.exhibition_Artist] as! String
+            let admission:Int = json[Constants.exhibition_Admission] as! Int
+            let detail:String = json[Constants.exhibition_Detail] as! String
+            let genre:Genre = Genre(rawValue: json[Constants.exhibition_Genre] as! String)!
+            let district:District = District(rawValue: json[Constants.exhibition_District] as! String)!
+            var imageURLs:[Image] = []
+            var places:[Place] = []
+            var period:[Period] = []
+            var workingHours:[WorkingHours] = []
             
             
-//            var dataFromJSON:[String:Any] = [Constants.]
+            //-----imageURL Array
+            let imgURLSnapshot = snapshot.childSnapshot(forPath: Constants.exhibition_ImgURL)
+            guard let imgURLJSON = imgURLSnapshot.value as? [String:Any] else {return}
             
+            let posterURL:String = imgURLJSON[Constants.image_PosterURL] as! String
+            let detailURLSnapshot = imgURLSnapshot.childSnapshot(forPath: Constants.image_DetailImages)
+            
+            guard let detailURLJSON = detailURLSnapshot.value as? [String] else {return}
+            
+            let detailURLs:[String] = detailURLJSON
+            let imageDic:[String:Any] = [Constants.image_PosterURL:posterURL,
+                                         Constants.image_DetailImages:detailURLs]
+            let imageData:Image = Image(data: imageDic)
+            imageURLs.append(imageData)
+            
+            //-----place Array
+            let placeSnapshot = snapshot.childSnapshot(forPath: Constants.exhibition_PlaceData)
+            guard let placeJSON = placeSnapshot.value as? [String:String] else {return}
+            
+            let address:String = placeJSON[Constants.place_Address] as! String
+            let websiteURL:String = placeJSON[Constants.place_WebsiteURL] as! String
+            
+            let placeDic:[String:String] = [Constants.place_Address:address,
+                                            Constants.place_WebsiteURL:websiteURL]
+            let placeData:Place = Place(data: placeDic)
+            places.append(placeData)
+            
+            //-----period Array
+            let periodSnapshot = snapshot.childSnapshot(forPath: Constants.exhibition_Period)
+            guard let periodJSON = periodSnapshot.value as? [String:String] else {return}
+            
+            let startDate:String = periodJSON[Constants.period_StartDate] as! String
+            let endDate:String = periodJSON[Constants.period_EndDate] as! String
+            
+            let periodDic:[String:String] = [Constants.period_StartDate:startDate,
+                                             Constants.period_EndDate:endDate]
+            let periodData:Period = Period(data: periodDic)
+            period.append(periodData)
+            
+            //-----workingHour Array
+            let workingHourSnapshot = snapshot.childSnapshot(forPath: Constants.exhibition_WorkingHours)
+            guard let workingHourJSON = workingHourSnapshot.value as? [String:String] else {return}
+            
+            let startTime:String = workingHourJSON[Constants.workingHours_StartTime] as! String
+            let endTime:String = workingHourJSON[Constants.workingHours_EndTime] as! String
+            
+            let workingHourDic:[String:String] = [Constants.workingHours_StartTime:startTime,
+                                                  Constants.workingHours_EndTime:endTime]
+            let workingHourData:WorkingHours = WorkingHours(data: workingHourDic)
+            workingHours.append(workingHourData)
+            
+            print(" id:\(id)\n 전시제목:\(title)\n 작가(주최자):\(artist)\n 관람료:\(admission)\n 설명:\(detail)\n 장르:\(genre)\n 지역:\(district)\n 이미지주소:\(imageURLs)\n 장소주소:\(places)\n 전시기간:\(period)\n 관람시간:\(workingHours)")
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         
-    }) { (error) in
-    print(error.localizedDescription)
+        
+        
+        /*
+         for place in tempPlaceData {
+         placeData.append(Place.init(data: place))
+         }
+         for period in tempPeriodData {
+         periodData.append(Period.init(data: period))
+         }
+         for workingHour in tempWorkingHourData {
+         workingHourData.append(WorkingHours.init(data: workingHour))
+         }
+         */
+        
+        
+        
     }
-    
-    
-    
-    
-    
-    
 }
-}
-

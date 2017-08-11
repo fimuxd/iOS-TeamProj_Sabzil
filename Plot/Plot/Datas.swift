@@ -21,19 +21,19 @@ struct UserData {
     
     var dictionary:[String:Any] {
         get{
-            //likesExhibitions 채워놓을 곳
+//            likesExhibitions 채워놓을 곳
             var tempLikesExhibitions:[Int] = []
             for exhibitionID in likesExhibitions {
                 tempLikesExhibitions.append(exhibitionID) //TODO: 강사님께 물어볼 것 - 이 것 어떻게 처리해야 하는지.
             }
             
-            //starPoints
+//            starPoints
             var tempStarPoints:[[String:Any]] = []
             for stars in starPoints {
                 tempStarPoints.append(stars.dictionary)
             }
             
-            //comments
+//            comments_https://console.firebase.google.com/project/plot-be010/database/data
             var tempComments:[[String:Any]] = []
             for note in comments {
                 tempComments.append(note.dictionary)
@@ -46,7 +46,8 @@ struct UserData {
                     Constants.user_Name:self.name,
                     Constants.user_LikesExhibitions:tempLikesExhibitions,
                     Constants.user_StarPoints:tempStarPoints,
-                    Constants.user_Comments:tempComments]
+                    Constants.user_Comments:tempComments
+        ]
         }
     }
     
@@ -160,12 +161,18 @@ struct ExhibitionData {
             var tempPeriodData:[[String:String]] = []
             var tempWorkingHourData:[[String:String]] = []
             
+//            placeData.forEach { (place) in
+//              tempImageData.append(place.dictionary)
+//            }
+            
             for place in placeData {
                 tempPlaceData.append(place.dictionary)
             }
+            
             for image in imgURL {
                 tempImageData.append(image.dictionary)
             }
+            
             for comment in commentsFromUser {
                 tempCommentsData.append(comment.dictionary)
             }
@@ -283,22 +290,22 @@ struct Image {
     
     init(data:[String:Any]) {
         self.posterURL = data[Constants.image_PosterURL] as! String
-        self.detailImages = []  // TODO: 강사님께 물어볼 것 - 이 부분 모르겠음
+        self.detailImages = data[Constants.image_DetailImages] as! [String]
     }
 }
 
 struct Period {
     let startDate:String
-    let endData:String
+    let endDate:String
     
     var dictionary:[String:String] {
         return [Constants.period_StartDate:self.startDate,
-                Constants.period_EndData:self.endData]
+                Constants.period_EndDate:self.endDate]
     }
     
     init(data:[String:String]) {
         self.startDate = data[Constants.period_StartDate]!
-        self.endData = data[Constants.period_EndData]!
+        self.endDate = data[Constants.period_EndDate]!
     }
 }
 
