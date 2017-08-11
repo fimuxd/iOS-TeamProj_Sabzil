@@ -75,7 +75,9 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         isBeginEditing = false
         isdidChangeText = false
         isSearchBtnClicked = true
-        searchKeyword.append(searchBar.text!)
+        if !searchKeyword.contains(searchBar.text!) {
+                searchKeyword.append(searchBar.text!)
+        }
         print(isSearchBtnClicked,isdidChangeText,isBeginEditing)
         print(searchKeyword)
         rankingTableView.reloadData()

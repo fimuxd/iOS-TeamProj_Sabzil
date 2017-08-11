@@ -14,7 +14,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: -  Outlet & Property              //
     /*******************************************/
     
+    @IBOutlet weak var contentsViewHeight: NSLayoutConstraint!
    
+    @IBOutlet weak var introduceExsHeight: NSLayoutConstraint!
+    
     @IBAction func starPoint(_ sender: UIButton) {
         presentPopup(sender)
     }
@@ -39,10 +42,15 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("viewWillAppear")
         self.navigationController?.isNavigationBarHidden = false
 
+//        if introduceExsHeight.constant > 0 {
+//            contentsViewHeight.constant += introduceExsHeight.constant
+//        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    
         
         self.commentTableView.delegate = self
         self.commentTableView.dataSource = self
