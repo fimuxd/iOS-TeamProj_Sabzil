@@ -21,19 +21,19 @@ struct UserData {
     
     var dictionary:[String:Any] {
         get{
-            //likesExhibitions 채워놓을 곳
+            //            likesExhibitions 채워놓을 곳
             var tempLikesExhibitions:[Int] = []
             for exhibitionID in likesExhibitions {
                 tempLikesExhibitions.append(exhibitionID) //TODO: 강사님께 물어볼 것 - 이 것 어떻게 처리해야 하는지.
             }
             
-            //starPoints
+            //            starPoints
             var tempStarPoints:[[String:Any]] = []
             for stars in starPoints {
                 tempStarPoints.append(stars.dictionary)
             }
             
-            //comments
+            //            comments
             var tempComments:[[String:Any]] = []
             for note in comments {
                 tempComments.append(note.dictionary)
@@ -46,7 +46,8 @@ struct UserData {
                     Constants.user_Name:self.name,
                     Constants.user_LikesExhibitions:tempLikesExhibitions,
                     Constants.user_StarPoints:tempStarPoints,
-                    Constants.user_Comments:tempComments]
+                    Constants.user_Comments:tempComments
+            ]
         }
     }
     
@@ -83,18 +84,21 @@ struct UserData {
 
 struct StarPoint {
     let id:Int                              //기본적으로 부여되는 ID 값
-    let exhibitionID:Int                    //별점을 준 전시ID
+    let exhibitionID:Int                    //별점을 받은 전시ID
+    let userID:Int                          //별점을 준 유저ID
     let point:Point                         //별점
     
     var dictionary:[String:Any] {
         return [Constants.starPoint_ID:self.id,
-                Constants.starPoint_exhibitionID:self.exhibitionID,
+                Constants.starPoint_ExhibitionID:self.exhibitionID,
+                Constants.starPoint_UserID:self.userID,
                 Constants.starPoint_Point:self.point]
     }
     
     init(data:[String:Any]) {
         self.id = data[Constants.starPoint_ID] as! Int
-        self.exhibitionID = data[Constants.starPoint_exhibitionID] as! Int
+        self.exhibitionID = data[Constants.starPoint_ExhibitionID] as! Int
+        self.userID = data[Constants.starPoint_UserID] as! Int
         self.point = Point.init(rawValue: data[Constants.starPoint_Point] as! Double)!
     }
 }
@@ -142,30 +146,41 @@ struct ExhibitionData {
     let artist:String                   //전시주체(작가/단체)
     let admission:Int                   //관람료
     let detail:String                   //작품설명
-    let likesFromUser:Int               //좋아요; 유저가 부여한 좋아요 갯수
-    let starPointFromUser:Int           //별점; 유저가 부여한 별점의 평균
     let genre:Genre                     //장르
     let district:District               //전시지역
     var placeData:[Place]               //전시장소
     var imgURL:[Image]                  //전시이미지
-    var commentsFromUser:[Comment]      //후기
     var periodData:[Period]             //전시기간
     var workingHourData:[WorkingHours]  //관람시간
+    var likesFromUser:[Like]               //좋아요; 유저가 부여한 좋아요 갯수
+    var starPointFromUser:[StarPoint]           //별점; 유저가 부여한 별점의 평균
+    var commentsFromUser:[Comment]      //후기
     
     var dictionary:[String:Any] {
         get{
             var tempPlaceData:[[String:String]] = []
             var tempImageData:[[String:Any]] = []
+            var tempLikeData:[[String:Int]] = []
             var tempCommentsData:[[String:Any]] = []
             var tempPeriodData:[[String:String]] = []
             var tempWorkingHourData:[[String:String]] = []
             
+            //            placeData.forEach { (place) in
+            //              tempImageData.append(place.dictionary)
+            //            }
+            
             for place in placeData {
                 tempPlaceData.append(place.dictionary)
             }
+            
             for image in imgURL {
                 tempImageData.append(image.dictionary)
             }
+            
+            for like in likesFromUser {
+                tempLikeData.append(like.dictionary)
+            }
+            
             for comment in commentsFromUser {
                 tempCommentsData.append(comment.dictionary)
             }
@@ -187,6 +202,7 @@ struct ExhibitionData {
                     Constants.exhibition_District:self.district,
                     Constants.exhibition_PlaceData:tempPlaceData,
                     Constants.exhibition_ImgURL:tempImageData,
+                    Constants.exhibition_LikesFromUser:tempLikeData,
                     Constants.exhibition_CommentsFromUser:tempCommentsData,
                     Constants.exhibition_Period:tempPeriodData,
                     Constants.exhibition_WorkingHours:tempWorkingHourData]
@@ -199,29 +215,26 @@ struct ExhibitionData {
         self.artist = data[Constants.exhibition_Artist] as! String
         self.admission = data[Constants.exhibition_Admission] as! Int
         self.detail = data[Constants.exhibition_Detail] as! String
-        self.likesFromUser = data[Constants.exhibition_LikesFromUser] as! Int
-        self.starPointFromUser = data[Constants.exhibition_StarPointFromUser] as! Int
-        self.genre = Genre.init(rawValue: data[Constants.exhibition_Genre] as! String)!
+        self.genre = Genre(rawValue: data[Constants.exhibition_Genre] as! String)!
         self.district = District.init(rawValue: data[Constants.exhibition_District] as! String)!
         self.placeData = []
         self.imgURL = []
+        self.likesFromUser = []
+        self.starPointFromUser = []
         self.commentsFromUser = []
         self.periodData = []
         self.workingHourData = []
         
         if let tempPlaceData:[[String:String]] = data[Constants.exhibition_PlaceData] as? [[String:String]],
             let tempImageData:[[String:Any]] = data[Constants.exhibition_ImgURL] as? [[String:Any]],
-            let tempCommentsData:[[String:Any]] = data[Constants.exhibition_CommentsFromUser] as? [[String:Any]],
             let tempPeriodData:[[String:String]] = data[Constants.exhibition_Period] as? [[String:String]],
             let tempWorkingHourData:[[String:String]] = data[Constants.exhibition_WorkingHours] as? [[String:String]] {
+            
             for place in tempPlaceData {
                 placeData.append(Place.init(data: place))
             }
             for image in tempImageData {
                 imgURL.append(Image.init(data: image))
-            }
-            for comment in tempCommentsData {
-                commentsFromUser.append(Comment.init(data: comment))
             }
             for period in tempPeriodData {
                 periodData.append(Period.init(data: period))
@@ -229,6 +242,20 @@ struct ExhibitionData {
             for workingHour in tempWorkingHourData {
                 workingHourData.append(WorkingHours.init(data: workingHour))
             }
+        }
+        
+        guard let templikesData:[[String:Int]] = data[Constants.exhibition_LikesFromUser] as? [[String:Int]],
+        let tempStarPointData:[[String:Any]] = data[Constants.exhibition_StarPointFromUser] as? [[String:Any]],
+            let tempCommentsData:[[String:Any]] = data[Constants.exhibition_CommentsFromUser] as? [[String:Any]] else {return}
+
+        for like in templikesData {
+            likesFromUser.append(Like.init(data: like))
+        }
+        for star in tempStarPointData {
+            starPointFromUser.append(StarPoint.init(data: star))
+        }
+        for comment in tempCommentsData {
+            commentsFromUser.append(Comment.init(data: comment))
         }
     }
     
@@ -283,22 +310,22 @@ struct Image {
     
     init(data:[String:Any]) {
         self.posterURL = data[Constants.image_PosterURL] as! String
-        self.detailImages = []  // TODO: 강사님께 물어볼 것 - 이 부분 모르겠음
+        self.detailImages = data[Constants.image_DetailImages] as! [String]
     }
 }
 
 struct Period {
     let startDate:String
-    let endData:String
+    let endDate:String
     
     var dictionary:[String:String] {
         return [Constants.period_StartDate:self.startDate,
-                Constants.period_EndData:self.endData]
+                Constants.period_EndDate:self.endDate]
     }
     
     init(data:[String:String]) {
         self.startDate = data[Constants.period_StartDate]!
-        self.endData = data[Constants.period_EndData]!
+        self.endDate = data[Constants.period_EndDate]!
     }
 }
 
@@ -314,6 +341,24 @@ struct WorkingHours {
     init(data:[String:String]) {
         self.startTime = data[Constants.workingHours_StartTime]!
         self.endTime = data[Constants.workingHours_EndTime]!
+    }
+}
+
+struct Like {
+    let id:Int
+    let exhibitionID:Int
+    let userID:Int
+    
+    var dictionary:[String:Int] {
+        return [Constants.likes_ID:id,
+                Constants.likes_ExhibitionID:exhibitionID,
+                Constants.likes_UserID:userID]
+    }
+    
+    init(data:[String:Int]) {
+        self.id = data[Constants.likes_ID]!
+        self.exhibitionID = data[Constants.likes_ExhibitionID]!
+        self.userID = data[Constants.likes_UserID]!
     }
 }
 
