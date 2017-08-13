@@ -37,13 +37,18 @@ struct Constants {
     
     // - C. 하위 dictionary 부분
     static let starPoint_ID:String = "starPoint_ID"                     //기본적으로 부여되는 ID 값
-    static let starPoint_exhibitionID:String = "starPoint_exhibitionID" //별점을 준 전시ID
+    static let starPoint_ExhibitionID:String = "starPoint_ExhibitionID" //별점을 받은 전시ID
+    static let starPoint_UserID:String = "starPoint_UserID"             //별점을 준 유저ID
     static let starPoint_Point:String = "starPoint_Point"               //별점
     
     static let comment_ID:String = "comment_ID"                         //기본적으로 부여되는 ID 값
     static let comment_ExhibitionID:String = "comment_ExhibitionID"     //어떤 전시에 대한 후기인지 전시의 ID 값 저장
     static let comment_UserID:String = "comment_UserID"                 //어떤 유저가 남긴 후기인지 유저의 ID 값 저장
     static let comment_Detail:String = "comment_Detail"                 //후기
+    
+    static let likes_ID:String = "likes_ID"                             //기본적으로 부여되는 ID 값
+    static let likes_ExhibitionID:String = "likes_ExhibitionID"         //좋아요 받은 전시 ID
+    static let likes_UserID:String = "likes_UserID"                     //좋아요 남긴 유저 ID
     
     static let place_Address:String = "place_Address"           //전시장소 주소
     static let place_WebsiteURL:String = "place_WebsiteURL"     //전시 웹사이트 URL
@@ -52,7 +57,7 @@ struct Constants {
     static let image_DetailImages:String = "image_DetailImages"     //디테일포스터 Array
     
     static let period_StartDate:String = "period_StartDate"     //전시기간_시작날짜
-    static let period_EndData:String = "period_EndData"         //전시기간_종료날짜
+    static let period_EndDate:String = "period_EndDate"         //전시기간_종료날짜
     
     static let workingHours_StartTime:String = "workingHours_StartTime"     //전시시간_시작시간
     static let workingHours_EndTime:String = "workingHours_EndTime"         //전시시간_종료시간
