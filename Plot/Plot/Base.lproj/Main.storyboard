@@ -1051,10 +1051,16 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugj-aK-eOy">
                                                         <rect key="frame" x="8" y="8" width="30" height="24"/>
                                                         <state key="normal" title="닫기"/>
+                                                        <connections>
+                                                            <action selector="cancelBtnCilcked:" destination="nRm-l6-Tqn" eventType="touchUpInside" id="arb-ym-Na8"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAM-PJ-qIi">
                                                         <rect key="frame" x="297" y="8" width="69" height="24"/>
                                                         <state key="normal" title="코멘트 작성"/>
+                                                        <connections>
+                                                            <action selector="commentSaveBtnClicked:" destination="nRm-l6-Tqn" eventType="touchUpInside" id="9Ww-Qm-jQ9"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평가:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XR0-QS-Odr">
                                                         <rect key="frame" x="8" y="49" width="28.5" height="24"/>
@@ -1065,6 +1071,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHp-c2-SwV">
                                                         <rect key="frame" x="44.5" y="46" width="172" height="30"/>
                                                         <state key="normal" title="여기를 눌러 평가를 해주세요."/>
+                                                        <connections>
+                                                            <action selector="popUpStarPointView:" destination="nRm-l6-Tqn" eventType="touchUpInside" id="GC9-f8-Ia7"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 작품에 대한 생각을 자유롭게 표현해주세요." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc0-ET-NZW">
                                                         <rect key="frame" x="8" y="90" width="358" height="17"/>

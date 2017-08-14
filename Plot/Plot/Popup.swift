@@ -15,16 +15,33 @@ class Popup: UIViewController {
     /*******************************************/
     
     var senderTag:Int!
-    
+
     @IBAction func tappedBlackOut(_ sender: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet weak var starPointPopup: UIView!
     @IBOutlet weak var commentPopup: UIView!
-
+    
     @IBOutlet weak var commentViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var starPointBottomConstranint: NSLayoutConstraint!
+    
+    // MARK: -  StarPoint PopUp
+    
+    
+    // MARK: -  Comment PopUp
+    
+    
+    @IBAction func cancelBtnCilcked(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func commentSaveBtnClicked(_ sender: UIButton) {
+        
+    }
+  
+    @IBAction func popUpStarPointView(_ sender: UIButton) {
+        
+    }
     
     
     /*******************************************/
@@ -46,16 +63,7 @@ class Popup: UIViewController {
         }
         
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-     
-    }
     
-
+    
+    
 }

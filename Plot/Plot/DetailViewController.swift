@@ -15,7 +15,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /*******************************************/
     
     @IBOutlet weak var contentsViewHeight: NSLayoutConstraint!
-   
     @IBOutlet weak var introduceExsHeight: NSLayoutConstraint!
     
     @IBAction func starPoint(_ sender: UIButton) {
@@ -29,7 +28,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var commentTableView: UITableView!
     var userLikesExhi:[String] = []
-    
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
     /*******************************************/
@@ -49,8 +47,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    
         
         self.commentTableView.delegate = self
         self.commentTableView.dataSource = self
@@ -73,6 +69,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /*******************************************/
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UserCommentCustomCell = tableView.dequeueReusableCell(withIdentifier: "UserCommentCustomCell", for: indexPath) as! UserCommentCustomCell
+        cell.selectionStyle = .none
         return cell
     }
     
@@ -113,5 +110,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         present(popup, animated: true, completion: nil)
     }
     
+    func reloadComment(){
+        print("코멘트테이블뷰리로드")
+        self.commentTableView.reloadData()
+    }
     
+//    var reloadComment = {()->Void in
+//        self.reloadComment()
+//    }
 }
