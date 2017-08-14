@@ -45,7 +45,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="검색"/>
                                 <connections>
-                                    <action selector="searchButtonAction:" destination="rYf-fw-1yd" eventType="touchUpInside" id="ob7-Ue-a5K"/>
                                     <action selector="searchUserButtonAction:" destination="rYf-fw-1yd" eventType="touchUpInside" id="Lsh-tm-c4S"/>
                                 </connections>
                             </button>
