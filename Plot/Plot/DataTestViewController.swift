@@ -82,7 +82,7 @@ class DataTestViewController: UIViewController {
         }
     }
     
-    var testArray:[Int]?{
+    var testArray:Int?{
         didSet{
             print("여기:\(testArray)")
         }
@@ -103,10 +103,10 @@ class DataTestViewController: UIViewController {
             self.starPointData = star
         }
         
-        DataCenter.sharedData.requestFavoriteExhibitionIDsOfUser(id: 0) { (like) in
-            self.testArray = like
+        DataCenter.sharedData.requestLikeCountsOfExhibition(id: 0) { (int) in
+            self.testArray = int
+            
         }
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

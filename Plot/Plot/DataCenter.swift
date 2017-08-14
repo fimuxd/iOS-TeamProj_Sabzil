@@ -178,7 +178,7 @@ class DataCenter {
     }
 
 
-    //--특정 유저가 좋아요한 전시ID
+    //--특정 유저가 좋아요한 전시ID Array
     func requestFavoriteExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
         
         //좋아요 데이터를 가져옵니다
@@ -194,7 +194,7 @@ class DataCenter {
             
             //필터링한 데이터 중, 전시ID 만 추출하여 어레이로 매핑합니다
             let favoriteExhibitionIDs = likesDataForSelectedUser.map({ (dic:[String:Int]) -> Int in
-                return dic[Constants.likes_ExhibitionID] as! Int
+                return dic[Constants.likes_ExhibitionID]!
             })
             
             completion(favoriteExhibitionIDs)
@@ -205,14 +205,106 @@ class DataCenter {
     }
     
         
-    //--특정 유저의 별점 남긴 전시
+    //--특정 유저가 별점 남긴 전시ID Array
+    func requestStarPointedExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
+        
+        Database.database().reference().child("StarPoints").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Any]],
+                let realIntID:Int = id else {return}
+            
+            let starPointDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
+                let userID:Int = dic[Constants.starPoint_UserID] as! Int
+                 return realIntID == userID
+                
+            })
+            
+            let starPointedExhibitionIDs = starPointDataForSelectedUser.map({ (dic:[String:Any]) -> Int in
+                return dic[Constants.starPoint_UserID] as! Int
+            })
+            
+            completion(starPointedExhibitionIDs)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
-    //--특정 유저의 코멘트 별도 확인
+    
+    //--특정 유저의 코멘트 남긴 전시 ID Array
+    func requestCommentedExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
+    
+        Database.database().reference().child("Comments").observe(.value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Any]],
+                let realIntID:Int = id else {return}
+            
+            let commentDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
+                let userID:Int = dic[Constants.comment_UserID] as! Int
+                return realIntID == userID
+                
+            })
+            
+            let commentedExhibitionIDs = commentDataForSelectedUser.map({ (dic:[String:Any]) -> Int in
+                return dic[Constants.comment_UserID] as! Int
+            })
+            
+            completion(commentedExhibitionIDs)
+
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     
     //--특정 전시의 별점 평균
+    func requestAverageStarPointOfExhibition(id:Int?, completion:@escaping (_ info:Double) -> Void) {
+        
+        Database.database().reference().child("StarPoints").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Any]],
+                let realIntID:Int = id else {return}
+            
+            let starPointDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
+                let userID:Int = dic[Constants.starPoint_ExhibitionID] as! Int
+                return realIntID == userID
+                
+            })
+            
+            let starPoints = starPointDataForSelectedUser.map({ (dic:[String:Any]) -> Double in
+                return dic[Constants.starPoint_Point] as! Double
+            })
+            let sumStarPoint = starPoints.reduce(0, { (point1, point2) -> Double in
+                point1 + point2
+            })
+            let averageStarPoint:Double = sumStarPoint/Double(starPoints.count)
+            
+            completion(averageStarPoint)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
     //--특정 전시의 좋아요 합계
+    func requestLikeCountsOfExhibition(id:Int?, completion:@escaping (_ info:Int) -> Void) {
+        
+        Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Int]],
+                let realIntID:Int = id else {return}
+            
+            let likesDataForSelectedExhibition = json.filter({ (dic:[String:Int]) -> Bool in
+                dic[Constants.likes_ExhibitionID] == realIntID
+                
+            })
+            
+            let likesCount:Int = likesDataForSelectedExhibition.count
+            
+            completion(likesCount)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
     //--특정 전시의 코멘트 확인
+    
     
 }

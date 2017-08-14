@@ -27,7 +27,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     
+    
     @IBOutlet weak var commentTableView: UITableView!
+    
     var userLikesExhi:[String] = []
     
     @IBOutlet weak var posterCollectionView: UICollectionView!
