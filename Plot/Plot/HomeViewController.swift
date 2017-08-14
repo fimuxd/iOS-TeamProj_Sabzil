@@ -44,9 +44,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
         
-        cell.localLabel.text = "서울"
-        cell.mainTitleLabel.text = "메인타이틀 텍스트 전시이름이들어갑니다"
-        cell.exhibitionTerm.text = "2017. 07. 08~ 2017. 08. 09"
+        cell.mainPosterImg.image = UIImage(data: <#T##Data#>)
+        cell.localLabel.text = DataCenter.sharedData.exhibitionData?.district.rawValue
+        cell.mainTitleLabel.text = DataCenter.sharedData.exhibitionData?.title
+        cell.exhibitionTerm.text = DataCenter.sharedData.exhibitionData?.periodData[Constants.period_StartDate]
         cell.museumName.text = "디뮤지엄"
         return cell
     }

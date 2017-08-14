@@ -18,8 +18,8 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
 //    @IBOutlet weak var layoutTAG: FlowLayout!
     @IBOutlet weak var recommendTableView: UITableView!
     
-    let localTag:[String] = ["미술","사진","영상","공예","조각","설치","기타"]
-    let genreTag:[String] = ["서울","부산","광주","대구","대전","경기도","경상도","강원도","충청도","전라도","제주도"]
+    let localTag:[Genre] = [Genre.Carving,Genre.Craft,Genre.Installation,Genre.Paint,Genre.Photo,Genre.Video,Genre.Etc]
+    let genreTag:[District] = [District.Seoul, District.GyeongGi, District.Busan,District.DaeGu, District.DaeJeon, District.GangWon, District.ChuncCehongBuk, District.ChungCheongNam, District.JeJu,District.GwangJu,District.GyeongSangBuk, District.GyeongSangNam, District.JeonLaBuk, District.JeonLaNam,District.Incheon, District.UlSan]
     
     var localtags = [Tag]()
     var genretags = [Tag]()
@@ -48,13 +48,13 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
         //        self.layoutTAG.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8)
         for name in localTag {
             let tag = Tag()
-            tag.name = name
+            tag.name = name.rawValue
             self.localtags.append(tag)
         }
         
         for name in genreTag {
             let tag = Tag()
-            tag.name = name
+            tag.name = name.rawValue
             self.genretags.append(tag)
         }
         
