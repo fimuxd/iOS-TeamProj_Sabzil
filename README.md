@@ -28,6 +28,8 @@
 1. Required Data: [here](https://github.com/fimuxd/iOS-TeamProj_PLOT/blob/Boyoung-PARK/for%20MD/필요%20데이터.pdf)
 2. iOS Screen Transition Specification: [here](https://github.com/fimuxd/iOS-TeamProj_PLOT/blob/Boyoung-PARK/for%20MD/iOS%20Team%20Project.pdf)
 3. UI Reference: [here](https://github.com/fimuxd/iOS-TeamProj_PLOT/tree/Boyoung-PARK/레퍼런스)
+4. Trello: [here](https://trello.com/b/A1VSSdvn/plot)
+5. Scrum Board: [here](https://docs.google.com/spreadsheets/d/1oiZtAF3_ECJIQQCTCB7K71vXvSk6dfbSxSCQXGW_Ydc/edit?usp=sharing)
 
 ## Contact Us
 

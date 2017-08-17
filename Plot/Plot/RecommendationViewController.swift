@@ -77,6 +77,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
+        cell.selectionStyle = .none
         return cell
     }
     

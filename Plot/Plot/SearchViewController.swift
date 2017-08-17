@@ -124,11 +124,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else if isSearchBtnClicked {
             let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
+            cell.selectionStyle = .none
             //검색된 셀이 뜬다
             return cell
             
         } else {
             let cell:RankListCustomCell = tableView.dequeueReusableCell(withIdentifier: "RankListCustomCell", for: indexPath) as! RankListCustomCell
+            cell.selectionStyle = .none
             //얘가 기본else일때
             return cell
         }
@@ -271,7 +273,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+     
         if isBeginEditing {
             
         } else if isdidChangeText {
@@ -284,7 +286,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
     }
-    
     
     
     /*******************************************/

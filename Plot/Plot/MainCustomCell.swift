@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol customCellDelegate {
+    func isCommentButtonClicked()
+    func isStarPointButtonClicked()
+}
+
 class MainCustomCell: UITableViewCell {
+    
     
     /*******************************************/
     // MARK: -  Outlet                         //
     /*******************************************/
+    var delegate:customCellDelegate?
     
     @IBOutlet weak var mainPosterImg: UIImageView!
     @IBOutlet weak var scoreFirstStar: UIImageView!
@@ -32,11 +39,11 @@ class MainCustomCell: UITableViewCell {
     }
     
     @IBAction func clickedComentBtn(_ sender: UIButton) {
-        
+        self.delegate?.isCommentButtonClicked()
     }
     
     @IBAction func starPointBtnClicked(_ sender: UIButton) {
-        
+       self.delegate?.isStarPointButtonClicked()
     }
     
     /*******************************************/

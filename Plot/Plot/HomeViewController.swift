@@ -8,7 +8,8 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, customCellDelegate {
+    
     
     
     /*******************************************/
@@ -29,6 +30,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
         // Do any additional setup after loading the view.
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,13 +45,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
-        
-        cell.mainPosterImg.image = UIImage(data: <#T##Data#>)
-        cell.localLabel.text = DataCenter.sharedData.exhibitionData?.district.rawValue
-        cell.mainTitleLabel.text = DataCenter.sharedData.exhibitionData?.title
-        cell.exhibitionTerm.text = DataCenter.sharedData.exhibitionData?.periodData[Constants.period_StartDate]
+        cell.delegate = self
+        cell.selectionStyle = .none
+        cell.localLabel.text = "서울"
+        cell.mainTitleLabel.text = "전시제목"
+        cell.exhibitionTerm.text = "전시기간"
         cell.museumName.text = "디뮤지엄"
         return cell
+    }
+    
+    func isStarPointButtonClicked() {
+        presentStarPointPopup()
+    }
+    
+    func isCommentButtonClicked() {
+        presentCommentPopup()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,4 +87,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func presentStarPointPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
+        popup.senderTag = 1
+        present(popup, animated: true, completion: nil)
+    }
+    
+    func presentCommentPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
+        popup.senderTag = 2
+        present(popup, animated: true, completion: nil)
+    }
 }

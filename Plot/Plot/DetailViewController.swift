@@ -14,9 +14,31 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: -  Outlet & Property              //
     /*******************************************/
     
-    @IBOutlet weak var contentsViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var introduceExsHeight: NSLayoutConstraint!
+    @IBOutlet weak var commentTableView: UITableView!
+    var userLikesExhi:[String] = []
+    @IBOutlet weak var posterCollectionView: UICollectionView!
+   
+    // MARK: - Info
+    @IBOutlet weak var posterImg: UIImageView!
+    @IBOutlet weak var exhibitionTitle: UILabel!
+    @IBOutlet weak var exhibitionDate: UILabel!
+    @IBOutlet weak var exhibitionPlace: UILabel!
+    @IBOutlet weak var exhibitionTime: UILabel!
+    @IBOutlet weak var exhibitionPrice: UILabel!
+    @IBOutlet weak var exhibitionAgent: UILabel!
+    @IBOutlet weak var exhibitionHomepage: UIButton!
+    @IBOutlet weak var exhibitionGenre: UILabel!
+    @IBOutlet weak var exhibitionAge: UILabel!
+    @IBOutlet weak var exhibitionIntroduce: UILabel!
     
+    // MARK: - Star Score
+    @IBOutlet weak var firScoreStar: UIImageView!
+    @IBOutlet weak var secScoreStar: UIImageView!
+    @IBOutlet weak var thiScoreStar: UIImageView!
+    @IBOutlet weak var fouScoreStar: UIImageView!
+    @IBOutlet weak var fivScoreStar: UIImageView!
+    
+    // MARK: - IBAction
     @IBAction func starPoint(_ sender: UIButton) {
         presentPopup(sender)
     }
@@ -25,10 +47,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         presentPopup(sender)
     }
     
-    
-    @IBOutlet weak var commentTableView: UITableView!
-    var userLikesExhi:[String] = []
-    @IBOutlet weak var posterCollectionView: UICollectionView!
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
