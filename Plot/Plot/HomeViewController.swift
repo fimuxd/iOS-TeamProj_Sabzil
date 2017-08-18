@@ -40,7 +40,33 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+   
+    /*******************************************/
+    // MARK: -  CustomCell Delegate Method     //
+    /*******************************************/
     
+    func isStarPointButtonClicked() {
+        presentStarPointPopup()
+    }
+    
+    func isCommentButtonClicked() {
+        presentCommentPopup()
+    }
+    
+    func isLikeButtonClicked() {
+        
+        /*
+         이거를 눌렀을때, 전시데이터의 like갯수가 올라가고,
+         해당 유저의 좋아요목록에 이 전시id가 들어가고
+         만약 이 전시 id를 검색해서 좋아요가 눌려있다면
+         이미지뷰의 이미지가 tint바뀐다.
+         다시 좋아요를 눌렀을때는, 전시데이터 like갯수가 줄어들고
+         해당 유저의 좋아요 목록에서 이 전시 Id가 사라지며
+         이 전시 id를 검색해 좋아요가 사라져있다면
+         이미지뷰의 이미지가 노말로 바뀐다
+         */
+        
+    }
     
     /*******************************************/
     // MARK: -  Table View                     //
@@ -55,14 +81,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.exhibitionTerm.text = "전시기간"
         cell.museumName.text = "디뮤지엄"
         return cell
-    }
-    
-    func isStarPointButtonClicked() {
-        presentStarPointPopup()
-    }
-    
-    func isCommentButtonClicked() {
-        presentCommentPopup()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
