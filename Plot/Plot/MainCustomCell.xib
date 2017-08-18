@@ -103,7 +103,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c2C-uR-kEI" userLabel="like">
                                 <rect key="frame" x="0.0" y="0.0" width="87.5" height="20"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected_star" translatesAutoresizingMaskIntoConstraints="NO" id="aDp-3q-goN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="likeBtn_off" translatesAutoresizingMaskIntoConstraints="NO" id="aDp-3q-goN">
                                         <rect key="frame" x="5.5" y="2" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="16" id="GTv-48-dY0"/>
@@ -133,7 +133,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCE-26-T8P" userLabel="comment">
                                 <rect key="frame" x="175.5" y="0.0" width="87.5" height="20"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected_star" translatesAutoresizingMaskIntoConstraints="NO" id="CHk-3l-YiE">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="commentIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CHk-3l-YiE">
                                         <rect key="frame" x="5.5" y="2" width="16" height="16"/>
                                     </imageView>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY0-B4-O7u">
@@ -156,7 +156,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJW-uJ-F0k" userLabel="starPoint">
                                 <rect key="frame" x="88" y="0.0" width="87.5" height="20"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected_star" translatesAutoresizingMaskIntoConstraints="NO" id="kyh-em-G3K">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nomal_star" translatesAutoresizingMaskIntoConstraints="NO" id="kyh-em-G3K">
                                         <rect key="frame" x="-0.5" y="2" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="kyh-em-G3K" secondAttribute="height" multiplier="1:1" id="9iv-Ps-yrO"/>
@@ -259,9 +259,10 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="commentIcon" width="29" height="27"/>
         <image name="defaultImage" width="140" height="179"/>
+        <image name="likeBtn_off" width="25" height="24"/>
         <image name="nomal_star" width="20" height="19"/>
-        <image name="selected_star" width="20" height="19"/>
         <image name="스크린샷 2017-07-31 오후 5.55.44.png" width="866" height="464"/>
     </resources>
 </document>

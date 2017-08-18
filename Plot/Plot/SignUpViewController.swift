@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldDelegate {
     
@@ -55,7 +56,7 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
     // MARK: -  Func                           //
     /*******************************************/
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func texCustomButton_RoundtFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
         case idTF:
             self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
@@ -104,5 +105,17 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
         let okBtn:UIAlertAction=UIAlertAction.init(title: "확인", style: .cancel, handler: nil)
         errorAlert.addAction(okBtn)
         present(errorAlert, animated: true, completion: nil)
+    }
+    
+    func signUpActionHandle(){
+        Auth.auth().createUser(withEmail: idTF.text!, password: passwordTF.text!) { (user, error) in
+            if let error = error {
+                print("error!!!!//",error)
+                return
+            }
+            guard let userName = self.nickNameTF.text else { return }
+            //success
+        }
+        
     }
 }
