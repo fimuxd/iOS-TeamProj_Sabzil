@@ -50,8 +50,8 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L08-8e-LEZ">
-                                                        <rect key="frame" x="194" y="13" width="46" height="30"/>
-                                                        <state key="normal" title="Button"/>
+                                                        <rect key="frame" x="194" y="13" width="52" height="30"/>
+                                                        <state key="normal" title="로그아웃"/>
                                                         <connections>
                                                             <action selector="clickedLogout:" destination="r6J-LA-LP7" eventType="touchUpInside" id="U0O-rl-F6M"/>
                                                         </connections>
@@ -262,8 +262,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="마이페이지" id="cS8-Us-sCy"/>
                     <connections>
+                        <outlet property="commentCountLabel" destination="592-Wo-vfS" id="bzW-aE-4Ou"/>
+                        <outlet property="emailLabel" destination="l4q-mC-FGd" id="Zjf-Il-EH0"/>
+                        <outlet property="likeCountLabel" destination="86l-4R-1Eq" id="8Qq-IT-ncg"/>
                         <outlet property="posterCollectionView" destination="oIv-O3-LHp" id="XDz-2u-CL0"/>
+                        <outlet property="profileImageView" destination="gjp-7F-W58" id="gJ4-Z9-Ggz"/>
                         <outlet property="tagCollectionView" destination="hJK-wV-lSB" id="nJF-n5-CgJ"/>
+                        <outlet property="userNameLabel" destination="tTw-he-h6W" id="bVh-2e-kPz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ofv-bl-8fY" userLabel="First Responder" sceneMemberID="firstResponder"/>

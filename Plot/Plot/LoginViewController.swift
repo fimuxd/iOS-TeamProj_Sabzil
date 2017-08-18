@@ -8,6 +8,7 @@
 
 import UIKit
 import FacebookLogin
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDelegate {
     
@@ -23,8 +24,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     @IBAction func clickedLoginBtn(_ sender: Any) {
         
         if idTF.text != "" && passwordTF.text != ""{
+            logInActionHandle()
             dismissSelf()
-            UserDefaults.standard.set(true, forKey: "LoginTest")
         }else{
             callAlert()
         }
@@ -109,5 +110,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         let okBtn:UIAlertAction = UIAlertAction.init(title: "확인", style: .cancel, handler: nil)
         errorAlert.addAction(okBtn)
         present(errorAlert, animated: true, completion: nil)
+    }
+    
+    func logInActionHandle() {
+        Auth.auth().signIn(withEmail: self.idTF.text!, password: self.passwordTF.text!) { (user, error) in
+            if let error = error {
+                print("error://", error)
+                return
+            }
+        }
     }
 }

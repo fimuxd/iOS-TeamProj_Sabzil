@@ -14,17 +14,24 @@ class DataCenter {
     
     static let sharedData = DataCenter()
     
-    var exhibitionData:[[String:Any]]?
-    var userData:UserData?
+    var isLogIn:Bool = false
+    
+    func requestIsLogIn() -> Bool {
+        if Auth.auth().currentUser == nil {
+            isLogIn = false
+            return false
+        }else{
+            isLogIn = true
+            return true
+        }
+    }
     
     //전체 전시 데이터 가져오기
-    func getExhibitionDatas(completion:@escaping (_ info:[[String:Any]]) -> Void) {
+    func getExhibitionDatas(completion:@escaping (_ info:Int) -> Void) {
         Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let json = snapshot.value as? [[String:Any]] else {return}
+            let exhibitionCount:Int = Int(snapshot.childrenCount)
             
-            self.exhibitionData = json
-            
-            completion(json)
+            completion(exhibitionCount)
             
         }) { (error) in
             print(error.localizedDescription)
@@ -124,14 +131,14 @@ class DataCenter {
     
     
     //유저데이터 파싱하는 함수
-    func requestUserData(id:Int?, completion:@escaping (_ info:UserData) -> Void) {
+    func requestUserData(id:String?, completion:@escaping (_ info:UserData) -> Void) {
         Database.database().reference().child("UserData").observeSingleEvent(of: .value, with: { (snapshot) in
             
             //UserData를 가져옵니다.
-            guard let json = snapshot.value as? [[String:Any]],
-                let realIntID:Int = id else {return}
+            guard let json = snapshot.value as? [String:[String:Any]],
+                let realIntID:String = id else {return}
             
-            let selectedUserData:[String:Any] = json[realIntID]
+            let selectedUserData:[String:Any] = json[realIntID]!
             
             completion(UserData.init(dictionary: selectedUserData))
             
@@ -193,22 +200,23 @@ class DataCenter {
     
     
     //--특정 유저가 좋아요한 전시ID Array
-    func requestFavoriteExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
+    func requestFavoriteExhibitionIDsOfUser(id:String?, completion:@escaping (_ info:[Int]) -> Void) {
         
         //좋아요 데이터를 가져옵니다
         Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let json = snapshot.value as? [[String:Int]],
-                let realIntID:Int = id else {return}
+            guard let json = snapshot.value as? [[String:Any]],
+                let realIntID:String = id else {return}
             
             //가져온 좋아요 데이터 중, 입력한 UserID에 해당하는 좋아요 데이터만 필터합니다
-            let likesDataForSelectedUser = json.filter({ (dic:[String:Int]) -> Bool in
-                dic[Constants.likes_UserID] == realIntID
+            let likesDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
+                let userID:String = dic[Constants.likes_UserID] as! String
+                return userID == realIntID
                 
             })
             
             //필터링한 데이터 중, 전시ID 만 추출하여 어레이로 매핑합니다
-            let favoriteExhibitionIDs = likesDataForSelectedUser.map({ (dic:[String:Int]) -> Int in
-                return dic[Constants.likes_ExhibitionID]!
+            let favoriteExhibitionIDs = likesDataForSelectedUser.map({ (dic:[String:Any]) -> Int in
+                return dic[Constants.likes_ExhibitionID] as! Int
             })
             
             completion(favoriteExhibitionIDs)
@@ -220,20 +228,20 @@ class DataCenter {
     
     
     //--특정 유저가 별점 남긴 전시ID Array
-    func requestStarPointedExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
+    func requestStarPointedExhibitionIDsOfUser(id:String?, completion:@escaping (_ info:[Int]) -> Void) {
         
         Database.database().reference().child("StarPoints").observeSingleEvent(of: .value, with: { (snapshot) in
             guard let json = snapshot.value as? [[String:Any]],
-                let realIntID:Int = id else {return}
+                let realIntID:String = id else {return}
             
             let starPointDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
-                let userID:Int = dic[Constants.starPoint_UserID] as! Int
+                let userID:String = dic[Constants.starPoint_UserID] as! String
                 return realIntID == userID
                 
             })
             
             let starPointedExhibitionIDs = starPointDataForSelectedUser.map({ (dic:[String:Any]) -> Int in
-                return dic[Constants.starPoint_UserID] as! Int
+                return dic[Constants.starPoint_ExhibitionID] as! Int
             })
             
             completion(starPointedExhibitionIDs)
@@ -245,20 +253,20 @@ class DataCenter {
     
     
     //--특정 유저의 코멘트 남긴 전시 ID Array
-    func requestCommentedExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
+    func requestCommentedExhibitionIDsOfUser(id:String?, completion:@escaping (_ info:[Int]) -> Void) {
         
         Database.database().reference().child("Comments").observe(.value, with: { (snapshot) in
             guard let json = snapshot.value as? [[String:Any]],
-                let realIntID:Int = id else {return}
+                let realIntID:String = id else {return}
             
             let commentDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
-                let userID:Int = dic[Constants.comment_UserID] as! Int
+                let userID:String = dic[Constants.comment_UserID] as! String
                 return realIntID == userID
                 
             })
             
             let commentedExhibitionIDs = commentDataForSelectedUser.map({ (dic:[String:Any]) -> Int in
-                return dic[Constants.comment_UserID] as! Int
+                return dic[Constants.comment_ExhibitionID] as! Int
             })
             
             completion(commentedExhibitionIDs)
@@ -336,6 +344,7 @@ class DataCenter {
             })
             
             completion(commentDetails)
+            
         }) { (error) in
             print(error.localizedDescription)
         }

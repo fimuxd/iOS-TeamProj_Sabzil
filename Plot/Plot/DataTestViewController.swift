@@ -25,7 +25,7 @@ class DataTestViewController: UIViewController {
     @IBOutlet weak var inputUserIDTextField: UITextField!
     @IBAction func searchUserButtonAction(_ sender: UIButton) {
         print("유저검색 버튼이 눌렸습니다")
-        DataCenter.sharedData.requestUserData(id: Int(self.inputUserIDTextField.text!)!) { (user) in
+        DataCenter.sharedData.requestUserData(id: self.inputUserIDTextField.text!) { (user) in
             self.userData = user
         }
     }
@@ -48,7 +48,7 @@ class DataTestViewController: UIViewController {
     
     var userData:UserData?{
         didSet{
-//            print("유저데이터: \(userData)/n==================================")
+            print("유저데이터: \(userData)/n==================================")
             
             guard let url = URL(string: (userData?.profileImgURL)!) else {return}
             
