@@ -216,7 +216,7 @@ struct ExhibitionData {
         self.admission = data[Constants.exhibition_Admission] as! Int
         self.detail = data[Constants.exhibition_Detail] as! String
         self.genre = Genre(rawValue: data[Constants.exhibition_Genre] as! String)!
-        self.district = District.init(rawValue: data[Constants.exhibition_District] as! String)!
+        self.district = District(rawValue: data[Constants.exhibition_District] as! String)!
         self.placeData = []
         self.imgURL = []
         self.likesFromUser = []
@@ -374,22 +374,22 @@ enum Genre:String {
 }
 
 enum District:String {
-    case Seoul = "서울특별시"
-    case Incheon = "인천광역시"
-    case DaeJeon = "대전광역시"
-    case DaeGu = "대구광역시"
-    case UlSan = "울산광역시"
-    case GwangJu = "광주광역시"
-    case Busan = "부산광역시"
-    case GyeongGi = "경기도"
-    case GangWon = "강원도"
-    case ChungCheongNam = "충청남도"
-    case ChuncCehongBuk = "충청북도"
-    case GyeongSangNam = "경상남도"
-    case GyeongSangBuk = "경상북도"
-    case JeonLaNam = "전라남도"
-    case JeonLaBuk = "전라북도"
-    case JeJu = "제주도"
+    case Seoul = "서울"
+    case Incheon = "인천"
+    case DaeJeon = "대전"
+    case DaeGu = "대구"
+    case UlSan = "울산"
+    case GwangJu = "광주"
+    case Busan = "부산"
+    case GyeongGi = "경기"
+    case GangWon = "강원"
+    case ChungCheongNam = "충남"
+    case ChuncCehongBuk = "충북"
+    case GyeongSangNam = "경남"
+    case GyeongSangBuk = "경북"
+    case JeonLaNam = "전남"
+    case JeonLaBuk = "전북"
+    case JeJu = "제주"
 }
 
 //enum District {

@@ -64,49 +64,12 @@ class DataTestViewController: UIViewController {
     }
     
     
-    var commentData:Comment?{
-        didSet{
-//            print("코멘트: \(commentData)")
-        }
-    }
-    
-    var likeData:Like?{
-        didSet{
-//            print("좋아요: \(likeData)")
-        }
-    }
-    
-    var starPointData:StarPoint?{
-        didSet{
-//            print("별점: \(starPointData)")
-        }
-    }
-    
-    var testArray:Int?{
-        didSet{
-            print("여기:\(testArray)")
-        }
-    }
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DataCenter.sharedData.requestCommentData(id: 0) { (comment) in
-            self.commentData = comment
-        }
-        DataCenter.sharedData.requestLike(id: 0) { (like) in
-            self.likeData = like
-        }
-        DataCenter.sharedData.requestStarPoint(id: 0) { (star) in
-            self.starPointData = star
-        }
+      
         
-        DataCenter.sharedData.requestLikeCountsOfExhibition(id: 0) { (int) in
-            self.testArray = int
-            
-        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
