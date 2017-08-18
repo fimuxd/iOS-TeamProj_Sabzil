@@ -38,7 +38,7 @@ class StarPointPopupViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         
-        NotificationCenter.default.post(name: NSNotification.Name("dismissPopup"), object: self)
+        NotificationCenter.default.post(name: NSNotification.Name("dismissStarPopup"), object: self)
     }
     
 

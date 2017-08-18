@@ -48,7 +48,19 @@ class RankingViewController: UIViewController,UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCustomCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCustomCell", for: indexPath) as! RankingCustomCell
+        
+        switch indexPath.item {
+        case 0:
+            cell.rankImage.image = #imageLiteral(resourceName: "rangking_1st")
+        case 1:
+            cell.rankImage.image = #imageLiteral(resourceName: "rangking_2nd")
+        case 2:
+            cell.rankImage.image = #imageLiteral(resourceName: "rangking_3rd")
+        default:
+            cell.rankImage.isHidden = true
+        }
+        
         return cell
     }
     

@@ -56,7 +56,7 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
     // MARK: -  Func                           //
     /*******************************************/
     
-    func textFieldDidBeginEditing(_ textField: UITextField) {
+    func texCustomButton_RoundtFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
         case idTF:
             self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
@@ -85,9 +85,9 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
         case nickNameTF:
             self.view.endEditing(true)
             self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            
-            //            self.scrollView.contentOffset =
-            return true
+
+        return true
+
         default:
             self.view.endEditing(true)
             return true
@@ -133,5 +133,17 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
         let okBtn:UIAlertAction=UIAlertAction.init(title: "확인", style: .cancel, handler: nil)
         errorAlert.addAction(okBtn)
         present(errorAlert, animated: true, completion: nil)
+    }
+    
+    func signUpActionHandle(){
+        Auth.auth().createUser(withEmail: idTF.text!, password: passwordTF.text!) { (user, error) in
+            if let error = error {
+                print("error!!!!//",error)
+                return
+            }
+            guard let userName = self.nickNameTF.text else { return }
+            //success
+        }
+        
     }
 }

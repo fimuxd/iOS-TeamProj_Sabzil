@@ -11,8 +11,6 @@ import Firebase
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, customCellDelegate {
     
-    
-    
     /*******************************************/
     // MARK: -  Outlet                         //
     /*******************************************/
@@ -80,9 +78,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
-        
+
         cell.delegate = self
-        
+
         var selectedExhibitionData:ExhibitionData?{
             didSet{
                 guard let realExhibitionData = selectedExhibitionData else {
@@ -123,8 +121,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       
-        
         return 1
     }
     
