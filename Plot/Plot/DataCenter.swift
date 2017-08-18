@@ -11,6 +11,7 @@ import Firebase
 import SwiftyJSON
 
 class DataCenter {
+    
     static let sharedData = DataCenter()
     
     var exhibitionData:[[String:Any]]?
@@ -338,5 +339,6 @@ class DataCenter {
             print(error.localizedDescription)
         }
     }
+    
     
 }

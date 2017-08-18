@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, customCellDelegate {
     
     
     
@@ -30,8 +30,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadmainTabelview), name: NSNotification.Name("dismissPopup"), object: nil)
 
+        self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,6 +47,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
+
         
         var selectedExhibitionData:ExhibitionData?{
             didSet{
@@ -85,6 +88,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return cell
     }
     
+    func isStarPointButtonClicked() {
+        presentStarPointPopup()
+    }
+    
+    func isCommentButtonClicked() {
+        presentCommentPopup()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
    
         return Database.database().reference().child("ExhibitionData").accessibilityElementCount
@@ -111,4 +122,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func reloadmainTabelview(){
+        print("메인테이블뷰 리로드")
+        self.mainTableView.reloadData()
+    }
+    
+    
+    func presentCommentPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
+        present(popup, animated: true, completion: nil)
+    }
+    
+    func presentStarPointPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "StarPointPopup") as! StarPointPopupViewController
+        present(popup, animated: true, completion: nil)
+    }
 }
