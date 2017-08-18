@@ -18,7 +18,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
      - Parameter loginButton: The button that was clicked.
      */
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-
+        
     }
     
     /**
@@ -40,92 +40,97 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 // ...
                 return
             }
-
+            
         }
         FBSDKLoginManager().logOut();
         
     }
     
-
-        /*******************************************/
-        // MARK: -  Outlet                         //
-        /*******************************************/
+    
+    /*******************************************/
+    // MARK: -  Outlet                         //
+    /*******************************************/
+    
+    
+    @IBOutlet weak var facebookLoginBtn: FBSDKLoginButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var idTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
+    @IBAction func clickedLoginBtn(_ sender: Any) {
         
-        
-        @IBOutlet weak var facebookLoginBtn: FBSDKLoginButton!
-        
-        @IBOutlet weak var scrollView: UIScrollView!
-        @IBOutlet weak var idTF: UITextField!
-        @IBOutlet weak var passwordTF: UITextField!
-        
-        @IBAction func clickedLoginBtn(_ sender: Any) {
+        if idTF.text != "" && passwordTF.text != ""{
             
-            if idTF.text != "" && passwordTF.text != ""{
-                dismissSelf()
-                UserDefaults.standard.set(true, forKey: "LoginTest")
-            }else{
-                callAlert()
-            }
+            dismissSelf()
+        }else{
+            callAlert()
         }
+    }
+    
+    @IBAction func clickedSignup(_ sender: UIButton) {
+        presentSignupVC()
+    }
+    
+    
+    /*******************************************/
+    // MARK: -  LifeCycle                      //
+    /*******************************************/
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.scrollView.delegate = self
+        self.facebookLoginBtn.delegate = self
+        facebookLoginBtn.layer.frame.size.height = 44
         
-        @IBAction func clickedSignup(_ sender: UIButton) {
-            presentSignupVC()
-        }
-        
-        
-        /*******************************************/
-        // MARK: -  LifeCycle                      //
-        /*******************************************/
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            self.scrollView.delegate = self
-            self.facebookLoginBtn.delegate = self
-            facebookLoginBtn.layer.frame.size.height = 44
-            // Do any additional setup after loading the view.
-        }
-        
-        override func didReceiveMemoryWarning() {
-            super.didReceiveMemoryWarning()
-            // Dispose of any resources that can be recreated.
-        }
-        
-        
-        /*******************************************/
-        // MARK: -  Func                           //
-        /*******************************************/
-        
-        func textFieldDidBeginEditing(_ textField: UITextField) {
-            self.scrollView.contentOffset = CGPoint.init(x: 0, y: 90)
-        }
-        
-        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            switch textField {
-            case idTF:
-                passwordTF.becomeFirstResponder()
-                return true
-            default:
-                self.view.endEditing(true)
-                self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
-                return true
-            }
-        }
-        
-        @IBAction func tappedBlackView(_ sender: UITapGestureRecognizer) {
-            
+        //왼쪽패딩주는건데 메모리를 겁나먹어서 주석처리함
+//        let textFieldPadding = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: idTF.frame.size.height))
+//        idTF.leftView = textFieldPadding
+//        idTF.leftViewMode = .always
+//        passwordTF.leftView = textFieldPadding
+//        passwordTF.leftViewMode = .always
+        // Do any additional setup after loading the view.
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    /*******************************************/
+    // MARK: -  Func                           //
+    /*******************************************/
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.scrollView.contentOffset = CGPoint.init(x: 0, y: 90)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case idTF:
+            passwordTF.becomeFirstResponder()
+            return true
+        default:
             self.view.endEditing(true)
             self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
-            
+            return true
         }
-        func dismissSelf(){
-            self.dismiss(animated: true, completion: nil)
-        }
+    }
+    
+    @IBAction func tappedBlackView(_ sender: UITapGestureRecognizer) {
         
-        func presentSignupVC(){
-            let signupVC:SignUpViewController = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-            present(signupVC, animated: true, completion: nil)
-        }
+        self.view.endEditing(true)
+        self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
         
+    }
+    func dismissSelf(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func presentSignupVC(){
+        let signupVC:SignUpViewController = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+        present(signupVC, animated: true, completion: nil)
+    }
+    
     
     
     func logInActionHandle() {
@@ -136,11 +141,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             }
         }
     }
-        func callAlert() {
-            let errorAlert:UIAlertController = UIAlertController.init(title: "로그인 실패", message: "아이디와 비밀번호를 확인해주세요", preferredStyle: .alert)
-            let okBtn:UIAlertAction = UIAlertAction.init(title: "확인", style: .cancel, handler: nil)
-            errorAlert.addAction(okBtn)
-            present(errorAlert, animated: true, completion: nil)
-        }
-
+    func callAlert() {
+        let errorAlert:UIAlertController = UIAlertController.init(title: "로그인 실패", message: "아이디와 비밀번호를 확인해주세요", preferredStyle: .alert)
+        let okBtn:UIAlertAction = UIAlertAction.init(title: "확인", style: .cancel, handler: nil)
+        errorAlert.addAction(okBtn)
+        present(errorAlert, animated: true, completion: nil)
+    }
+    
 }

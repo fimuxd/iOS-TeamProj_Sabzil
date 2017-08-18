@@ -643,6 +643,7 @@
                                                     <constraint firstItem="0lv-5m-eAz" firstAttribute="leading" secondItem="qqS-Cx-6YD" secondAttribute="leading" id="biS-jf-Ywh"/>
                                                     <constraint firstItem="YUS-YQ-50G" firstAttribute="leading" secondItem="bpp-mJ-tXG" secondAttribute="trailing" constant="8" id="cYv-Pi-Oh2"/>
                                                     <constraint firstItem="qqS-Cx-6YD" firstAttribute="leading" secondItem="Dda-aP-WSh" secondAttribute="trailing" constant="9" id="dC9-9b-XA2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Dsq-Pv-gvI" secondAttribute="trailing" constant="94" id="f19-cc-i5O"/>
                                                     <constraint firstItem="bpp-mJ-tXG" firstAttribute="bottom" secondItem="Dda-aP-WSh" secondAttribute="bottom" id="f7G-QB-ay4"/>
                                                     <constraint firstItem="EhW-7F-qAi" firstAttribute="centerY" secondItem="rXl-a8-CPW" secondAttribute="centerY" id="fY5-rp-4Mh"/>
                                                     <constraint firstAttribute="trailing" secondItem="hSU-7A-jAQ" secondAttribute="trailing" constant="16" id="fuP-d2-63c"/>
@@ -1388,7 +1389,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M6X-Ob-Ezu">
                                                 <rect key="frame" x="7.5" y="210" width="360" height="300"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    E M A I L" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4D-Dn-4CC">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E M A I L" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J4D-Dn-4CC">
                                                         <rect key="frame" x="17.5" y="8" width="324" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -1409,7 +1410,7 @@
                                                             <constraint firstAttribute="height" constant="2" id="WyQ-64-diF"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    P A S S W O R D" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PyL-CI-xxi">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="P A S S W O R D" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PyL-CI-xxi">
                                                         <rect key="frame" x="17" y="68" width="324" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
@@ -1426,7 +1427,7 @@
                                                             <constraint firstAttribute="height" constant="2" id="YKH-5M-ixc"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    P A S S W O R D C H E C K" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DoR-Xf-Dal">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="P A S S W O R D C H E C K" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DoR-Xf-Dal">
                                                         <rect key="frame" x="17.5" y="128" width="324" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
@@ -1464,7 +1465,7 @@
                                                             <action selector="clickedSignup:" destination="6C7-y2-nSx" eventType="touchUpInside" id="NaU-Gu-Ob4"/>
                                                         </connections>
                                                     </button>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    N I C N A M E" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYp-WP-aQS">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="N I C N A M E" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lYp-WP-aQS">
                                                         <rect key="frame" x="17" y="188" width="324" height="50"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
@@ -1620,7 +1621,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iXZ-nH-fWL">
                                                 <rect key="frame" x="7.5" y="210" width="360" height="300"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    E M A I L" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZB-X0-nDC">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E M A I L" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XZB-X0-nDC">
                                                         <rect key="frame" x="17.5" y="8" width="324" height="44"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -1641,7 +1642,7 @@
                                                             <constraint firstAttribute="height" constant="2" id="LE4-Yw-S2A"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="    P A S S W O R D" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xw6-xU-EE7">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="P A S S W O R D" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xw6-xU-EE7">
                                                         <rect key="frame" x="17" y="62" width="324" height="44"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="textColor"/>
