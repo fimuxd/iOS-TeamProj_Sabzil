@@ -18,6 +18,9 @@ class DataCenter {
     var userData:UserData?
     
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> f967244c9418675a460520f36b63e5b6e42e6ae6
     //전체 전시 데이터 가져오기
     func getExhibitionDatas(completion:@escaping (_ info:[[String:Any]]) -> Void) {
         Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -34,10 +37,13 @@ class DataCenter {
     
     
     //특정 전시데이터 파싱하는 함수
+<<<<<<< HEAD
 =======
 
     //전시데이터 파싱하는 함수
 >>>>>>> 2759a35c9835ddb45cc411dbd437f41d8383c045
+=======
+>>>>>>> f967244c9418675a460520f36b63e5b6e42e6ae6
     func requestExhibitionData(id:Int?, completion:@escaping (_ info:ExhibitionData) -> Void) {
         Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
             

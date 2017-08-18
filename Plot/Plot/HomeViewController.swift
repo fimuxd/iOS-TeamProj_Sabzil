@@ -35,11 +35,14 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
         // Do any additional setup after loading the view.
     
 >>>>>>> 2759a35c9835ddb45cc411dbd437f41d8383c045
+=======
+>>>>>>> f967244c9418675a460520f36b63e5b6e42e6ae6
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,6 +57,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> f967244c9418675a460520f36b63e5b6e42e6ae6
         
         var selectedExhibitionData:ExhibitionData?{
             didSet{
@@ -91,6 +98,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          cell.museumName.text = "디뮤지엄"
          */
         
+<<<<<<< HEAD
 =======
         cell.delegate = self
         cell.selectionStyle = .none
@@ -99,6 +107,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.exhibitionTerm.text = "전시기간"
         cell.museumName.text = "디뮤지엄"
 >>>>>>> 2759a35c9835ddb45cc411dbd437f41d8383c045
+=======
+>>>>>>> f967244c9418675a460520f36b63e5b6e42e6ae6
         return cell
     }
     
