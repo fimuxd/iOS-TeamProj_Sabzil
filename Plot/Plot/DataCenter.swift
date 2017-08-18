@@ -11,11 +11,11 @@ import Firebase
 import SwiftyJSON
 
 class DataCenter {
+    
     static let sharedData = DataCenter()
 
     var exhibitionData:ExhibitionData?
     var userData:UserData?
-    
     
 
     //전시데이터 파싱하는 함수
@@ -305,6 +305,7 @@ class DataCenter {
     }
     
     //--특정 전시의 코멘트 확인
+    
     
     
 }

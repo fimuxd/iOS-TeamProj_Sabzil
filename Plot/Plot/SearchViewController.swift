@@ -76,7 +76,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         isdidChangeText = false
         isSearchBtnClicked = true
         if !searchKeyword.contains(searchBar.text!) {
-                searchKeyword.append(searchBar.text!)
+            searchKeyword.append(searchBar.text!)
         }
         print(isSearchBtnClicked,isdidChangeText,isBeginEditing)
         print(searchKeyword)
@@ -124,18 +124,20 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else if isSearchBtnClicked {
             let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
+            cell.selectionStyle = .none
             //검색된 셀이 뜬다
             return cell
             
         } else {
             let cell:RankListCustomCell = tableView.dequeueReusableCell(withIdentifier: "RankListCustomCell", for: indexPath) as! RankListCustomCell
+            cell.selectionStyle = .none
             //얘가 기본else일때
             return cell
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-    
+        
         if isBeginEditing {
             //테이블뷰가 비워져야함
             return 1
@@ -152,11 +154,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //얘가 기본else일때
             return 3
         }
-
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      
+        
         if isBeginEditing {
             //테이블뷰가 비워져야함
             return 1
@@ -177,7 +179,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-       
+        
         if isBeginEditing {
             //테이블뷰가 비워져야함
             return nil
@@ -216,11 +218,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             //얘가 기본else일때
             return 30
         }
-
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-     
+        
         if isBeginEditing {
             //테이블뷰가 비워져야함
             return 0
@@ -258,7 +260,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return nil
         }
         return nil
-
+        
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -271,13 +273,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+     
         if isBeginEditing {
             
         } else if isdidChangeText {
             
         } else if isSearchBtnClicked {
- 
+            
         } else {
             let rankingViewController:RankingViewController = storyboard?.instantiateViewController(withIdentifier: "RankingViewController") as! RankingViewController
             self.navigationController?.pushViewController(rankingViewController, animated: true)
@@ -285,12 +287,11 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
     
-
     
     /*******************************************/
     // MARK: -  Func                           //
     /*******************************************/
-
+    
     func deleteSearchKeyword(){
         searchKeyword = []
         rankingTableView.reloadData()

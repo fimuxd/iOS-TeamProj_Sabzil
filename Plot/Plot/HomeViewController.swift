@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, customCellDelegate {
     
     
     
@@ -28,8 +28,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadmainTabelview), name: NSNotification.Name("dismissPopup"), object: nil)
+
         self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
         // Do any additional setup after loading the view.
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,12 +48,21 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
-        
+        cell.delegate = self
+        cell.selectionStyle = .none
         cell.localLabel.text = "서울"
-        cell.mainTitleLabel.text = "메인타이틀 텍스트 전시이름이들어갑니다"
-        cell.exhibitionTerm.text = "2017. 07. 08~ 2017. 08. 09"
+        cell.mainTitleLabel.text = "전시제목"
+        cell.exhibitionTerm.text = "전시기간"
         cell.museumName.text = "디뮤지엄"
         return cell
+    }
+    
+    func isStarPointButtonClicked() {
+        presentStarPointPopup()
+    }
+    
+    func isCommentButtonClicked() {
+        presentCommentPopup()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,4 +90,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func reloadmainTabelview(){
+        print("메인테이블뷰 리로드")
+        self.mainTableView.reloadData()
+    }
+    
+    
+    func presentCommentPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
+        present(popup, animated: true, completion: nil)
+    }
+    
+    func presentStarPointPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "StarPointPopup") as! StarPointPopupViewController
+        present(popup, animated: true, completion: nil)
+    }
 }
