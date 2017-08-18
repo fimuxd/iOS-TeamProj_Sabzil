@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, customCellDelegate {
     
     
     
@@ -30,8 +30,16 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadmainTabelview), name: NSNotification.Name("dismissPopup"), object: nil)
 
+        self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
+<<<<<<< HEAD
+
+=======
+        // Do any additional setup after loading the view.
+    
+>>>>>>> 2759a35c9835ddb45cc411dbd437f41d8383c045
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,6 +53,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
+<<<<<<< HEAD
         
         var selectedExhibitionData:ExhibitionData?{
             didSet{
@@ -82,7 +91,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
          cell.museumName.text = "디뮤지엄"
          */
         
+=======
+        cell.delegate = self
+        cell.selectionStyle = .none
+        cell.localLabel.text = "서울"
+        cell.mainTitleLabel.text = "전시제목"
+        cell.exhibitionTerm.text = "전시기간"
+        cell.museumName.text = "디뮤지엄"
+>>>>>>> 2759a35c9835ddb45cc411dbd437f41d8383c045
         return cell
+    }
+    
+    func isStarPointButtonClicked() {
+        presentStarPointPopup()
+    }
+    
+    func isCommentButtonClicked() {
+        presentCommentPopup()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -111,4 +136,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
+    func reloadmainTabelview(){
+        print("메인테이블뷰 리로드")
+        self.mainTableView.reloadData()
+    }
+    
+    
+    func presentCommentPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
+        present(popup, animated: true, completion: nil)
+    }
+    
+    func presentStarPointPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "StarPointPopup") as! StarPointPopupViewController
+        present(popup, animated: true, completion: nil)
+    }
 }

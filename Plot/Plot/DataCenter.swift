@@ -11,11 +11,13 @@ import Firebase
 import SwiftyJSON
 
 class DataCenter {
+    
     static let sharedData = DataCenter()
     
     var exhibitionData:[[String:Any]]?
     var userData:UserData?
     
+<<<<<<< HEAD
     //전체 전시 데이터 가져오기
     func getExhibitionDatas(completion:@escaping (_ info:[[String:Any]]) -> Void) {
         Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -32,6 +34,10 @@ class DataCenter {
     
     
     //특정 전시데이터 파싱하는 함수
+=======
+
+    //전시데이터 파싱하는 함수
+>>>>>>> 2759a35c9835ddb45cc411dbd437f41d8383c045
     func requestExhibitionData(id:Int?, completion:@escaping (_ info:ExhibitionData) -> Void) {
         Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -338,5 +344,6 @@ class DataCenter {
             print(error.localizedDescription)
         }
     }
+    
     
 }

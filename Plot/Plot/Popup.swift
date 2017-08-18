@@ -14,17 +14,25 @@ class Popup: UIViewController {
     // MARK: -  Outlet & Property              //
     /*******************************************/
     
-    var senderTag:Int!
-    
     @IBAction func tappedBlackOut(_ sender: UITapGestureRecognizer) {
-        self.dismiss(animated: true, completion: nil)
+        dismissSelf()
     }
     
-    @IBOutlet weak var starPointPopup: UIView!
-    @IBOutlet weak var commentPopup: UIView!
-
-    @IBOutlet weak var commentViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var starPointBottomConstranint: NSLayoutConstraint!
+    @IBOutlet weak var commentPopupConstraint: NSLayoutConstraint!
+    
+    @IBAction func clickedCancelBtn(_ sender: Any) {
+        dismissSelf()
+    }
+    
+    @IBAction func clickedSaveBtn(_ sender: UIButton) {
+        //각 전시 데이터와 해당 유저데이터에 코멘트 저장
+        dismissSelf()
+    }
+    
+    @IBAction func clickedStarPointPopup(_ sender: UIButton) {
+        presentStarPointPopup()
+    }
+    
     
     
     /*******************************************/
@@ -34,28 +42,28 @@ class Popup: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        if senderTag == 1 {
-            commentPopup.isHidden = true
-            starPointBottomConstranint.constant = 0
-            UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
-            
-        }else if senderTag == 2 {
-            starPointPopup.isHidden = true
-            commentViewBottomConstraint.constant = 0
-            UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
-        }
+        commentPopupConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
         
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
     
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        NotificationCenter.default.post(name: NSNotification.Name("dismissPopup"), object: self)
     }
     
-
+    /*******************************************/
+    // MARK: -  Func                           //
+    /*******************************************/
+    
+    func presentStarPointPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "StarPointPopup") as! StarPointPopupViewController
+        present(popup, animated: true, completion: nil)
+    }
+    
+    func dismissSelf(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

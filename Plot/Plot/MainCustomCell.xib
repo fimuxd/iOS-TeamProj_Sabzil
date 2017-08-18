@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,7 +23,7 @@
                     <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="스크린샷 2017-07-31 오후 5.55.44.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pcw-8V-vz6">
                         <rect key="frame" x="0.0" y="0.0" width="405" height="173"/>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="스크린샷 2017-07-31 오후 7.43.24.png" translatesAutoresizingMaskIntoConstraints="NO" id="PUj-Je-zZU">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="PUj-Je-zZU">
                         <rect key="frame" x="8" y="8" width="118" height="157"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="PUj-Je-zZU" secondAttribute="height" multiplier="3:4" id="w9h-Ns-giv"/>
@@ -136,7 +135,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected_star" translatesAutoresizingMaskIntoConstraints="NO" id="CHk-3l-YiE">
                                         <rect key="frame" x="5.5" y="2" width="16" height="16"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY0-B4-O7u">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY0-B4-O7u">
                                         <rect key="frame" x="25.5" y="-4" width="37" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="코멘트">
@@ -162,14 +161,13 @@
                                             <constraint firstAttribute="width" secondItem="kyh-em-G3K" secondAttribute="height" multiplier="1:1" id="9iv-Ps-yrO"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj0-WQ-flQ">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aj0-WQ-flQ">
                                         <rect key="frame" x="19.5" y="-4.5" width="49" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="평가하기">
                                             <color key="titleColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="clickedComentBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="wj7-Ff-f6h"/>
                                             <action selector="starPointBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="gI8-E3-1NN"/>
                                         </connections>
                                     </button>
@@ -260,9 +258,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="defaultImage" width="140" height="179"/>
         <image name="nomal_star" width="20" height="19"/>
         <image name="selected_star" width="20" height="19"/>
         <image name="스크린샷 2017-07-31 오후 5.55.44.png" width="866" height="464"/>
-        <image name="스크린샷 2017-07-31 오후 7.43.24.png" width="310" height="430"/>
     </resources>
 </document>

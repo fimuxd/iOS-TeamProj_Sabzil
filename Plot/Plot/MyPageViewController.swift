@@ -14,6 +14,10 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     // MARK: -  Outlet                         //
     /*******************************************/
     
+    @IBAction func clickedLogout(_ sender: UIButton) {
+        UserDefaults.standard.set(false, forKey: "LoginTest")
+        presentLoginVC()
+    }
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
     
@@ -43,7 +47,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.posterCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
         
         self.tagCollectionView.register(UINib(nibName: "TagCustomCell", bundle: nil), forCellWithReuseIdentifier: "TagCustomCell")
-
+        
         self.tagCollectionView.register(UINib(nibName: "CollectionViewHeader", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "CollectionViewHeader")
         
         self.posterCollectionView.delegate = self
@@ -132,8 +136,8 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         let tag = liketag[indexPath.row]
         cell.tagName.text = tag.name
-        cell.tagName.textColor = tag.selected ? UIColor.white : UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1)
-        cell.backgroundColor = tag.selected ? UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1) : UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+        cell.tagName.textColor = tag.selected ? UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1) : UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1)
+        cell.backgroundColor = tag.selected ? UIColor(red: 1, green: 1, blue: 1, alpha: 1) : UIColor(red: 1, green: 1, blue: 1, alpha: 1)
         
     }
     
@@ -146,5 +150,16 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         self.tagCollectionView.reloadData()
     }
     
+    
+    /*******************************************/
+    // MARK: -  Func                           //
+    /*******************************************/
+    
+    func presentLoginVC(){
+        if !UserDefaults.standard.bool(forKey: "LoginTest"){
+            let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            present(loginVC, animated: true, completion: nil)
+        }
+    }
     
 }
