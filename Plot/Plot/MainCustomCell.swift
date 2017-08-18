@@ -11,6 +11,7 @@ import UIKit
 protocol customCellDelegate {
     func isCommentButtonClicked()
     func isStarPointButtonClicked()
+    func isLikeButtonClicked()
 }
 
 class MainCustomCell: UITableViewCell {
@@ -44,6 +45,10 @@ class MainCustomCell: UITableViewCell {
     
     @IBAction func starPointBtnClicked(_ sender: UIButton) {
        self.delegate?.isStarPointButtonClicked()
+    }
+    @IBAction func likeBtnClicked(_ sender: UIButton) {
+        self.delegate?.isLikeButtonClicked()
+        
     }
     
     /*******************************************/

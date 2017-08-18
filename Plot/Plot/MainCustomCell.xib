@@ -118,6 +118,7 @@
                                         </state>
                                         <connections>
                                             <action selector="clickedLikeBtn:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4xN-1o-lZe"/>
+                                            <action selector="likeBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="F6K-YJ-dwA"/>
                                         </connections>
                                     </button>
                                 </subviews>
