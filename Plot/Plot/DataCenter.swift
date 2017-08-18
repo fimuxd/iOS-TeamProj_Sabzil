@@ -13,12 +13,26 @@ import SwiftyJSON
 class DataCenter {
     
     static let sharedData = DataCenter()
-
-    var exhibitionData:ExhibitionData?
+    
+    var exhibitionData:[[String:Any]]?
     var userData:UserData?
     
-
-    //전시데이터 파싱하는 함수
+    //전체 전시 데이터 가져오기
+    func getExhibitionDatas(completion:@escaping (_ info:[[String:Any]]) -> Void) {
+        Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Any]] else {return}
+            
+            self.exhibitionData = json
+            
+            completion(json)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    
+    //특정 전시데이터 파싱하는 함수
     func requestExhibitionData(id:Int?, completion:@escaping (_ info:ExhibitionData) -> Void) {
         Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -36,7 +50,7 @@ class DataCenter {
             let detail:String = selectedExhibitionData[Constants.exhibition_Detail] as! String
             let genre:String = selectedExhibitionData[Constants.exhibition_Genre] as! String
             let district:String = selectedExhibitionData[Constants.exhibition_District] as! String
-
+            
             //-- Json 속의 Json 들 정리
             var imageURLs:[[String:Any]] = []
             var places:[[String:String]] = []
@@ -54,7 +68,6 @@ class DataCenter {
             let imageDic:[String:Any] = [Constants.image_PosterURL:posterURL,
                                          Constants.image_DetailImages:detailURLs]
             imageURLs.append(imageDic)
-            print(imageURLs)
             
             //-----place Array
             guard let placeJSON = selectedExhibitionData[Constants.exhibition_PlaceData] as? [String:String] else {return}
@@ -65,7 +78,6 @@ class DataCenter {
             let placeDic:[String:String] = [Constants.place_Address:address,
                                             Constants.place_WebsiteURL:websiteURL]
             places.append(placeDic)
-            print(places)
             
             //-----period Array
             guard let periodJSON = selectedExhibitionData[Constants.exhibition_Period] as? [String:String] else {return}
@@ -102,12 +114,13 @@ class DataCenter {
             
             completion(ExhibitionData.init(data: completeDic))
             
+            
         }) { (error) in
             print(error.localizedDescription)
         }
- 
+        
     }
- 
+    
     
     //유저데이터 파싱하는 함수
     func requestUserData(id:Int?, completion:@escaping (_ info:UserData) -> Void) {
@@ -159,7 +172,7 @@ class DataCenter {
             print(error.localizedDescription)
         }
     }
-
+    
     
     //좋아요 파싱함수
     func requestLike(id:Int?, completion:@escaping (_ info:Like) -> Void) {
@@ -176,8 +189,8 @@ class DataCenter {
             print(error.localizedDescription)
         }
     }
-
-
+    
+    
     //--특정 유저가 좋아요한 전시ID Array
     func requestFavoriteExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
         
@@ -204,7 +217,7 @@ class DataCenter {
         }
     }
     
-        
+    
     //--특정 유저가 별점 남긴 전시ID Array
     func requestStarPointedExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
         
@@ -214,7 +227,7 @@ class DataCenter {
             
             let starPointDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
                 let userID:Int = dic[Constants.starPoint_UserID] as! Int
-                 return realIntID == userID
+                return realIntID == userID
                 
             })
             
@@ -232,7 +245,7 @@ class DataCenter {
     
     //--특정 유저의 코멘트 남긴 전시 ID Array
     func requestCommentedExhibitionIDsOfUser(id:Int?, completion:@escaping (_ info:[Int]) -> Void) {
-    
+        
         Database.database().reference().child("Comments").observe(.value, with: { (snapshot) in
             guard let json = snapshot.value as? [[String:Any]],
                 let realIntID:Int = id else {return}
@@ -248,7 +261,7 @@ class DataCenter {
             })
             
             completion(commentedExhibitionIDs)
-
+            
         }) { (error) in
             print(error.localizedDescription)
         }
@@ -305,7 +318,27 @@ class DataCenter {
     }
     
     //--특정 전시의 코멘트 확인
-    
+    func requestCommentDetailOfExhibition(id:Int?, completion:@escaping (_ info:[String]) -> Void) {
+        
+        Database.database().reference().child("Comments").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Any]],
+                let realIntID:Int = id else {return}
+            
+            let commentDataForSelectedExhibition = json.filter({ (dic:[String:Any]) -> Bool in
+                let userID:Int = dic[Constants.comment_ExhibitionID] as! Int
+                return realIntID == userID
+            })
+            
+            let commentDetails = commentDataForSelectedExhibition.map({ (dic:[String:Any]) -> String in
+                return dic[Constants.comment_Detail] as! String
+                
+            })
+            
+            completion(commentDetails)
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
     
     
 }
