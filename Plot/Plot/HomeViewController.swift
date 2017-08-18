@@ -116,7 +116,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
    
-        return Database.database().reference().child("ExhibitionData").accessibilityElementCount
+        return Database.database().reference().child("ExhibitionData").accessibilityElementCount()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

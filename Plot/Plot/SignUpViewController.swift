@@ -84,9 +84,7 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
         case nickNameTF:
             self.view.endEditing(true)
             self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-            
-//            self.scrollView.contentOffset =
-            return true
+        return true
         default:
             self.view.endEditing(true)
             return true
