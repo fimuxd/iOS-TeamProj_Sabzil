@@ -29,7 +29,7 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
     @IBAction func clickedSignup(_ sender: UIButton) {
         //signupRequest
         if idTF.text != "" && passwordTF.text != "" && passwordCheckTF.text != "" && nickNameTF.text != "" {
-            signUPRequest()
+            signUpRequest()
             dismissSelf()
         }else {
             callAlert()
@@ -85,7 +85,9 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
         case nickNameTF:
             self.view.endEditing(true)
             self.scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+
         return true
+
         default:
             self.view.endEditing(true)
             return true
@@ -96,7 +98,33 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
         self.dismiss(animated: true, completion: nil)
     }
     
-    func signUPRequest(){
+    func signUpRequest(){
+        
+        Auth.auth().createUser(withEmail: self.idTF.text!, password: self.passwordTF.text!) { (user, error) in
+            if let error = error {
+                print("error://",error)
+                return
+            }
+            
+            guard let userName = self.nickNameTF.text else {return}
+            
+            guard let uid = user?.uid else {return}
+            
+            let dic:[String:Any] = [Constants.user_ID:uid,
+                                    Constants.user_Email:self.idTF.text!,
+                                    Constants.user_Name:userName,
+                                    Constants.user_Password:self.passwordTF.text!,
+                                    Constants.user_ProfileImgURL:""]
+            
+            Database.database().reference().child("UserData").child(uid).setValue(dic)
+            print("호출됨")
+            
+        }
+        
+        
+        
+        
+        
         
     }
     

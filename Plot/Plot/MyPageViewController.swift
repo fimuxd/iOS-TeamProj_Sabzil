@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -15,8 +16,13 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     /*******************************************/
     
     @IBAction func clickedLogout(_ sender: UIButton) {
-        UserDefaults.standard.set(false, forKey: "LoginTest")
-        presentLoginVC()
+        do {
+            try Auth.auth().signOut()
+            presentLoginVC()
+            //TODO: 항상 home이 가장 첫번째로 뜨게 하는 방법?
+        }catch{
+            
+        }
     }
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
@@ -28,6 +34,17 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     var sizingCell: TagCustomCell?
     
     var liketag = [Tag]()
+    
+    
+    //보영
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var commentCountLabel: UILabel!
+    
+    var userID:String?
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -58,6 +75,31 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         let cellNib = UINib(nibName: "TagCustomCell", bundle: nil)
         self.sizingCell = (cellNib.instantiate(withOwner: nil, options: nil) as NSArray).firstObject as! TagCustomCell?
         
+        //보영
+        var userData:UserData?{
+            didSet{
+                guard let realUserData = userData else {return}
+                self.userNameLabel.text = realUserData.name
+                self.emailLabel.text = realUserData.email
+                
+                guard let url = URL(string: realUserData.profileImgURL) else {return}
+                
+                do{
+                    let realData = try Data(contentsOf: url)
+                    self.profileImageView.image = UIImage(data: realData)
+                }catch{
+                    
+                }
+                
+            }
+        }
+        
+        guard let realCurrnetUser = Auth.auth().currentUser else {return}
+        
+        let currentUserID:String = realCurrnetUser.uid
+        DataCenter.sharedData.requestUserData(id: currentUserID) { (data) in
+            userData = data
+        }
         
     }
     
@@ -156,7 +198,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     /*******************************************/
     
     func presentLoginVC(){
-        if !UserDefaults.standard.bool(forKey: "LoginTest"){
+        if !DataCenter.sharedData.requestIsLogIn() {
             let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             present(loginVC, animated: true, completion: nil)
         }

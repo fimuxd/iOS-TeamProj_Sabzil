@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -50,7 +51,23 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBOutlet weak var displayLike: UIImageView!
+    
     @IBAction func likeBtnClicked(_ sender: UIButton) {
+        
+        var likeData:Like?{
+            didSet{
+                guard let realLike = likeData else {return}
+                
+//                if realLike.userID = Auth.auth().currentUser?.uid {
+//                    
+//                }
+            }
+        }
+        
+        DataCenter.sharedData.requestLike(id: self.exhibitionID) { (like) in
+            likeData = like
+        }
+        
         /*
          이거를 눌렀을때, 전시데이터의 like갯수가 올라가고,
          해당 유저의 좋아요목록에 이 전시id가 들어가고
@@ -63,6 +80,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
          */
     }
     
+    var exhibitionID:Int?
+    
     /*******************************************/
     // MARK: -  Life Cycle                     //
     /*******************************************/
@@ -70,7 +89,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print("viewWillAppear")
+        
         self.navigationController?.isNavigationBarHidden = false
 
 //        if introduceExsHeight.constant > 0 {
@@ -87,11 +106,44 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.commentTableView.delegate = self
         self.commentTableView.dataSource = self
         self.commentTableView.register(UINib(nibName: "UserCommentCustomCell", bundle: nil), forCellReuseIdentifier: "UserCommentCustomCell")
-        print("viewDidLoad")
         
         self.posterCollectionView.delegate = self
         self.posterCollectionView.dataSource = self
         self.posterCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
+        
+        var selectedExhibition:ExhibitionData?{
+            didSet{
+                guard let realExhibitionData = selectedExhibition else {
+                    print("리얼데이터가 없습니다")
+                    return
+                }
+
+                self.exhibitionTitle.text = realExhibitionData.title
+                self.exhibitionDate.text = "\(realExhibitionData.periodData[0].startDate) ~ \(realExhibitionData.periodData[0].endDate)"
+                self.exhibitionPlace.text = realExhibitionData.placeData[0].address
+                self.exhibitionTime.text = "\(realExhibitionData.workingHourData[0].startTime) ~ \(realExhibitionData.workingHourData[0].endTime)"
+                self.exhibitionPrice.text = "\(realExhibitionData.admission)원"
+                self.exhibitionAgent.text = realExhibitionData.artist
+                self.exhibitionHomepage.setTitle(realExhibitionData.placeData[0].websiteURL, for: .normal)
+                self.exhibitionGenre.text = realExhibitionData.genre.rawValue
+                self.exhibitionAge.text = "전체관람가"
+                self.exhibitionIntroduce.text = realExhibitionData.detail
+                guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
+                
+                do{
+                    let realData = try Data(contentsOf: url)
+                    self.posterImg.image = UIImage(data: realData)
+                    print("loading Image")
+                }catch{
+                    
+                }
+                
+            }
+        }
+        DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (exhibition) in
+            selectedExhibition = exhibition
+        }
+        
         
     }
     
@@ -127,12 +179,38 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:RankingCustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCustomCell", for: indexPath) as! RankingCustomCell
         cell.rankImage.isHidden = true
+        
+        var detailImg:[String]?{
+            didSet{
+                guard let realImgs = detailImg else {return}
+                
+                guard let url = URL(string: realImgs[indexPath.row]) else {return}
+                
+                do{
+                    let realData = try Data(contentsOf: url)
+                    cell.posterImage.image = UIImage(data: realData)
+                    print("loading Image")
+                }catch{
+                    
+                }
+            }
+        }
+        
+        var exhibitionData:ExhibitionData? {
+            didSet{
+                guard let realExhibitionData = exhibitionData else {return}
+                detailImg = realExhibitionData.imgURL[0].detailImages
+            }
+        }
+        DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (data) in
+            exhibitionData = data
+        }
         return cell
     }
     
