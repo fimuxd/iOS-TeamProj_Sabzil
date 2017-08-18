@@ -747,6 +747,9 @@
                                                         <state key="normal" title="좋아요">
                                                             <color key="titleColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="likeBtnClicked:" destination="y3y-pF-Dyt" eventType="touchUpInside" id="2TS-7p-KcM"/>
+                                                        </connections>
                                                     </button>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selected_star" translatesAutoresizingMaskIntoConstraints="NO" id="V7r-6g-LMz">
                                                         <rect key="frame" x="268" y="13" width="20" height="19"/>
@@ -994,6 +997,7 @@
                     <size key="freeformSize" width="375" height="1378"/>
                     <connections>
                         <outlet property="commentTableView" destination="L7U-cv-7UW" id="Fwe-4X-Dkh"/>
+                        <outlet property="displayLike" destination="S1I-Ar-rcH" id="FAF-jv-LTV"/>
                         <outlet property="exhibitionAge" destination="5es-cE-OFf" id="rqr-Cy-0mq"/>
                         <outlet property="exhibitionAgent" destination="Wn2-Ky-kMa" id="MmD-py-kK8"/>
                         <outlet property="exhibitionDate" destination="hSU-7A-jAQ" id="yAR-fd-SyF"/>
