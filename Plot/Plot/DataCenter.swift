@@ -186,10 +186,10 @@ class DataCenter {
     func requestLike(id:Int?, completion:@escaping (_ info:Like) -> Void) {
         Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            guard let json = snapshot.value as? [[String:Int]],
+            guard let json = snapshot.value as? [[String:Any]],
                 let realIntID:Int = id else {return}
             
-            let selectedLikeData:[String:Int] = json[realIntID]
+            let selectedLikeData:[String:Any] = json[realIntID]
             
             completion(Like.init(data: selectedLikeData))
             
@@ -309,11 +309,12 @@ class DataCenter {
     func requestLikeCountsOfExhibition(id:Int?, completion:@escaping (_ info:Int) -> Void) {
         
         Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let json = snapshot.value as? [[String:Int]],
+            guard let json = snapshot.value as? [[String:Any]],
                 let realIntID:Int = id else {return}
             
-            let likesDataForSelectedExhibition = json.filter({ (dic:[String:Int]) -> Bool in
-                dic[Constants.likes_ExhibitionID] == realIntID
+            let likesDataForSelectedExhibition = json.filter({ (dic:[String:Any]) -> Bool in
+                let exhibitionID:Int = dic[Constants.likes_ExhibitionID] as! Int
+                return exhibitionID == realIntID
                 
             })
             
@@ -321,6 +322,30 @@ class DataCenter {
             
             completion(likesCount)
             
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
+    //--특정 전시의 좋아요 데이터
+    func isLiked(exhibitionID:Int?, userID:String?, completion:@escaping (_ info:Bool) -> Void) {
+        
+        Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Any]],
+                let realExhibitionID:Int = exhibitionID,
+                let realUserID:String = userID else {return}
+            
+            let filterLike = json.filter({ (dic) -> Bool in
+                let inputExhibitionID = dic[Constants.likes_ExhibitionID] as! Int
+                let inputUserID = dic[Constants.likes_UserID] as! String
+                return inputExhibitionID == realExhibitionID && inputUserID == realUserID
+            })
+            
+            if filterLike.count == 0 {
+                completion(false)
+            }else{
+                completion(true)
+            }
         }) { (error) in
             print(error.localizedDescription)
         }

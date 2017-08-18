@@ -61,8 +61,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         @IBAction func clickedLoginBtn(_ sender: Any) {
             
             if idTF.text != "" && passwordTF.text != ""{
+                self.logInActionHandle()
                 dismissSelf()
-                UserDefaults.standard.set(true, forKey: "LoginTest")
+                
             }else{
                 callAlert()
             }
