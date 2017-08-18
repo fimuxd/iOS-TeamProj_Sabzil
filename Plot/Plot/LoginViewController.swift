@@ -40,6 +40,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 // ...
                 return
             }
+
         }
         FBSDKLoginManager().logOut();
         
@@ -125,10 +126,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             present(signupVC, animated: true, completion: nil)
         }
         
+    
+    
+    func logInActionHandle() {
+        Auth.auth().signIn(withEmail: self.idTF.text!, password: self.passwordTF.text!) { (user, error) in
+            if let error = error {
+                print("error://", error)
+                return
+            }
+        }
+    }
         func callAlert() {
             let errorAlert:UIAlertController = UIAlertController.init(title: "로그인 실패", message: "아이디와 비밀번호를 확인해주세요", preferredStyle: .alert)
             let okBtn:UIAlertAction = UIAlertAction.init(title: "확인", style: .cancel, handler: nil)
             errorAlert.addAction(okBtn)
             present(errorAlert, animated: true, completion: nil)
         }
+
 }

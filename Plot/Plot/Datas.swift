@@ -10,74 +10,32 @@ import Foundation
 
 //-----UserData
 struct UserData {
-    let id:Int                             //기본적으로 부여되는 ID 값 (로그인아이디 아님)
+    let id:String                             //기본적으로 부여되는 ID 값 (로그인아이디 아님)
     let email:String                       //이메일
     let password:String                    //비밀번호
     let profileImgURL:String               //프로필사진 URL
     let name:String                        //유저명
-    var likesExhibitions:[Int]             //좋아요; Exhibition의 ID값을 Array로 저장
-    var starPoints:[StarPoint]             //별점
-    var comments:[Comment]                 //후기
     
     var dictionary:[String:Any] {
         get{
-            //            likesExhibitions 채워놓을 곳
-            var tempLikesExhibitions:[Int] = []
-            for exhibitionID in likesExhibitions {
-                tempLikesExhibitions.append(exhibitionID) //TODO: 강사님께 물어볼 것 - 이 것 어떻게 처리해야 하는지.
-            }
-            
-            //            starPoints
-            var tempStarPoints:[[String:Any]] = []
-            for stars in starPoints {
-                tempStarPoints.append(stars.dictionary)
-            }
-            
-            //            comments
-            var tempComments:[[String:Any]] = []
-            for note in comments {
-                tempComments.append(note.dictionary)
-            }
             
             return [Constants.user_ID:self.id,
                     Constants.user_Email:self.email,
                     Constants.user_Password:self.password,
                     Constants.user_ProfileImgURL:self.profileImgURL,
                     Constants.user_Name:self.name,
-                    Constants.user_LikesExhibitions:tempLikesExhibitions,
-                    Constants.user_StarPoints:tempStarPoints,
-                    Constants.user_Comments:tempComments
             ]
         }
     }
     
     //init 할 부분
     init(dictionary:[String:Any]) {
-        self.id = dictionary[Constants.user_ID] as! Int
+        self.id = dictionary[Constants.user_ID] as! String
         self.email = dictionary[Constants.user_Email] as! String
         self.password = dictionary[Constants.user_Password] as! String
         self.profileImgURL = dictionary[Constants.user_ProfileImgURL] as! String
         self.name = dictionary[Constants.user_Name] as! String
-        self.likesExhibitions = []
-        self.starPoints = []
-        self.comments = []
         
-        guard let likesExhibitionContainer:[Int] = dictionary[Constants.user_LikesExhibitions] as? [Int],
-            let starPointsContainer:[[String:Any]] = dictionary[Constants.user_StarPoints] as? [[String:Any]],
-            let commentsContainer:[[String:Any]] = dictionary[Constants.user_Comments] as? [[String:Any]]
-            else { return }
-        
-        for exhibitionID in likesExhibitionContainer {
-            likesExhibitions.append(exhibitionID) //TODO: 강사님께 물어볼 것 - 이 것 어떻게 처리해야 하는지.
-        }
-        
-        for stars in starPointsContainer {
-            starPoints.append(StarPoint.init(data: stars))
-        }
-        
-        for note in commentsContainer {
-            comments.append(Comment.init(data: note))
-        }
     }
 }
 
@@ -85,7 +43,7 @@ struct UserData {
 struct StarPoint {
     let id:Int                              //기본적으로 부여되는 ID 값
     let exhibitionID:Int                    //별점을 받은 전시ID
-    let userID:Int                          //별점을 준 유저ID
+    let userID:String                       //별점을 준 유저ID
     let point:Point                         //별점
     
     var dictionary:[String:Any] {
@@ -98,7 +56,7 @@ struct StarPoint {
     init(data:[String:Any]) {
         self.id = data[Constants.starPoint_ID] as! Int
         self.exhibitionID = data[Constants.starPoint_ExhibitionID] as! Int
-        self.userID = data[Constants.starPoint_UserID] as! Int
+        self.userID = data[Constants.starPoint_UserID] as! String
         self.point = Point.init(rawValue: data[Constants.starPoint_Point] as! Double)!
     }
 }
@@ -106,7 +64,7 @@ struct StarPoint {
 struct Comment {
     let id:Int                              //기본적으로 부여되는 ID 값
     let exhibitionID:Int                    //어떤 전시에 대한 후기인지 전시의 ID 값 저장
-    let userID:Int                          //어떤 유저가 남긴 후기인지 유저의 ID 값 저장
+    let userID:String                       //어떤 유저가 남긴 후기인지 유저의 ID 값 저장
     let detail:String                       //후기
     
     var dictionary:[String:Any] {
@@ -119,7 +77,7 @@ struct Comment {
     init(data:[String:Any]) {
         self.id = data[Constants.comment_ID] as! Int
         self.exhibitionID = data[Constants.comment_ExhibitionID] as! Int
-        self.userID = data[Constants.comment_UserID] as! Int
+        self.userID = data[Constants.comment_UserID] as! String
         self.detail = data[Constants.comment_Detail] as! String
     }
 }
@@ -152,16 +110,11 @@ struct ExhibitionData {
     var imgURL:[Image]                  //전시이미지
     var periodData:[Period]             //전시기간
     var workingHourData:[WorkingHours]  //관람시간
-    var likesFromUser:[Like]               //좋아요; 유저가 부여한 좋아요 갯수
-    var starPointFromUser:[StarPoint]           //별점; 유저가 부여한 별점의 평균
-    var commentsFromUser:[Comment]      //후기
     
     var dictionary:[String:Any] {
         get{
             var tempPlaceData:[[String:String]] = []
             var tempImageData:[[String:Any]] = []
-            var tempLikeData:[[String:Int]] = []
-            var tempCommentsData:[[String:Any]] = []
             var tempPeriodData:[[String:String]] = []
             var tempWorkingHourData:[[String:String]] = []
             
@@ -177,13 +130,6 @@ struct ExhibitionData {
                 tempImageData.append(image.dictionary)
             }
             
-            for like in likesFromUser {
-                tempLikeData.append(like.dictionary)
-            }
-            
-            for comment in commentsFromUser {
-                tempCommentsData.append(comment.dictionary)
-            }
             for period in periodData {
                 tempPeriodData.append(period.dictionary)
             }
@@ -196,14 +142,10 @@ struct ExhibitionData {
                     Constants.exhibition_Artist:self.artist,
                     Constants.exhibition_Admission:self.admission,
                     Constants.exhibition_Detail:self.detail,
-                    Constants.exhibition_LikesFromUser:self.likesFromUser,
-                    Constants.exhibition_StarPointFromUser:self.starPointFromUser,
                     Constants.exhibition_Genre:self.genre,
                     Constants.exhibition_District:self.district,
                     Constants.exhibition_PlaceData:tempPlaceData,
                     Constants.exhibition_ImgURL:tempImageData,
-                    Constants.exhibition_LikesFromUser:tempLikeData,
-                    Constants.exhibition_CommentsFromUser:tempCommentsData,
                     Constants.exhibition_Period:tempPeriodData,
                     Constants.exhibition_WorkingHours:tempWorkingHourData]
         }
@@ -219,9 +161,6 @@ struct ExhibitionData {
         self.district = District(rawValue: data[Constants.exhibition_District] as! String)!
         self.placeData = []
         self.imgURL = []
-        self.likesFromUser = []
-        self.starPointFromUser = []
-        self.commentsFromUser = []
         self.periodData = []
         self.workingHourData = []
         
@@ -243,22 +182,7 @@ struct ExhibitionData {
                 workingHourData.append(WorkingHours.init(data: workingHour))
             }
         }
-        
-        guard let templikesData:[[String:Int]] = data[Constants.exhibition_LikesFromUser] as? [[String:Int]],
-        let tempStarPointData:[[String:Any]] = data[Constants.exhibition_StarPointFromUser] as? [[String:Any]],
-            let tempCommentsData:[[String:Any]] = data[Constants.exhibition_CommentsFromUser] as? [[String:Any]] else {return}
-
-        for like in templikesData {
-            likesFromUser.append(Like.init(data: like))
-        }
-        for star in tempStarPointData {
-            starPointFromUser.append(StarPoint.init(data: star))
-        }
-        for comment in tempCommentsData {
-            commentsFromUser.append(Comment.init(data: comment))
-        }
     }
-    
 }
 
 struct Place {
@@ -347,18 +271,18 @@ struct WorkingHours {
 struct Like {
     let id:Int
     let exhibitionID:Int
-    let userID:Int
+    let userID:String
     
-    var dictionary:[String:Int] {
+    var dictionary:[String:Any] {
         return [Constants.likes_ID:id,
                 Constants.likes_ExhibitionID:exhibitionID,
                 Constants.likes_UserID:userID]
     }
     
-    init(data:[String:Int]) {
-        self.id = data[Constants.likes_ID]!
-        self.exhibitionID = data[Constants.likes_ExhibitionID]!
-        self.userID = data[Constants.likes_UserID]!
+    init(data:[String:Any]) {
+        self.id = data[Constants.likes_ID] as! Int
+        self.exhibitionID = data[Constants.likes_ExhibitionID] as! Int
+        self.userID = data[Constants.likes_UserID] as! String
     }
 }
 

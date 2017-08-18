@@ -17,12 +17,17 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var mainTableView: UITableView!
     
+    var exhibitionData:Int?
+    
     /*******************************************/
     // MARK: -  Life Cycle                     //
     /*******************************************/
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presentLoginVC()
+        self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
+        
 
     }
     
@@ -30,14 +35,13 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadmainTabelview), name: NSNotification.Name("dismissPopup"), object: nil)
-
-        self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
+     
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-   
+    
     /*******************************************/
     // MARK: -  CustomCell Delegate Method     //
     /*******************************************/
@@ -65,13 +69,18 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
     }
     
+    
+    
     /*******************************************/
     // MARK: -  Table View                     //
     /*******************************************/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
+
         cell.delegate = self
+
         var selectedExhibitionData:ExhibitionData?{
             didSet{
                 guard let realExhibitionData = selectedExhibitionData else {
@@ -89,7 +98,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 do{
                     let realData = try Data(contentsOf: url)
                     cell.mainPosterImg.image = UIImage(data: realData)
-                    print("loading Image")
                 }catch{
                     
                 }
@@ -100,7 +108,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         DataCenter.sharedData.requestExhibitionData(id: indexPath.row) { (dic) in
             selectedExhibitionData = dic
         }
-
+        
         /*
          cell.localLabel.text = "서울"
          cell.mainTitleLabel.text = "메인타이틀 텍스트 전시이름이들어갑니다"
@@ -110,9 +118,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return cell
     }
+
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-   
         return 1
     }
     
@@ -122,6 +130,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController:DetailViewController = storyboard?.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
+        detailViewController.exhibitionID = indexPath.row
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     
@@ -131,9 +140,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     /*******************************************/
     
     func presentLoginVC(){
-        if !UserDefaults.standard.bool(forKey: "LoginTest"){
+        if Auth.auth().currentUser == nil {
             let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             present(loginVC, animated: true, completion: nil)
+        }else{
+            print(Auth.auth().currentUser?.email)
         }
     }
     
@@ -151,5 +162,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func presentStarPointPopup(){
         let popup = storyboard?.instantiateViewController(withIdentifier: "StarPointPopup") as! StarPointPopupViewController
         present(popup, animated: true, completion: nil)
+        
     }
+    
+    
+    
+    
 }
