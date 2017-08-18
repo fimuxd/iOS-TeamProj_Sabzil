@@ -10,9 +10,11 @@ import UIKit
 
 class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
+    
     /*******************************************/
     // MARK: -  Outlet & Property              //
     /*******************************************/
+
     
     @IBOutlet weak var commentTableView: UITableView!
     var userLikesExhi:[String] = []
@@ -40,11 +42,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     // MARK: - IBAction
     @IBAction func starPoint(_ sender: UIButton) {
-        presentPopup(sender)
+        presentStarPointPopup()
     }
     
     @IBAction func commentBtnClicked(_ sender: UIButton) {
-        presentPopup(sender)
+        presentCommentPopup()
     }
     
     
@@ -65,6 +67,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadComment), name: NSNotification.Name("dismissPopup"), object: nil)
         
         self.commentTableView.delegate = self
         self.commentTableView.dataSource = self
@@ -122,9 +126,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: -  Func                           //
     /*******************************************/
     
-    func presentPopup(_ sender: UIButton){
+    func presentCommentPopup(){
         let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
-        popup.senderTag = sender.tag
+        present(popup, animated: true, completion: nil)
+    }
+    
+    func presentStarPointPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "StarPointPopup") as! StarPointPopupViewController
         present(popup, animated: true, completion: nil)
     }
     

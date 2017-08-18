@@ -28,6 +28,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadmainTabelview), name: NSNotification.Name("dismissPopup"), object: nil)
+
         self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
         // Do any additional setup after loading the view.
     
@@ -87,15 +90,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     
-    func presentStarPointPopup(){
-        let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
-        popup.senderTag = 1
-        present(popup, animated: true, completion: nil)
+    func reloadmainTabelview(){
+        print("메인테이블뷰 리로드")
+        self.mainTableView.reloadData()
     }
+    
     
     func presentCommentPopup(){
         let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
-        popup.senderTag = 2
+        present(popup, animated: true, completion: nil)
+    }
+    
+    func presentStarPointPopup(){
+        let popup = storyboard?.instantiateViewController(withIdentifier: "StarPointPopup") as! StarPointPopupViewController
         present(popup, animated: true, completion: nil)
     }
 }
