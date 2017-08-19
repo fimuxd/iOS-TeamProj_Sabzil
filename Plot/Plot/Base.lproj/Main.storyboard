@@ -532,7 +532,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPq-fH-RaH" userLabel="exhiInfo">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-aP-WSh">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-aP-WSh">
                                                         <rect key="frame" x="16" y="10" width="150" height="200"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="Dda-aP-WSh" secondAttribute="height" multiplier="3:4" id="AzZ-P1-KS3"/>

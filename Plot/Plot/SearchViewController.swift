@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDataSource,UISearchBarDelegate {
     
@@ -40,6 +41,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentLoginVC()
         self.searchBar.delegate = self
         searchBar.placeholder = "전시명, 지역, 장르 등 검색"
         self.rankingTableView.dataSource = self
@@ -285,6 +287,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.navigationController?.pushViewController(rankingViewController, animated: true)
         }
         
+    }
+    
+    func presentLoginVC(){
+        if Auth.auth().currentUser == nil {
+            let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            present(loginVC, animated: true, completion: nil)
+        }else{
+            print(Auth.auth().currentUser?.email)
+        }
     }
     
     

@@ -17,7 +17,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     @IBOutlet weak var mainTableView: UITableView!
     
-    var exhibitionData:Int?
+    let exhibitionDatasRef = Database.database().reference().child("ExhibitionData")
+    var exhibitionDataCount:Int = 0
+    
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -25,16 +27,37 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presentLoginVC()
+        
         self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
-
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presentLoginVC()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadmainTabelview), name: NSNotification.Name("dismissPopup"), object: nil)
-     
+        
+        exhibitionDatasRef.keepSynced(true)
+        
+        self.exhibitionDatasRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            self.exhibitionDataCount = Int(snapshot.childrenCount)
+            
+            self.mainTableView.reloadData()
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
+        self.exhibitionDatasRef.observe(.childChanged, with: { (snapshot) in
+            self.exhibitionDataCount = Int(snapshot.childrenCount)
+            self.mainTableView.reloadData()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -120,7 +143,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        
+        return self.exhibitionDataCount
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

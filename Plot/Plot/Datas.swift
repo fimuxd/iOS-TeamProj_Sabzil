@@ -307,12 +307,9 @@ enum District:String {
     case Busan = "부산"
     case GyeongGi = "경기"
     case GangWon = "강원"
-    case ChungCheongNam = "충남"
-    case ChuncCehongBuk = "충북"
-    case GyeongSangNam = "경남"
-    case GyeongSangBuk = "경북"
-    case JeonLaNam = "전남"
-    case JeonLaBuk = "전북"
+    case ChungCheong = "충청"
+    case GyeongSang = "경상"
+    case JeonLa = "전라"
     case JeJu = "제주"
 }
 

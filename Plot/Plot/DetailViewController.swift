@@ -196,7 +196,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             didSet{
                 guard let realImgs = detailImg else {return}
                 
-                guard let url = URL(string: realImgs[indexPath.row]) else {return}
+                guard let url = URL(string: realImgs[indexPath.item]) else {return}
                 
                 do{
                     let realData = try Data(contentsOf: url)

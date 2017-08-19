@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RankingViewController: UIViewController,UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -27,6 +28,7 @@ class RankingViewController: UIViewController,UICollectionViewDelegate, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presentLoginVC()
         self.rankingCollectionView.delegate = self
         self.rankingCollectionView.dataSource = self
         self.rankingCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
@@ -75,5 +77,14 @@ class RankingViewController: UIViewController,UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 20)
+    }
+    
+    func presentLoginVC(){
+        if Auth.auth().currentUser == nil {
+            let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            present(loginVC, animated: true, completion: nil)
+        }else{
+            print(Auth.auth().currentUser?.email)
+        }
     }
 }
