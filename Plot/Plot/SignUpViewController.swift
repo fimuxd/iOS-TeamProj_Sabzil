@@ -42,8 +42,16 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+//        textField에 패딩 넣어줌
+//        let textFieldPadding = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: idTF.frame.size.height))
+//        idTF.leftView = textFieldPadding
+//        idTF.leftViewMode = .always
+//        passwordTF.leftView = textFieldPadding
+//        passwordTF.leftViewMode = .always
+//        passwordCheckTF.leftView = textFieldPadding
+//        passwordCheckTF.leftViewMode = .always
+//        nickNameTF.leftView = textFieldPadding
+//        nickNameTF.leftViewMode = .always
     }
     
     override func didReceiveMemoryWarning() {

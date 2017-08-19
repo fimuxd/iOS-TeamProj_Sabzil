@@ -53,7 +53,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     
     
     @IBOutlet weak var facebookLoginBtn: FBSDKLoginButton!
-    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var idTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
@@ -62,6 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         
         if idTF.text != "" && passwordTF.text != ""{
             self.logInActionHandle()
+
         }else{
             callAlert()
         }
@@ -75,7 +75,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
     /*******************************************/
     // MARK: -  LifeCycle                      //
     /*******************************************/
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
@@ -91,10 +90,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         self.scrollView.delegate = self
         self.facebookLoginBtn.delegate = self
         facebookLoginBtn.layer.frame.size.height = 44
-        print(UserDefaults.standard.bool(forKey: "loginFlag"))
-    
         
-        // Do any additional setup after loading the view.
+        //왼쪽패딩주는건데 메모리를 겁나먹어서 주석처리함
+//        let textFieldPadding = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: idTF.frame.size.height))
+//        idTF.leftView = textFieldPadding
+//        idTF.leftViewMode = .always
+//        passwordTF.leftView = textFieldPadding
+//        passwordTF.leftViewMode = .always
+      
     }
     
     override func didReceiveMemoryWarning() {
@@ -129,6 +132,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
         
     }
+
+    func dismissSelf(){
+        self.dismiss(animated: true, completion: nil)
+    }
+
     
     func presentSignupVC(){
         let signupVC:SignUpViewController = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
@@ -139,6 +147,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         let tabbarController:mainTabbarController = storyboard?.instantiateViewController(withIdentifier: "mainTabbarController") as! mainTabbarController
         present(tabbarController, animated: true, completion: nil)
     }
+
     
     
     func logInActionHandle() {
@@ -154,7 +163,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             }
     
     }
-    
+
     func callAlert() {
         let errorAlert:UIAlertController = UIAlertController.init(title: "로그인 실패", message: "아이디와 비밀번호를 확인해주세요", preferredStyle: .alert)
         let okBtn:UIAlertAction = UIAlertAction.init(title: "확인", style: .cancel, handler: nil)

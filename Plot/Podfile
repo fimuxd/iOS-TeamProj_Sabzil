@@ -17,4 +17,6 @@ pod 'SwiftyJSON'
 pod 'FacebookCore'
 pod 'FacebookLogin'
 
+pod 'HCSStarRatingView', '~> 1.5'
+
 end
