@@ -269,18 +269,15 @@ struct WorkingHours {
 }
 
 struct Like {
-    let id:Int
     let exhibitionID:Int
     let userID:String
     
     var dictionary:[String:Any] {
-        return [Constants.likes_ID:id,
-                Constants.likes_ExhibitionID:exhibitionID,
+        return [Constants.likes_ExhibitionID:exhibitionID,
                 Constants.likes_UserID:userID]
     }
     
     init(data:[String:Any]) {
-        self.id = data[Constants.likes_ID] as! Int
         self.exhibitionID = data[Constants.likes_ExhibitionID] as! Int
         self.userID = data[Constants.likes_UserID] as! String
     }
@@ -307,12 +304,9 @@ enum District:String {
     case Busan = "부산"
     case GyeongGi = "경기"
     case GangWon = "강원"
-    case ChungCheongNam = "충남"
-    case ChuncCehongBuk = "충북"
-    case GyeongSangNam = "경남"
-    case GyeongSangBuk = "경북"
-    case JeonLaNam = "전남"
-    case JeonLaBuk = "전북"
+    case ChungCheong = "충청"
+    case GyeongSang = "경상"
+    case JeonLa = "전라"
     case JeJu = "제주"
 }
 

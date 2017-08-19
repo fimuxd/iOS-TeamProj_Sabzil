@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RecommendationViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
     
@@ -19,7 +20,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     @IBOutlet weak var recommendTableView: UITableView!
     
     let localTag:[Genre] = [Genre.Carving,Genre.Craft,Genre.Installation,Genre.Paint,Genre.Photo,Genre.Video,Genre.Etc]
-    let genreTag:[District] = [District.Seoul, District.GyeongGi, District.Busan,District.DaeGu, District.DaeJeon, District.GangWon, District.ChuncCehongBuk, District.ChungCheongNam, District.JeJu,District.GwangJu,District.GyeongSangBuk, District.GyeongSangNam, District.JeonLaBuk, District.JeonLaNam,District.Incheon, District.UlSan]
+    let genreTag:[District] = [District.Seoul, District.GyeongGi, District.Busan,District.DaeGu, District.DaeJeon, District.GangWon, District.ChungCheong, District.JeJu,District.GwangJu,District.GyeongSang, District.JeonLa, District.Incheon, District.UlSan]
     
     var localtags = [Tag]()
     var genretags = [Tag]()
@@ -37,6 +38,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentLoginVC()
         self.tagCollectionView.delegate = self
         self.tagCollectionView.dataSource = self
         self.tagCollectionView.register(UINib(nibName: "TagCustomCell", bundle: nil), forCellWithReuseIdentifier: "TagCustomCell")
@@ -166,5 +168,13 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
         return CGSize.init(width: tagCollectionView.frame.size.width, height: 30)
     }
 
+    func presentLoginVC(){
+        if Auth.auth().currentUser == nil {
+            let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            present(loginVC, animated: true, completion: nil)
+        }else{
+            print(Auth.auth().currentUser?.email)
+        }
+    }
     
 }

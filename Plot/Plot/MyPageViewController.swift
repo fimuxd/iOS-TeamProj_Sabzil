@@ -18,6 +18,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBAction func clickedLogout(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
+            UserDefaults.standard.set(false, forKey: "loginFlag")
             presentLoginVC()
             //TODO: 항상 home이 가장 첫번째로 뜨게 하는 방법?
         }catch{
@@ -50,16 +51,19 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     // MARK: -  Life Cycle                     //
     /*******************************************/
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentLoginVC()
         
         for name in likeGenre {
             let tag = Tag()
             tag.name = name
             self.liketag.append(tag)
         }
-        
-        print(liketag)
         
         self.posterCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
         
@@ -78,6 +82,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         //보영
         var userData:UserData?{
             didSet{
+                print("유저데이타 디드셋")
                 guard let realUserData = userData else {return}
                 self.userNameLabel.text = realUserData.name
                 self.emailLabel.text = realUserData.email
@@ -95,9 +100,11 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         guard let realCurrnetUser = Auth.auth().currentUser else {return}
-        
+        print("리얼커런트 유저:\(realCurrnetUser)")
         let currentUserID:String = realCurrnetUser.uid
+        print("커런트유저:\(currentUserID)")
         DataCenter.sharedData.requestUserData(id: currentUserID) { (data) in
+            print("data:\(data)")
             userData = data
         }
         
@@ -193,14 +200,17 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     
+    
     /*******************************************/
     // MARK: -  Func                           //
     /*******************************************/
-    
+   
     func presentLoginVC(){
-        if !DataCenter.sharedData.requestIsLogIn() {
+        if Auth.auth().currentUser == nil {
             let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
             present(loginVC, animated: true, completion: nil)
+        }else{
+            print(Auth.auth().currentUser?.email)
         }
     }
     

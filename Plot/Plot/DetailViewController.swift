@@ -53,19 +53,25 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var displayLike: UIImageView!
     
     @IBAction func likeBtnClicked(_ sender: UIButton) {
+        print("버튼이 눌림")
         
-        var likeData:Like?{
+        var isLike:Bool?{
             didSet{
-                guard let realLike = likeData else {return}
-                
-//                if realLike.userID = Auth.auth().currentUser?.uid {
-//                    
-//                }
+                guard let realBool = isLike else {return}
+                print("여기")
+                if realBool == true {
+                    print("저기")
+                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_off")
+//                    Database.database().reference().child("Likes")
+                    
+                }else{
+                    print("거기")
+                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+                }
             }
         }
-        
-        DataCenter.sharedData.requestLike(id: self.exhibitionID) { (like) in
-            likeData = like
+        DataCenter.sharedData.isLiked(exhibitionID: self.exhibitionID, userID: Auth.auth().currentUser?.uid) { (bool) in
+            isLike = bool
         }
         
         /*
@@ -144,6 +150,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             selectedExhibition = exhibition
         }
         
+        print(Auth.auth().currentUser?.uid)
         
     }
     
@@ -190,7 +197,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             didSet{
                 guard let realImgs = detailImg else {return}
                 
-                guard let url = URL(string: realImgs[indexPath.row]) else {return}
+                guard let url = URL(string: realImgs[indexPath.item]) else {return}
                 
                 do{
                     let realData = try Data(contentsOf: url)
