@@ -150,6 +150,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             selectedExhibition = exhibition
         }
         
+        print(Auth.auth().currentUser?.uid)
         
     }
     

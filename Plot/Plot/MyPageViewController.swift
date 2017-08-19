@@ -18,6 +18,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBAction func clickedLogout(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
+            UserDefaults.standard.set(false, forKey: "loginFlag")
             presentLoginVC()
             //TODO: 항상 home이 가장 첫번째로 뜨게 하는 방법?
         }catch{
