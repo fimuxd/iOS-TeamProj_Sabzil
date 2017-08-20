@@ -18,11 +18,11 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var mainTableView: UITableView!
     
     let exhibitionDatasRef = Database.database().reference().child("ExhibitionData")
-    let likeDataRef = Database.database().reference().child("Likes")
-    
-    var favoriteExhibitionIDs:[Int] = []
     var exhibitionDataCount:Int = 0
+    
+    let likeDataRef = Database.database().reference().child("Likes")
     var likeDataCount:Int = 0
+    var favoriteExhibitionIDs:[Int] = []
     
     
     /*******************************************/
@@ -45,7 +45,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //--보영: 전시 데이터 가져오고 실시간 반영하기
         exhibitionDatasRef.keepSynced(true)
-        likeDataRef.keepSynced(true)
         
         self.exhibitionDatasRef.observeSingleEvent(of: .value, with: { (snapshot) in
             self.exhibitionDataCount = Int(snapshot.childrenCount)
@@ -58,34 +57,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         self.exhibitionDatasRef.observe(.childChanged, with: { (snapshot) in
             self.exhibitionDataCount = Int(snapshot.childrenCount)
-            self.mainTableView.reloadData()
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        //--보영: 좋아요 표시된 전시 목록 가져오기
-        self.likeDataRef.observeSingleEvent(of: .value, with: { (snapshot) in
-            self.likeDataCount = Int(snapshot.childrenCount)
-            guard let likesJSON = snapshot.value as? [[String:Any]] else {return}
-
-            var filteredJSON = likesJSON.filter({ (dic) -> Bool in
-                let filteredUserID:String = dic[Constants.likes_UserID] as! String
-                return filteredUserID == Auth.auth().currentUser?.uid
-            })
-            
-            var mappedJSON = filteredJSON.map({ (dic:[String:Any]) -> Int in
-                return dic[Constants.likes_ExhibitionID] as! Int
-            })
-            
-            self.favoriteExhibitionIDs = mappedJSON
-            self.mainTableView.reloadData()
-            
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
-        self.likeDataRef.observe(.childChanged, with: { (snapshot) in
-            self.likeDataCount = Int(snapshot.childrenCount)
             self.mainTableView.reloadData()
         }) { (error) in
             print(error.localizedDescription)
@@ -137,14 +108,15 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.exhibitionTerm.text = "\(realExhibitionData.periodData[0].startDate)~\(realExhibitionData.periodData[0].endDate)"
                 cell.museumName.text = realExhibitionData.placeData[0].address
                 
+                cell.indexPathRow = indexPath.row
+                
+                
                 if self.favoriteExhibitionIDs.contains(indexPath.row) {
                     cell.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
                 }else{
                     cell.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
                 }
                 
-                cell.indexPathRow = indexPath.row
-                cell.likeDataCount = self.likeDataCount
                 
                 guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
                 

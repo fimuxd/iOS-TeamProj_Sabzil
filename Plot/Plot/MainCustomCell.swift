@@ -46,19 +46,11 @@ class MainCustomCell: UITableViewCell {
         
         if self.likeBtnOutlet.image == #imageLiteral(resourceName: "likeBtn_on") {
             self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
-            Database.database().reference().child("Likes").removeValue(completionBlock: { (error, reference) in
-                if let error = error {
-                    print("error://\(error)")
-                    return
-                }
-                
-                reference.child("0")
-            })
+            Database.database().reference().child("Likes").childByAutoId().setValue(nil)
         }else {
             self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
-            Database.database().reference().child("Likes").child("\(self.likeDataCount!)").setValue([Constants.likes_ExhibitionID:self.indexPathRow,
-                                                                     Constants.likes_UserID:Auth.auth().currentUser?.uid])
-        
+            Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_ExhibitionID:self.indexPathRow,
+                                                                                     Constants.likes_UserID:Auth.auth().currentUser?.uid])
         }
         
         self.delegate?.isLikeButtonClicked()
