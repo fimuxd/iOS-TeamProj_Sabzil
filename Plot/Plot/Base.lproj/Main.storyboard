@@ -643,7 +643,6 @@
                                                     <constraint firstItem="0lv-5m-eAz" firstAttribute="leading" secondItem="qqS-Cx-6YD" secondAttribute="leading" id="biS-jf-Ywh"/>
                                                     <constraint firstItem="YUS-YQ-50G" firstAttribute="leading" secondItem="bpp-mJ-tXG" secondAttribute="trailing" constant="8" id="cYv-Pi-Oh2"/>
                                                     <constraint firstItem="qqS-Cx-6YD" firstAttribute="leading" secondItem="Dda-aP-WSh" secondAttribute="trailing" constant="9" id="dC9-9b-XA2"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Dsq-Pv-gvI" secondAttribute="trailing" constant="94" id="f19-cc-i5O"/>
                                                     <constraint firstItem="bpp-mJ-tXG" firstAttribute="bottom" secondItem="Dda-aP-WSh" secondAttribute="bottom" id="f7G-QB-ay4"/>
                                                     <constraint firstItem="EhW-7F-qAi" firstAttribute="centerY" secondItem="rXl-a8-CPW" secondAttribute="centerY" id="fY5-rp-4Mh"/>
                                                     <constraint firstAttribute="trailing" secondItem="hSU-7A-jAQ" secondAttribute="trailing" constant="16" id="fuP-d2-63c"/>
@@ -673,7 +672,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관람등급" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aN-T0-EX6">
-                                                        <rect key="frame" x="208" y="33" width="49" height="17"/>
+                                                        <rect key="frame" x="194" y="33" width="49" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -685,7 +684,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체관람가" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5es-cE-OFf">
-                                                        <rect key="frame" x="265" y="33" width="61" height="17"/>
+                                                        <rect key="frame" x="251" y="33" width="61" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.44602633250000001" green="0.44602633250000001" blue="0.44602633250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -697,20 +696,20 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장르" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFc-FO-vvT">
-                                                        <rect key="frame" x="208" y="10" width="25" height="17"/>
+                                                        <rect key="frame" x="194" y="10" width="25" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설치" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7y-06-PGe">
-                                                        <rect key="frame" x="241" y="10" width="25" height="17"/>
+                                                        <rect key="frame" x="227" y="10" width="25" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <color key="textColor" red="0.44602633250000001" green="0.44602633250000001" blue="0.44602633250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I34-ls-OBN">
-                                                        <rect key="frame" x="73" y="27" width="111" height="29"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <rect key="frame" x="73" y="28" width="97" height="27"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <state key="normal" title="www.google.com">
                                                             <color key="titleColor" red="0.62392925129999999" green="0.62392925129999999" blue="0.62392925129999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
