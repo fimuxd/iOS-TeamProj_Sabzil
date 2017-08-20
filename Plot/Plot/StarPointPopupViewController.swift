@@ -10,17 +10,19 @@ import UIKit
 import HCSStarRatingView
 
 class StarPointPopupViewController: UIViewController {
-
+    
     /*******************************************/
     // MARK: -  Outlet & Property              //
     /*******************************************/
+//    
+//    var rating:Int = 0
     
     
     @IBAction func tappedBlackOut(_ sender: UITapGestureRecognizer) {
         self.dismiss(animated: true, completion: nil)
     }
-
-
+    
+    
     @IBOutlet weak var starPointBottomConstranint: NSLayoutConstraint!
     
     
@@ -31,10 +33,10 @@ class StarPointPopupViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
-            starPointBottomConstranint.constant = 0
-            UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
-
+        
+        starPointBottomConstranint.constant = 0
+        UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
+        
     }
     
     override func viewDidLoad() {
@@ -46,7 +48,9 @@ class StarPointPopupViewController: UIViewController {
         starRatingView.minimumValue = 0
         starRatingView.value = 0
         starRatingView.tintColor = UIColor.cyan
-        starRatingView.addTarget(self, action: #selector(changedValue), for: .valueChanged)
+        
+//        starRatingView.addTarget(self, action: #selector(changedValue), for: .valueChanged)
+//        rating = Int(starRatingView.value)
         
         starRatingView.allowsHalfStars = true
         starRatingView.emptyStarImage = #imageLiteral(resourceName: "nomal_star")
@@ -64,7 +68,8 @@ class StarPointPopupViewController: UIViewController {
     }
     
     func changedValue(){
+//        print(rating)
         print("별점주세여!!!!!")
     }
-
+    
 }
