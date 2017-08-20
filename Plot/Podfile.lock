@@ -13,41 +13,37 @@ PODS:
     - FacebookCore (~> 0.2)
     - FBSDKCoreKit (~> 4.15)
     - FBSDKLoginKit (~> 4.15)
-  - FBSDKCoreKit (4.25.0):
+  - FBSDKCoreKit (4.24.0):
     - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.25.0):
+  - FBSDKLoginKit (4.24.0):
     - FBSDKCoreKit
-  - Firebase/Auth (4.1.0):
+  - Firebase/Auth (4.0.2):
     - Firebase/Core
-    - FirebaseAuth (= 4.1.0)
-  - Firebase/Core (4.1.0):
-    - FirebaseAnalytics (= 4.0.3)
-    - FirebaseCore (= 4.0.5)
-  - Firebase/Database (4.1.0):
+    - FirebaseAuth (= 4.0.0)
+  - Firebase/Core (4.0.2):
+    - FirebaseAnalytics (= 4.0.1)
+    - FirebaseCore (= 4.0.2)
+  - Firebase/Database (4.0.2):
     - Firebase/Core
-    - FirebaseDatabase (= 4.0.1)
-  - Firebase/Storage (4.1.0):
+    - FirebaseDatabase (= 4.0.0)
+  - Firebase/Storage (4.0.2):
     - Firebase/Core
-    - FirebaseStorage (= 2.0.1)
-  - FirebaseAnalytics (4.0.3):
+    - FirebaseStorage (= 2.0.0)
+  - FirebaseAnalytics (4.0.1):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-    - nanopb (~> 0.3)
-  - FirebaseAuth (4.1.0):
+  - FirebaseAuth (4.0.0):
     - FirebaseAnalytics (~> 4.0)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.5):
+  - FirebaseCore (4.0.2):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-    - nanopb (~> 0.3)
-  - FirebaseDatabase (4.0.1):
+  - FirebaseDatabase (4.0.0):
     - FirebaseAnalytics (~> 4.0)
+  - FirebaseInstanceID (2.0.0):
     - FirebaseCore (~> 4.0)
-    - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (2.0.1):
-    - FirebaseCore (~> 4.0)
-  - FirebaseStorage (2.0.1):
+  - FirebaseStorage (2.0.0):
     - FirebaseAnalytics (~> 4.0)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
@@ -61,14 +57,8 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
-  - GTMSessionFetcher/Core (1.1.11)
+  - GTMSessionFetcher/Core (1.1.10)
   - HCSStarRatingView (1.5)
-  - leveldb-library (1.18.3)
-  - nanopb (0.3.8):
-    - nanopb/decode (= 0.3.8)
-    - nanopb/encode (= 0.3.8)
-  - nanopb/decode (0.3.8)
-  - nanopb/encode (0.3.8)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -85,22 +75,20 @@ SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
-  FBSDKCoreKit: 53e3f4bfb64e80c5f229dd30ae33ff57fbbbd2d1
-  FBSDKLoginKit: f628c09684dae9c17f071cf90b014e886f5093ea
-  Firebase: ebebf41db7f10e0c7668b6eaaa857fbe599aa478
-  FirebaseAnalytics: 76f754d37ca5b04f36856729b6af3ca0152d1069
-  FirebaseAuth: 8d1d2389cf82f891048d6d50d27d044f55ae09a6
-  FirebaseCore: 7d876ea97a830cbe62ba7fbbe7670c833a324ba0
-  FirebaseDatabase: 94c38c783d23dc6679441050772d42e801d06e9e
-  FirebaseInstanceID: 0500e3cb54a1a4e01a8cffcc09323b8bb8fc7e1e
-  FirebaseStorage: 661fc1f8d4131891d256b62e82a45ace8b3f0c3b
+  FBSDKCoreKit: f8c9eb0dd34a9cd277c7b60da4b32226d142502d
+  FBSDKLoginKit: 1214c6d5a1c4995b694d8db8a9ba6910c6028acf
+  Firebase: c7ad0731eab26d18a3fc547dd048b0f7cd9c63ae
+  FirebaseAnalytics: 4d7040fefc3cd8b291cde35f12cf063d7963f15d
+  FirebaseAuth: ebb6abcbabae00fc47446d690c19ce68d8484fde
+  FirebaseCore: 1a8bf6c795ad07d2918278657954ffd2552e9c17
+  FirebaseDatabase: d829b3a8c3e2ac7a16773c5df226966b0805dfc2
+  FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
+  FirebaseStorage: 8110a1ed2034c8fbfd83890d2acc9cdbbd99afec
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
-  GTMSessionFetcher: 5ad62e8200fa00ed011fe5e08d27fef72c5b1429
+  GTMSessionFetcher: 30d874b96d0d76028f61fbd122801e3f030d47db
   HCSStarRatingView: 1d18f79654735514cd6f00e6d90e38cb6320dc31
-  leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
-  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: 13621116c569df33fc29183915e71f3ad81d3e7c
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.2.0

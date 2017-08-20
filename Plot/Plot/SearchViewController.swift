@@ -30,6 +30,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var searchKeyword:[String] = []
     //검색어 버튼이 눌렸을때 여기에 어펜드된다
+
     
     /*******************************************/
     // MARK: -  LifeCycle                      //

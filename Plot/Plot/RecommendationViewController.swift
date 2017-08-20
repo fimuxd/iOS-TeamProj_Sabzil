@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RecommendationViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+class RecommendationViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, customCellDelegate {
     
     /*******************************************/
     // MARK: -  Outlet & Property              //
@@ -26,6 +26,10 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     var genretags = [Tag]()
     
     var sizingCell: TagCustomCell?
+    
+    
+    let exhibitionDatasRef = Database.database().reference().child("ExhibitionData")
+    var exhibitionDataCount:Int = 0
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -65,12 +69,44 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
         self.recommendTableView.dataSource = self
         self.recommendTableView.register(UINib(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
         
-        // Do any additional setup after loading the view.
+        exhibitionDatasRef.keepSynced(true)
+        
+        self.exhibitionDatasRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            self.exhibitionDataCount = Int(snapshot.childrenCount)
+            
+            self.recommendTableView.reloadData()
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        self.exhibitionDatasRef.observe(.childChanged, with: { (snapshot) in
+            self.exhibitionDataCount = Int(snapshot.childrenCount)
+            self.recommendTableView.reloadData()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    /*******************************************/
+    // MARK: -  CustomCell Delegate Method     //
+    /*******************************************/
+    
+    func isStarPointButtonClicked() {
+        
+    }
+    
+    func isCommentButtonClicked() {
+        
+    }
+    
+    func isLikeButtonClicked() {
+        
     }
     
     /*******************************************/
@@ -80,11 +116,54 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
         cell.selectionStyle = .none
+        cell.delegate = self
+        
+        var selectedExhibitionData:ExhibitionData?{
+            didSet{
+                guard let realExhibitionData = selectedExhibitionData else {
+                    print("리얼데이터가 없습니다")
+                    return
+                }
+                
+                cell.mainTitleLabel.text = realExhibitionData.title
+                cell.localLabel.text = realExhibitionData.district.rawValue
+                cell.exhibitionTerm.text = "\(realExhibitionData.periodData[0].startDate)~\(realExhibitionData.periodData[0].endDate)"
+                cell.museumName.text = realExhibitionData.placeData[0].address
+                
+                cell.indexPathRow = indexPath.row
+                
+                
+                
+                
+                
+                guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
+                
+                do{
+                    let realData = try Data(contentsOf: url)
+                    cell.mainPosterImg.image = UIImage(data: realData)
+                }catch{
+                    
+                }
+                
+            }
+        }
+        
+        DataCenter.sharedData.requestExhibitionData(id: indexPath.row) { (dic) in
+            selectedExhibitionData = dic
+        }
+        
+        /*
+         cell.localLabel.text = "서울"
+         cell.mainTitleLabel.text = "메인타이틀 텍스트 전시이름이들어갑니다"
+         cell.exhibitionTerm.text = "2017. 07. 08~ 2017. 08. 09"
+         cell.museumName.text = "디뮤지엄"
+         */
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.exhibitionDataCount
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

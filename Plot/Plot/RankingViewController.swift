@@ -32,6 +32,8 @@ class RankingViewController: UIViewController,UICollectionViewDelegate, UICollec
         self.rankingCollectionView.delegate = self
         self.rankingCollectionView.dataSource = self
         self.rankingCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
+
+        
     }
 
     override func didReceiveMemoryWarning() {
