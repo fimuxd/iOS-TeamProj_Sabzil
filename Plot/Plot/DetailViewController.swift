@@ -19,7 +19,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var commentTableView: UITableView!
     var exhibitionID:Int?
-    var userLikesDataIDs:[(key: String, value: [String : Any])] = []
+    var userLikesData:[(key: String, value: [String : Any])] = []
     
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
@@ -59,16 +59,16 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if self.displayLike.image == #imageLiteral(resourceName: "likeBtn_on") {
             self.displayLike.image = #imageLiteral(resourceName: "likeBtn_off")
             
-            if self.userLikesDataIDs.count != 0 {
-                let keyString:String = self.userLikesDataIDs[0].key
+            if self.userLikesData.count != 0 {
+                let keyString:String = self.userLikesData[0].key
                 Database.database().reference().child("Likes").child(keyString).setValue(nil)
-                self.userLikesDataIDs = []
+                self.userLikesData = []
             }
             
         }else{
             self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
             
-            if self.userLikesDataIDs.count == 0 {
+            if self.userLikesData.count == 0 {
                 
                 Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_UserID:Auth.auth().currentUser?.uid,
                                                                                          Constants.likes_ExhibitionID:self.exhibitionID!])
@@ -133,10 +133,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                 }
                 
-                if self.userLikesDataIDs.count != 0 {
-                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+                DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (exhibition) in
+                    selectedExhibition = exhibition
                 }
                 
+                if self.userLikesData.count != 0 {
+                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+                }
                 
             }
         }
@@ -148,8 +151,8 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //좋아요
         Database.database().reference().child("Likes").keepSynced(true)
         
-        DataCenter.sharedData.isLiked(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid, completion: { (datas) in
-            self.userLikesDataIDs = datas
+        DataCenter.sharedData.requestLikeDataFor(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid, completion: { (datas) in
+            self.userLikesData = datas
         })
         
     }
@@ -227,11 +230,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func presentCommentPopup(){
         let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
+        popup.exhibitionID = self.exhibitionID
         present(popup, animated: true, completion: nil)
     }
     
     func presentStarPointPopup(){
         let popup = storyboard?.instantiateViewController(withIdentifier: "StarPointPopup") as! StarPointPopupViewController
+        popup.exhibitionID = self.exhibitionID
         present(popup, animated: true, completion: nil)
     }
     

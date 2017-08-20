@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import Firebase
 
 class Popup: UIViewController, UITextViewDelegate {
+    
+    var exhibitionID:Int?
+    var userCommentData:[(key: String, value: [String : Any])] = []
     
     /*******************************************/
     // MARK: -  Outlet & Property              //
@@ -26,6 +30,17 @@ class Popup: UIViewController, UITextViewDelegate {
     
     @IBAction func clickedSaveBtn(_ sender: UIButton) {
         //각 전시 데이터와 해당 유저데이터에 코멘트 저장
+    
+        if self.commentTextView.text != "" && self.userCommentData.count == 0 {
+            Database.database().reference().child("Comments").childByAutoId().setValue([Constants.comment_Detail:self.commentTextView.text,
+                                                                                        Constants.comment_UserID:Auth.auth().currentUser?.uid,
+                                                                                        Constants.comment_ExhibitionID:self.exhibitionID!])
+        }else if self.commentTextView.text != "" && self.userCommentData.count != 0 {
+            Database.database().reference().child("Comments").child(self.userCommentData[0].key).setValue([Constants.comment_Detail:self.commentTextView.text,
+                                                                                                           Constants.comment_UserID:Auth.auth().currentUser?.uid,
+                                                                                                           Constants.comment_ExhibitionID:self.exhibitionID!])
+        }
+        
         dismissSelf()
     }
     
@@ -37,6 +52,8 @@ class Popup: UIViewController, UITextViewDelegate {
     @IBOutlet weak var commentTextView: UITextView!
     
     @IBOutlet weak var commentView: UIView!
+    
+    
     /*******************************************/
     // MARK: -  LifeCycle                      //
     /*******************************************/
@@ -47,6 +64,12 @@ class Popup: UIViewController, UITextViewDelegate {
         commentPopupConstraint.constant = -300
         UIView.animate(withDuration: 0.3, animations: {self.view.layoutIfNeeded()})
         
+        if self.userCommentData.count != 0 {
+            let commentDetail:String = self.userCommentData[0].value[Constants.comment_Detail] as! String
+            self.commentTextView.text = commentDetail
+        }
+        
+        print("뷰윌어피어 유저데이터 글로벌:\(self.userCommentData)")
     }
     
     override func viewDidLoad() {
@@ -56,12 +79,23 @@ class Popup: UIViewController, UITextViewDelegate {
         
         self.commentTextView.delegate = self
         self.commentTextView.isScrollEnabled = false
+        
+        //코멘트 데이터
+        Database.database().reference().child("Comments").keepSynced(true)
+        
+        DataCenter.sharedData.requestCommentDataFor(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid) { (data) in
+            self.userCommentData = data
+        }
+        
+        print("뷰디드로드 유저데이터 글로벌:\(self.userCommentData)")
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         
         NotificationCenter.default.post(name: NSNotification.Name("dismissPopup"), object: self)
+        
         
     }
     
