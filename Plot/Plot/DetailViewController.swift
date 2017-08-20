@@ -15,12 +15,14 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /*******************************************/
     // MARK: -  Outlet & Property              //
     /*******************************************/
-
+    
     
     @IBOutlet weak var commentTableView: UITableView!
-    var userLikesExhi:[String] = []
+    var exhibitionID:Int?
+    var userLikesDataIDs:[(key: String, value: [String : Any])] = []
+    
     @IBOutlet weak var posterCollectionView: UICollectionView!
-   
+    
     // MARK: - Info
     @IBOutlet weak var posterImg: UIImageView!
     @IBOutlet weak var exhibitionTitle: UILabel!
@@ -53,40 +55,28 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var displayLike: UIImageView!
     
     @IBAction func likeBtnClicked(_ sender: UIButton) {
-        print("버튼이 눌림")
-        
-        var isLike:Bool?{
-            didSet{
-                guard let realBool = isLike else {return}
-                print("여기")
-                if realBool == true {
-                    print("저기")
-                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_off")
-//                    Database.database().reference().child("Likes")
-                    
-                }else{
-                    print("거기")
-                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
-                }
+
+        if self.displayLike.image == #imageLiteral(resourceName: "likeBtn_on") {
+            self.displayLike.image = #imageLiteral(resourceName: "likeBtn_off")
+            
+            if self.userLikesDataIDs.count != 0 {
+                let keyString:String = self.userLikesDataIDs[0].key
+                Database.database().reference().child("Likes").child(keyString).setValue(nil)
+                self.userLikesDataIDs = []
             }
+            
+        }else{
+            self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+            
+            if self.userLikesDataIDs.count == 0 {
+                
+                Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_UserID:Auth.auth().currentUser?.uid,
+                                                                                         Constants.likes_ExhibitionID:self.exhibitionID!])
+            }
+            
         }
-        DataCenter.sharedData.isLiked(exhibitionID: self.exhibitionID, userID: Auth.auth().currentUser?.uid) { (bool) in
-            isLike = bool
-        }
-        
-        /*
-         이거를 눌렀을때, 전시데이터의 like갯수가 올라가고,
-         해당 유저의 좋아요목록에 이 전시id가 들어가고
-         만약 이 전시 id를 검색해서 좋아요가 눌려있다면
-         이미지뷰의 이미지가 tint바뀐다.
-         다시 좋아요를 눌렀을때는, 전시데이터 like갯수가 줄어들고
-         해당 유저의 좋아요 목록에서 이 전시 Id가 사라지며
-         이 전시 id를 검색해 좋아요가 사라져있다면
-         이미지뷰의 이미지가 노말로 바뀐다
-         */
     }
     
-    var exhibitionID:Int?
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -97,10 +87,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewWillAppear(true)
         
         self.navigationController?.isNavigationBarHidden = false
-
-//        if introduceExsHeight.constant > 0 {
-//            contentsViewHeight.constant += introduceExsHeight.constant
-//        }
+        
+        //        if introduceExsHeight.constant > 0 {
+        //            contentsViewHeight.constant += introduceExsHeight.constant
+        //        }
     }
     
     override func viewDidLoad() {
@@ -123,7 +113,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     print("리얼데이터가 없습니다")
                     return
                 }
-
+                
                 self.exhibitionTitle.text = realExhibitionData.title
                 self.exhibitionDate.text = "\(realExhibitionData.periodData[0].startDate) ~ \(realExhibitionData.periodData[0].endDate)"
                 self.exhibitionPlace.text = realExhibitionData.placeData[0].address
@@ -139,18 +129,28 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 do{
                     let realData = try Data(contentsOf: url)
                     self.posterImg.image = UIImage(data: realData)
-                    print("loading Image")
                 }catch{
                     
                 }
                 
+                if self.userLikesDataIDs.count != 0 {
+                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+                }
+                
+                
             }
         }
+        
         DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (exhibition) in
             selectedExhibition = exhibition
         }
         
-        print(Auth.auth().currentUser?.uid)
+        //좋아요
+        Database.database().reference().child("Likes").keepSynced(true)
+        
+        DataCenter.sharedData.isLiked(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid, completion: { (datas) in
+            self.userLikesDataIDs = datas
+        })
         
     }
     
@@ -202,7 +202,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 do{
                     let realData = try Data(contentsOf: url)
                     cell.posterImage.image = UIImage(data: realData)
-                    print("loading Image")
+                    
                 }catch{
                     
                 }
@@ -239,8 +239,5 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         print("코멘트테이블뷰리로드")
         self.commentTableView.reloadData()
     }
-    
-//    var reloadComment = {()->Void in
-//        self.reloadComment()
-//    }
+
 }

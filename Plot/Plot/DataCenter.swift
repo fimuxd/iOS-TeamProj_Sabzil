@@ -328,30 +328,25 @@ class DataCenter {
     }
     
     //--특정 전시의 좋아요 데이터
-    func isLiked(exhibitionID:Int?, userID:String?, completion:@escaping (_ info:Bool) -> Void) {
-        
-        Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
-            print("좋아요 스냅샷:\(snapshot)")
-            guard let json = snapshot.value as? [[String:Any]],
-                let realExhibitionID:Int = exhibitionID,
-                let realUserID:String = userID else {return}
-            
-            print("좋아요 제이슨:\(json)")
-            
-            let filterLike = json.filter({ (dic) -> Bool in
-                let inputExhibitionID = dic[Constants.likes_ExhibitionID] as! Int
-                let inputUserID = dic[Constants.likes_UserID] as! String
-                return inputExhibitionID == realExhibitionID && inputUserID == realUserID
+    func isLiked(exhibitionID:Int?, userID:String?, completion:@escaping (_ info:[(key: String, value: [String : Any])]) -> Void) {
+           
+            Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_ExhibitionID).queryEqual(toValue: exhibitionID!).observe(.value, with: { (snapshot) in
                 
-            })
-            
-            print("좋아요필터: \(filterLike)")
-            if filterLike.count == 0 {
-                completion(false)
-            }else{
-                completion(true)
+                guard let filteredJSON = snapshot.value as? [String:[String:Any]] else {return}
+                
+                var filteredDic = filteredJSON.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                    let userIDValue:String = dic.value[Constants.likes_UserID] as! String
+                    return userIDValue == userID!
+                })
+
+                completion(filteredDic)
+                
             }
-        }) { (error) in
+            
+            
+            
+            
+            ){ (error) in
             print(error.localizedDescription)
         }
     }
