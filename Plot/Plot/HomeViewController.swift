@@ -20,10 +20,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let exhibitionDatasRef = Database.database().reference().child("ExhibitionData")
     var exhibitionDataCount:Int = 0
     
-    let likeDataRef = Database.database().reference().child("Likes")
-    var likeDataCount:Int = 0
-    var favoriteExhibitionIDs:[Int] = []
-    
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -61,6 +57,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }) { (error) in
             print(error.localizedDescription)
         }
+        
+        //좋아요
         
     }
     
@@ -111,12 +109,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 cell.indexPathRow = indexPath.row
                 
                 
-                if self.favoriteExhibitionIDs.contains(indexPath.row) {
-                    cell.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
-                }else{
-                    cell.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
-                }
-                
                 
                 guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
                 
@@ -133,13 +125,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         DataCenter.sharedData.requestExhibitionData(id: indexPath.row) { (dic) in
             selectedExhibitionData = dic
         }
-        
-        /*
-         cell.localLabel.text = "서울"
-         cell.mainTitleLabel.text = "메인타이틀 텍스트 전시이름이들어갑니다"
-         cell.exhibitionTerm.text = "2017. 07. 08~ 2017. 08. 09"
-         cell.museumName.text = "디뮤지엄"
-         */
+
         
         return cell
     }
@@ -190,8 +176,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         present(popup, animated: true, completion: nil)
         
     }
-    
-    
     
     
 }

@@ -41,20 +41,17 @@ struct UserData {
 
 
 struct StarPoint {
-    let id:Int                              //기본적으로 부여되는 ID 값
     let exhibitionID:Int                    //별점을 받은 전시ID
     let userID:String                       //별점을 준 유저ID
     let point:Point                         //별점
     
     var dictionary:[String:Any] {
-        return [Constants.starPoint_ID:self.id,
-                Constants.starPoint_ExhibitionID:self.exhibitionID,
+        return [Constants.starPoint_ExhibitionID:self.exhibitionID,
                 Constants.starPoint_UserID:self.userID,
                 Constants.starPoint_Point:self.point]
     }
     
     init(data:[String:Any]) {
-        self.id = data[Constants.starPoint_ID] as! Int
         self.exhibitionID = data[Constants.starPoint_ExhibitionID] as! Int
         self.userID = data[Constants.starPoint_UserID] as! String
         self.point = Point.init(rawValue: data[Constants.starPoint_Point] as! Double)!
@@ -62,20 +59,17 @@ struct StarPoint {
 }
 
 struct Comment {
-    let id:Int                              //기본적으로 부여되는 ID 값
     let exhibitionID:Int                    //어떤 전시에 대한 후기인지 전시의 ID 값 저장
     let userID:String                       //어떤 유저가 남긴 후기인지 유저의 ID 값 저장
     let detail:String                       //후기
     
     var dictionary:[String:Any] {
-        return [Constants.comment_ID:self.id,
-                Constants.comment_ExhibitionID:self.exhibitionID,
+        return [Constants.comment_ExhibitionID:self.exhibitionID,
                 Constants.comment_UserID:self.userID,
                 Constants.comment_Detail:self.detail]
     }
     
     init(data:[String:Any]) {
-        self.id = data[Constants.comment_ID] as! Int
         self.exhibitionID = data[Constants.comment_ExhibitionID] as! Int
         self.userID = data[Constants.comment_UserID] as! String
         self.detail = data[Constants.comment_Detail] as! String
