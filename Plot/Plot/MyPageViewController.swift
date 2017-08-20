@@ -46,6 +46,8 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var commentCountLabel: UILabel!
     
     var userID:String?
+    var userLikeCount:Int = 0
+    var userLikeDataList:[String:[String:Any]] = [:]
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -100,12 +102,36 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         guard let realCurrnetUser = Auth.auth().currentUser else {return}
-        print("리얼커런트 유저:\(realCurrnetUser)")
         let currentUserID:String = realCurrnetUser.uid
-        print("커런트유저:\(currentUserID)")
         DataCenter.sharedData.requestUserData(id: currentUserID) { (data) in
-            print("data:\(data)")
             userData = data
+        }
+        
+        
+        //좋아요한 전시아이디 어레이 출력
+        var userLikeList:[String : [String : Any]]? {
+            didSet{
+                self.likeCountLabel.text = "\(userLikeList!.count)"
+            }
+        }
+        DataCenter.sharedData.requestFavoriteExhibitionIDsOfUser(id: Auth.auth().currentUser?.uid) { (int) in
+            userLikeList = int
+            self.userLikeCount = (userLikeList?.count)!
+            self.userLikeDataList = int
+            
+            self.posterCollectionView.reloadData()
+        }
+        
+        
+        //코멘트 갯수
+        var userCommentList:[String : [String : Any]]? {
+            didSet{
+                self.commentCountLabel.text = "\(userCommentList!.count)"
+            }
+        }
+        
+        DataCenter.sharedData.requestCommentedExhibitionIDsOfUser(id: Auth.auth().currentUser?.uid) { (int) in
+            userCommentList = int
         }
         
     }
@@ -133,7 +159,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if collectionView == posterCollectionView {
-            return 10
+            return self.userLikeCount
         } else {
             return liketag.count
         }
@@ -153,6 +179,34 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         
         if collectionView == posterCollectionView {
             let cell:RankingCustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCustomCell", for: indexPath) as! RankingCustomCell
+            
+            let mappedID = self.userLikeDataList.map({ (dic:(key: String, value: [String : Any])) -> Int in
+                let exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
+                return exhibitionID
+            })
+            
+            var exhibitionData:ExhibitionData? {
+                didSet{
+                    
+                    guard let realExhibitionData = exhibitionData else {
+                        print("리얼데이터가 없습니다")
+                        return
+                    }
+                    guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
+                    
+                    do{
+                        let realData = try Data(contentsOf: url)
+                        cell.posterImage.image = UIImage(data: realData)
+                    }catch{
+                        
+                    }
+                }
+            }
+            
+            DataCenter.sharedData.requestExhibitionData(id: mappedID[indexPath.item], completion: { (data) in
+                exhibitionData = data
+            })
+            
             cell.rankImage.isHidden = true
             return cell
             
@@ -204,7 +258,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     /*******************************************/
     // MARK: -  Func                           //
     /*******************************************/
-   
+    
     func presentLoginVC(){
         if Auth.auth().currentUser == nil {
             let loginVC:LoginViewController = storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController

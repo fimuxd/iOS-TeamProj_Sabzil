@@ -40,7 +40,7 @@ class DataCenter {
     
     
     //특정 전시데이터 파싱하는 함수
-
+    
     func requestExhibitionData(id:Int?, completion:@escaping (_ info:ExhibitionData) -> Void) {
         Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -183,45 +183,32 @@ class DataCenter {
     
     
     //좋아요 파싱함수
-//    func requestLike(id:Int?, completion:@escaping (_ info:Like) -> Void) {
-//        Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
-//            
-//            guard let json = snapshot.value as? [[String:Any]],
-//                let realIntID:Int = id else {return}
-//            
-//            let selectedLikeData:[String:Any] = json[realIntID]
-//            
-//            completion(Like.init(data: selectedLikeData))
-//            
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
-//    }
+    //    func requestLike(id:Int?, completion:@escaping (_ info:Like) -> Void) {
+    //        Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
+    //
+    //            guard let json = snapshot.value as? [[String:Any]],
+    //                let realIntID:Int = id else {return}
+    //
+    //            let selectedLikeData:[String:Any] = json[realIntID]
+    //
+    //            completion(Like.init(data: selectedLikeData))
+    //
+    //        }) { (error) in
+    //            print(error.localizedDescription)
+    //        }
+    //    }
     
     
     //--특정 유저가 좋아요한 전시ID Array
-    func requestFavoriteExhibitionIDsOfUser(id:String?, completion:@escaping (_ info:[Int]) -> Void) {
+    func requestFavoriteExhibitionIDsOfUser(id:String?, completion:@escaping (_ info:[String : [String : Any]]) -> Void) {
         
-        //좋아요 데이터를 가져옵니다
-        Database.database().reference().child("Likes").observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let json = snapshot.value as? [[String:Any]],
-                let realIntID:String = id else {return}
+        Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: id!).observe(.value, with: { (snapshot) in
             
-            //가져온 좋아요 데이터 중, 입력한 UserID에 해당하는 좋아요 데이터만 필터합니다
-            let likesDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
-                let userID:String = dic[Constants.likes_UserID] as! String
-                return userID == realIntID
-                
-            })
+            guard let filteredJSON = snapshot.value as? [String:[String:Any]] else {return}
             
-            //필터링한 데이터 중, 전시ID 만 추출하여 어레이로 매핑합니다
-            let favoriteExhibitionIDs = likesDataForSelectedUser.map({ (dic:[String:Any]) -> Int in
-                return dic[Constants.likes_ExhibitionID] as! Int
-            })
+            completion(filteredJSON)
             
-            completion(favoriteExhibitionIDs)
-            
-        }) { (error) in
+        }){ (error) in
             print(error.localizedDescription)
         }
     }
@@ -253,27 +240,18 @@ class DataCenter {
     
     
     //--특정 유저의 코멘트 남긴 전시 ID Array
-    func requestCommentedExhibitionIDsOfUser(id:String?, completion:@escaping (_ info:[Int]) -> Void) {
+    func requestCommentedExhibitionIDsOfUser(id:String?, completion:@escaping (_ info:[String : [String : Any]]) -> Void) {
         
-        Database.database().reference().child("Comments").observe(.value, with: { (snapshot) in
-            guard let json = snapshot.value as? [[String:Any]],
-                let realIntID:String = id else {return}
+        Database.database().reference().child("Comments").queryOrdered(byChild: Constants.comment_UserID).queryEqual(toValue: id!).observe(.value, with: { (snapshot) in
             
-            let commentDataForSelectedUser = json.filter({ (dic:[String:Any]) -> Bool in
-                let userID:String = dic[Constants.comment_UserID] as! String
-                return realIntID == userID
-                
-            })
+            guard let filteredJSON = snapshot.value as? [String:[String:Any]] else {return}
             
-            let commentedExhibitionIDs = commentDataForSelectedUser.map({ (dic:[String:Any]) -> Int in
-                return dic[Constants.comment_ExhibitionID] as! Int
-            })
+            completion(filteredJSON)
             
-            completion(commentedExhibitionIDs)
-            
-        }) { (error) in
+        }){ (error) in
             print(error.localizedDescription)
         }
+
     }
     
     
@@ -328,52 +306,42 @@ class DataCenter {
     }
     
     //--특정 전시의 좋아요 데이터
-    func isLiked(exhibitionID:Int?, userID:String?, completion:@escaping (_ info:[(key: String, value: [String : Any])]) -> Void) {
-           
-            Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_ExhibitionID).queryEqual(toValue: exhibitionID!).observe(.value, with: { (snapshot) in
-                
-                guard let filteredJSON = snapshot.value as? [String:[String:Any]] else {return}
-                
-                var filteredDic = filteredJSON.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
-                    let userIDValue:String = dic.value[Constants.likes_UserID] as! String
-                    return userIDValue == userID!
-                })
-
-                completion(filteredDic)
-                
-            }
+    func requestLikeDataFor(exhibitionID:Int?, userID:String?, completion:@escaping (_ info:[(key: String, value: [String : Any])]) -> Void) {
+        
+        Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_ExhibitionID).queryEqual(toValue: exhibitionID!).observe(.value, with: { (snapshot) in
             
+            guard let filteredJSON = snapshot.value as? [String:[String:Any]] else {return}
             
+            let filteredDic = filteredJSON.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                let userIDValue:String = dic.value[Constants.likes_UserID] as! String
+                return userIDValue == userID!
+            })
             
+            completion(filteredDic)
             
-            ){ (error) in
+        }){ (error) in
             print(error.localizedDescription)
         }
     }
     
-    //--특정 전시의 코멘트 확인
-    func requestCommentDetailOfExhibition(id:Int?, completion:@escaping (_ info:[String]) -> Void) {
+    //--특정 전시의 코멘트 데이터
+    func requestCommentDataFor(exhibitionID:Int?, userID:String?, completion:@escaping (_ info:[(key: String, value: [String : Any])]) -> Void) {
         
-        Database.database().reference().child("Comments").observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let json = snapshot.value as? [[String:Any]],
-                let realIntID:Int = id else {return}
+        Database.database().reference().child("Comments").queryOrdered(byChild: Constants.comment_ExhibitionID).queryEqual(toValue: exhibitionID!).observe(.value, with: { (snapshot) in
             
-            let commentDataForSelectedExhibition = json.filter({ (dic:[String:Any]) -> Bool in
-                let userID:Int = dic[Constants.comment_ExhibitionID] as! Int
-                return realIntID == userID
+            guard let filteredJSON = snapshot.value as? [String:[String:Any]] else {return}
+            
+            print("코멘트데이터함수 필터 제이슨:\(filteredJSON)")
+            let filteredDic = filteredJSON.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                let userIDValue:String = dic.value[Constants.comment_UserID] as! String
+                return userIDValue == userID!
             })
             
-            let commentDetails = commentDataForSelectedExhibition.map({ (dic:[String:Any]) -> String in
-                return dic[Constants.comment_Detail] as! String
-                
-            })
-            
-            completion(commentDetails)
-            
+            print("코멘트데이터 함수 필터 코멘트:\(filteredDic)")
+            completion(filteredDic)
         }) { (error) in
             print(error.localizedDescription)
         }
+
     }
-    
-    
 }

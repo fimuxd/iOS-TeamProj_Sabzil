@@ -36,17 +36,14 @@ struct Constants {
     static let exhibition_WorkingHours:String = "exhibition_WorkingHours"           //관람시간
     
     // - C. 하위 dictionary 부분
-    static let starPoint_ID:String = "starPoint_ID"                     //기본적으로 부여되는 ID 값
     static let starPoint_ExhibitionID:String = "starPoint_ExhibitionID" //별점을 받은 전시ID
     static let starPoint_UserID:String = "starPoint_UserID"             //별점을 준 유저ID
     static let starPoint_Point:String = "starPoint_Point"               //별점
     
-    static let comment_ID:String = "comment_ID"                         //기본적으로 부여되는 ID 값
     static let comment_ExhibitionID:String = "comment_ExhibitionID"     //어떤 전시에 대한 후기인지 전시의 ID 값 저장
     static let comment_UserID:String = "comment_UserID"                 //어떤 유저가 남긴 후기인지 유저의 ID 값 저장
     static let comment_Detail:String = "comment_Detail"                 //후기
     
-    static let likes_ID:String = "likes_ID"                             //기본적으로 부여되는 ID 값
     static let likes_ExhibitionID:String = "likes_ExhibitionID"         //좋아요 받은 전시 ID
     static let likes_UserID:String = "likes_UserID"                     //좋아요 남긴 유저 ID
     
