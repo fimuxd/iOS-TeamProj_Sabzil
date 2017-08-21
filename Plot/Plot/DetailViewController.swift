@@ -110,6 +110,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.posterCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         loadData(RowOfIndexPath: self.exhibitionID!)
 =======
         var selectedExhibition:ExhibitionData?{
@@ -154,6 +155,10 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
 >>>>>>> 20a06c68688c748649008a41d07c1ee5e23f2831
+=======
+
+        loadData(RowOfIndexPath: self.exhibitionID!)
+>>>>>>> 4ea431e9983a0b582b0bf21eb0b344cec7e71d4d
         
         /*
          var selectedExhibition:ExhibitionData?{
