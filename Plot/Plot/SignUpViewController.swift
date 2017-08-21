@@ -111,6 +111,7 @@ class SignUpViewController: UIViewController, UIScrollViewDelegate, UITextFieldD
         Auth.auth().createUser(withEmail: self.idTF.text!, password: self.passwordTF.text!) { (user, error) in
             if let error = error {
                 print("error://",error)
+                
                 return
             }
             

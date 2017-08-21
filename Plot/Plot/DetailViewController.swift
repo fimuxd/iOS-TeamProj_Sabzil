@@ -109,7 +109,51 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.posterCollectionView.dataSource = self
         self.posterCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
         
+<<<<<<< HEAD
         loadData(RowOfIndexPath: self.exhibitionID!)
+=======
+        var selectedExhibition:ExhibitionData?{
+            didSet{
+                guard let realExhibitionData = selectedExhibition else {
+                    print("리얼데이터가 없습니다")
+                    return
+                }
+                
+                self.exhibitionTitle.text = realExhibitionData.title
+                self.exhibitionDate.text = "\(realExhibitionData.periodData[0].startDate) ~ \(realExhibitionData.periodData[0].endDate)"
+                self.exhibitionPlace.text = realExhibitionData.placeData[0].address
+                self.exhibitionTime.text = "\(realExhibitionData.workingHourData[0].startTime) ~ \(realExhibitionData.workingHourData[0].endTime)"
+                self.exhibitionPrice.text = "\(realExhibitionData.admission)원"
+                self.exhibitionAgent.text = realExhibitionData.artist
+                self.exhibitionHomepage.setTitle(realExhibitionData.placeData[0].websiteURL, for: .normal)
+                self.exhibitionGenre.text = realExhibitionData.genre.rawValue
+                self.exhibitionAge.text = "전체관람가"
+                self.exhibitionIntroduce.text = realExhibitionData.detail
+                guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
+                
+                do{
+                    let realData = try Data(contentsOf: url)
+                    self.posterImg.image = UIImage(data: realData)
+                }catch{
+                    
+                }
+                
+
+                DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (exhibition) in
+                    selectedExhibition = exhibition
+
+                }
+                
+                if self.userLikesData.count != 0 {
+                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+                    
+                }
+                
+                self.detailImgCount = realExhibitionData.imgURL[0].detailImages.count
+                self.posterCollectionView.reloadData()
+            }
+        }
+>>>>>>> 20a06c68688c748649008a41d07c1ee5e23f2831
         
         /*
          var selectedExhibition:ExhibitionData?{
