@@ -36,6 +36,11 @@ class RankingViewController: UIViewController,UICollectionViewDelegate, UICollec
         
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        
+        print("랭킹여기")
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
