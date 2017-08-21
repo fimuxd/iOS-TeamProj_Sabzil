@@ -109,6 +109,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.posterCollectionView.dataSource = self
         self.posterCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
         
+
         loadData(RowOfIndexPath: self.exhibitionID!)
         
         /*

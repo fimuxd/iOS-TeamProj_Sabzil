@@ -155,6 +155,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             Auth.auth().signIn(withEmail: self.idTF.text!, password: self.passwordTF.text!) { (user, error) in
                 if let error = error {
                     print("error://", error)
+                    self.callAlert()
                     return
                 }
                 UserDefaults.standard.set(true, forKey: "loginFlag")
