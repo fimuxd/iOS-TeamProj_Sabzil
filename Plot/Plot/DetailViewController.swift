@@ -135,6 +135,12 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                 }
                 
+
+                DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (exhibition) in
+                    selectedExhibition = exhibition
+
+                }
+                
                 if self.userLikesData.count != 0 {
                     self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
                     
