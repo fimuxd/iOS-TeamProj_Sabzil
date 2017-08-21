@@ -19,7 +19,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var commentTableView: UITableView!
     var exhibitionID:Int?
+//    var selectedExhibition:ExhibitionData = ExhibitionData(data: [:])
     var userLikesData:[(key: String, value: [String : Any])] = []
+    var detailImgCount:Int = 1
     
     @IBOutlet weak var posterCollectionView: UICollectionView!
     
@@ -133,6 +135,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     
                 }
                 
+
                 DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (exhibition) in
                     selectedExhibition = exhibition
 
@@ -140,13 +143,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 if self.userLikesData.count != 0 {
                     self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
-
+                    
                 }
                 
-                if self.userLikesData.count != 0 {
-                    self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
-                }
-                
+                self.detailImgCount = realExhibitionData.imgURL[0].detailImages.count
+                self.posterCollectionView.reloadData()
             }
         }
         
@@ -160,13 +161,13 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         DataCenter.sharedData.requestLikeDataFor(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid, completion: { (datas) in
             self.userLikesData = datas
         })
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     /*******************************************/
     // MARK: -  Table View                     //
@@ -195,18 +196,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return self.detailImgCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell:RankingCustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCustomCell", for: indexPath) as! RankingCustomCell
-        cell.rankImage.isHidden = true
         
-        var detailImg:[String]?{
+        var exhibitionData:ExhibitionData? {
             didSet{
-                guard let realImgs = detailImg else {return}
+                guard let realExhibitionData = exhibitionData else {return}
                 
-                guard let url = URL(string: realImgs[indexPath.item]) else {return}
+                guard let url = URL(string: realExhibitionData.imgURL[0].detailImages[indexPath.item]) else {return}
                 
                 do{
                     let realData = try Data(contentsOf: url)
@@ -218,15 +218,11 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
         
-        var exhibitionData:ExhibitionData? {
-            didSet{
-                guard let realExhibitionData = exhibitionData else {return}
-                detailImg = realExhibitionData.imgURL[0].detailImages
-            }
-        }
-        DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (data) in
+        DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID!) { (data) in
             exhibitionData = data
         }
+        
+        cell.rankImage.isHidden = true
         return cell
     }
     

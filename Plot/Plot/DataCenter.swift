@@ -213,7 +213,6 @@ class DataCenter {
         }
     }
     
-    
     //--특정 유저가 별점 남긴 전시ID Array
     func requestStarPointedExhibitionIDsOfUser(id:String?, completion:@escaping (_ info:[Int]) -> Void) {
         
@@ -308,7 +307,7 @@ class DataCenter {
     //--특정 전시의 좋아요 데이터
     func requestLikeDataFor(exhibitionID:Int?, userID:String?, completion:@escaping (_ info:[(key: String, value: [String : Any])]) -> Void) {
         
-        Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_ExhibitionID).queryEqual(toValue: exhibitionID!).observe(.value, with: { (snapshot) in
+        Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_ExhibitionID).queryEqual(toValue: exhibitionID!).observeSingleEvent(of: .value, with: { (snapshot) in
             
             guard let filteredJSON = snapshot.value as? [String:[String:Any]] else {return}
             
@@ -344,4 +343,8 @@ class DataCenter {
         }
 
     }
+    
+    //--특정 장르별 Array
+    
+    
 }

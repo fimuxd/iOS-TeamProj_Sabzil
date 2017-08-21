@@ -20,7 +20,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let exhibitionDatasRef = Database.database().reference().child("ExhibitionData")
     var exhibitionDataCount:Int = 0
     
-    
     /*******************************************/
     // MARK: -  Life Cycle                     //
     /*******************************************/
@@ -59,6 +58,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         //좋아요
+        Database.database().reference().child("Likes").keepSynced(true)
         
     }
     
@@ -94,6 +94,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.delegate = self
         
+        cell.loadData(RowOfIndexPath: indexPath.row)
+        /*
         var selectedExhibitionData:ExhibitionData?{
             didSet{
                 guard let realExhibitionData = selectedExhibitionData else {
@@ -108,8 +110,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
                 cell.indexPathRow = indexPath.row
                 
-                
-                
                 guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
                 
                 do{
@@ -119,13 +119,38 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
                     
                 }
                 
+                print("여기?")
             }
         }
-        
+
         DataCenter.sharedData.requestExhibitionData(id: indexPath.row) { (dic) in
             selectedExhibitionData = dic
         }
-
+        
+        
+        var userLikesData:[(key: String, value: [String : Any])]? {
+            didSet{
+                guard let realLikeData = userLikesData else {return}
+                
+                if realLikeData.count != 0 {
+                    let exhibitionID:Int = realLikeData[0].value[Constants.likes_ExhibitionID] as! Int
+                    if exhibitionID == indexPath.row {
+                        cell.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
+                    }
+                }else{
+                    cell.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
+                }
+                
+                self.mainTableView.reloadData()
+                print("저기")
+            }
+        }
+        
+        DataCenter.sharedData.requestLikeDataFor(exhibitionID: indexPath.row, userID: Auth.auth().currentUser?.uid, completion: { (datas) in
+            userLikesData = datas
+        })
+        */
+        
         
         return cell
     }

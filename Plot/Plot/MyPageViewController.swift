@@ -29,8 +29,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     
     @IBOutlet weak var tagCollectionView: UICollectionView!
-    var likeExhi:[String] = []
-    var likeGenre:[String] = ["으어어어어어", "이거머야", "무서어"]
+    
     
     var sizingCell: TagCustomCell?
     
@@ -48,6 +47,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     var userID:String?
     var userLikeCount:Int = 0
     var userLikeDataList:[String:[String:Any]] = [:]
+    var likeGenre:[String] = ["전시","설치"]
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -84,7 +84,6 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         //보영
         var userData:UserData?{
             didSet{
-                print("유저데이타 디드셋")
                 guard let realUserData = userData else {return}
                 self.userNameLabel.text = realUserData.name
                 self.emailLabel.text = realUserData.email
@@ -108,18 +107,20 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         }
         
         
-        //좋아요한 전시아이디 어레이 출력
+        //좋아요한 전시 어레이 출력
         var userLikeList:[String : [String : Any]]? {
             didSet{
                 self.likeCountLabel.text = "\(userLikeList!.count)"
             }
         }
+        
         DataCenter.sharedData.requestFavoriteExhibitionIDsOfUser(id: Auth.auth().currentUser?.uid) { (int) in
             userLikeList = int
             self.userLikeCount = (userLikeList?.count)!
             self.userLikeDataList = int
             
             self.posterCollectionView.reloadData()
+        
         }
         
         
@@ -133,6 +134,10 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         DataCenter.sharedData.requestCommentedExhibitionIDsOfUser(id: Auth.auth().currentUser?.uid) { (int) in
             userCommentList = int
         }
+        
+        //좋아요한 장르 어레이
+        
+        
         
     }
     
@@ -161,7 +166,7 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
         if collectionView == posterCollectionView {
             return self.userLikeCount
         } else {
-            return liketag.count
+            return self.likeGenre.count
         }
     }
     
@@ -176,15 +181,14 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let mappedID = self.userLikeDataList.map({ (dic:(key: String, value: [String : Any])) -> Int in
+            let exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
+            return exhibitionID
+        })
         
         if collectionView == posterCollectionView {
             let cell:RankingCustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCustomCell", for: indexPath) as! RankingCustomCell
-            
-            let mappedID = self.userLikeDataList.map({ (dic:(key: String, value: [String : Any])) -> Int in
-                let exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
-                return exhibitionID
-            })
-            
+
             var exhibitionData:ExhibitionData? {
                 didSet{
                     
@@ -212,6 +216,9 @@ class MyPageViewController: UIViewController, UICollectionViewDelegate, UICollec
             
         } else {
             let cell:TagCustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCustomCell", for: indexPath) as! TagCustomCell
+            
+            print("인덱스패스로우:\(indexPath.row)")
+            print("여기는 태그셀")
             self.configureCell(cell, forIndexPath: indexPath)
             return cell
         }
