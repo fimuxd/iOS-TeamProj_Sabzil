@@ -131,11 +131,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
                 cell.museumName.text = realExhibitionData.placeData[0].address
                 
                 cell.indexPathRow = indexPath.row
-                
-                
-                
-                
-                
+
                 guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
                 
                 do{
@@ -152,13 +148,6 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
             selectedExhibitionData = dic
         }
         
-        /*
-         cell.localLabel.text = "서울"
-         cell.mainTitleLabel.text = "메인타이틀 텍스트 전시이름이들어갑니다"
-         cell.exhibitionTerm.text = "2017. 07. 08~ 2017. 08. 09"
-         cell.museumName.text = "디뮤지엄"
-         */
-        
         return cell
     }
     
@@ -172,6 +161,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController:DetailViewController = storyboard?.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
+        detailViewController.exhibitionID = indexPath.row
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     
@@ -207,6 +197,25 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
         
         if indexPath.section == 0 {
             localtags[indexPath.row].selected = !localtags[indexPath.row].selected
+            
+            if localtags[indexPath.row].selected && localTag[indexPath.row] == Genre.Carving {
+                Database.database().reference().child("ExhibitionData").queryOrdered(byChild: Constants.exhibition_Genre).queryEqual(toValue: Genre.Carving.rawValue).observe(.value, with: { (snapshot) in
+                    guard let json = snapshot.value as? [String:[String:Any]] else {
+                        return
+                    }
+                    
+                    print("선택된아이들:\(json)")
+                }, withCancel: { (error) in
+                    print(error.localizedDescription)
+                })
+                
+                
+            }
+            
+          
+            
+            
+            
         } else {
             genretags[indexPath.row].selected = !genretags[indexPath.row].selected
         }
