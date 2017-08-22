@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftyJSON
 
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, customCellDelegate {
     
@@ -26,9 +27,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.mainTableView.register(UINib.init(nibName: "MainCustomCell", bundle: nil), forCellReuseIdentifier: "mainCustomCell")
         
+        awakeFromNib()
     }
     
     override func viewDidLoad() {
@@ -36,7 +37,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         presentLoginVC()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadmainTabelview), name: NSNotification.Name("dismissPopup"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadmainTabelview), name: NSNotification.Name("dismissPopup"), object: nil) //디스미스팝업 되면 여기 있는 리로드테이블뷰 함수를 뷰디드로드할 때 실행시켜
         
         //--보영: 전시 데이터 가져오고 실시간 반영하기
         exhibitionDatasRef.keepSynced(true)
@@ -56,9 +57,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }) { (error) in
             print(error.localizedDescription)
         }
-        
-        //좋아요
-        Database.database().reference().child("Likes").keepSynced(true)
         
     }
     
@@ -82,6 +80,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.mainTableView.reloadData()
     }
     
+    func reloadMainTableView() {
+        self.mainTableView.reloadData()
+    }
     
     
     /*******************************************/
@@ -89,75 +90,19 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     /*******************************************/
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
-        
+        cell.selectionStyle = .none
         cell.delegate = self
         
-        cell.loadData(RowOfIndexPath: indexPath.row)
-        /*
-        var selectedExhibitionData:ExhibitionData?{
-            didSet{
-                guard let realExhibitionData = selectedExhibitionData else {
-                    print("리얼데이터가 없습니다")
-                    return
-                }
-                
-                cell.mainTitleLabel.text = realExhibitionData.title
-                cell.localLabel.text = realExhibitionData.district.rawValue
-                cell.exhibitionTerm.text = "\(realExhibitionData.periodData[0].startDate)~\(realExhibitionData.periodData[0].endDate)"
-                cell.museumName.text = realExhibitionData.placeData[0].address
-                
-                cell.indexPathRow = indexPath.row
-                
-                guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
-                
-                do{
-                    let realData = try Data(contentsOf: url)
-                    cell.mainPosterImg.image = UIImage(data: realData)
-                }catch{
-                    
-                }
-                
-                print("여기?")
-            }
-        }
-
-        DataCenter.sharedData.requestExhibitionData(id: indexPath.row) { (dic) in
-            selectedExhibitionData = dic
-        }
-        
-        
-        var userLikesData:[(key: String, value: [String : Any])]? {
-            didSet{
-                guard let realLikeData = userLikesData else {return}
-                
-                if realLikeData.count != 0 {
-                    let exhibitionID:Int = realLikeData[0].value[Constants.likes_ExhibitionID] as! Int
-                    if exhibitionID == indexPath.row {
-                        cell.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
-                    }
-                }else{
-                    cell.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
-                }
-                
-                self.mainTableView.reloadData()
-                print("저기")
-            }
-        }
-        
-        DataCenter.sharedData.requestLikeDataFor(exhibitionID: indexPath.row, userID: Auth.auth().currentUser?.uid, completion: { (datas) in
-            userLikesData = datas
-        })
-        */
-        
+        cell.loadLikeData(rowOfIndexPath: indexPath.row)
+        cell.loadExbibitionData(rowOfIndexPath: indexPath.row)
+        cell.indexPathRow = indexPath.row
         
         return cell
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.exhibitionDataCount
     }
     
@@ -186,7 +131,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func reloadmainTabelview(){
-        print("메인테이블뷰 리로드")
         self.mainTableView.reloadData()
     }
     
@@ -201,6 +145,4 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         present(popup, animated: true, completion: nil)
         
     }
-    
-    
 }
