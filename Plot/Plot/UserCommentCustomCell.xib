@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="117.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 1" translatesAutoresizingMaskIntoConstraints="NO" id="PpO-UF-h2b">
@@ -55,7 +54,7 @@
                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트내용" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JX3-sn-UCO">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="코멘트내용" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JX3-sn-UCO">
                         <rect key="frame" x="75" y="29" width="229" height="72.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" red="0.44602633250000001" green="0.44602633250000001" blue="0.44602633250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -103,6 +102,11 @@
                     <constraint firstItem="bGr-be-ei8" firstAttribute="leading" secondItem="rI6-MO-o8d" secondAttribute="trailing" constant="1" id="yqt-Wb-fPm"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="commentDetailLabel" destination="JX3-sn-UCO" id="4gN-Lt-ewc"/>
+                <outlet property="userNickNameLabel" destination="jmZ-A9-iw2" id="upU-fS-m1O"/>
+                <outlet property="userProfileImageView" destination="PpO-UF-h2b" id="98h-4N-76W"/>
+            </connections>
             <point key="canvasLocation" x="21" y="33"/>
         </tableViewCell>
     </objects>
