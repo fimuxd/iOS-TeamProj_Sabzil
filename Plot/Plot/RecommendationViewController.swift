@@ -109,6 +109,11 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
         
     }
     
+    func reloadMainTableView() {
+        self.tagCollectionView.reloadData()
+        self.recommendTableView.reloadData()
+    }
+    
     /*******************************************/
     // MARK: -  Table View                     //
     /*******************************************/
@@ -118,35 +123,9 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
         cell.selectionStyle = .none
         cell.delegate = self
         
-        var selectedExhibitionData:ExhibitionData?{
-            didSet{
-                guard let realExhibitionData = selectedExhibitionData else {
-                    print("리얼데이터가 없습니다")
-                    return
-                }
-                
-                cell.mainTitleLabel.text = realExhibitionData.title
-                cell.localLabel.text = realExhibitionData.district.rawValue
-                cell.exhibitionTerm.text = "\(realExhibitionData.periodData[0].startDate)~\(realExhibitionData.periodData[0].endDate)"
-                cell.museumName.text = realExhibitionData.placeData[0].address
-                
-                cell.indexPathRow = indexPath.row
-
-                guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
-                
-                do{
-                    let realData = try Data(contentsOf: url)
-                    cell.mainPosterImg.image = UIImage(data: realData)
-                }catch{
-                    
-                }
-                
-            }
-        }
-        
-        DataCenter.sharedData.requestExhibitionData(id: indexPath.row) { (dic) in
-            selectedExhibitionData = dic
-        }
+        cell.loadLikeData(rowOfIndexPath: indexPath.row)
+        cell.loadExbibitionData(rowOfIndexPath: indexPath.row)
+        cell.indexPathRow = indexPath.row
         
         return cell
     }
@@ -161,7 +140,9 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailViewController:DetailViewController = storyboard?.instantiateViewController(withIdentifier: "detailViewController") as! DetailViewController
+        
         detailViewController.exhibitionID = indexPath.row
+        
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
     

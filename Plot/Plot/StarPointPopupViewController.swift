@@ -76,9 +76,9 @@ class StarPointPopupViewController: UIViewController {
         
         NotificationCenter.default.post(name: NSNotification.Name("dismissStarPopup"), object: self)
         
-        Database.database().reference().child("StarPoints").childByAutoId().setValue([Constants.starPoint_UserID:Auth.auth().currentUser?.uid,
-                                                                                      Constants.starPoint_ExhibitionID:self.exhibitionID!,
-                                                                                      Constants.starPoint_Point:Point.Zero.rawValue])
+//        Database.database().reference().child("StarPoints").childByAutoId().setValue([Constants.starPoint_UserID:Auth.auth().currentUser?.uid,
+//                                                                                      Constants.starPoint_ExhibitionID:self.exhibitionID!,
+//                                                                                      Constants.starPoint_Point:Point.Zero.rawValue])
         
     }
     
