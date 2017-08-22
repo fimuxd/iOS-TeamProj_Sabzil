@@ -43,6 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
             
         }
         FBSDKLoginManager().logOut();
+        self.presentTabbarController()
         
     }
     

@@ -19,8 +19,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var commentTableView: UITableView!
     var exhibitionID:Int?
-    //    var selectedExhibition:ExhibitionData = ExhibitionData(data: [:])
-    var userLikesData:[(key: String, value: [String : Any])] = []
     var detailImgArray:[String] = []
     
     @IBOutlet weak var posterCollectionView: UICollectionView!
@@ -57,26 +55,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var displayLike: UIImageView!
     
     @IBAction func likeBtnClicked(_ sender: UIButton) {
-        
-        if self.displayLike.image == #imageLiteral(resourceName: "likeBtn_on") {
-            self.displayLike.image = #imageLiteral(resourceName: "likeBtn_off")
-            
-            if self.userLikesData.count != 0 {
-                let keyString:String = self.userLikesData[0].key
-                Database.database().reference().child("Likes").child(keyString).setValue(nil)
-                self.userLikesData = []
-            }
-            
-        }else{
-            self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
-            
-            if self.userLikesData.count == 0 {
-                
-                Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_UserID:Auth.auth().currentUser?.uid,
-                                                                                         Constants.likes_ExhibitionID:self.exhibitionID!])
-            }
-            
-        }
+        self.likeButtonAction()
     }
     
     
@@ -87,12 +66,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         self.navigationController?.isNavigationBarHidden = false
-        
-        //        if introduceExsHeight.constant > 0 {
-        //            contentsViewHeight.constant += introduceExsHeight.constant
-        //        }
     }
     
     override func viewDidLoad() {
@@ -109,62 +83,23 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.posterCollectionView.dataSource = self
         self.posterCollectionView.register(UINib(nibName: "RankingCustomCell", bundle: nil), forCellWithReuseIdentifier: "RankingCustomCell")
         
-
-        loadData(RowOfIndexPath: self.exhibitionID!)
+        guard let realExhibitionID:Int = self.exhibitionID else {
+            return print("전시데이터가 없습니다")
+        }
         
-        /*
-         var selectedExhibition:ExhibitionData?{
-         didSet{
-         guard let realExhibitionData = selectedExhibition else {
-         print("리얼데이터가 없습니다")
-         return
-         }
-         
-         self.exhibitionTitle.text = realExhibitionData.title
-         self.exhibitionDate.text = "\(realExhibitionData.periodData[0].startDate) ~ \(realExhibitionData.periodData[0].endDate)"
-         self.exhibitionPlace.text = realExhibitionData.placeData[0].address
-         self.exhibitionTime.text = "\(realExhibitionData.workingHourData[0].startTime) ~ \(realExhibitionData.workingHourData[0].endTime)"
-         self.exhibitionPrice.text = "\(realExhibitionData.admission)원"
-         self.exhibitionAgent.text = realExhibitionData.artist
-         self.exhibitionHomepage.setTitle(realExhibitionData.placeData[0].websiteURL, for: .normal)
-         self.exhibitionGenre.text = realExhibitionData.genre.rawValue
-         self.exhibitionAge.text = "전체관람가"
-         self.exhibitionIntroduce.text = realExhibitionData.detail
-         guard let url = URL(string: realExhibitionData.imgURL[0].posterURL) else {return}
-         
-         do{
-         let realData = try Data(contentsOf: url)
-         self.posterImg.image = UIImage(data: realData)
-         }catch{
-         
-         }
-         
-         if self.userLikesData.count != 0 {
-         self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
-         
-         }
-         
-         self.detailImgCount = realExhibitionData.imgURL[0].detailImages.count
-         self.posterCollectionView.reloadData()
-         }
-         }
-         
-         DataCenter.sharedData.requestExhibitionData(id: self.exhibitionID) { (exhibition) in
-         selectedExhibition = exhibition
-         }
-         */
+        self.loadExhibitionData(itemOfIndexPath: realExhibitionID)
+        self.loadDetailImgArrayForCollectionView(itemOfIndexPath: realExhibitionID)
+        self.loadLikeData(exhibitionID: realExhibitionID)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
         
-        //좋아요
-        Database.database().reference().child("Likes").keepSynced(true)
-        
-        DataCenter.sharedData.requestLikeDataFor(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid, completion: { (datas) in
-            self.userLikesData = datas
-        })
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
     }
     
     
@@ -174,6 +109,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UserCommentCustomCell = tableView.dequeueReusableCell(withIdentifier: "UserCommentCustomCell", for: indexPath) as! UserCommentCustomCell
         cell.selectionStyle = .none
+        
         return cell
     }
     
@@ -200,14 +136,17 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell:RankingCustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "RankingCustomCell", for: indexPath) as! RankingCustomCell
         
-        let detailImgURL = URL(string: self.detailImgArray[indexPath.item])
+        guard let url = URL(string: self.detailImgArray[indexPath.item]) else {
+            print("URL을 불러오지 못했습니다")
+            return cell
+        }
         
         do{
-            let realData = try Data(contentsOf: detailImgURL!)
+            let realData = try Data(contentsOf: url)
             cell.posterImage.image = UIImage(data: realData)
-            
         }catch{
             
         }
@@ -237,39 +176,41 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.commentTableView.reloadData()
     }
     
-    func loadData(RowOfIndexPath:Int) {
+    func loadExhibitionData(itemOfIndexPath:Int) {
+        
         DispatchQueue.global(qos: .default).async {
-            Database.database().reference().child("ExhibitionData").child("\(RowOfIndexPath)").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            Database.database().reference().child("ExhibitionData").child("\(itemOfIndexPath)").observeSingleEvent(of: .value, with: { (snapshot) in
+                
                 guard let json = snapshot.value as? [String:Any] else {return}
                 
                 DispatchQueue.main.async {
-                    self.exhibitionTitle.text = json[Constants.exhibition_Title] as! String
+                    self.exhibitionTitle.text = json[Constants.exhibition_Title] as? String
                     
-                    let periodDic:[String:String] = json[Constants.exhibition_Period] as! [String:String]
-                    let startDateStr:String = periodDic[Constants.period_StartDate] as! String
-                    let endDateStr:String = periodDic[Constants.period_EndDate] as! String
+                    guard let periodDic:[String:String] = json[Constants.exhibition_Period] as? [String:String],
+                        let startDateStr:String = periodDic[Constants.period_StartDate],
+                        let endDateStr:String = periodDic[Constants.period_EndDate] else {return}
                     self.exhibitionDate.text = "\(startDateStr) ~ \(endDateStr)"
                     
-                    let placeDic:[String:String] = json[Constants.exhibition_PlaceData] as! [String:String]
-                    let addressStr:String = json[Constants.exhibition_Artist] as! String
-                    let websiteStr:String = placeDic[Constants.place_WebsiteURL] as! String
+                    guard let placeDic:[String:String] = json[Constants.exhibition_PlaceData] as? [String:String],
+                        let addressStr:String = placeDic[Constants.place_Address],
+                        let websiteStr:String = placeDic[Constants.place_WebsiteURL] else {return}
                     self.exhibitionPlace.text = addressStr
                     
-                    let workingHoursDic:[String:String] = json[Constants.exhibition_WorkingHours] as! [String:String]
-                    let startTime:String = workingHoursDic[Constants.workingHours_StartTime] as! String
-                    let endTime:String = workingHoursDic[Constants.workingHours_EndTime] as! String
+                    guard let workingHoursDic:[String:String] = json[Constants.exhibition_WorkingHours] as? [String:String],
+                        let startTime:String = workingHoursDic[Constants.workingHours_StartTime],
+                        let endTime:String = workingHoursDic[Constants.workingHours_EndTime] else {return}
                     self.exhibitionTime.text = "\(startTime) ~ \(endTime)"
                     
-                    self.exhibitionPrice.text = "\(json[Constants.exhibition_Admission] as! Int)원"
-                    self.exhibitionAgent.text = json[Constants.exhibition_Artist] as! String
+                    self.exhibitionPrice.text = "\(json[Constants.exhibition_Admission] as? Int ?? 0)원"
+                    self.exhibitionAgent.text = json[Constants.exhibition_Artist] as? String
                     self.exhibitionHomepage.setTitle(websiteStr, for: .normal)
-                    self.exhibitionGenre.text = json[Constants.exhibition_Genre] as! String
+                    self.exhibitionGenre.text = json[Constants.exhibition_Genre] as? String
                     self.exhibitionAge.text = "전체관람가"
-                    self.exhibitionIntroduce.text = json[Constants.exhibition_Detail] as! String
+                    self.exhibitionIntroduce.text = json[Constants.exhibition_Detail] as? String
                     
-                    let imageDic:[String:Any] = json[Constants.exhibition_ImgURL] as! [String:Any]
-                    let posterImgURL:String = imageDic[Constants.image_PosterURL] as! String
-                    let detailImg:[String] = imageDic[Constants.image_DetailImages] as! [String]
+                    guard let imageDic:[String:Any] = json[Constants.exhibition_ImgURL] as? [String:Any],
+                        let posterImgURL:String = imageDic[Constants.image_PosterURL] as? String else {return}
                     
                     guard let posterurl = URL(string: posterImgURL) else {return}
                     do{
@@ -278,23 +219,114 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     }catch{
                         
                     }
-                    
-                    if self.userLikesData.count != 0 {
-                        self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
-                        
-                    }
-                    
-                    self.detailImgArray = detailImg
-                    self.posterCollectionView.reloadData()
-                    
                 }
-                print("===\(RowOfIndexPath)번 전시 제이슨로딩중===")
+                print("===\(itemOfIndexPath)번 전시 제이슨로딩중===")
                 
             },withCancel: { (error) in
+                print(error.localizedDescription)
+            })
+        }
+    }
+    
+    func loadDetailImgArrayForCollectionView(itemOfIndexPath:Int) {
+        DispatchQueue.global(qos: .default).async {
+            Database.database().reference().child("ExhibitionData").child("\(itemOfIndexPath)").child(Constants.exhibition_ImgURL).child(Constants.image_DetailImages).observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let json = snapshot.value as? [String] else {return}
+                
+                DispatchQueue.main.async {
+                    self.detailImgArray = json
+                    self.posterCollectionView.reloadData()
+                }
+            }, withCancel: { (error) in
                 print(error.localizedDescription)
             })
             
         }
     }
+    
+    func loadLikeData(exhibitionID:Int) {
+
+        DispatchQueue.global(qos: .default).async {
+            Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let json = snapshot.value as? [String:[String:Any]] else {return}
+                
+                let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                    var exhibitionNumber:Int = dic.value[Constants.likes_ExhibitionID] as! Int
+                    return exhibitionNumber == exhibitionID
+                })
+                
+                DispatchQueue.main.async {
+                    switch filteredLikeData.count {
+                    case 0:
+                        self.displayLike.image = #imageLiteral(resourceName: "likeBtn_off")
+                    case 1:
+                        self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+                    default:
+                        print("좋아요 버튼표시에러: \(filteredLikeData)")
+                    }
+                }
+            }, withCancel: { (error) in
+                print(error.localizedDescription)
+            })
+        }
+
+    }
+    
+    func likeButtonAction() {
+        guard let realExhibitionID:Int = self.exhibitionID else {return}
+        Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [String:[String:Any]] else {return}
+            print("여기여기여기:\(json)")
+            
+            let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                var exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
+                return exhibitionID == realExhibitionID
+            })
+            
+            
+            switch filteredLikeData.count {
+            case 0:
+                self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+                Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_ExhibitionID:realExhibitionID,
+                                                                                         Constants.likes_UserID:Auth.auth().currentUser?.uid])
+            case 1:
+                self.displayLike.image = #imageLiteral(resourceName: "likeBtn_off")
+                Database.database().reference().child("Likes").child(filteredLikeData[0].key).setValue(nil)
+            default:
+                print("좋아요 버튼액션에러: \(filteredLikeData)")
+            }
+            
+        }, withCancel: { (error) in
+            print(error.localizedDescription)
+        })
+        
+        Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observe(.childChanged, with: { (snapshot) in
+            guard let json = snapshot.value as? [String:[String:Any]] else {return}
+            print("여기여기여기:\(json)")
+            
+            let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                var exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
+                return exhibitionID == realExhibitionID
+            })
+            
+            
+            switch filteredLikeData.count {
+            case 0:
+                self.displayLike.image = #imageLiteral(resourceName: "likeBtn_on")
+                Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_ExhibitionID:realExhibitionID,
+                                                                                         Constants.likes_UserID:Auth.auth().currentUser?.uid])
+            case 1:
+                self.displayLike.image = #imageLiteral(resourceName: "likeBtn_off")
+                Database.database().reference().child("Likes").child(filteredLikeData[0].key).setValue(nil)
+            default:
+                print("좋아요 버튼액션에러: \(filteredLikeData)")
+            }
+            
+        }, withCancel: { (error) in
+            print(error.localizedDescription)
+        })
+        
+    }
+    
     
 }

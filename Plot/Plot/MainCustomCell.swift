@@ -13,6 +13,7 @@ protocol customCellDelegate {
     func isCommentButtonClicked()
     func isStarPointButtonClicked()
     func isLikeButtonClicked()
+    func reloadMainTableView()
 }
 
 class MainCustomCell: UITableViewCell {
@@ -48,60 +49,61 @@ class MainCustomCell: UITableViewCell {
     }
     
     @IBAction func likeBtnClicked(_ sender: UIButton) {
-        
-        
-        /*
-        var userLikesData:[(key: String, value: [String : Any])]? {
-            didSet{
-                
-                guard let realLikeData = userLikesData else {return}
-                
-                if self.likeBtnOutlet.image == #imageLiteral(resourceName: "likeBtn_on") {
-                    self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
-                    
-                    if realLikeData.count != 0 {
-                        let keyString:String = realLikeData[0].key
-                        Database.database().reference().child("Likes").child(keyString).setValue(nil)
-                    }
-                }else{
-                    self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
-                    
-                    if realLikeData.count == 0 {
-                        Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_ExhibitionID:self.indexPathRow!,
-                                                                                                 Constants.likes_UserID:Auth.auth().currentUser?.uid])
-                    }
-                }
-                self.delegate?.isLikeButtonClicked()
-            }
-        }
-        
-        Database.database().reference().child("Likes").keepSynced(true)
-        DataCenter.sharedData.requestLikeDataFor(exhibitionID: self.indexPathRow!, userID: Auth.auth().currentUser?.uid) { (data) in
-            userLikesData = data
-        }
-        */
+        self.likeButtonAction()
+    }
+    
+    
+    /*******************************************/
+    // MARK: -  Life Cycle                     //
+    /*******************************************/
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
         
     }
     
-    func loadData(RowOfIndexPath:Int) {
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+    }
+    
+    
+    /*******************************************/
+    // MARK: -  Func                           //
+    /*******************************************/
+    
+    func loadExbibitionData(rowOfIndexPath:Int) {
         DispatchQueue.global(qos: .default).async {
-            Database.database().reference().child("ExhibitionData").child("\(RowOfIndexPath)").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            Database.database().reference().child("ExhibitionData").child("\(rowOfIndexPath)").observeSingleEvent(of: .value, with: { (snapshot) in
+                
                 guard let json = snapshot.value as? [String:Any] else {return}
                 
                 DispatchQueue.main.async {
-                    self.mainTitleLabel.text = json[Constants.exhibition_Title] as! String
-                    self.localLabel.text = json[Constants.exhibition_District] as! String
+                    guard let titleStr:String = json[Constants.exhibition_Title] as? String else {return}
+                    self.mainTitleLabel.text = titleStr
                     
-                    let periodDic:[String:String] = json[Constants.exhibition_Period] as! [String:String]
-                    let startDateStr:String = periodDic[Constants.period_StartDate] as! String
-                    let endDateStr:String = periodDic[Constants.period_EndDate] as! String
+                    guard let districStr:String = json[Constants.exhibition_District] as? String else {return}
+                    self.localLabel.text = districStr
+                    
+                    guard let periodDic:[String:String] = json[Constants.exhibition_Period] as? [String:String],
+                        let startDateStr:String = periodDic[Constants.period_StartDate],
+                        let endDateStr:String = periodDic[Constants.period_EndDate] else {return}
                     self.exhibitionTerm.text = "\(startDateStr) ~ \(endDateStr)"
                     
-                    self.museumName.text = json[Constants.exhibition_Artist] as! String
-
-                    let imageDic:[String:Any] = json[Constants.exhibition_ImgURL] as! [String:Any]
-                    let posterImgURL:String = imageDic[Constants.image_PosterURL] as! String
+                    guard let artistStr:String = json[Constants.exhibition_Artist] as? String else {return}
+                    self.museumName.text = artistStr
+                    
+                    
+                    guard let imageDic:[String:Any] = json[Constants.exhibition_ImgURL] as? [String:Any],
+                        let posterImgURL:String = imageDic[Constants.image_PosterURL] as? String else {return}
+                    
                     guard let url = URL(string: posterImgURL) else {return}
                     do{
                         let realData = try Data(contentsOf: url)
@@ -110,61 +112,91 @@ class MainCustomCell: UITableViewCell {
                         
                     }
                 }
-                print("===\(RowOfIndexPath)번 전시 제이슨로딩중===")
+                print("===\(rowOfIndexPath)번 전시 제이슨로딩중===")
             }, withCancel: { (error) in
                 print(error.localizedDescription)
             })
-            
-            Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_ExhibitionID).queryEqual(toValue: RowOfIndexPath).observeSingleEvent(of: .value, with: { (snapshot) in
+        }
+    }
+    
+    func loadLikeData(rowOfIndexPath:Int) {
+        
+        DispatchQueue.global(qos: .default).async {
+            Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                guard let json = snapshot.value as? [String:[String:Any]] else {return}
                 
-                guard let filteredJSON = snapshot.value as? [String:[String : Any]] else {
-                    print("좋아요 없어여")
-                    return
-                }
-                
-                let filteredDic = filteredJSON.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
-                    let userIDValue:String = dic.value[Constants.likes_UserID] as! String
-                    return userIDValue == Auth.auth().currentUser?.uid
+                let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                    var exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
+                    return exhibitionID == rowOfIndexPath
                 })
                 
                 DispatchQueue.main.async {
-                    if filteredDic.count != 0 {
-                        let exhibitionID:Int = filteredDic[0].value[Constants.likes_ExhibitionID] as! Int
-                        if exhibitionID == RowOfIndexPath {
-                            self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
-                        }
-                    }else{
+                    switch filteredLikeData.count {
+                    case 0:
                         self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
+                    case 1:
+                        self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
+                    default:
+                        print("좋아요 버튼표시에러: \(filteredLikeData)")
                     }
                 }
-            }){ (error) in
+            }, withCancel: { (error) in
                 print(error.localizedDescription)
-            }
-
+            })
         }
         
-        
     }
     
-    /*******************************************/
-    // MARK: -  Life Cycle                     //
-    /*******************************************/
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    func likeButtonAction() {
+        guard let realExhibitionID:Int = self.indexPathRow else {return}
+        Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [String:[String:Any]] else {return}
+            
+            let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                var exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
+                return exhibitionID == realExhibitionID
+            })
+            
+            switch filteredLikeData.count {
+            case 0:
+                self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
+                Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_ExhibitionID:self.indexPathRow!,
+                                                                                         Constants.likes_UserID:Auth.auth().currentUser?.uid])
+            case 1:
+                self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
+                Database.database().reference().child("Likes").child(filteredLikeData[0].key).setValue(nil)
+            default:
+                print("좋아요 버튼액션에러: \(filteredLikeData)")
+            }
+            
+        }, withCancel: { (error) in
+            print(error.localizedDescription)
+        })
         
-        Database.database().reference().child("Likes").keepSynced(true)
-        
+        Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observe(.childChanged, with: { (snapshot) in
+            guard let json = snapshot.value as? [String:[String:Any]] else {return}
+            
+            let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
+                var exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
+                return exhibitionID == realExhibitionID
+            })
+            
+            
+            switch filteredLikeData.count {
+            case 0:
+                self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
+                Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_ExhibitionID:self.indexPathRow!,
+                                                                                         Constants.likes_UserID:Auth.auth().currentUser?.uid])
+            case 1:
+                self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_off")
+                Database.database().reference().child("Likes").child(filteredLikeData[0].key).setValue(nil)
+            default:
+                print("좋아요 버튼액션에러: \(filteredLikeData)")
+            }
+            
+        }, withCancel: { (error) in
+            print(error.localizedDescription)
+        })
+ 
     }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        
-    }
-    
-    /*******************************************/
-    // MARK: -  Func                           //
-    /*******************************************/
-    
-    
 }
