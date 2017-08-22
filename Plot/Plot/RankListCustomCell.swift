@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class RankListCustomCell: UITableViewCell {
 
@@ -16,6 +17,7 @@ class RankListCustomCell: UITableViewCell {
     /*******************************************/
     
     @IBOutlet weak var cellBgImageView: UIImageView!
+    @IBOutlet weak var rankingTitleTextLabel: UILabel!
     
     
     
@@ -33,5 +35,9 @@ class RankListCustomCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    
+   
+
     
 }

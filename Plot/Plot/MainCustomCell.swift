@@ -42,6 +42,8 @@ class MainCustomCell: UITableViewCell {
     
     @IBAction func clickedComentBtn(_ sender: UIButton) {
         self.delegate?.isCommentButtonClicked()
+        
+        print(self.indexPathRow)
     }
     
     @IBAction func starPointBtnClicked(_ sender: UIButton) {
@@ -112,7 +114,6 @@ class MainCustomCell: UITableViewCell {
                         
                     }
                 }
-                print("===\(rowOfIndexPath)번 전시 제이슨로딩중===")
             }, withCancel: { (error) in
                 print(error.localizedDescription)
             })
