@@ -30,7 +30,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var searchKeyword:[String] = []
     //검색어 버튼이 눌렸을때 여기에 어펜드된다
-
+    
+    var filteringData:[String] = []
+    
+    var searchData:[String] = []
     
     /*******************************************/
     // MARK: -  LifeCycle                      //
@@ -42,13 +45,28 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 전시데이터 불러오기
+        Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Any]] else { return }
+            let extitleArray:[String] = json.map({ (dic:[String : Any]) -> String in
+                return dic[Constants.exhibition_Title] as! String
+            })
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",extitleArray)
+            self.searchData = extitleArray
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
         presentLoginVC()
         self.searchBar.delegate = self
-        searchBar.placeholder = "전시명, 지역, 장르 등 검색"
+        self.searchBar.placeholder = "전시명, 지역, 장르 등 검색"
         self.rankingTableView.dataSource = self
         self.rankingTableView.delegate = self
         self.rankingTableView.register(UINib(nibName: "RankListCustomCell", bundle: nil), forCellReuseIdentifier: "RankListCustomCell")
         self.rankingTableView.register(UINib(nibName: "SearchResultCell", bundle: nil), forCellReuseIdentifier: "SearchResultCell")
+        
         
     }
     
@@ -56,7 +74,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     /*******************************************/
@@ -276,7 +293,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     
+        
         if isBeginEditing {
             
         } else if isdidChangeText {
@@ -308,5 +325,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         searchKeyword = []
         rankingTableView.reloadData()
     }
+    
     
 }
