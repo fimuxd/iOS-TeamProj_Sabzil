@@ -10,6 +10,11 @@ import UIKit
 
 class UserCommentCustomCell: UITableViewCell {
 
+    
+    @IBOutlet weak var userProfileImageView: UIImageView!
+    @IBOutlet weak var userNickNameLabel: UILabel!
+    @IBOutlet weak var commentDetailLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

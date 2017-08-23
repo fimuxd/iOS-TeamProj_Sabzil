@@ -68,8 +68,6 @@ class Popup: UIViewController, UITextViewDelegate {
             let commentDetail:String = self.userCommentData[0].value[Constants.comment_Detail] as! String
             self.commentTextView.text = commentDetail
         }
-        
-        print("뷰윌어피어 유저데이터 글로벌:\(self.userCommentData)")
     }
     
     override func viewDidLoad() {
@@ -83,12 +81,11 @@ class Popup: UIViewController, UITextViewDelegate {
         //코멘트 데이터
         Database.database().reference().child("Comments").keepSynced(true)
         
-        DataCenter.sharedData.requestCommentDataFor(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid) { (data) in
-            self.userCommentData = data
-        }
+        print(self.exhibitionID)
         
-        print("뷰디드로드 유저데이터 글로벌:\(self.userCommentData)")
-        
+//        DataCenter.sharedData.requestCommentDataFor(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid) { (data) in
+//            self.userCommentData = data
+//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -57,7 +57,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }) { (error) in
             print(error.localizedDescription)
         }
-        
     }
     
     override func didReceiveMemoryWarning() {

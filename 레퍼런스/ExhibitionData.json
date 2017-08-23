@@ -1,68 +1,121 @@
 {
-  "Comments" : [ {
-    "comment_Detail" : "이 곳에 코멘트를입력하세요",
-    "comment_ExhibitionID" : 0,
-    "comment_ID" : 0,
-    "comment_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
-  } ],
+  "Comments" : {
+    "-KrzKijZIqtibsa1XXxP" : {
+      "comment_Detail" : "I'm just gonna start getting ready and go home to sleep now lol ",
+      "comment_ExhibitionID" : 1,
+      "comment_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrzLhArNnul0Z5aJ3KD" : {
+      "comment_Detail" : "The fact is I have a problem I don't like to see it on twitter ",
+      "comment_ExhibitionID" : 0,
+      "comment_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrzLp2uscEJ113YiWL1" : {
+      "comment_Detail" : "I'm just gonna start getting ready to be the next single ",
+      "comment_ExhibitionID" : 2,
+      "comment_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrzMWHJe9ZT4uBuSSpN" : {
+      "comment_Detail" : "이 작품에 대한 생각을 자유롭게 표현해주세요.",
+      "comment_ExhibitionID" : 3,
+      "comment_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrzSMEtA6JOCfAY3r4V" : {
+      "comment_Detail" : "이 작품에 대한 생각을 자유롭게 표현해주세요.",
+      "comment_ExhibitionID" : 16,
+      "comment_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrzSTmWapXZbRhGHd1m" : {
+      "comment_Detail" : "이 작품에 대한 생각을 자유롭게 표현해주세요.",
+      "comment_ExhibitionID" : 13,
+      "comment_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Ks-2dLyshu-e9eBXh6e" : {
+      "comment_Detail" : "엑스레이야뭐야",
+      "comment_ExhibitionID" : 1,
+      "comment_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks-2nOfOgVi3QuvUOQe" : {
+      "comment_Detail" : "코멘트가 남겨지고있는건가효",
+      "comment_ExhibitionID" : 10,
+      "comment_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks-2xyHVKnMQ67MSYEI" : {
+      "comment_Detail" : "어둠속의대화가뭐여",
+      "comment_ExhibitionID" : 4,
+      "comment_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks-3AdCrKbXmfqEOagR" : {
+      "comment_Detail" : "뭔가 느린느낌적인느낌이다 ",
+      "comment_ExhibitionID" : 13,
+      "comment_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks2PZaOQ31bao4ERod3" : {
+      "comment_Detail" : "진짜 진짜 좋아해 사랑해 진짜 왜 저래 왜 이런 건 진짜 진짜 ",
+      "comment_ExhibitionID" : 1,
+      "comment_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks2Sp30pxJJsMVsiKph" : {
+      "comment_Detail" : "Hello hello",
+      "comment_ExhibitionID" : 1,
+      "comment_UserID" : "jB1yqFyLiOZA42ofvExztioy8Sx1"
+    },
+    "-Ks2Z93H8KL-5MeWMOtR" : {
+      "comment_Detail" : "Jjjj",
+      "comment_ExhibitionID" : 3,
+      "comment_UserID" : "fyS6zHDJzXhAD3XSJKQoHPbPiEn1"
+    },
+    "-Ks7HnHeNMt7laMb9-Wo" : {
+      "comment_Detail" : "Asdfasdfad",
+      "comment_ExhibitionID" : 0,
+      "comment_UserID" : "fyS6zHDJzXhAD3XSJKQoHPbPiEn1"
+    },
+    "-Ks9PKm5r0nGAlh9PFp-" : {
+      "comment_Detail" : "진짜 진짜 감사합니다 언제 나와 비슷한 건 어때 어때 멋지지 진짜 진짜 감사합니다 언제 나와 ",
+      "comment_ExhibitionID" : 8,
+      "comment_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9PP3sOVfFQqhEtNc7" : {
+      "comment_Detail" : "이런 상황에서 실험해 볼 시간이 모자라 왜 왜 그런 대요 건 어쩔 진짜 보고 진짜 사나이 진짜 보고 진짜 완전 예뻐요 ",
+      "comment_ExhibitionID" : 10,
+      "comment_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9PUyVEQU3ezEIvO9j" : {
+      "comment_Detail" : "왜 그런 그래 뭐 세상에 세상에 가장 소중한  사람은 아무도 몰라 왜 이런 건 진짜 왜 그래 진짜 왜 저래 ",
+      "comment_ExhibitionID" : 12,
+      "comment_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9Pe5vH6de1aikh8Yd" : {
+      "comment_Detail" : "진짜 왜 그래 왜 그런 대요 왜 그런 거지 왜 그런 사람이 먼저 들어가 본 사람은 알겠지만 진짜 보고 계셔 배우들 사진은 빛이 보여 영원한 생명을 약속하신 목자 왜 이런 ",
+      "comment_ExhibitionID" : 13,
+      "comment_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9w23gr9ycxLh46TqI" : {
+      "comment_Detail" : "Ffghjkjffffgghhmmkggh",
+      "comment_ExhibitionID" : 19,
+      "comment_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9xFCg_-o6_6sXoILS" : {
+      "comment_Detail" : "이런 상황에서 실험해 볼 시간이 모자라 왜 이런 건 진짜 보고 시퍼 진정해 침착해 침착해 ",
+      "comment_ExhibitionID" : 17,
+      "comment_UserID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2"
+    },
+    "-Ks9xSbs34nOkYfV-nnU" : {
+      "comment_Detail" : "이런 상황에서 복귀 절차를 거쳐 브랜드명을 결정한다 왜 그래 뭐 어때 멋지지 왜 그래 뭐 먹지 못한 사람이 가장 행복한 시간입니다 건 어때 보여 주실 건 어쩔 수업이 끝날 시간이야 계약자 ",
+      "comment_ExhibitionID" : 25,
+      "comment_UserID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2"
+    }
+  },
   "ExhibitionData" : [ {
-    "exhibition_Admission" : 5000,
-    "exhibition_Artist" : "서울문화재단",
-    "exhibition_Detail" : "■ 경주예술의전당 알천미술관 입장권입니다. 특별전《계림, 신화의 숲》+ 어린이색채체험전《빨주노초파남보》SeMA순회전  ■ 음악이 있는 전시회 : 매월 마지막 수요일 ① 6. 28(수), 11:00 ② 7. 26(수), 14:00  ③ 8. 30(수), 19:00  ■ 전시설명프로그램 : 11:00/14:00/16:00(약 20-30분소요) *10명이상 단체관람시 사전예약 바랍니다(054-748-7726)",
-    "exhibition_District" : "서울",
-    "exhibition_Genre" : "설치",
-    "exhibition_ID" : 3,
-    "exhibition_ImgURL" : {
-      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/etc/17/17008311-02.jpg" ],
-      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/small/17/17010729.gif"
-    },
-    "exhibition_Period" : {
-      "period_EndDate" : "20170910",
-      "period_StartDate" : "20170628"
-    },
-    "exhibition_PlaceData" : {
-      "place_Address" : "경복궁",
-      "place_WebsiteURL" : "www.gifac.or.kr"
-    },
-    "exhibition_Title" : "2017년 8월 경복궁 야간 특별관람(일반인)",
-    "exhibition_WorkingHours" : {
-      "workingHours_EndTime" : "1800",
-      "workingHours_StartTime" : "1000"
-    }
-  }, {
-    "exhibition_Admission" : 5000,
-    "exhibition_Artist" : "서울문화재단",
-    "exhibition_Detail" : "■ 경주예술의전당 알천미술관 입장권입니다. 특별전《계림, 신화의 숲》+ 어린이색채체험전《빨주노초파남보》SeMA순회전  ■ 음악이 있는 전시회 : 매월 마지막 수요일 ① 6. 28(수), 11:00 ② 7. 26(수), 14:00  ③ 8. 30(수), 19:00  ■ 전시설명프로그램 : 11:00/14:00/16:00(약 20-30분소요) *10명이상 단체관람시 사전예약 바랍니다(054-748-7726)",
-    "exhibition_District" : "서울",
-    "exhibition_Genre" : "설치",
-    "exhibition_ID" : 1,
-    "exhibition_ImgURL" : {
-      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/etc/17/17008311-02.jpg" ],
-      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/small/17/17010729.gif"
-    },
-    "exhibition_Period" : {
-      "period_EndDate" : "20170910",
-      "period_StartDate" : "20170628"
-    },
-    "exhibition_PlaceData" : {
-      "place_Address" : "경복궁",
-      "place_WebsiteURL" : "www.gifac.or.kr"
-    },
-    "exhibition_Title" : "2017년 8월 경복궁 야간 특별관람(일반인)",
-    "exhibition_WorkingHours" : {
-      "workingHours_EndTime" : "1800",
-      "workingHours_StartTime" : "1000"
-    }
-  }, {
     "exhibition_Admission" : 5000,
     "exhibition_Artist" : "경주문화재단",
     "exhibition_Detail" : "■ 경주예술의전당 알천미술관 입장권입니다. 특별전《계림, 신화의 숲》+ 어린이색채체험전《빨주노초파남보》SeMA순회전  ■ 음악이 있는 전시회 : 매월 마지막 수요일 ① 6. 28(수), 11:00 ② 7. 26(수), 14:00  ③ 8. 30(수), 19:00  ■ 전시설명프로그램 : 11:00/14:00/16:00(약 20-30분소요) *10명이상 단체관람시 사전예약 바랍니다(054-748-7726)",
-    "exhibition_District" : "경상",
+    "exhibition_District" : "부산",
     "exhibition_Genre" : "공예",
     "exhibition_ID" : 0,
     "exhibition_ImgURL" : {
       "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/etc/17/17008311-02.jpg" ],
-      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/etc/17/17008311-01.jpg"
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17000560_p.gif"
     },
     "exhibition_Period" : {
       "period_EndDate" : "20170910",
@@ -81,11 +134,11 @@
     "exhibition_Admission" : 10000,
     "exhibition_Artist" : "닉 베세이",
     "exhibition_Detail" : "예술의전당 한가람미술관 제7전시실",
-    "exhibition_District" : "대전",
+    "exhibition_District" : "부산",
     "exhibition_Genre" : "미술",
-    "exhibition_ID" : 2,
+    "exhibition_ID" : 1,
     "exhibition_ImgURL" : {
-      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/etc/17/17008311-02.jpg" ],
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.40.56.png?alt=media&token=aa92330f-fa25-4e92-bea3-60f0000c4841", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.40.41.png?alt=media&token=d2f303d0-f2f7-47b5-809b-9aed10c56a72", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.40.49.png?alt=media&token=42587e2f-9405-4581-9bf7-2c02976c747https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.40.49.png?alt=media&token=42587e2f-9405-4581-9bf7-2c02976c747https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.40.49.png?alt=media&token=42587e2f-9405-4581-9bf7-2c02976c747c" ],
       "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/small/17/17006662.gif"
     },
     "exhibition_Period" : {
@@ -101,24 +154,1407 @@
       "workingHours_EndTime" : "1800",
       "workingHours_StartTime" : "1000"
     }
+  }, {
+    "exhibition_Admission" : 5000,
+    "exhibition_Artist" : "서울문화재단",
+    "exhibition_Detail" : "■ 경주예술의전당 알천미술관 입장권입니다. 특별전《계림, 신화의 숲》+ 어린이색채체험전《빨주노초파남보》SeMA순회전  ■ 음악이 있는 전시회 : 매월 마지막 수요일 ① 6. 28(수), 11:00 ② 7. 26(수), 14:00  ③ 8. 30(수), 19:00  ■ 전시설명프로그램 : 11:00/14:00/16:00(약 20-30분소요) *10명이상 단체관람시 사전예약 바랍니다(054-748-7726)",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 3,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/etc/17/17008311-02.jpg" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17010729_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170910",
+      "period_StartDate" : "20170628"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "경복궁",
+      "place_WebsiteURL" : "www.gifac.or.kr"
+    },
+    "exhibition_Title" : "2017년 8월 경복궁 야간 특별관람(일반인)",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1800",
+      "workingHours_StartTime" : "1000"
+    }
+  }, {
+    "exhibition_Admission" : 13000,
+    "exhibition_Artist" : "주식회사 씨씨오씨",
+    "exhibition_Detail" : "알립니다\n\n〈얼리버드 티켓 판매기간 및 유효기간〉\n- 3차 얼리버드 : 35% 할인\n판매기간 : 2017. 7. 24 ~ 8. 6 \n유효기간 : 2017. 10. 15까지\n\n- 4차 얼리버드 : 30% 할인\n판매기간 : 2017. 8. 7 ~ 8. 20\n유효기간 : 2017. 10. 15까지\n\n- 5차 얼리버드 : 25% 할인\n판매기간 : 2017. 8. 21 ~ 9. 1\n유효기간 : 2017. 10. 15까지\n\n* 날짜 지정과 관계 없이 예매하신 얼리버드 차수 사용 기간 까지 사용 하시면 됩니다.\n* 각 차수별 사용기간 이외에는 이용이 불가합니다.\n* 각 차수별 사용기간이 지나면 취소/환불 불가합니다.",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 3,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/large/17/17008609_p.gif" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008609_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171126",
+      "period_StartDate" : "20170902"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "예술의전당 한가람디자인미술관",
+      "place_WebsiteURL" : "http://www.sac.or.kr"
+    },
+    "exhibition_Title" : "무민원화전 Moomin Original Artworks Exhibition 얼리버드 4차",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 30000,
+    "exhibition_Artist" : "주식회사 엔비전스",
+    "exhibition_Detail" : "2014년 11월 이후부터는 북촌에서 어둠속의대화를 만나실 수 있습니다. \n*주소: 서울시 종로구 가회동 1-29 어둠속의대화 \n*주차장: 주차장 공간이 협소하여 장애인 차량(승용차)만 지원되므로 대중교통 이용을 권장합니다. \n*100분 동안 완전한 어둠 속에서 일상을 체험하는 전시로, 중도입장이 불가합니다.\n*예매하신 시간에만 관람할 수 있으며, 당일 회차 변경이 불가합니다.\n\n〈 2017년 7월 ~ 2017년 9월 〉 \n* 어둠속의대화는 상설전시(2010년 1월 20일~)이며 인터파크에서는 분기별로 오픈됩니다. \n* 관람소요시간 : 100분 (1시간 40분)\n* 관람인원 : 1회차 당 1~8명 \n* 관람연령 : 8세 이상 ~ 70세 이하 \n* 화·수·목·금 : 11:00 ~ 20:00 (매 15분마다/총 37회차) \n* 토·일·공휴일 : 10:00 ~ 19:00 (매 15분마다/총 37회차) \n* 정기휴관일 : 매주 월요일\n* 공휴일 : \n 1) 8월 15일(화) : 광복절\n\n〈 영어투어 안내 : The English Tour 〉 \nThe English Tour will COMING SOON - Since we move to the new place, we need some time to prepare it safely. \nThank you for your co-operations, if you need more details please call us: 02-313-9977 \nFurthermore, we cannot provide the English Tour without reservation. \nIf you have a difficulty to talk in Korean, then even if you bought the ticket online, \nfor your safety and smooth tour, we＇re not allowed you for the Korean tour.\n\n새로운 곳으로 이전을 오면서 완전하고 안전한 어둠속의대화를 위하여 현재 영어 투어는 준비 중입니다. \n관련하여 문의사항 있으시면 02-313-9977로 문의하시기 바랍니다. \n더불어, 당일 현장에서 영어투어 예매는 불가합니다. \n사전 예매를 하셨다 하더라도 한국어 사용이 어려우신 외국인분들께서는 \n안내자 분과의 의사소통이 원활하지 않아 안전한 관람이 이루어지지 못하므로 입장이 제한됩니다.\n\n〈 관람유의사항 : 예매 및 관람 〉 \n* 취소·환불·날짜 및 회차 변경 등은 인터파크 규정을 준수합니다. \n* 청소년 및 각종 특별 할인으로 예매하신 분들은 반드시 신분증을 지참해주셔야 하며 \n  신분증 미지참·각종 할인 조건 미충족 시 현장에서 차액을 지불해주셔야 합니다.\n\n* 당일·현장 예매 희망시 잔여석이 없어 대기 시간이 길어지거나 관람이 어려울 수 있으므로 \n  반드시 사전 예매를 부탁드립니다. \n* 예매된 회차에만 프로그램이 진행됩니다. \n* 단체·장애인·임산부·노약자·외국인 분들은 반드시 기획사로 사전 문의주시기 바랍니다. \n  (사전에 기획사와 협의 없이 예매하신 경우에는 당일 관람이 제한 될 수 있습니다.)\n\n* 효과적이고 안전한 프로그램 체험을 위하여 1회차 당 입장 정원을 8명으로 정하고 있습니다. \n* 사전 예매된 회차에 따라 진행되는 프로그램인만큼 예매하신 회차 이외의 관람·입장은 불가합니다. \n* 완전한 어둠 속에서 체험하는 전시 특성상 중도입장이 불가하오니 \n  반드시 예매시간 15분 전까지 전시장에 도착해주셔야 합니다. \n  (예: ［14:00］회차 예매 시 ［13:45］까지 전시장 도착) \n* 완전한 어둠 속에서 진행되는 프로그램인만큼 \n  발광(휴대폰 등)·발화(라이터 등) 위험이 있는 물건은 착용 및 소지가 불가합니다. \n* 입장 전 소지품은 반드시 사물함에 보관해 주시고 열쇠 관리에 유의해주시기 바랍니다. \n  (귀중품 및 사물함 열쇠 분실 시 책임지지 않습니다.) \n* 폐소공포증·컨디션 난조가 있으신 분들은 예매 전 충분히 고려해주시기 바랍니다.\n\n〈 할인 적용 기준 〉 \n* 청소년 요금: \n1) 2017년 기준 1999년~2010년생에 한하며 학생증 및 증빙서류를 반드시 지참해 주셔야 합니다. \n  미지참시 현장에서 일반 성인 요금을 기준으로 차액 지불을 해주셔야 합니다. \n2) 빠른 년생의 청소년일 경우, 1999년 12월 31일 생까지 할인이 적용됩니다.\n\n* 할인(4인이상): \n1) 관람 동행자가 최소 4인일 때에만 적용됩니다. \n2) 일행 중 우대할인을 받은 분이 계실 경우, 중복 할인이 불가하므로 단체관람 인원수에서 제외됩니다.\n\n* 복지·경로·국가유공자우대 =〉 해당 할인 권종으로 예매를 원하시면 02-313-9977로 문의주시기 바랍니다. \n1) 복지우대는 복지카드 1~3급 소지자 본인에 한해서만 50% 할인됩니다. \n2) 경로우대는 만 65세 이상~만 70세 이하 본인에 한해서만 50% 할인됩니다. \n3) 국가유공자우대는 급수 상관없이 소지자 본인에 한해서만 50% 할인됩니다. \n※ 단, 국가유족증은 해당되지 않습니다.",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 4,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.45.26.png?alt=media&token=edb8b469-882d-4251-88c5-8ee27da4d740", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.45.14.png?alt=media&token=cd92ab63-f76e-4acb-881f-144a5cf14214" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17000502_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171126",
+      "period_StartDate" : "20100120"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "북촌 어둠속의대화",
+      "place_WebsiteURL" : "http://www.dialogueinthedark.co.kr/"
+    },
+    "exhibition_Title" : "DIALOGUE IN THE DARK（어둠속의대화）",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 10400,
+    "exhibition_Artist" : "주식회사 제이콘컴퍼니",
+    "exhibition_Detail" : "- 날짜 및 회차 지정이 없는 상시예매티켓입니다.\n- 온라인/앱을 통한 예매 티켓은 매표소 현장 발권 또는 현장 안내에 따라 전시장 입장이 가능하며, 전시기간 (7/7 ~ 10/8) 내 1회 사용 가능합니다. (예매 다음날부터 사용 가능)\n- 매표소에서 티켓 발권후에는 취소 및 환불이 불가합니다.\n- 티켓 분실로 인한 재발권이 불가합니다.\n\n〈도슨트 운영 안내〉\n- 도슨트 운영은 오후 2시, 5시 총 2회이며, 주말 및 공휴일은 운영하지 않습니다.\n\n〈문화가 있는 날〉\n- 매월 마지막째 주 수요일\n- 정상가에서 50% 할인 (중복할인불가)\n- 할인 혜택은 당일 오후 6시부터 오후 8시까지 현장 매표소에서 티켓 구매 시 적용됩니다.\n- 관람시간은 오후 9까지이며, 입장 및 매표마감은 오후 8시입니다.",
+    "exhibition_District" : "부산",
+    "exhibition_Genre" : "사진",
+    "exhibition_ID" : 5,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.47.19.png?alt=media&token=23fa4855-736d-49d3-a591-232de0257e07", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.47.09.png?alt=media&token=0ec5d62b-d8ab-4bc6-9471-1b88f75af727", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.47.03.png?alt=media&token=523ca3bf-4735-4313-8806-c313445e459d" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17007877_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171008",
+      "period_StartDate" : "20100707"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "예술의전당 한가람미술관",
+      "place_WebsiteURL" : "http://www.dialogueinthedark.co.kr/"
+    },
+    "exhibition_Title" : "롯데카드 무브컬처 〈라이프 사진전〉",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 12000,
+    "exhibition_Artist" : "씨제이이앤엠 주식회사",
+    "exhibition_Detail" : "［운영 안내］\n* 티켓 발권 : 오전 9시30분 ~ 오후 6시\n* 입장 마감 : 오후 6시\n* 관람 종료 : 오후 7시\n* 휴관일 : 8월28일(월)\n \n［티켓 안내］\n* 날짜 및 회차 지정이 없는 상시 예매 티켓입니다.\n* 인터넷으로 구매하신 티켓은 구매 다음날부터 사용 가능하며, 전시 기간내에 1회 사용 가능합니다.\n* 평일과 주말(공휴일 포함)의 관람가능 기간과 가격이 나눠져 있으니 실제 관람 예정 기간을 확인하신 후 구매해주세요.\n* ＇평일＇ 티켓으로 ＇주말/공휴일＇에 관람을 원하실 경우, 매표소에서 주말권종 정상가의 차액을 지불하신 후 관람 가능합니다. \n* 각 권종별 할인을 위한 증빙을 제시 하지 못할 경우, 해당 권종의 정상가의 차액을 지불하신 후 관람이 가능합니다.\n* ＇청소년＇ 권종은 현재 중-고등학교에 재학중인 청소년을 위한 권종입니다. (현역 중-고등학교 학생증 제시)\n* 발권 된 티켓은 발권 당일에 한해 사용 가능하며, 발권후에는 취소가 불가합니다.\n* 사용기간이 지나면 취소/환불 불가합니다.\n* 인터넷으로 구매한 티켓/패키지상품은 현장에서 취소가 불가합니다.\n* 구매하신 티켓 중 일부만 취소가 불가능합니다. 취소를 원하실 경우 전체 취소 후 필요수량만 재구매 부탁드립니다.\n \n［관람 안내］\n* 질서있는 관람을 위해 운영요원의 안내를 잘 따라주시기 바랍니다.\n* 전시장 내부에 관람중인 관람객이 많을 경우, 전시장 입장에 대기 시간이 발생할 수 있습니다.\n* 전시장 입장을 대기해야 할 경우, 운영요원의 안내에 따라 대기 번호표를 받으시고 대기 번호표 순서대로 입장 부탁드립니다.\n* 다른 관람객의 즐거운 관람을 위해 사건 추리 내용, 힌트 및 탐정수첩 내지의 내용을 공개하지 말아주세요. \n* 사진촬영 금지 구역에서 사진 및 영상 촬영을 하면 안됩니다.\n* ＇DETECTIVE CONAN FILM ZONE＇에서는 영화를 상영하지 않습니다.\n* 도슨트 투어는 운영하지 않습니다.\n \n［탐정수첩］\n* 탐정수첩은 ＇코난/남도일/괴도키드/하인성/어린이탐정단＇ 총 다섯 종류입니다.\n* 탐정수첩은 티켓 발권시에 티켓1매당 1권 증정하며, 별도 판매하지 않습니다.\n* 탐정수첩은 분실/파손시에 재 지급되지 않습니다.\n* 탐정수첩은 원하는 종류로 택1 가능하며, 지급 후 교환되지 않습니다.\n* 탐정수첩은 사전 예고없이 캐릭터별로 조기소진/재입고 될 수 있습니다.\n* 티켓을 여러장 구매하실 경우, 구매하신 티켓 중 발권하는 수량만큼 탐정수첩이 증정됩니다.\n \n［패키지상품 사전구매 특별할인］\n* 패키지상품에는 ＇세트상품 1종＇과 ＇할인 입장권 1매＇가 포함됩니다.\n* 7월1일부터는 ＇입장권＇이 포함되지 않은 ＇세트상품＇만 별도로 현장 굿즈샵에서 판매합니다.\n* 패키지상품에 포함된 입장권은 평일/주말 관계없이 사용 가능합니다.\n* 패키지상품에 포함된 입장권은 성인/대학생/청소년/어린이 관계없이 사용 가능합니다.\n* 패키지상품 중 ＇세트상품＇은 전시회 현장에서 별도 판매 예정입니다.\n* ＇세트＇구성에 포함된 제품들은 별도 판매하지 않습니다.\n* 패키지상품 인터넷 판매는 종료되었습니다.\n \n［패키지상품 일반판매］\n* 본 권종은 ＇한정판 세트상품 1종＇과 ＇입장권 1매＇가 포함됩니다.\n* 본 권종은 ＇패키지상품 사전구매 특별할인＇과 다른 ＇패키지상품 정상가 판매＇ 상품 입니다.\n* 패키지상품은 인터넷 예매만 가능합니다. \n세트 상품만 구매를 희망하시는 경우, 현장 굿즈 샵에서 구매해주세요.\n* 패키지상품은 현장 매표소에서 티켓 수령시 세트 제품을 함께 드립니다.\n* 본 권종에 포함된 입장권은 평일/주말과 성인/대학생/청소년/어린이로 구분됩니다.\n* 패키지상품 인터넷 판매는 종료되었습니다.\n \n［조기예매 이벤트］\n* 얼리버드 티켓/패키지상품 관계없이 6월15일까지 구매하신 분은 모두 ＇한정판 오리지널 포스터＇를 받으실 수 있습니다.\n* ＇한정판 오리지널 포스터＇는 티켓 발권시 현장에서 지급해드립니다.\n* 6월15일까지 구매하신 분들에게는 권종/가격대와 관계없이 예매 티켓 1매당 포스터 1매 지급됩니다.\n* ＇한정판 오리지널 포스터＇를 증정하는 이벤트는 6월15일까지로 종료되었습니다.\n \n［강수진성우님 사인회 이벤트］\n* 사인회 일정 : 2017년 8월26일(토) 오후 4시\n* 사인회 장소 : 아라아트센터\n* 당첨 인원 : 100명 (1인 1매)\n* 응모 기간 : 2017년 8월1일(화)~8월20일(일)\n* 응모 방법 : 응모기간 내에 인터파크 기대평을 작성해주세요.\n* 당첨자 발표 : 2017년 8월23일(수)\n* 주의사항\n: 본 사인회는 현장 상황에 의해 일부 변경 및 취소될 수 있습니다.\n: 당첨 후 타인에게 양도 및 판매할 수 없습니다.\n: 당첨자 본인의 신분증을 지참해주세요. (학생증 가능)\n: 사인회 현장에는 당첨자 본인만 입장이 가능합니다. (동반자 입장 불가)\n: 사인회 행사가 모두 종료된 후 퇴장 가능합니다. (중간 퇴장 후 재입장 불가)\n: 사인회 당일, 현장에서 준비한 사인 용지에 한해 성우님 사인을 받으실 수 있습니다.\n: 시사회 관련 문의사항은 〈명탐정코난 테마전〉 공식SNS로 문의 바랍니다. (www.facebook.com/OfficialDetectiveconanKorea)\n: ＇이용후기＇에 작성하신 신청글은 당첨자 후보에 포함되지 않습니다. 반드시 ＇기대평＇에 작성해주시기 바랍니다.",
+    "exhibition_District" : "부산",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 6,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/large/17/17007437_p.gif" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17007437_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170903",
+      "period_StartDate" : "20170701"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "아라아트센터",
+      "place_WebsiteURL" : "http://www.araart.co.kr/"
+    },
+    "exhibition_Title" : "명탐정코난 테마전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 10900,
+    "exhibition_Artist" : "㈜미디어앤아트",
+    "exhibition_Detail" : "- 2인 관람권+오디오가이드1 (20,900원) - 오디오가이드 쿠폰 1개 지급\n- 2인 관람권+오디오가이드2 (21,900원) - 오디오가이드 쿠폰 2개 지급",
+    "exhibition_District" : "부산",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 7,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.50.03.png?alt=media&token=13382c3a-03ce-4db7-9eb1-96aa991eb79c", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.50.22.png?alt=media&token=15c47b89-932c-4527-84c8-c28c4f7d18ab", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.50.32.png?alt=media&token=3b652f27-f3f5-4593-bf0e-212de84ed476", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.50.47.png?alt=media&token=cecfdeb1-39a2-4798-b024-e8c41e37fb71" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17010538_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20180301",
+      "period_StartDate" : "20170808"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "서울숲 갤러리아포레",
+      "place_WebsiteURL" : "없음"
+    },
+    "exhibition_Title" : "ALICE 앨리스",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 9750,
+    "exhibition_Artist" : "(주)와이제이커뮤니케이션",
+    "exhibition_Detail" : "［매니아 티켓 판매기간 및 유효기간］\n-판매기간: 2017년 6월 23일 ~ 2017년 8월 25일\n-유효기간: 2017년 7월 17일 ~ 8월 25일\n\n*매니아 티켓 유효기간내 1회 사용 가능합니다.\n*매니아 티켓 유효기간이 지나면 취소/환불 불가합니다\n\n- 휴관일: 전시기간 중 휴관일 없음(월요일. 공휴일 추석연휴도  전시회 운영 합니다.)\n- 주차: 2시간 할인권 (세종로 공영 주차장)\n- 도슨트: 오전 11시 오후 3시, 6시 (토, 일요일 제외)\n*공휴일은 현장상황에 따라 변경 또는 취소 될 수 있습니다.\n*온라인 예매 티켓 당일 사용 가능",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 8,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.52.46.png?alt=media&token=c682425b-22a3-4de4-96ab-548b3928303a", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.53.01.png?alt=media&token=69d0c869-2b9b-4e90-91f4-c499c758af31", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.53.09.png?alt=media&token=70b21531-96a7-4781-b6e2-d4f0c1eaeb65", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.53.15.png?alt=media&token=d33c98aa-cbc9-4a65-815a-cb96bc523d8c" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008482_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171015",
+      "period_StartDate" : "20170717"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "세종문화회관",
+      "place_WebsiteURL" : "http://www.sejongpac.or.kr/"
+    },
+    "exhibition_Title" : "그림의 마술사 “에셔특별전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1030",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 9100,
+    "exhibition_Artist" : "(주)GKMS, (주)쇼노트",
+    "exhibition_Detail" : "［매니아 티켓 판매기간 및 유효기간］\n-판매기간: 2017년 6월 23일 ~ 2017년 8월 25일\n-유효기간: 2017년 7월 17일 ~ 8월 25일\n\n*매니아 티켓 유효기간내 1회 사용 가능합니다.\n*매니아 티켓 유효기간이 지나면 취소/환불 불가합니다\n\n- 휴관일: 전시기간 중 휴관일 없음(월요일. 공휴일 추석연휴도  전시회 운영 합니다.)\n- 주차: 2시간 할인권 (세종로 공영 주차장)\n- 도슨트: 오전 11시 오후 3시, 6시 (토, 일요일 제외)\n*공휴일은 현장상황에 따라 변경 또는 취소 될 수 있습니다.\n*온라인 예매 티켓 당일 사용 가능",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 9,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.54.59.png?alt=media&token=7ae6a398-8f0c-4fc2-90d4-681da6a9b6a4", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.55.12.png?alt=media&token=8c1b1f48-01f1-430c-a44c-b403c14a5bad", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.55.23.png?alt=media&token=ddda53dd-b532-447f-a68a-635fee1a1a10", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.55.37.png?alt=media&token=7f39a06c-71d1-46d6-b929-92ed0e7ebe31", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.55.51.png?alt=media&token=e918f150-27a0-46b4-8951-fddd74962ff5", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.56.02.png?alt=media&token=fe92018f-76e3-4ee3-b719-9c1fa1410b64" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17010826_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171203",
+      "period_StartDate" : "20170105"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "아라아트센터",
+      "place_WebsiteURL" : "http://www.araart.co.kr/"
+    },
+    "exhibition_Title" : "디 아트 오브 더 브릭〈The Art of the Brick〉",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 4800,
+    "exhibition_Artist" : "(재)대림문화재단",
+    "exhibition_Detail" : "**인터파크 티켓은 지정 관람일 이후부터 전시 종료일까지 관람이 가능합니다. (당일 관람 티켓 예매 불가)\n\n- 전시기간: 2017년 4월 27일 (목) - 10월 29일 (일)\n- 관람시간: 화, 수, 금, 일요일 오전 10시 ~ 오후 6시 / (야간개관) 목, 토요일 오전 10시 ~ 저녁 8시 \n  (입장마감: 전시 종료 30분 전) \n- 휴관안내: 매주 월요일, 추석 연휴\n- 도슨트 투어: 휴관일 제외 한 평일, 토요일 11, 13, 14, 15, 16, 17시 / 일요일 1시, 2시, 3시, 4시, 5시\n  (정규 도슨트 투어는 미술관 사정에 따라 취소 될 수 있습니다.)\n\n**인터파크 티켓은 미술관 현장에서 환불, 추가 금액 지불 등 옵션 변경이 절대로 불가능하오니, 내용을 정확하게 인지한 후 본인 및 동반인에게 적합한 티켓을 구매하기 바랍니다.\n\n**대림미술관 온라인 회원(성인/청소년/어린이) 티켓을 구매하시는 모든 분들은 (예매자 및 동반인 포함) 반드시 대림미술관＆디뮤지엄 앱 로그인 인증 후 전시 입장권 수령이 가능합니다.\n\n**대림미술관 온라인 회원(성인/청소년/어린이) 티켓을 예매하는 분은 미술관 방문 전에 대림미술관＆디뮤지엄 앱에 가입하고 방문하시면 현장에서 입장권을 빠르게 수령하실 수 있습니다.\n\n〈인터파크 예매 티켓 수령 시 확인사항〉\n-성인권(만 19세 이상): 신분증 확인 \n-청소년권(초/중/고 8-18세): 학생증 확인 \n-어린이권(3-7세): 생년월일이 표기된 건강보험증 확인(실물 또는 휴대폰 사진으로 인증 가능) \n(신분증, 학생증 등 증빙자료 미지참 시 티켓 수령이 불가합니다. 단, 미취학 아동 티켓의 경우\n부모님(어머니 또는 아버지) 동반 방문 시 부모님의 신분증 확인으로 티켓 수령이 가능합니다.)",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 10,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-20%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%2011.59.56.png?alt=media&token=8f6f8641-f66d-4225-a881-aee2fb4466e9", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.00.35.png?alt=media&token=7ee7b4ca-1c4c-4633-9b93-b176aaad4834", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.00.55.png?alt=media&token=9a403ff9-9000-4b95-b0b8-b1f83bfc8fa8", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.01.06.png?alt=media&token=a5d20983-af82-44ea-8522-fd596f1cc32b", "http://ticketimage.interpark.com/Play/image/large/17/17005450_p.gif" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17005450_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171029",
+      "period_StartDate" : "20170427"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "대림미술관",
+      "place_WebsiteURL" : "http://www.daelimmuseum.org/"
+    },
+    "exhibition_Title" : "The Selby House: #즐거운_나의_집",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 10500,
+    "exhibition_Artist" : "본다빈치 주식회사",
+    "exhibition_Detail" : "관람시간 : 오전 10시 ~ 오후 7시 (입장마감 오후 6시) 매주 월요일은 휴관일입니다.\n금,토,매월 마지막 주 수요일 문화가있는날-오후 8시30분까지 연장 (입장마감 오후7시30분)\n\n7/7(금)오픈일은 오후 5시 오픈\n8/15(화)광복절, 10/3(화)개천절~추석연휴~10/9(월)한글날 까지 정상오픈\n10/10(화) 대체휴관",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 11,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.03.46.png?alt=media&token=a7c16bab-dc62-4741-a680-993055bbe020", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.03.55.png?alt=media&token=e2c2cf58-2265-4e1d-a4da-8e69ce777907", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.04.15.png?alt=media&token=4698121f-f4d0-4817-b521-996175f59bf7" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17007448_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171029",
+      "period_StartDate" : "20170707"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "본다빈치뮤지엄",
+      "place_WebsiteURL" : "http://www.bondavinci.com/"
+    },
+    "exhibition_Title" : "모네빛을그리다전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 13000,
+    "exhibition_Artist" : "예술의전당",
+    "exhibition_Detail" : "오전 11시-오후 8시(입장마감 오후 7시) / 매달 마지막월요일 휴관",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 12,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.05.47.png?alt=media&token=01b1401c-0824-4fd1-ab24-94ae5da0e2e4", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.05.56.png?alt=media&token=66debdba-8863-4d26-bc6e-0812ecd49b90", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.06.06.png?alt=media&token=b978117d-2a76-4a4e-86c4-fa046eca19a6", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.06.17.png?alt=media&token=a7f81a3c-db68-4d8b-9695-73ed0ab794f0" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17006295_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170820",
+      "period_StartDate" : "20170603"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "예술의전당 한가람디자인미술관",
+      "place_WebsiteURL" : "http://www.sac.or.kr/"
+    },
+    "exhibition_Title" : "모리스 드 블라맹크_현대백화점 SUPER STAGE",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 14000,
+    "exhibition_Artist" : "(주)아트센터이다",
+    "exhibition_Detail" : "1. 일반가 \n1) 일반(만19-64세) - 14,000\n2) 대학생 - 12,000\n3) 청소년(만13-18세) - 10,000\n4) 어린이(만7-12세) - 8,000\n5) 특별할인 - 7,000\n-만3-6세 / 만 65세이상/ 국가유공자 본인\n- 장애인(1-6급)본인/ 장애인(1-3급) 동반자\n- 교직원 본인(교직원증 제시 시)\n- 예술인패스 소지자 본인(카드 소지 시)\n- 문화의날(매월 마지막주 수요일)\n* 성인 일반가 기준 외 할인 적용 불가\n6) 가족권 - 37,000\n- 청소년 및 어린이 2명 포함 4인 가족\n\n2. 단체가(20인 이상)\n1) 일반(만19-64세) - 12,000원\n2) 대학생(학생증 지참) - 10,000원\n3) 청소년(만 13세 - 18세) - 8,000원\n4) 어린이(만 7세 - 12세) - 6,000원",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 13,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.08.54.png?alt=media&token=f60d3c6e-8544-4afb-8822-0b782d3f7ab3", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.09.08.png?alt=media&token=ccc352e1-12ab-4cf7-8aaa-a5b21a840d61", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.09.23.png?alt=media&token=90ae9d56-2213-4f03-b5db-9a017fe5f1d3" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008722_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171007",
+      "period_StartDate" : "20170630"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "예술의전당 한가람디자인미술관",
+      "place_WebsiteURL" : "http://www.sac.or.kr/"
+    },
+    "exhibition_Title" : "세계 3대 디자이너 카림 라시드 展",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 11000,
+    "exhibition_Artist" : "(주)아트센터이다",
+    "exhibition_Detail" : "- 인터파크 예매할인- 성인 11000원 / 청소년 7000원 / 어린이 4000원 (각 2000원씩 할인)",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "조각",
+    "exhibition_ID" : 14,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.11.15.png?alt=media&token=04122446-b161-4478-a536-a7ff362081eb", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.11.27.png?alt=media&token=38cd55ea-2405-484d-841b-9b78ec2535ff", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.11.36.png?alt=media&token=c00a26ce-0163-4914-aa4b-4555b436c594" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008845_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171225",
+      "period_StartDate" : "20170811"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "올림픽공원 소마미술관",
+      "place_WebsiteURL" : "https://soma.kspo.or.kr/"
+    },
+    "exhibition_Title" : "영국국립미술관 테이트 명작전-누드",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 16000,
+    "exhibition_Artist" : "주식회사 그레뱅코리아",
+    "exhibition_Detail" : "* 월 ~ 토요일     : 9:30AM~ 9PM (티켓박스 마감시간:  오후 8:15)\n* 일요일            : 9:30AM~ 7PM (티켓박스 마감시간:  오후 6:15)\n* 8월 15일         : 9:30AM~ 9PM (티켓박스 마감시간:  오후 8:15)\n\n\n〈기업행사로 인한 관람 시간 변경 안내〉\n기업행사로 인하여 하기 날짜에 관람시간이 변경되오니 방문 일정에 참고 부탁 드립니다. \n7월 18일(화) : 9:30AM~ 7PM (입장 및 매표 마감: 오후 6:15)",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 15,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.24.18.png?alt=media&token=b63d5be1-cd5a-451f-a6ca-9960327c4f71", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.24.29.png?alt=media&token=9937577e-2139-457e-8e55-d9c09a9fc427", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.24.40.png?alt=media&token=2f101d6e-f3e6-40a2-921a-da0813306e16" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008143_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170930",
+      "period_StartDate" : "20170701"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "그레뱅 뮤지엄",
+      "place_WebsiteURL" : "http://www.grevin-seoul.com/ko/"
+    },
+    "exhibition_Title" : "그레뱅 뮤지엄 7,8,9월",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "0930",
+      "workingHours_StartTime" : "2100"
+    }
+  }, {
+    "exhibition_Admission" : 13000,
+    "exhibition_Artist" : "(주)디커뮤니케이션",
+    "exhibition_Detail" : "알립니다\n\n- 도슨트 운영시간 : 오후 2시 / 오후 5시, 주말 도슨트 운영 없음\n- 등급별 나이 : 청소년 : 만 13세 - 18세 / 어린이 : 만 3세 - 12세 / 36개월 미만 유아 무료\n- 특별할인 : (만 65세 이상/장애인/국가유공자/독립유공자/상이군경) 본인에 한해 6,500원 \n*특별할인은 현장구매시 혜택적용을 받으실 수 있습니다. \n- 사진 및 동영상 촬영 금지\n- 행사장 내 음식물 반입금지\n- 미취학 아동 반드시 보호자 동반 입장",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 16,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.26.12.png?alt=media&token=7ba09636-fee4-409e-9367-cb3f3684b1cc", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.26.22.png?alt=media&token=0bb9ceb8-c477-4be8-9efe-ac34eb1011dc", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.26.32.png?alt=media&token=b53c7d17-ccec-4ec2-835a-63fd943dbe44", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.26.41.png?alt=media&token=53282fde-f59e-4e45-ae83-130b5fa3c383" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17006952_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171007",
+      "period_StartDate" : "20170624"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "예술의전당 한가람미술관",
+      "place_WebsiteURL" : "http://www.sac.or.kr/"
+    },
+    "exhibition_Title" : "보그 라이크 어 페인팅 展",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 8000,
+    "exhibition_Artist" : "(주)디커뮤니케이션",
+    "exhibition_Detail" : "※ 관람료 : 8,000원 \n    - 단체(20인 이상) : 30% 할인 (전화문의 063-859-3317)\n    - 문화가 있는 날 : 30% 할인(현장구매 시에만 할인적용)\n    - 익산예술의전당 회원 : 20% 할인익산예술의전당 홈페이지에서 예매 시 할인적용 (arts.iksan.go.kr)\n    - 장애인 50%(1~3급:1인, 동반1인/4~6급:본인) 50% 할인\n    - 국가유공자증 소유자(본인) 50% 할인\n    - 독립유공자증 소유자(본인) 50% 할인\n    - 특수임무유공자증 소유자(본인) 50% 할인\n    - 국민기초생활수급자(본인) 50% 할인\n    - 익산사랑카드 소지자(본인) 50% 할인\n    - 36개월 미만의 어린이는 무료입장이 가능합니다.(증빙서류 제시 시)\n\n※주민등록 연령기준, 증빙서류(신분증 등) 필수 지참, 중복 할인 불가\n※확인증 미지참시 현장에서 차액 지불",
+    "exhibition_District" : "전라",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 17,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.29.27.png?alt=media&token=05d194ab-6d99-43a2-8170-aef187406bee", "" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17005471_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170820",
+      "period_StartDate" : "20170530"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "익산예술의전당 미술관",
+      "place_WebsiteURL" : "http://www.sac.or.kr/"
+    },
+    "exhibition_Title" : "모니카와 떠나는 세계명화 여행전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 18000,
+    "exhibition_Artist" : "(주)문화방송",
+    "exhibition_Detail" : "〈MBC WORLD - 2017년 07월, 08월, 09월〉 \n\n※ MBC WORLD 는 상설 체험테마파크 이며, 인터파크에서는 3개월 마다 티켓 오픈 됩니다.\n\n예매티켓은 취소 마감시간(방문일 전날 오후 5시 이전/일요일인 경우 전날 오전 11시)이후 취소/환불/변경은 불가합니다.\n\n\n〈회차(관람시간)별 입장가능 시간〉 \n- 10시00분 ~ 11시30분\n- 10시30분 ~ 12시00분\n- 11시00분 ~ 12시30분\n- 11시30분 ~ 13시00분\n- 12시00분 ~ 13시30분\n- 12시30분 ~ 14시00분\n- 13시00분 ~ 14시30분\n- 13시30분 ~ 15시00분\n- 14시00분 ~ 15시30분\n- 14시30분 ~ 16시00분\n- 15시00분 ~ 16시30분\n- 15시30분 ~ 17시00분\n- 16시00분 ~ 17시30분\n\n※ 1회 투어 평균관람시간은 90분이며 회차별 인원은 50명으로 제한됩니다. \n※ 20명이상 방문시 단체 할인 가능하므로 사전예약 해주시기 바랍니다. \n※ (☎단체예약 문의 (02)789-3705~6) \n※ 주차는 MBC 경영센터 2번 게이트에 가능하며, 주차권은 ＇MBC WORLD＇ 티켓박스에서 수령할 수 있습니다. 입차 후 3시간 무료주차 가능합니다.",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 18,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.31.03.png?alt=media&token=ac906efe-6c8e-41d2-9ab3-d75aaafa6dc6", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.31.24.png?alt=media&token=b399a273-6530-45d6-970f-61545af543ab", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.31.36.png?alt=media&token=75b01307-bb1b-47bb-b92f-c6c01ac772a6" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17007617_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170930",
+      "period_StartDate" : "20170701"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "상암동 MBC 신사옥",
+      "place_WebsiteURL" : "http://aboutmbc.imbc.com/"
+    },
+    "exhibition_Title" : "MBC WORLD",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1130"
+    }
+  }, {
+    "exhibition_Admission" : 6000,
+    "exhibition_Artist" : "국립박물관문화재단",
+    "exhibition_Detail" : "1.전시 가격 안내\n- 성인(만 24세 이상) : 6,000원\n- 대학생(학생증 소지) 및 청소년(중학생 이상부터 만 24세 미만) : 5,000원 \n- 초등학생 : 4,000 원\n- 65세 이상 및 유아(48개월 미만 ~ 만 6세 미만) : 3,000 원\n\n2.무료 (기획사로 문의)\n- 48개월 미만, 단체 인솔자(교원 1인), 국가보훈대상자, 기초 생활 수급자,\n- 장애인(1급~3급) 본인 및 동반 1인\n- 상이군(1급-3급) 본인 및 동반 1인\n- 박물관회회원증소지자 및 동반1인(기부회원)\n- 박물관 기증자증소지자 및 동반 1인\n- ‘의무복무대상’ 기준 군인, 경찰, 소방원 (본인)\n- 법정 차상위계층 ‘문화누리카드＇ 소지자 (본인)\n\n\n※복지카드 및 확인증 미지참시 현장에서 차액 지불",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 19,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.33.16.png?alt=media&token=f5bba2cb-7350-4d07-972f-e3a8dac48332", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.33.27.png?alt=media&token=b4b21dfd-f6fd-4a83-94be-9b4e911afcc6" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17005735_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170827",
+      "period_StartDate" : "20170509"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "국립중앙박물관",
+      "place_WebsiteURL" : "http://www.museum.go.kr/"
+    },
+    "exhibition_Title" : "아라비아의 길",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "0900",
+      "workingHours_StartTime" : "2100"
+    }
+  }, {
+    "exhibition_Admission" : 10000,
+    "exhibition_Artist" : "이엔에이파트너스",
+    "exhibition_Detail" : "-무료 : 만36개월 미만 유아, 단체(20인 이상)인솔자(교원1인), 국가보훈대상자, 기초생활수급자, 장애인(1급~3급)본인 및 동반 1인, \n상이군경(1급~3급) 본인 및 동반 1인, 박물관 기증자 및 동반 1인",
+    "exhibition_District" : "울산",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 20,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.36.41.png?alt=media&token=052abab4-db72-498b-b87c-e057cadbb9fe", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.36.59.png?alt=media&token=2b2f7bcc-deea-4f1a-8b9f-d6d01b915219", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.37.14.png?alt=media&token=d98a1739-b5e1-43ba-81cf-3d3985cd4b30" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17005673_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170827",
+      "period_StartDate" : "20170502"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "울산박물관 기획전시실",
+      "place_WebsiteURL" : "http://museum.ulsan.go.kr/"
+    },
+    "exhibition_Title" : "이집트 보물전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "0900",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 4000,
+    "exhibition_Artist" : "(주)타이드스퀘어",
+    "exhibition_Detail" : "※ M포인트 적립이 되지 않는 카드 사용자분들은 ‘M포인트 사용 안함’에 체크해주셔야 결제가 가능합니다. \n(미 체크 시, 결제 진행 불가) \n- 대상카드 : 현대카드 Zero, X, T, 프리미엄카드(Black, Purple, Red) 중 M포인트 미적립형 카드\n- M포인트 보유 현황은 현대카드 홈페이지〉 My Account〉 포인트/마일리지/할인/캐시백 메뉴 혹은 \n현대카드 모바일 어플리케이션 〉 나만의 혜택 메뉴에 들어가시면 확인하실 수 있습니다.",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 21,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/large/17/17009764_p.gif" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17009764_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171029",
+      "period_StartDate" : "20170728"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "현대카드 Storage",
+      "place_WebsiteURL" : "http://museum.ulsan.go.kr/"
+    },
+    "exhibition_Title" : "ADFF: Seoul",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1200",
+      "workingHours_StartTime" : "2100"
+    }
+  }, {
+    "exhibition_Admission" : 15000,
+    "exhibition_Artist" : "(주)에블린",
+    "exhibition_Detail" : "* 3차 얼리버드 할인은 6월 15일까지 적용되며, 8월 13일까지 사용 가능합니다.\n* 36개월 미만 유아 무료입장 (현장 입장시 증빙서류 제출 필수)\n* 전시관련 세부 문의사항은 http://tqs.modoo.at 을 참고 바랍니다.",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 22,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.40.53.png?alt=media&token=da5ec174-7dc7-4b6e-a73d-8a721068e61f", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.41.06.png?alt=media&token=f99b2df0-3e80-426b-a5c8-5efce070051f", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.41.17.png?alt=media&token=9fd83b8d-7f46-4e6b-a416-87f8786e263a" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17007449_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171015",
+      "period_StartDate" : "20170704"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "용산전쟁기념관 기획전시실",
+      "place_WebsiteURL" : "https://www.warmemo.or.kr/"
+    },
+    "exhibition_Title" : "더퀸즈시크릿 전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 12000,
+    "exhibition_Artist" : "강동아트센터",
+    "exhibition_Detail" : "※ 전시관람 유의사항 \n\n〈예매안내〉 \n1. 관람등급 : 전체 관람가 \n36개월 미만 아동은 생년월일을 확인할 수 있는 의료보험증 및 기타서류를 지참 시, 무료 입장이 가능합니다.\n2. 티켓은 유가증권이므로 분실 또는 훼손 시 취소, 변경이 불가능합니다. \n3. 전시 당일 예매 티켓의 취소, 환불, 교환은 불가능합니다. \n4. 20인 이상 단체 예매는 티움교육 1588-4909 전화 예매만 가능합니다.\n\n〈입장안내〉 \n1. 전시장은 강동아트센터 별관 특별전시장 건물입니다. \n2. 매표 및 입장마감은 오후 5시입니다. \n3. 전시장 입장시 생수 외 음료 및 음식물 반입이 불가합니다. \n4. 예매 티켓수령 시 예매자 신분증과 함께 예매번호, 할인 관련 서류 원본 등을 지참하시기 바랍니다. \n\n〈티켓발권 공지〉 \n예매하신 티켓을 발권 받으신 후 분실하셨을 경우 티켓 재발행이 불가능하오니, 유의하여 주시기 바랍니다.",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "사진",
+    "exhibition_ID" : 23,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.43.50.png?alt=media&token=ac8d02c3-1c8d-4a31-b8a7-d17bf8d20f32" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008077_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171029",
+      "period_StartDate" : "20170623"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "강동아트센터",
+      "place_WebsiteURL" : "https://www.warmemo.or.kr/"
+    },
+    "exhibition_Title" : "내셔널지오그래픽展",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 5000,
+    "exhibition_Artist" : "구리시청",
+    "exhibition_Detail" : "* 티켓배부 : 오전 10:00 ~ 오후 5:30까지 구리아트홀 1층 아츠서비스존에서 티켓 배부합니다\n* 36개월 이하 무료입니다\n* 관람을 위한 전시 입장의 최소, 최대 관람인원은 없습니다. 단, 도슨트 운영은 적정인원 30~40명입니다.\n* 단체의 도슨트 관람을 원할 경우 반듯이 예약을 하셔야 합니다(구리아트홀 아츠서비스존 031-550-8800~1)\n* 도슨트 운영 프로그램 진행 시 소요시간은 40분 내외입니다.\n* 음식물 반입금지입니다.\n* 사진촬영가능합니다.\n* 주차는 티켓을 제시하시면 3시간 무료입니다.",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 24,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.44.56.png?alt=media&token=d4966323-e507-4efb-bea4-8ab707ece77b", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.45.21.png?alt=media&token=18c9c6c6-8ec5-49fc-8382-2c0dc5fb82d0", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.45.31.png?alt=media&token=b9ac25cb-42a3-4ac3-9504-98ae1cd7ba6c", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.45.47.png?alt=media&token=ffabe65d-460e-4524-b4a7-5e186c819758" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17007106_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170926",
+      "period_StartDate" : "20170615"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "구리아트홀 갤러리",
+      "place_WebsiteURL" : "http://www.gart.go.kr/"
+    },
+    "exhibition_Title" : "황금빛 색채화가, 클림트",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 9600,
+    "exhibition_Artist" : "㈜미디어앤아트",
+    "exhibition_Detail" : "*특별 할인 (유효기간: 2017년 12월 31일까지 사용 가능)\n- 1인 관람권(성인) :: 12,000원 ▶ 9,600원 (20%)\n- 1인 관람권(학생) :: 10,000원 ▶ 8,000원 (20%)\n- 1인 관람권(유아) :: 8,000원 ▶ 6,400원 (20%)\n- 2인 관람권(성인) :: 24,000원 ▶18,000원 (25%)\n\n* 티켓 정상가 \n- 성인 12,000원, 학생(초중고생) 10,000원, 유아 8,000원 \n- 36개월 미만 무료입장 \n\n※ 현장에서 티켓 수령시 증빙서류 확인(미지참시 차액지불)",
+    "exhibition_District" : "제주",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 25,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.48.19.png?alt=media&token=fcf4de3d-66cf-4e2d-885b-1deb273ccd64", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.49.05.png?alt=media&token=9c55143a-7b1a-4fc3-b06b-6693635731b8", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.49.21.png?alt=media&token=62a4afcd-7de9-4601-9f2d-af6c1d6af269", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.49.32.png?alt=media&token=d1da244e-47c8-434d-ad77-5ca84d1a0712" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/16/16006616_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170926",
+      "period_StartDate" : "20170617"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "제주 부영호텔",
+      "place_WebsiteURL" : "www.booyoungjejuhotel.com/"
+    },
+    "exhibition_Title" : "반 고흐 인사이드",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 13000,
+    "exhibition_Artist" : "㈜라엘엔터테인먼트",
+    "exhibition_Detail" : "전시장 내 음식물 반입 금지 입니다.",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 26,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.51.54.png?alt=media&token=2d8e6ff2-3603-41a2-90bb-8610357fb09f", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.52.09.png?alt=media&token=be7c001e-cae7-45c7-8baf-235aa1f6adff", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.52.18.png?alt=media&token=751f09a6-56ec-40ec-82dc-8309745905fc", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.52.26.png?alt=media&token=3629ce3d-84b6-4180-b8f8-0e9c0bd2217a" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17009400_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170910",
+      "period_StartDate" : "20170714"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "아라아트센터",
+      "place_WebsiteURL" : "www.araart.co.kr"
+    },
+    "exhibition_Title" : "뱅크시 코리아 서울 (Banksy Korea Seoul) 그래피티 전시회",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 9000,
+    "exhibition_Artist" : "(주)아라리오",
+    "exhibition_Detail" : "알립니다\n\n1. 모바일 티켓은 문자(mms)로 발송됩니다. \n2. 예매 취소 마감시간은 관람 하루 전인 평일/일요일/공휴일 오후 5시, 토요일은 오전 11시까지입니다.\n\n아라리오컬렉션 (상설전) \n리칭:8개의방 (상설전)\n한만영 개인전 間(간) 2017.7.5~2018.8.27",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 27,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.55.30.png?alt=media&token=bcf621d4-c43e-4e26-83a2-cf865e3707eb", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.55.40.png?alt=media&token=044cb50c-7a49-4534-abee-e9a40a80d08b" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/14/14007966_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170131",
+      "period_StartDate" : "20170801"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "아라리오뮤지엄",
+      "place_WebsiteURL" : "www.arariomuseum.org/"
+    },
+    "exhibition_Title" : "아라리오컬렉션+리칭의 방+間(간)",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 13500,
+    "exhibition_Artist" : "구하우스",
+    "exhibition_Detail" : "알립니다\n\n1. 모바일 티켓은 문자(mms)로 발송됩니다. \n2. 예매 취소 마감시간은 관람 하루 전인 평일/일요일/공휴일 오후 5시, 토요일은 오전 11시까지입니다.\n\n아라리오컬렉션 (상설전) \n리칭:8개의방 (상설전)\n한만영 개인전 間(간) 2017.7.5~2018.8.27",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 28,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.57.12.png?alt=media&token=eaab552b-f1c1-4781-90af-1351a5823970", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%2012.57.23.png?alt=media&token=e517a20b-695c-496f-b538-ade314652b87" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17000964_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171231",
+      "period_StartDate" : "20170401"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "구하우스",
+      "place_WebsiteURL" : "koohouse.org"
+    },
+    "exhibition_Title" : "KOO HOUSE",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1030",
+      "workingHours_StartTime" : "1700"
+    }
+  }, {
+    "exhibition_Admission" : 8000,
+    "exhibition_Artist" : "케이티하이텔주식회사",
+    "exhibition_Detail" : "전시기간 : 2017년 7월 8일(토) - 10월 15일(일)\n［전시기간 내 관람시간 안내］\n※ 2017년 7월 8일(토)-8월 20일(일) 휴관 없음/  오전 11:00 - 오후 9:00 (입장마감 오후 8:30)\n※ 2017년 8월 22일(화)-10월 15일(일) 월요일 휴관/  오전 11:00 - 오후 8:00 (입장마감 오후 7:30)\n *.8/22(화)부터 관람 시간이  변경되었습니다.이용하시는데 불편함을 끼쳐 죄송합니다.\n   관람 시간을 꼭 확인 부탁드립니다!!!",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 29,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.00.54.png?alt=media&token=039bd1d7-d246-4133-89ed-a905b709bd3c", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.01.04.png?alt=media&token=bf7faa8f-7531-449b-a164-d198645f95d9", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.01.16.png?alt=media&token=98230e07-9363-4917-9dd2-44d47dabf162" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008786_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170903",
+      "period_StartDate" : "20170708"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "모나코스페이스",
+      "place_WebsiteURL" : "www.monacospace.co.kr/"
+    },
+    "exhibition_Title" : "너의 이름은. 展",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2100"
+    }
+  }, {
+    "exhibition_Admission" : 12000,
+    "exhibition_Artist" : "(주)디커뮤니케이션",
+    "exhibition_Detail" : "오전 10시 ~ 오후 7시 (입장마감 오후 6시) \n\n*매주 월요일 휴관 / *5/1, 5/8, 6/5, 8/14 정상오픈\n할인정보*성인:만 19세~ / *청소년: 중고교생 / *어린이: 48개월~초등생 / *48개월 미만 무료\n\n★할인 및 무료대상자는 신분증,학생증 또는 증빙서류 지참 필수★",
+    "exhibition_District" : "대구",
+    "exhibition_Genre" : "사진",
+    "exhibition_ID" : 30,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.05.54.png?alt=media&token=7583a70b-b3e0-43c1-b7a8-fcce29b2bd5b", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.06.02.png?alt=media&token=fd83c091-7670-4818-9365-ce99f7ba255c" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17004911_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170827",
+      "period_StartDate" : "20170429"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "대구MBC",
+      "place_WebsiteURL" : "www.dgmbc.com/\nwww.dgmbc.com/\nwww.dgmbc.com/\nwww.dgmbc.com/"
+    },
+    "exhibition_Title" : "LOOK SMITHSONIAN: 스미스소니언 사진전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 3000,
+    "exhibition_Artist" : "한국소리문화의전당 우석학원",
+    "exhibition_Detail" : "■ 24개월 미만은 무료입장입니다.(의료보험증 등 증빙서류 지참시 무료입장 가능)\n■ 전시종료 1시간 전 입장 마감입니다.(주중: 16시 / 주말 및 공휴일: 17시) \n■ 본 전시는 주중(화~금)에 한해 재입장이 가능합니다.(티켓 미소지시 입장불가 / 주말 및 공휴일 재입장 불가) \n■ 전시 당일에는 현장에서 취소 및 환불이 불가합니다.",
+    "exhibition_District" : "전라",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 31,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.07.32.png?alt=media&token=003c6edd-5e54-47df-8580-ddeab463b5ac" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17004805_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170827",
+      "period_StartDate" : "20170404"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "한국소리문화의전당",
+      "place_WebsiteURL" : "www.sori21.co.kr/"
+    },
+    "exhibition_Title" : "상상놀이터-색.빛.소리",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1700"
+    }
+  }, {
+    "exhibition_Admission" : 9900,
+    "exhibition_Artist" : "마크앤",
+    "exhibition_Detail" : "▶재방문티켓-------〉 정가 10,000원 〉 9,000원(기간한정 / 500매한정) \n구매기간 : 2017.6.21(수) ~ 2017. 7월 9일(일)\n사용기간 : 2017.6.21(수) ~ 2017. 7월 9일(일) / 사용기간 지날 시 사용불가 \n재방문 증명 사진 지참 / 없을 시 차액 현장 결제 \n\n▶오픈특가이벤트티켓 -------〉 정가20,000원 〉 12,900원(45%할인 / 선착순500매 한정)\n구매기간: 2017.6.21(수) ~ 2017. 7월 9일(일) \n사용기간 : 2017.6.21(수) ~ 2017. 7월 9일(일) / 사용기간 지날 시 사용불가 \n\n▶주중(월~금)1인입장권 ------〉정가20,000원 〉 14,900원 (35%할인)\n▶주말(토~일) / 공휴일 1인입장권 ------〉정가20,000원 〉 15,900원 (20%)\n\n▶초~중~고등학교 1인입장권 ------〉정가20,000원 〉 9,900원 (50%)\n\n▶2인 패키지(주중,주말,공휴일 사용가능) ------〉 정가 40,000원 〉 29.000원(30%)\n\n▶ 영남권 20만 돌파기념 300매 한정\n\n-가격 : 정가 2만원(1+1) \n\n(위 티켓 1장 구매시 2만원에 1+1으로 총 2명 입장 가능합니다)\n \n-사용/유효기간 : ~ 8/15(화)까지\n \n(사용기간 지날시 사용불가/분활사용 불가/주중,주말,공휴일 사용가능)\n\n◎ 기타 정보 : 전연령 \n24개월 미만 무료입장 (증빙서류지참)",
+    "exhibition_District" : "대구",
+    "exhibition_Genre" : "사진",
+    "exhibition_ID" : 32,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.08.31.png?alt=media&token=18c6e24d-28a2-47a1-af00-e468a774a34a", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.08.48.png?alt=media&token=6fc711c5-dc21-49ff-9c88-a3bd9a673942", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.09.12.png?alt=media&token=7bf8f78e-e69c-47dc-9d6a-bc56c12f7013" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008307_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170827",
+      "period_StartDate" : "20170630"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "대구 엑스코",
+      "place_WebsiteURL" : "www.excodaegu.co.kr/"
+    },
+    "exhibition_Title" : "인생사진관",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 16000,
+    "exhibition_Artist" : "（주）스마트인피니",
+    "exhibition_Detail" : "알립니다\n\n* 원활한 입장을 위해 입장시 필요한 바코드는 미리 준비부탁드립니다\n(바코드 안내 : 스마트인피니 1661-1063 / 오전 9시~오후 6시까지 운영 ※ 점심시간 12:00~1:00)\n3. 매표소에서 모바일 입장권(바코드) 제시\n4. 여수 인생사진관 즐기기!\n",
+    "exhibition_District" : "전라",
+    "exhibition_Genre" : "사진",
+    "exhibition_ID" : 33,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.10.34.png?alt=media&token=d92e6ac8-ca6d-4f8f-ae4c-2daa2116cd96", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.10.51.png?alt=media&token=02f29a74-9b9f-4ffe-b6cc-2748c2628d8d" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17006747_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171029",
+      "period_StartDate" : "20170515"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "여수엑스포 ",
+      "place_WebsiteURL" : "www.expo2012.kr/"
+    },
+    "exhibition_Title" : "인생사진관",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 10000,
+    "exhibition_Artist" : "(재)서울디자인재단DDP",
+    "exhibition_Detail" : "- 성인(만 19~64세) : 10,000원\n- 어린이 및 청소년(만 7~18세): 8,000원\n- 미취학아동(만 4~6세): 6,000원\n- 만 65세 이상: 8,000원\n- 장애인 4~6급: 8,000원\n- 군인: 8,000원\n- 다둥이 행복 카드 소지자 및 카드에 등재된 가족 포함: 8,000원 (서울시등록다둥이행복카드(타지역불가) 및신분증지참)\n- 문화의날(매월 마지막 주 수요일): 40% 할인 (단, 18시 이후 현장 매표소 구매시에만 해당)\n- 간송 특별전 오픈 기념 할인 특가 (4월12일~4월30일) 티켓가 30% 할인 진행\n\n※확인증 미지참시 현장에서 차액 지불\n\n※무료 대상자 (기획사로 문의)\n: 만 4세 미만, 국가유공자 유족증 소유자 독립유공자 유족증 소유자, 의사상자 유족, 국가기초수급대상자\n장애인 1~3급(보호자 1인 포함)\n\n※단체 예매는 기획사로 문의",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 34,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.12.08.png?alt=media&token=1b3282c3-be38-4cfa-a112-88d523986838", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.12.20.png?alt=media&token=69ab81d2-72cf-439b-9f19-f923d9837777" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17005463_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171012",
+      "period_StartDate" : "20170413"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "DDP배움터 2층",
+      "place_WebsiteURL" : "https://ddp.or.kr/"
+    },
+    "exhibition_Title" : "훈민정음.난중일기 展 : 다시, 바라보다",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 5000,
+    "exhibition_Artist" : "재단법인 경주문화재단",
+    "exhibition_Detail" : "［ 전시설명프로그램 ］\n화-목(예약자에 한해 가능)\n11:00│14:00│16:00\n\n* 10명이상 단체관람시 사전예약 필수 (054-748-7726)\n* 매월 마지막 수요일 ＂문화가 있는날＂ 무료입장",
+    "exhibition_District" : "경상",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 35,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/large/17/17000560_p.gif" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17000560_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170924",
+      "period_StartDate" : "20170117"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "경주예술의전당",
+      "place_WebsiteURL" : "www.gjartcenter.kr"
+    },
+    "exhibition_Title" : "《빨주노초파남보》어린이체험전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 12000,
+    "exhibition_Artist" : "(주)KNN",
+    "exhibition_Detail" : "※ 인터파크할인 ※\n\n- 대인 : 12,000원 / 소인 : 10,000원\n- 보훈(국가유공자), 장애인 1~3급 (동반 1인 6,000원)\n- 경로(만65세 이상), 군경(군인, 경찰), 장애인 4~6급 (본인만 6,000원)\n- 에어부산 / KTX 탑승권 제시 20% 할인 (동반 1인 / 1개월 이내 탑승권(모바일, 실물티켓) 지참)\n- KNN 주최공연 입장권 소지자 20% 할인 (동반 3인 / ex)KNN시어터 공연 및 월석아트홀 전시)\n※ 증빙자료 미 지참 시 차액 지불하셔야 합니다.\n\n※ 현장구매할인 ※\n［50% 할인］\n- 디오라마월드 재 관람할인 (본인만 / 티켓확인)\n\n［30% 할인］\n- 부산교육청발급  토요스쿨패스 , 방과후행복카드 할인 (학생본인만 / 토요일만 가능)\n\n［20% 할인］\n- 경남지역 초,중,고등학생 할인 (학생본인만)\n- 부산시티투어 탑승객 할인 (동반 1인 / 팔찌확인)\n- 아르피나, 해운대체육센터 할인 (동반 1인 / 회원카드확인)\n- 메가마트, 교보핫트랙스 할인 (동반 1인 / 회원카드(모바일, 실물카드), 영수증지참)\n- 국립국악원 〈왕비의 잔치〉 입장권 소지자 할인 (동반 1인)\n- 벡스코 cafe B / 더베이 101 / 식당 120 / 신세계몰 라필리아 델 프레지덴테 할인\n(동반 1인 / 1개월이내 영수증 확인)\n- 부산시 자원봉사자할인 (동반 3인 / 자원봉사자통장 및 확인증 확인)\n- 부산은행 문화사랑카드 할인 (동반 3인 / 카드결제시 할인가능)\n\n※인터파크 할인은 현장에서도 할인 가능합니다, \n［디오라마월드 티켓소지시 영화의 전당 영화관람 1,000원 할인, 국립국악원 〈왕비의 잔치〉 10,000원 할인됩니다.］",
+    "exhibition_District" : "부산",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 36,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.14.18.png?alt=media&token=a41041ff-e761-4382-b341-e23bb668d521", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.14.35.png?alt=media&token=4ee6b60a-5a58-4e1f-92b0-46e31ee5a629" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/15/15014418_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171231",
+      "period_StartDate" : "20151217"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "KNN 월석아트홀",
+      "place_WebsiteURL" : "https://ko.foursquare.com"
+    },
+    "exhibition_Title" : "디오라마월드",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 8000,
+    "exhibition_Artist" : "실버트레인",
+    "exhibition_Detail" : "성인 (만 19세-64세 / 대학생 및 일반) : 10,000원 　　 \n청소년 (만 13세-18세 /중, 고등학생) : 8,000원 \n어린이 (만 12세 이하, 초등학생 미취학아동) : 5,000원 \n\n얼리버드 할인 20% (8월 31일까지예매시)\n예술인패스 할인 10%\n\n※증빙 미 지참 시 차액 지불",
+    "exhibition_District" : "부산",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 37,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.16.06.png?alt=media&token=b5ad354f-a4d3-4831-ab93-9a5a94795d96", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.16.16.png?alt=media&token=e011dc90-4c9d-4e00-bf27-84082bb75142", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.16.50.png?alt=media&token=4427c660-e4e5-4aee-9afa-99262fe3e27b" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17010843_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171008",
+      "period_StartDate" : "20170818"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "부산시민공원 미로홀",
+      "place_WebsiteURL" : "www.citizenpark.or.kr/"
+    },
+    "exhibition_Title" : "마츠모토레이지 은하철도999전 _발표40주년 기념",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 7000,
+    "exhibition_Artist" : "(주)대구백화점 대백프라자",
+    "exhibition_Detail" : "지정석 : 일반 10,000원, 온라인예매 7,000원",
+    "exhibition_District" : "대구",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 38,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.18.12.png?alt=media&token=4a06d32f-d11e-4500-9865-5eb7f56b7401", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.18.20.png?alt=media&token=5feeefb0-9771-45a7-8bfb-4faf6517a341" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17010857_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170924",
+      "period_StartDate" : "20170923"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "대백프라자",
+      "place_WebsiteURL" : "https://www.debec.co.kr/"
+    },
+    "exhibition_Title" : "스토리텔링 드로잉아트쇼 ‘드림캐쳐’ ",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1400",
+      "workingHours_StartTime" : "1600"
+    }
+  }, {
+    "exhibition_Admission" : 10000,
+    "exhibition_Artist" : "컴퍼니에스에스 (주) 춘천",
+    "exhibition_Detail" : "* 인터파크 티켓은 관람일 지정 및 사용기한이 없습니다.\n* 티켓은 현장수령만 가능합니다.\n* 현장수령 시 신분증, 학생증, 장애인증 등 증빙자료 지참 부탁드립니다.",
+    "exhibition_District" : "강원",
+    "exhibition_Genre" : "사진",
+    "exhibition_ID" : 39,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.22.37.png?alt=media&token=3d9f9083-317f-442d-a542-a6a53ef1077f", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.22.49.png?alt=media&token=c15d6ee2-57a9-497d-b009-a44a53df9dcd", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.23.02.png?alt=media&token=1a4e8d34-c356-42c8-880b-e16207ca3f86" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17010738_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171112",
+      "period_StartDate" : "20170827"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "KT＆G 상상마당 춘천 아트센터 갤러리",
+      "place_WebsiteURL" : "https://ko.foursquare.com/"
+    },
+    "exhibition_Title" : "자끄 앙리 라띠그 - 라 벨 프랑스!",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1900"
+    }
+  }, {
+    "exhibition_Admission" : 5000,
+    "exhibition_Artist" : "(재)김해문화재단 김해문화의전당",
+    "exhibition_Detail" : "2017년 6월 5일(월) - 2017년 8월 27일(화)\n평일 : 오전 10시 - 오후 6시 (입장마감 : 오후 5시) \n도슨트 : 일일 2회 (오전 11시, 오후 3시) / 주말 공휴일 없음\n\n티켓구매시 오디오 가이드 무료제공 \n\n*휴관일: 매주 월요일",
+    "exhibition_District" : "경상",
+    "exhibition_Genre" : "미술",
+    "exhibition_ID" : 40,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/large/17/17008570_p.gif" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008570_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170827",
+      "period_StartDate" : "20170605"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "김해문화의전당",
+      "place_WebsiteURL" : "https://www.gasc.or.kr/"
+    },
+    "exhibition_Title" : "한국근대미술의 여정",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 12000,
+    "exhibition_Artist" : "재단법인 광주광역시 광주문화재단",
+    "exhibition_Detail" : "토,일,공휴일 16:20 17:20\n\n* 매주 월요일은 휴관입니다.(7.3. 7.10. 7.17. 7.24. 7.31. 8.7. 8.14. 8.21. 8.28.)\n* 8.1. 8.2. 8.3. 8.4. 8.5. 8.6. 8.7.은 장비점검으로 휴관입니다.",
+    "exhibition_District" : "전라",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 41,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.25.14.png?alt=media&token=16ad1f1e-6a22-44b1-8152-f751a63f9e7b", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.25.22.png?alt=media&token=8a5a1da7-3b6a-4a6a-aaa9-be0c2d97b848", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.25.31.png?alt=media&token=bbf9e314-b02e-44b1-bca2-89dd9c4827e1" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17007339_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170831",
+      "period_StartDate" : "20170701"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "홀로그램 극장 광주",
+      "place_WebsiteURL" : "gjmp.kr"
+    },
+    "exhibition_Title" : "홀로그램 K-POP공연",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1620",
+      "workingHours_StartTime" : "1720"
+    }
+  }, {
+    "exhibition_Admission" : 4000,
+    "exhibition_Artist" : "(재)대림문화재단(디뮤지엄)",
+    "exhibition_Detail" : "〈인터파크 사전 예매 티켓 수령 시 확인사항〉\n-성인권(만 19세 이상): 신분증 확인\n-학생권(초/중/고 8-18세) : 학생증 확인\n-어린이권(3-7세): 생년월일이 표기된 건강보험증 확인(실물 또는 휴대폰 사진으로 인증 가능)\n\n**신분증, 학생증 등 증빙자료 미지참 시 티켓 수령이 불가합니다. \n단, 미취학 아동 티켓의 경우 보모님 동반 방문 시 신분증 확인으로 티켓 수령이 가능합니다.\n\n**미술관 현장에서 환불, 추가 금액 지불 등 옵션 변경이 절대로 불가능하오니, \n내용을 정확하게 인지한 후 본인 및 동반인에게 적합한 티켓을 구매하기 바랍니다.\n\n** 사전예매 티켓을 구입하신 분은 미술관 방문 전에 디뮤지엄＆대림미술관 앱에 가입하고 방문하시면 현장에서 입장권을 원활하게 수령하실 수 있습니다.\n\n** 미술관 온라인 회원 인증이 어려운 일부 청소년/어린이 티켓 구매자는 지도자 또는 동반인이 미술관 온라인 회원을 대신 인증하실 수 있습니다.\n\n** 예매 취소 조건은 예매시 지정한 관람일자에 따라 적용 됩니다.",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 42,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.27.07.png?alt=media&token=7d2fc8ae-3a7d-4946-9bd2-c454e847b085", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.27.24.png?alt=media&token=312685ae-74cb-4e32-abda-df1833c8bfb7" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17010987_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171015",
+      "period_StartDate" : "20170914"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "디뮤지엄",
+      "place_WebsiteURL" : "daelimmuseum.org/dmuseum/"
+    },
+    "exhibition_Title" : "PLASTIC FANTASTIC : 상상 사용법",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 13000,
+    "exhibition_Artist" : "(주)빅제이엔터테인먼트",
+    "exhibition_Detail" : "［패티보이드사진전 25회 연장 OPEN (~17.09.03 SUN)］\n  8월 9일까지 진행예정이였던 패티보이드사진전이 여러분의 성원에 힘입어,9월 3일까지로 연장되었습니다.\n  앞으로도 많은 관심 부탁드리겠습니다.\n\n［재관람 무료］\n  - 패티보이드 사진전 재관람시 기존 입장권을 매표소에 제시해 주시면 무료로 입장가능.\n\n［도슨트 운영］\n- 평일 정규도슨트 : 평일 오후 2시, 오후 5시 (2회) \n- 주말 도슨트 : 오후 2시 (1회)\n\n［문화가 있는 날］\n- 마지막주 수요일(문화가 있는날) (7/26)\n- 기본가에서 50% 할인 (중복할인불가, 현장매표소에서만 할인 가능)\n- 할인 적용기간 : 오전 11:00 ~ 오후 8:00 (입장마감 오후 7시 30분) \n***현장매표소에서 티켓 구매 시 적용 가능",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "사진",
+    "exhibition_ID" : 43,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.28.48.png?alt=media&token=36450499-69aa-4d3a-ab5b-369013f95e33", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.28.58.png?alt=media&token=b42a9d4b-24ed-4980-91e7-81bd685e7e80", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.29.06.png?alt=media&token=7336ba0a-aedf-4a3e-82ad-ce2d6a475e16" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17006088_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170903",
+      "period_StartDate" : "20170428"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "성수 S-FACTORY",
+      "place_WebsiteURL" : "lfive.co.kr/ko/s-factory/"
+    },
+    "exhibition_Title" : "Rockin’ Love_패티보이드사진전",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1100",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 10000,
+    "exhibition_Artist" : "주식회사 소셜네트워크",
+    "exhibition_Detail" : "［전시문의］ \n\n전화: 070-4870-4708\n\n［오픈기념 무료입장이벤트］ \n오픈당일인 8/11(금요일)부터 8/15(화요일)까지 \n5일간 ［뽀로로프렌즈 뮤지엄］ 오픈 기념으로\n무료입장 이벤트를 진행할 예정입니다. \n관련 내용은 아래 상세페이지 참고 부탁드립니다.\n\n［전시장 주차관련 안내］\n현재 블루스퀘어 주차장은 상시 만차되어 주차에 어려움이 있습니다.\n블루스퀘어는 지하철 6호선 한강진역과 연결되어 있어 편리하며 대중교통의 접근성이 용이하오니\n대중교통을 적극 이용하여 보다 편안한 관람이 되시기 바랍니다.\n매주 수요일 및 공휴일 12~18시까지는  뮤지컬 공연으로 인하여 입차가 제한 될 수 있으니 \n가능하면 주변 공영주차장을 이용을 부탁드립니다.",
+    "exhibition_District" : "서울",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 44,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.30.54.png?alt=media&token=a5ee62f9-9eca-4ae4-a12e-da8b1bbd2baa", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.31.02.png?alt=media&token=52d3a6ff-6454-496b-825e-7f07efecd399", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.31.13.png?alt=media&token=7866a419-1900-42bd-bac3-aca7aba8ec36" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17010526_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171105",
+      "period_StartDate" : "20170811"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "한남아트갤러리",
+      "place_WebsiteURL" : "lfive.co.kr/ko/s-factory/"
+    },
+    "exhibition_Title" : "AR 캐릭터 체험전 〈뽀로로프렌즈 뮤지엄〉",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "2000"
+    }
+  }, {
+    "exhibition_Admission" : 7000,
+    "exhibition_Artist" : "(주)문화방송",
+    "exhibition_Detail" : "용인 대장금파크는 한류의 중심지, MBC 사극의 주 무대 입니다.\n〈역적:백성을 훔친 도적〉   〈군주-가면의 주인〉 의 촬영지이며,\n〈대장금〉, 〈주몽〉, 〈이산〉, 〈선덕여왕〉, 〈해를 품은 달〉, 〈구가의 서〉, 〈기황후〉 등 수많은 작품들이 이곳에서 촬영 되었습니다.\n용인 대장금파크에서 MBC 사극 촬영 현장도 만나고, 각종 드라마 체험을 해보세요!\n대장금파크 홈페이지 :  djgpark.imbc.com/\n\n대장금파크 운영시간  (예약 및 문의 031-337-3241)\n: 09:00 ~ 18:00 (입장마감 17시)\n\n대장금파크 캠핑장 이용시간 (예약 및 문의 : 031-338-4266)\n캠 핑 장  이용시간 : 오후 2시 ~ 다음날 오전 11시 까지\n자가 텐트 이용시간 : 오후 2시 ~ 다음날 정오 12시 까지\n대장금파크 캠핑장 홈페이지 : www.mbccamping.co.kr",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "설치",
+    "exhibition_ID" : 45,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.32.47.png?alt=media&token=4663e5b6-338d-4d83-867c-fd3715523ad0" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17004191_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171105",
+      "period_StartDate" : "20170330"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "용인 대장금파크",
+      "place_WebsiteURL" : "lfive.co.kr/ko/s-factory/"
+    },
+    "exhibition_Title" : "대장금파크",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "0900",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 5000,
+    "exhibition_Artist" : "재단법인 한국만화영상진흥원",
+    "exhibition_Detail" : "휴관일: 매주 월요일, 1월 1일, 설·추석 당일 및 그 전날\n월요일이 공휴일인 경우 박물관 개관. 박물관 홈페이지 참고요망",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "영상",
+    "exhibition_ID" : 46,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.33.48.png?alt=media&token=d12dadb0-45ed-4922-a6e4-016db24b1cd1", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.34.04.png?alt=media&token=1b3d88af-a446-4fa3-a71c-de509a11d500", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.34.15.png?alt=media&token=748f1f73-9272-460c-8df3-58286c787cb2" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/16/16003063_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20180331",
+      "period_StartDate" : "20170315"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "한국만화박물관",
+      "place_WebsiteURL" : "https://www.komacon.kr/comicsmuseum"
+    },
+    "exhibition_Title" : "한국만화박물관",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 6000,
+    "exhibition_Artist" : "(주)조선일보사",
+    "exhibition_Detail" : "올해 10회를 맞은 아시아 대학생, 청년작가 미술축제 ＇2017 아시아프＇가 7월 25일부터 8월 20일까지 동대문디자인플라자 알림2관에서 열립니다. 청년 작가 600명의 작품 총 1000여 점을 전시 및 판매합니다.",
+    "exhibition_District" : "부산",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 47,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.35.43.png?alt=media&token=fdb7af04-7780-41da-867c-d2c2198269d2", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.35.54.png?alt=media&token=43f92778-a111-45c5-b492-191cec03cb2d" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17009499_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20180820",
+      "period_StartDate" : "20170726"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "동대문디자인플라자(DDP)",
+      "place_WebsiteURL" : "https://ddp.or.kr"
+    },
+    "exhibition_Title" : "2017 아시아프",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 70000,
+    "exhibition_Artist" : "(사) 부산문화관광축제조직위원회",
+    "exhibition_Detail" : "올해 10회를 맞은 아시아 대학생, 청년작가 미술축제 ＇2017 아시아프＇가 7월 25일부터 8월 20일까지 동대문디자인플라자 알림2관에서 열립니다. 청년 작가 600명의 작품 총 1000여 점을 전시 및 판매합니다.",
+    "exhibition_District" : "부산",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 48,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "http://ticketimage.interpark.com/Play/image/large/17/17007990_p.gif" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008735_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20171028",
+      "period_StartDate" : "20171028"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "부산 광안리해수욕장",
+      "place_WebsiteURL" : "korean.visitkorea.or.kr/"
+    },
+    "exhibition_Title" : "제13회 부산불꽃축제",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 8000,
+    "exhibition_Artist" : "(주)위너지비엠\t",
+    "exhibition_Detail" : "Wines from all around the world \n전 세계 와인 10,000여종을 한자리에... \n \n대전국제와인페어(2012~2016 대전 국제 푸드＆와인 페스티벌)는 대한민국을 대표하는 와인전문행사로 일반인 관람객, 와인전문가 및 애호가들이 찾는 아시아 최대 규모의 행사로 자리 매김하였습니다.\n\n \n독일와인마케팅사와 공동으로 개최하는 아시아와인트로피는 그동안 5회의 행사를 통하여 아시아지역 최대의 와인품평회로 발전하였으며, 국제와인기구 OIV(International Organization of Vine and Wine)의 승인 및 감독 하에 권위 있는 대회로 개최됩니다.\n아시아와인트로피에 출품된 와인의 일부는 대전국제와인페어(와인＆주류전시회)에 시음용으로 제공되며, 전시장에서는 국내외 와인과 전통주는 물론 전세계의 다양한 와인을 시음 할 수 있습니다.\n\n \n아시아와인바이어스컨퍼런스는 세계 유명 와인 전문가들의 와인에 대한 토론의 장으로 와인 전문가는 물론 와인 애호가가 참가하여 와인에 대한 폭넓은 지식을 접할 수 있는 기회입니다.\n \n국내 최고의 소믈리에를 선발하는 제13회 한국국가대표 소믈리에 경기대회는 와인에 대한 지식과 전문성은 물론, 스피릿, 칵테일, 커피, 차, 워터등 모든 음료에 대한 전문적인 지식과 서비스 스킬을 갖추어야 하는 ASI의 세계 베스트소믈리에경기대회와 그 맥락을 같이합니다. 9월 2일 결승전은 일반인의 참관이 가능하니 참고 바랍니다.\n \n또한 야간 한빛탑 광장에서는 세계의 다양한 문화공연과 먹거리, 체험프로그램 등 다양한 즐길거리와 함께 와인과 함께하는 가을밤의 여유를 느낄 수 있습니다",
+    "exhibition_District" : "부산",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 49,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.37.32.png?alt=media&token=33b6a6d6-fdee-459e-8a08-af76711c6bcd", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.37.41.png?alt=media&token=47326293-a701-41fe-a829-1181b0eb10f4", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.37.49.png?alt=media&token=e9402668-dbec-4ce1-85b5-23d6f97569ab", "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.38.00.png?alt=media&token=3eadc41f-30ad-4435-b126-e8bc4ddf1481" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008841_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170903",
+      "period_StartDate" : "20170901"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "대전무역전시관",
+      "place_WebsiteURL" : "www.kotrex.kr/"
+    },
+    "exhibition_Title" : "2017 대전국제와인페어",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
+  }, {
+    "exhibition_Admission" : 17000,
+    "exhibition_Artist" : "주식회사 에이맥스에이치큐",
+    "exhibition_Detail" : "1. 어린이: 25개월~초등학교 6학년 / 24개월 이하 무료\n*청소년, 어린이, 24개월 이하 현장에서 증빙자료 제시(증빙자료 미지참시 현장에서 차액 지불)\n\n2. 예매한 입장권은 날짜 관계없이 전시 기간 내(7월14일~8월20일) 1회 관람 가능\n\n3. 예매처를 통해 예매한 입장권은 예매일 다음날부터 관람 가능 / 현장에서 구매한 입장권은 당일 사용 가능\n\n4. 장애인,국가유공자,만65세 이상 50% 할인\n*당일 현장에서만 구매가 가능하며, 증빙자료(복지카드, 국가 유공자증, 신분증 등) 지참 시 할인 가능\n\n5. 예매한 입장권은 부분 발권 불가능\n\n6. 17:00 입장 마감으로 당일 관람에 지장이 없도록 유의하시기 바랍니다.\n  (17:00 입장 마감이기는 하나, 17:00 입장 시 행사장 전체 관람에 시간이 부족하므로, 관람에 지장이 없도록 유의하시기 바랍니다.)",
+    "exhibition_District" : "경기",
+    "exhibition_Genre" : "기타",
+    "exhibition_ID" : 50,
+    "exhibition_ImgURL" : {
+      "image_DetailImages" : [ "https://firebasestorage.googleapis.com/v0/b/plot-be010.appspot.com/o/29%2F%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202017-08-21%20%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB%201.39.51.png?alt=media&token=591195c9-102e-4a59-919d-85775429f6f8" ],
+      "image_PosterURL" : "http://ticketimage.interpark.com/Play/image/large/17/17008300_p.gif"
+    },
+    "exhibition_Period" : {
+      "period_EndDate" : "20170820",
+      "period_StartDate" : "20170714"
+    },
+    "exhibition_PlaceData" : {
+      "place_Address" : "킨텍스 제1전시관",
+      "place_WebsiteURL" : "www.kintex.com/"
+    },
+    "exhibition_Title" : "2017 신비한 세계곤충박람회［WIF 2017］",
+    "exhibition_WorkingHours" : {
+      "workingHours_EndTime" : "1000",
+      "workingHours_StartTime" : "1800"
+    }
   } ],
-  "Likes" : [ {
-    "likes_ExhibitionID" : 0,
-    "likes_ID" : 0,
-    "likes_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
-  } ],
-  "StarPoints" : [ {
-    "starPoint_ExhibitionID" : 0,
-    "starPoint_ID" : 0,
-    "starPoint_Point" : 0,
-    "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
-  } ],
+  "Likes" : {
+    "-Krw6Ns93vxO0OgbTkXn" : {
+      "likes_ExhibitionID" : 3,
+      "likes_UserID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2"
+    },
+    "-Ks-2y_0qfOATlBOQZO_" : {
+      "likes_ExhibitionID" : 4,
+      "likes_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks-X0Fn95hCO4yqb9I6" : {
+      "likes_ExhibitionID" : 33,
+      "likes_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks2Q_NMZVWvaa7wo-KF" : {
+      "likes_ExhibitionID" : 4,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks8j72cs98CBQZzmFML" : {
+      "likes_ExhibitionID" : 9,
+      "likes_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Ks8u2s6K6Dd_moHHoD0" : {
+      "likes_ExhibitionID" : 13,
+      "likes_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Ks92q_rQf3gHUNJiO7U" : {
+      "likes_ExhibitionID" : 3,
+      "likes_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Ks931u50-Wm3dkDn-BC" : {
+      "likes_ExhibitionID" : 1,
+      "likes_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Ks93N6tqqmRqvpOK-wd" : {
+      "likes_ExhibitionID" : 0,
+      "likes_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Ks94ctnuOP1cXgW_OMM" : {
+      "likes_ExhibitionID" : 2,
+      "likes_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Ks9L1zsy7tED-43XrpG" : {
+      "likes_ExhibitionID" : 32,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9L27IbuKaahgU5uXA" : {
+      "likes_ExhibitionID" : 33,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9L2I0Ks71K0j0A_Vm" : {
+      "likes_ExhibitionID" : 34,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9L2pHjtC3j-cadcD8" : {
+      "likes_ExhibitionID" : 38,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9L4J__4bb2InaRkQb" : {
+      "likes_ExhibitionID" : 39,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9L4wI7dJJA1FRKmHD" : {
+      "likes_ExhibitionID" : 43,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9L53CzRh9-hpd01vV" : {
+      "likes_ExhibitionID" : 44,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9L5WOnNJOZWkUCldS" : {
+      "likes_ExhibitionID" : 48,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9L5i2aSWw4xIaYxPX" : {
+      "likes_ExhibitionID" : 47,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9PCodBfZUyS6Orto9" : {
+      "likes_ExhibitionID" : 0,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9PD0t8LF7IQZLrz_Y" : {
+      "likes_ExhibitionID" : 1,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9QIMEBADrRSclG98G" : {
+      "likes_ExhibitionID" : 1,
+      "likes_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks9QJQtlELmkSsASUvo" : {
+      "likes_ExhibitionID" : 0,
+      "likes_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks9QMmhzGZjWrWsjK1P" : {
+      "likes_ExhibitionID" : 12,
+      "likes_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks9vxgEPkmyi0htxSD1" : {
+      "likes_ExhibitionID" : 15,
+      "likes_UserID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53"
+    },
+    "-Ks9ws8wR3Jw30GyyQdA" : {
+      "likes_ExhibitionID" : 0,
+      "likes_UserID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2"
+    },
+    "-Ks9wscb20el04sj31xV" : {
+      "likes_ExhibitionID" : 10,
+      "likes_UserID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2"
+    },
+    "-Ks9wtSXF-5DEiIL_Uv8" : {
+      "likes_ExhibitionID" : 19,
+      "likes_UserID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2"
+    },
+    "-Ks9wtrt16VVoVYKU7M2" : {
+      "likes_ExhibitionID" : 18,
+      "likes_UserID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2"
+    },
+    "-Ks9x7GONQvK6Aur_cX0" : {
+      "likes_ExhibitionID" : 17,
+      "likes_UserID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2"
+    }
+  },
+  "StarPoints" : {
+    "0" : {
+      "starPoint_ExhibitionID" : 0,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Krycm34NDx_kZTsBs2R" : {
+      "starPoint_ExhibitionID" : 0,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrycpE0OJKwdRTRKXdX" : {
+      "starPoint_ExhibitionID" : 2,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KryiXioJ262miFqUhjK" : {
+      "starPoint_ExhibitionID" : 0,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Kryp9mzw9Wq9ckL4I9n" : {
+      "starPoint_ExhibitionID" : 0,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrypATHEQvoxrlEXPMX" : {
+      "starPoint_ExhibitionID" : 0,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrypBIZqE-twW8hZaQZ" : {
+      "starPoint_ExhibitionID" : 0,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrypC1JsNDRYxh-XozH" : {
+      "starPoint_ExhibitionID" : 0,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrysNwBEDQltF0q8VTY" : {
+      "starPoint_ExhibitionID" : 1,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-KrytKQQd9ETZFQD8KZw" : {
+      "starPoint_ExhibitionID" : 1,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1"
+    },
+    "-Ks-2_n0J8a89sB3gCR-" : {
+      "starPoint_ExhibitionID" : 1,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    },
+    "-Ks-2invIFvH5yrkMU4H" : {
+      "starPoint_ExhibitionID" : 11,
+      "starPoint_Point" : 0,
+      "starPoint_UserID" : "UATj8FYGY3Tq3ym296snNFci2TG3"
+    }
+  },
   "UserData" : {
-    
+    "02uOAzROdDMH8Yjbo1oJsmtYeJ53" : {
+      "user_Email" : "123@naver.com",
+      "user_ID" : "02uOAzROdDMH8Yjbo1oJsmtYeJ53",
+      "user_Name" : "테스트유저",
+      "user_Password" : "123456",
+      "user_ProfileImgURL" : ""
+    },
+    "QbZhcNZRhITnniFLBSHJiLtR6KF2" : {
+      "user_Email" : "h2@naver.com",
+      "user_ID" : "QbZhcNZRhITnniFLBSHJiLtR6KF2",
+      "user_Name" : "hhhhhh",
+      "user_Password" : "123456",
+      "user_ProfileImgURL" : ""
+    },
+    "UATj8FYGY3Tq3ym296snNFci2TG3" : {
+      "user_Email" : "test1@test.com",
+      "user_ID" : "UATj8FYGY3Tq3ym296snNFci2TG3",
+      "user_Name" : "닉네이이이이이임",
+      "user_Password" : "testtest",
+      "user_ProfileImgURL" : ""
+    },
     "dCGTQBFJ1KRDBm5FaRdgXxmNurt1" : {
       "user_Email" : "fimuxd@gmail.com",
       "user_ID" : "dCGTQBFJ1KRDBm5FaRdgXxmNurt1",
       "user_Name" : "park",
+      "user_Password" : "123456",
+      "user_ProfileImgURL" : ""
+    },
+    "fyS6zHDJzXhAD3XSJKQoHPbPiEn1" : {
+      "user_Email" : "1234@gmail.com",
+      "user_ID" : "fyS6zHDJzXhAD3XSJKQoHPbPiEn1",
+      "user_Name" : "테스트유저3",
+      "user_Password" : "123456",
+      "user_ProfileImgURL" : ""
+    },
+    "jB1yqFyLiOZA42ofvExztioy8Sx1" : {
+      "user_Email" : "test@gmail.com",
+      "user_ID" : "jB1yqFyLiOZA42ofvExztioy8Sx1",
+      "user_Name" : "테스트유저2",
       "user_Password" : "123456",
       "user_ProfileImgURL" : ""
     }

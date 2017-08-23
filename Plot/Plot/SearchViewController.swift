@@ -17,7 +17,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var rankingTableView: UITableView!
-    let sectionTitles:[String] = ["좋아요 랭킹","별점 랭킹","딴거"]
+    let sectionTitles:[String] = ["지역별","장르별","기타"]
     
     var isSearchBtnClicked:Bool = false
     //이게 true이면 검색된 셀이 뜬다
@@ -184,6 +184,111 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             let cell:RankListCustomCell = tableView.dequeueReusableCell(withIdentifier: "RankListCustomCell", for: indexPath) as! RankListCustomCell
             cell.selectionStyle = .none
+            
+            if indexPath.section == 0 {
+                if indexPath.row == 0 {
+                    cell.rankingTitleTextLabel.text = "요즘 서울에서 뜨는 전시"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "seoul_low")
+
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("seoul_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
+ 
+                }else if indexPath.row == 1{
+                    cell.rankingTitleTextLabel.text = "이번 주말엔 경기도 어떠세요?"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "gyeongi_low")
+                    
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("gyeongi_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
+                }else if indexPath.row == 2 {
+                    cell.rankingTitleTextLabel.text = "부산에서 즐기는 여름 전시"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "busan_low")
+                    
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("busan_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
+                }
+            }else if indexPath.section == 1 {
+                if indexPath.row == 0 {
+                    cell.rankingTitleTextLabel.text = "미술에 대해서"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "paint_low")
+                    
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("paint_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
+                }else if indexPath.row == 1{
+                    cell.rankingTitleTextLabel.text = "설치미술"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "installation_low")
+                    
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("installation_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
+                }
+            }else{
+                cell.rankingTitleTextLabel.text = "땜빵"
+            }
+            
             //얘가 기본else일때
             return cell
         }
@@ -235,7 +340,17 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else {
             //얘가 기본else일때
-            return 3
+            
+            switch section {
+            case 0:
+                return 3
+            case 1:
+                return 2
+            case 2:
+                return 2
+            default:
+                return 0
+            }
         }
     }
     
@@ -308,7 +423,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else {
             //얘가 기본else일때
-            return 80
+            return 150
         }
     }
     
@@ -359,6 +474,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else {
             let rankingViewController:RankingViewController = storyboard?.instantiateViewController(withIdentifier: "RankingViewController") as! RankingViewController
+            
+            rankingViewController.sectionOfIndexPath = indexPath.section
+            rankingViewController.rowOfIndexPath = indexPath.row
+            
             self.navigationController?.pushViewController(rankingViewController, animated: true)
         }
         

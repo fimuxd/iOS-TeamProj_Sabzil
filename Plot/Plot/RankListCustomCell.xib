@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,6 +49,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="cellBgImageView" destination="bHs-6R-lq9" id="uqv-wt-obP"/>
+                <outlet property="rankingTitleTextLabel" destination="5Oq-Yn-6jl" id="Erq-UJ-rDH"/>
             </connections>
             <point key="canvasLocation" x="22" y="-53.5"/>
         </tableViewCell>
