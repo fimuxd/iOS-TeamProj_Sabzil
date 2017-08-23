@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     /*******************************************/
     // MARK: -  Outlet & Property              //
     /*******************************************/
-
+    
     @IBOutlet weak var commentTableView: UITableView!
     var exhibitionID:Int?
     var detailImgArray:[String] = []
@@ -91,7 +91,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.loadDetailImgArrayForCollectionView(itemOfIndexPath: realExhibitionID)
         self.loadLikeData(exhibitionID: realExhibitionID)
         self.loadCommentData(exhibitionID: realExhibitionID)
-
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -119,15 +119,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 let profileImgURL:String = json[Constants.user_ProfileImgURL]!
                 
                 DispatchQueue.main.async {
-                    
-//                    추후에 유저 이미지 넣으면 (imagePicker) 해당 기능 쓸 예정
-//                    guard let url = URL(string:json[Constants.user_ProfileImgURL]!) else {return}
-//                    do{
-//                        let realData = try Data(contentsOf: url)
-//                        cell.userProfileImageView.image = UIImage(data: realData)
-//                    }catch{
-//                        
-//                    }
                     
                     cell.userNickNameLabel.text = json[Constants.user_Name]
                     
@@ -201,76 +192,55 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func reloadComment(){
-        self.commentTableView.reloadData()
+        guard let exhibitionID:Int = self.exhibitionID else {return}
+        self.loadCommentData(exhibitionID: exhibitionID)
     }
     
     //해당 전시에 대한 내용을 불러와서 뿌립니다.
     func loadExhibitionData(itemOfIndexPath:Int) {
-        
-        DispatchQueue.global(qos: .default).async {
+        Database.database().reference().child("ExhibitionData").child("\(itemOfIndexPath)").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            Database.database().reference().child("ExhibitionData").child("\(itemOfIndexPath)").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [String:Any] else {return}
+            
+            self.exhibitionTitle.text = json[Constants.exhibition_Title] as? String
+            
+            guard let periodDic:[String:String] = json[Constants.exhibition_Period] as? [String:String],
+                let startDateStr:String = periodDic[Constants.period_StartDate],
+                let endDateStr:String = periodDic[Constants.period_EndDate] else {return}
+            self.exhibitionDate.text = "\(startDateStr) ~ \(endDateStr)"
+            
+            guard let placeDic:[String:String] = json[Constants.exhibition_PlaceData] as? [String:String],
+                let addressStr:String = placeDic[Constants.place_Address],
+                let websiteStr:String = placeDic[Constants.place_WebsiteURL] else {return}
+            self.exhibitionPlace.text = addressStr
+            
+            guard let workingHoursDic:[String:String] = json[Constants.exhibition_WorkingHours] as? [String:String],
+                let startTime:String = workingHoursDic[Constants.workingHours_StartTime],
+                let endTime:String = workingHoursDic[Constants.workingHours_EndTime] else {return}
+            self.exhibitionTime.text = "\(startTime) ~ \(endTime)"
+            
+            self.exhibitionPrice.text = "\(json[Constants.exhibition_Admission] as? Int ?? 0)원"
+            self.exhibitionAgent.text = json[Constants.exhibition_Artist] as? String
+            self.exhibitionHomepage.setTitle(websiteStr, for: .normal)
+            self.exhibitionGenre.text = json[Constants.exhibition_Genre] as? String
+            self.exhibitionAge.text = "전체관람가"
+            self.exhibitionIntroduce.text = json[Constants.exhibition_Detail] as? String
+            
+            guard let imageDic:[String:Any] = json[Constants.exhibition_ImgURL] as? [String:Any],
+                let posterImgURL:String = imageDic[Constants.image_PosterURL] as? String else {return}
+            
+            guard let posterurl = URL(string: posterImgURL) else {return}
+            do{
+                let realData = try Data(contentsOf: posterurl)
+                self.posterImg.image = UIImage(data: realData)
+            }catch{
                 
-                guard let json = snapshot.value as? [String:Any] else {return}
-                
-                self.exhibitionTitle.text = json[Constants.exhibition_Title] as? String
-                
-                guard let periodDic:[String:String] = json[Constants.exhibition_Period] as? [String:String],
-                    let startDateStr:String = periodDic[Constants.period_StartDate],
-                    let endDateStr:String = periodDic[Constants.period_EndDate] else {return}
-                self.exhibitionDate.text = "\(startDateStr) ~ \(endDateStr)"
-                
-                guard let placeDic:[String:String] = json[Constants.exhibition_PlaceData] as? [String:String],
-                    let addressStr:String = placeDic[Constants.place_Address],
-                    let websiteStr:String = placeDic[Constants.place_WebsiteURL] else {return}
-                self.exhibitionPlace.text = addressStr
-                
-                guard let workingHoursDic:[String:String] = json[Constants.exhibition_WorkingHours] as? [String:String],
-                    let startTime:String = workingHoursDic[Constants.workingHours_StartTime],
-                    let endTime:String = workingHoursDic[Constants.workingHours_EndTime] else {return}
-                self.exhibitionTime.text = "\(startTime) ~ \(endTime)"
-
-                DispatchQueue.main.async {
-//                    self.exhibitionTitle.text = json[Constants.exhibition_Title] as? String
-//                    
-//                    guard let periodDic:[String:String] = json[Constants.exhibition_Period] as? [String:String],
-//                        let startDateStr:String = periodDic[Constants.period_StartDate],
-//                        let endDateStr:String = periodDic[Constants.period_EndDate] else {return}
-//                    self.exhibitionDate.text = "\(startDateStr) ~ \(endDateStr)"
-//                    
-//                    guard let placeDic:[String:String] = json[Constants.exhibition_PlaceData] as? [String:String],
-//                        let addressStr:String = placeDic[Constants.place_Address],
-//                        let websiteStr:String = placeDic[Constants.place_WebsiteURL] else {return}
-//                    self.exhibitionPlace.text = addressStr
-//                    
-//                    guard let workingHoursDic:[String:String] = json[Constants.exhibition_WorkingHours] as? [String:String],
-//                        let startTime:String = workingHoursDic[Constants.workingHours_StartTime],
-//                        let endTime:String = workingHoursDic[Constants.workingHours_EndTime] else {return}
-//                    self.exhibitionTime.text = "\(startTime) ~ \(endTime)"
-                    
-                    self.exhibitionPrice.text = "\(json[Constants.exhibition_Admission] as? Int ?? 0)원"
-                    self.exhibitionAgent.text = json[Constants.exhibition_Artist] as? String
-                    self.exhibitionHomepage.setTitle(websiteStr, for: .normal)
-                    self.exhibitionGenre.text = json[Constants.exhibition_Genre] as? String
-                    self.exhibitionAge.text = "전체관람가"
-                    self.exhibitionIntroduce.text = json[Constants.exhibition_Detail] as? String
-                    
-                    guard let imageDic:[String:Any] = json[Constants.exhibition_ImgURL] as? [String:Any],
-                        let posterImgURL:String = imageDic[Constants.image_PosterURL] as? String else {return}
-                    
-                    guard let posterurl = URL(string: posterImgURL) else {return}
-                    do{
-                        let realData = try Data(contentsOf: posterurl)
-                        self.posterImg.image = UIImage(data: realData)
-                    }catch{
-                        
-                    }
-                }
-            },withCancel: { (error) in
-                print(error.localizedDescription)
-            })
-        }
+            }
+        },withCancel: { (error) in
+            print(error.localizedDescription)
+        })
     }
+    
     
     //전시의 디테일이미지들을 콜렉션뷰에 뿌립니다.
     func loadDetailImgArrayForCollectionView(itemOfIndexPath:Int) {
@@ -291,7 +261,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //전시의 좋아요 여부를 표시합니다.
     func loadLikeData(exhibitionID:Int) {
-
+        
         DispatchQueue.global(qos: .default).async {
             Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let json = snapshot.value as? [String:[String:Any]] else {return}
@@ -315,7 +285,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 print(error.localizedDescription)
             })
         }
-
+        
     }
     
     //좋아요를 누를 때마다 데이터 및 UI를 반영하여 나타냅니다.
@@ -380,11 +350,9 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         guard let realExhibitionID:Int = self.exhibitionID else {return}
         Database.database().reference().child("Comments").queryOrdered(byChild: Constants.comment_ExhibitionID).queryEqual(toValue: exhibitionID).observeSingleEvent(of: .value, with: { (snapshot) in
             guard let json = snapshot.value as? [String:[String:Any]] else {return}
-            
             let mappedJson = json.map({ (dic:(key: String, value: [String : Any])) -> [String:Any] in
                 return dic.value
             })
-            
             self.commentDataArray = mappedJson
             self.commentTableView.reloadData()
         }) { (error) in

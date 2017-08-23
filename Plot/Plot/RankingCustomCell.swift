@@ -26,7 +26,7 @@ class RankingCustomCell: UICollectionViewCell {
     //-----지역별 전시를 가져옵니다.
     func getExhibitionData(OfDistrict:District, itemOfIndexPath:Int) {
         
-        DispatchQueue.global(qos: .default).async {
+//        DispatchQueue.global(qos: .default).async {
             Database.database().reference().child("ExhibitionData").queryOrdered(byChild: Constants.exhibition_District).queryEqual(toValue: OfDistrict.rawValue).queryLimited(toFirst: 9).observeSingleEvent(of: .value, with: { (snapshot) in
                 
                 if OfDistrict == District.Seoul {
@@ -37,7 +37,7 @@ class RankingCustomCell: UICollectionViewCell {
                 })
                 
                 guard let realJson = filteredJson as? [[String:Any]] else {return}
-                DispatchQueue.main.async {
+//                DispatchQueue.main.async {
                     guard let imageDic:[String:Any] = realJson[itemOfIndexPath][Constants.exhibition_ImgURL] as? [String:Any],
                         let posterImgURL:String = imageDic[Constants.image_PosterURL] as? String else {return}
                     
@@ -48,7 +48,7 @@ class RankingCustomCell: UICollectionViewCell {
                     }catch{
                         
                     }
-                    }
+//                    }
                 }else{
                     guard let json = snapshot.value as? [String:[String:Any]] else {return}
                     
@@ -56,7 +56,7 @@ class RankingCustomCell: UICollectionViewCell {
                         return dic.value
                     })
                     
-                    DispatchQueue.main.async {
+//                    DispatchQueue.main.async {
                         guard let imageDic:[String:Any] = mappedJson[itemOfIndexPath][Constants.exhibition_ImgURL] as? [String:Any],
                             let posterImgURL:String = imageDic[Constants.image_PosterURL] as? String else {return}
                         
@@ -68,13 +68,13 @@ class RankingCustomCell: UICollectionViewCell {
                             
                         }
                     }
-                }
+//                }
             }) { (error) in
                 print(error.localizedDescription)
             }
             
         }
-    }
+//    }
     
     //-----장르별 전시를 가져옵니다.
     func getExhibitionData(OfGenre:Genre, itemOfIndexPath:Int) {
@@ -87,18 +87,20 @@ class RankingCustomCell: UICollectionViewCell {
                         return dic.value
                     })
                     
-                    DispatchQueue.main.async {
+                
                         guard let imageDic:[String:Any] = mappedJson[itemOfIndexPath][Constants.exhibition_ImgURL] as? [String:Any],
                             let posterImgURL:String = imageDic[Constants.image_PosterURL] as? String else {return}
 
                         guard let url = URL(string: posterImgURL) else {return}
                         do{
                             let realData = try Data(contentsOf: url)
+                            DispatchQueue.main.async {
                             self.posterImage.image = UIImage(data: realData)
+                            }
                         }catch{
                             
                         }
-                    }
+                
             }) { (error) in
                 print(error.localizedDescription)
             }
