@@ -30,7 +30,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var searchKeyword:[String] = []
     //검색어 버튼이 눌렸을때 여기에 어펜드된다
-
+    
+    var isSearchBarTextEmpty:Bool = true
+    
+    var filteringData:[String] = []
+    var searchData:[String] = []
+    
+    var searchEXID:Int = 0
     
     /*******************************************/
     // MARK: -  LifeCycle                      //
@@ -42,13 +48,31 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 전시데이터 불러오기
+        Database.database().reference().child("ExhibitionData").observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [[String:Any]] else { return }
+            let extitleArray:[String] = json.map({ (dic:[String : Any]) -> String in
+                return dic[Constants.exhibition_Title] as! String
+            })
+            print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",extitleArray)
+            self.searchData = extitleArray
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        self.filteringData = self.searchData
+        
+        
         presentLoginVC()
         self.searchBar.delegate = self
-        searchBar.placeholder = "전시명, 지역, 장르 등 검색"
+        self.searchBar.placeholder = "전시명, 지역, 장르 등 검색"
         self.rankingTableView.dataSource = self
         self.rankingTableView.delegate = self
         self.rankingTableView.register(UINib(nibName: "RankListCustomCell", bundle: nil), forCellReuseIdentifier: "RankListCustomCell")
         self.rankingTableView.register(UINib(nibName: "SearchResultCell", bundle: nil), forCellReuseIdentifier: "SearchResultCell")
+        
         
     }
     
@@ -56,7 +80,6 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     /*******************************************/
@@ -81,6 +104,8 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if !searchKeyword.contains(searchBar.text!) {
             searchKeyword.append(searchBar.text!)
         }
+        
+        //필터어레이에 필터되야됨
         print(isSearchBtnClicked,isdidChangeText,isBeginEditing)
         print(searchKeyword)
         rankingTableView.reloadData()
@@ -88,6 +113,20 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print("요걸로 검색됨 \(searchText)")
+        print("필터된 어레이이이이이이이이이",filteringData)
+        
+        if searchText == "" {
+            isSearchBarTextEmpty = true
+        }else{
+            isSearchBarTextEmpty = false
+        }
+        
+        //서치텍스트를 받아서 이름어레이 돌리면 -> 떠야댐
+        self.filteringData = searchData.filter({ (searText:String) -> Bool in
+            return ( searText.range(of: searchText, options: .caseInsensitive) != nil )
+        })
+        self.rankingTableView.reloadData()
+        
         //이게 빈칸이면, 저장됐던 검색어가 뜬다
         print(isSearchBtnClicked,isdidChangeText,isBeginEditing)
         isBeginEditing = false
@@ -120,10 +159,21 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return cell
             
         } else if isdidChangeText {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "searchKeywordCell", for: indexPath)
-            //최근검색어 셀이 나온다
-            cell.textLabel?.text = searchKeyword[indexPath.row]
-            return cell
+            
+            if isSearchBarTextEmpty {
+                //서치바의 텍스트가 비워져있다면 최근검색어 셀이 나온다
+                let cell = tableView.dequeueReusableCell(withIdentifier: "searchKeywordCell", for: indexPath)
+                cell.textLabel?.text = searchKeyword[indexPath.row]
+                return cell
+            } else {
+                //서치바의 텍스트가 채워져있다면 채워져있는거에 해당하는 검색결과들나온다
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
+                if filteringData.count != 0 {
+                    getExhivitionID(title: filteringData[indexPath.row])
+                    cell.getExhibitionInfo(exhibitionID: searchEXID)
+                }
+                return cell
+            }
             
         } else if isSearchBtnClicked {
             let cell:SearchResultCell = tableView.dequeueReusableCell(withIdentifier: "SearchResultCell", for: indexPath) as! SearchResultCell
@@ -272,12 +322,21 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return 1
             
         } else if isdidChangeText {
-            //최근검색어 셀이 나온다
-            return searchKeyword.count
+            //서치바의 텍스트가 비워져있다면 최근검색어 셀이 나온다
+            if isSearchBarTextEmpty {
+                return searchKeyword.count
+            }else{
+                if filteringData.count != 0 {
+                 return filteringData.count
+                }
+                return 0
+            }
+            
             
         } else if isSearchBtnClicked {
             //검색된 셀이 뜬다 -> 나중에 검색결과 갯수로
-            return 3
+            print(filteringData.count)
+            return filteringData.count
             
         } else {
             //얘가 기본else일때
@@ -303,9 +362,12 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return nil
             
         } else if isdidChangeText {
-            let header = Bundle.main.loadNibNamed("Sectionheader", owner: self, options: nil)?.first as! Sectionheader
-            header.sectionTitleLabel.text = "최근 검색어"
-            return header
+            if isSearchBarTextEmpty {
+                let header = Bundle.main.loadNibNamed("Sectionheader", owner: self, options: nil)?.first as! Sectionheader
+                header.sectionTitleLabel.text = "최근 검색어"
+                return header
+            }
+            return nil
             
         } else if isSearchBtnClicked {
             //검색된 셀이 뜬다
@@ -326,7 +388,10 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else if isdidChangeText {
             //최근검색어 셀이 나온다
-            return 30
+            if isSearchBarTextEmpty {
+                return 30
+            }
+            return 0
             
         } else if isSearchBtnClicked {
             //검색된 셀이 뜬다 -> 나중에 검색결과 갯수로
@@ -347,10 +412,13 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else if isdidChangeText {
             //최근검색어 셀이 나온다
-            return 30
+            if isSearchBarTextEmpty {
+                return 30
+            }
+            return 60
             
         } else if isSearchBtnClicked {
-            //검색된 셀이 뜬다 -> 나중에 검색결과 갯수로
+            //검색된 셀이 뜬다
             return 60
             
         } else {
@@ -365,10 +433,14 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return nil
             
         } else if isdidChangeText {
-            let footer = Bundle.main.loadNibNamed("FooterCell", owner: self, options: nil)?.first as! FooterCell
-            footer.footerBtnClicked.setTitle("검색기록 지우기", for: .normal)
-            footer.footerBtnClicked.addTarget(self, action: #selector(deleteSearchKeyword), for: .touchUpInside)
-            return footer
+            if isSearchBarTextEmpty {
+                let footer = Bundle.main.loadNibNamed("FooterCell", owner: self, options: nil)?.first as! FooterCell
+                footer.footerBtnClicked.setTitle("검색기록 지우기", for: .normal)
+                footer.footerBtnClicked.addTarget(self, action: #selector(deleteSearchKeyword), for: .touchUpInside)
+                return footer
+            }else{
+                return nil
+            }
             
         } else if isSearchBtnClicked {
             //검색된 셀이 뜬다
@@ -385,13 +457,15 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if section == 2 {
             return 55
         } else if isdidChangeText {
-            return 30
+            if isSearchBarTextEmpty {
+                return 30
+            }
         }
         return 4
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-     
+        
         if isBeginEditing {
             
         } else if isdidChangeText {
@@ -426,6 +500,27 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func deleteSearchKeyword(){
         searchKeyword = []
         rankingTableView.reloadData()
+    }
+    
+    func getExhivitionID(title text:String) {
+        Database.database().reference().child("ExhibitionData").queryOrdered(byChild: Constants.exhibition_Title).queryEqual(toValue: text).observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let json = snapshot.value as? [String:[String:Any]] else { return print("안되영 제이슨") }
+            
+            let mappedJson = json.map({ (dic:(key: String, value: [String : Any])) -> [String:Any] in
+                return dic.value
+            })
+            
+            guard let exhibitionID = mappedJson[0][Constants.exhibition_ID] as? Int else {return print("안되여")}
+            
+            print("되여\(exhibitionID)")
+            self.searchEXID = exhibitionID
+            var testarray:[Int] = []
+            testarray.append(exhibitionID)
+            print(testarray)
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
     
 }
