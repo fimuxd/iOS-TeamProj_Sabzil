@@ -138,16 +138,102 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if indexPath.section == 0 {
                 if indexPath.row == 0 {
                     cell.rankingTitleTextLabel.text = "요즘 서울에서 뜨는 전시"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "seoul_low")
+
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("seoul_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
+ 
                 }else if indexPath.row == 1{
                     cell.rankingTitleTextLabel.text = "이번 주말엔 경기도 어떠세요?"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "gyeongi_low")
+                    
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("gyeongi_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
                 }else if indexPath.row == 2 {
                     cell.rankingTitleTextLabel.text = "부산에서 즐기는 여름 전시"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "busan_low")
+                    
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("busan_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
                 }
             }else if indexPath.section == 1 {
                 if indexPath.row == 0 {
                     cell.rankingTitleTextLabel.text = "미술에 대해서"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "paint_low")
+                    
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("paint_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
                 }else if indexPath.row == 1{
                     cell.rankingTitleTextLabel.text = "설치미술"
+                    cell.cellBgImageView.image = #imageLiteral(resourceName: "installation_low")
+                    
+                    DispatchQueue.main.async {
+                        Storage.storage().reference().child("installation_high.jpg").downloadURL(completion: { (url, error) in
+                            if let error = error {
+                                print("error:\(error)")
+                            }
+                            
+                            guard let url = url else {return}
+                            
+                            do{
+                                let realData = try Data(contentsOf: url)
+                                cell.cellBgImageView.image = UIImage(data: realData)
+                            }catch{
+                            }
+                        })
+                    }
                 }
             }else{
                 cell.rankingTitleTextLabel.text = "땜빵"
@@ -269,7 +355,7 @@ class SearchViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
         } else {
             //얘가 기본else일때
-            return 80
+            return 150
         }
     }
     

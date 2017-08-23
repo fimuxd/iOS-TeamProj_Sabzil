@@ -67,7 +67,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.isNavigationBarHidden = false
-        print("여기")
     }
     
     override func viewDidLoad() {
@@ -92,6 +91,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.loadDetailImgArrayForCollectionView(itemOfIndexPath: realExhibitionID)
         self.loadLikeData(exhibitionID: realExhibitionID)
         self.loadCommentData(exhibitionID: realExhibitionID)
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

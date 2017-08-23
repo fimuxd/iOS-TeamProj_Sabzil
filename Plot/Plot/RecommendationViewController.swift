@@ -174,34 +174,12 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: false)
         
-        if indexPath.section == 0 {
-            localtags[indexPath.row].selected = !localtags[indexPath.row].selected
-            
-            if localtags[indexPath.row].selected && localTag[indexPath.row] == Genre.Carving {
-                Database.database().reference().child("ExhibitionData").queryOrdered(byChild: Constants.exhibition_Genre).queryEqual(toValue: Genre.Carving.rawValue).observe(.value, with: { (snapshot) in
-                    guard let json = snapshot.value as? [String:[String:Any]] else {
-                        return
-                    }
-                    
-                    print("선택된아이들:\(json)")
-                }, withCancel: { (error) in
-                    print(error.localizedDescription)
-                })
-                
-                
-            }
-            
-          
-            
-            
-            
-        } else {
-            genretags[indexPath.row].selected = !genretags[indexPath.row].selected
-        }
+        collectionView.deselectItem(at: indexPath, animated: false)
+
         self.tagCollectionView.reloadData()
     }
+
     
     func configureCell(_ cell: TagCustomCell, forIndexPath indexPath: IndexPath) {
         
@@ -211,6 +189,7 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
             cell.tagName.textColor = tag.selected ? UIColor.white : UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1)
             cell.backgroundColor = tag.selected ? UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1) : UIColor(red: 1, green: 1, blue: 1, alpha: 1)
 
+            
         } else {
             let tag = genretags[indexPath.row]
             cell.tagName.text = tag.name
