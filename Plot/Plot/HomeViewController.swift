@@ -63,6 +63,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.didReceiveMemoryWarning()
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     /*******************************************/
     // MARK: -  CustomCell Delegate Method     //
     /*******************************************/
@@ -92,7 +95,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell:MainCustomCell = tableView.dequeueReusableCell(withIdentifier: "mainCustomCell", for: indexPath) as! MainCustomCell
         cell.selectionStyle = .none
         cell.delegate = self
-        
+
         cell.loadLikeData(rowOfIndexPath: indexPath.row)
         cell.loadExbibitionData(rowOfIndexPath: indexPath.row)
         cell.indexPathRow = indexPath.row

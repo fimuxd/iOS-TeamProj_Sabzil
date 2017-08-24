@@ -42,8 +42,7 @@ class MainCustomCell: UITableViewCell {
     
     @IBAction func clickedComentBtn(_ sender: UIButton) {
         self.delegate?.isCommentButtonClicked()
-        
-        print(self.indexPathRow)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "selectedExhibitionID"), object: self.indexPathRow)
     }
     
     @IBAction func starPointBtnClicked(_ sender: UIButton) {
@@ -66,7 +65,6 @@ class MainCustomCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        
     }
     
     
@@ -74,7 +72,6 @@ class MainCustomCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
-    
     
     /*******************************************/
     // MARK: -  Func                           //

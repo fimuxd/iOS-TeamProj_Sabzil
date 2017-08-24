@@ -11,7 +11,7 @@ import Firebase
 
 class Popup: UIViewController, UITextViewDelegate {
     
-    var exhibitionID:Int?
+    var exhibitionID:Int = 0
     var userCommentData:[(key: String, value: [String : Any])] = []
     
     /*******************************************/
@@ -30,15 +30,15 @@ class Popup: UIViewController, UITextViewDelegate {
     
     @IBAction func clickedSaveBtn(_ sender: UIButton) {
         //각 전시 데이터와 해당 유저데이터에 코멘트 저장
-    
+
         if self.commentTextView.text != "" && self.userCommentData.count == 0 {
             Database.database().reference().child("Comments").childByAutoId().setValue([Constants.comment_Detail:self.commentTextView.text,
                                                                                         Constants.comment_UserID:Auth.auth().currentUser?.uid,
-                                                                                        Constants.comment_ExhibitionID:self.exhibitionID!])
+                                                                                        Constants.comment_ExhibitionID:self.exhibitionID])
         }else if self.commentTextView.text != "" && self.userCommentData.count != 0 {
             Database.database().reference().child("Comments").child(self.userCommentData[0].key).setValue([Constants.comment_Detail:self.commentTextView.text,
                                                                                                            Constants.comment_UserID:Auth.auth().currentUser?.uid,
-                                                                                                           Constants.comment_ExhibitionID:self.exhibitionID!])
+                                                                                                           Constants.comment_ExhibitionID:self.exhibitionID])
         }
         
         dismissSelf()
@@ -74,6 +74,7 @@ class Popup: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         NotificationCenter.default.addObserver(self, selector: #selector(Popkeyboard), name: NSNotification.Name("dismissStarPopup"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getExhibitionID(_:)), name: Notification.Name("selectedExhibitionID"), object: nil)
         
         self.commentTextView.delegate = self
         self.commentTextView.isScrollEnabled = false
@@ -81,19 +82,21 @@ class Popup: UIViewController, UITextViewDelegate {
         //코멘트 데이터
         Database.database().reference().child("Comments").keepSynced(true)
         
-        print(self.exhibitionID)
+        print("팝업뷰디드로드 번호\(self.exhibitionID)")
         
-//        DataCenter.sharedData.requestCommentDataFor(exhibitionID: self.exhibitionID!, userID: Auth.auth().currentUser?.uid) { (data) in
-//            self.userCommentData = data
-//        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
         
         NotificationCenter.default.post(name: NSNotification.Name("dismissPopup"), object: self)
+
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
         
-        
+        NotificationCenter.default.removeObserver(self)
     }
     
     /*******************************************/
@@ -119,6 +122,11 @@ class Popup: UIViewController, UITextViewDelegate {
     
     func Popkeyboard(){
         self.commentTextView.becomeFirstResponder()
+    }
+    
+    func getExhibitionID(_ sender:Notification) {
+        
+        self.exhibitionID = (sender.object as? Int)!
     }
     
 }

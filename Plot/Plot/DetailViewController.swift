@@ -181,7 +181,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func presentCommentPopup(){
         let popup = storyboard?.instantiateViewController(withIdentifier: "Popup") as! Popup
-        popup.exhibitionID = self.exhibitionID
+        popup.exhibitionID = self.exhibitionID!
         present(popup, animated: true, completion: nil)
     }
     
