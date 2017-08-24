@@ -121,6 +121,8 @@ class MainCustomCell: UITableViewCell {
         
         DispatchQueue.global(qos: .default).async {
             Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                if snapshot.childrenCount != 0 {
                 guard let json = snapshot.value as? [String:[String:Any]] else {return}
                 
                 let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
@@ -138,9 +140,15 @@ class MainCustomCell: UITableViewCell {
                         print("좋아요 버튼표시에러: \(filteredLikeData)")
                     }
                 }
+                }else{
+                    guard let json = snapshot.value as? [String:Any] else {return}
+                    
+                    print("좋아요를 눌렀음 \(json)")
+                }
             }, withCancel: { (error) in
                 print(error.localizedDescription)
             })
+            
         }
         
     }
