@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class RecommendationViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, customCellDelegate {
+class RecommendationViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, customCellDelegate{
     
     /*******************************************/
     // MARK: -  Outlet & Property              //
@@ -164,7 +164,9 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TagCustomCell", for: indexPath) as! TagCustomCell
+        
         self.configureCell(cell, forIndexPath: indexPath)
+
         return cell
     }
     
@@ -174,9 +176,13 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         collectionView.deselectItem(at: indexPath, animated: false)
-
+        
+        if indexPath.section == 0 {
+            localtags[indexPath.row].selected = !localtags[indexPath.row].selected
+        } else {
+            genretags[indexPath.row].selected = !genretags[indexPath.row].selected
+        }
         self.tagCollectionView.reloadData()
     }
 
@@ -188,13 +194,13 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
             cell.tagName.text = tag.name
             cell.tagName.textColor = tag.selected ? UIColor.white : UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1)
             cell.backgroundColor = tag.selected ? UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1) : UIColor(red: 1, green: 1, blue: 1, alpha: 1)
-
-            
+    
         } else {
             let tag = genretags[indexPath.row]
             cell.tagName.text = tag.name
             cell.tagName.textColor = tag.selected ? UIColor.white : UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1)
             cell.backgroundColor = tag.selected ? UIColor(red: 31/255, green: 208/255, blue: 255/255, alpha: 1) : UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+
         }
     }
     
@@ -207,7 +213,6 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
             header.headerName.text! = "지역"
     
         }
-        
         
         return header
     }
@@ -225,4 +230,5 @@ class RecommendationViewController: UIViewController, UITableViewDataSource,UITa
         }
     }
     
+ 
 }
