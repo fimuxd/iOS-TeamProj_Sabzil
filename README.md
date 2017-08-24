@@ -30,6 +30,7 @@
 3. UI Reference: [here](https://github.com/fimuxd/iOS-TeamProj_PLOT/tree/Boyoung-PARK/레퍼런스)
 4. Trello: [here](https://trello.com/b/A1VSSdvn/plot)
 5. Scrum Board: [here](https://docs.google.com/spreadsheets/d/1oiZtAF3_ECJIQQCTCB7K71vXvSk6dfbSxSCQXGW_Ydc/edit?usp=sharing)
+6. Completion Video: [here](https://youtu.be/T-HRtEFrQzE)
 
 ## Contact Us
 
