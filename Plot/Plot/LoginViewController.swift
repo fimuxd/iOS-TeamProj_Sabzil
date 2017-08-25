@@ -41,8 +41,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
                 return
             }
             
+            guard let realUser = user else {return print("페북리얼유저 없어요")}
+                let userEmail = realUser.providerData[0].providerID
+                let uid = user?.uid
+                let userName = realUser.providerData[0].displayName
+            
+            let dic:[String:Any] = [Constants.user_ID:uid,
+                                    Constants.user_Email:userEmail,
+                                    Constants.user_Name:userName,
+                                    Constants.user_Password:"",
+                                    Constants.user_ProfileImgURL:""]
+            
+            Database.database().reference().child("UserData").child(uid!).setValue(dic)
+            print("호출됨")
+            
+            
         }
         FBSDKLoginManager().logOut();
+        UserDefaults.standard.set(true, forKey: "loginFlag")
+        
+
         self.presentTabbarController()
         
     }
@@ -62,7 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         
         if idTF.text != "" && passwordTF.text != ""{
             self.logInActionHandle()
-
+            
         }else{
             callAlert()
         }
@@ -93,12 +111,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         facebookLoginBtn.layer.frame.size.height = 44
         
         //왼쪽패딩주는건데 메모리를 겁나먹어서 주석처리함
-//        let textFieldPadding = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: idTF.frame.size.height))
-//        idTF.leftView = textFieldPadding
-//        idTF.leftViewMode = .always
-//        passwordTF.leftView = textFieldPadding
-//        passwordTF.leftViewMode = .always
-      
+        //        let textFieldPadding = UIView(frame: CGRect(x: 0, y: 0, width: 16, height: idTF.frame.size.height))
+        //        idTF.leftView = textFieldPadding
+        //        idTF.leftViewMode = .always
+        //        passwordTF.leftView = textFieldPadding
+        //        passwordTF.leftViewMode = .always
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -133,11 +151,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         self.scrollView.contentOffset = CGPoint.init(x: 0, y: 0)
         
     }
-
+    
     func dismissSelf(){
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     
     func presentSignupVC(){
         let signupVC:SignUpViewController = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
@@ -148,24 +166,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, UIScrollViewDe
         let tabbarController:mainTabbarController = storyboard?.instantiateViewController(withIdentifier: "mainTabbarController") as! mainTabbarController
         present(tabbarController, animated: true, completion: nil)
     }
-
+    
     
     
     func logInActionHandle() {
         
-            Auth.auth().signIn(withEmail: self.idTF.text!, password: self.passwordTF.text!) { (user, error) in
-                if let error = error {
-                    print("error://", error)
-                    self.callAlert()
-                    return
-                }
-                UserDefaults.standard.set(true, forKey: "loginFlag")
-//                print("로그인핸들러 셋한 후: \(UserDefaults.standard.object(forKey: "currentUser"))")
-                self.presentTabbarController()
+        Auth.auth().signIn(withEmail: self.idTF.text!, password: self.passwordTF.text!) { (user, error) in
+            if let error = error {
+                print("error://", error)
+                self.callAlert()
+                return
             }
-    
+            UserDefaults.standard.set(true, forKey: "loginFlag")
+            //                print("로그인핸들러 셋한 후: \(UserDefaults.standard.object(forKey: "currentUser"))")
+            self.presentTabbarController()
+        }
+        
     }
-
+    
     func callAlert() {
         let errorAlert:UIAlertController = UIAlertController.init(title: "로그인 실패", message: "아이디와 비밀번호를 확인해주세요", preferredStyle: .alert)
         let okBtn:UIAlertAction = UIAlertAction.init(title: "확인", style: .cancel, handler: nil)

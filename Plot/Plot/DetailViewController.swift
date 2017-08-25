@@ -58,6 +58,7 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.likeButtonAction()
     }
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     /*******************************************/
     // MARK: -  Life Cycle                     //
@@ -244,13 +245,18 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //전시의 디테일이미지들을 콜렉션뷰에 뿌립니다.
     func loadDetailImgArrayForCollectionView(itemOfIndexPath:Int) {
+        self.activityIndicator.startAnimating()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         DispatchQueue.global(qos: .default).async {
             Database.database().reference().child("ExhibitionData").child("\(itemOfIndexPath)").child(Constants.exhibition_ImgURL).child(Constants.image_DetailImages).observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let json = snapshot.value as? [String] else {return}
+                    self.detailImgArray = json
                 
                 DispatchQueue.main.async {
-                    self.detailImgArray = json
                     self.posterCollectionView.reloadData()
+                    self.activityIndicator.stopAnimating()
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
                 }
             }, withCancel: { (error) in
                 print(error.localizedDescription)
@@ -261,7 +267,6 @@ class DetailViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     //전시의 좋아요 여부를 표시합니다.
     func loadLikeData(exhibitionID:Int) {
-        
         DispatchQueue.global(qos: .default).async {
             Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 guard let json = snapshot.value as? [String:[String:Any]] else {return}

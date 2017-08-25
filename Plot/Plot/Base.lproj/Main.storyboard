@@ -325,7 +325,7 @@
                                         <rect key="frame" x="0.0" y="233" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pyZ-Ew-FCn" id="8e6-nb-k2P">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -370,7 +370,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Czr-56-R4O" id="hiC-Av-gnd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -789,9 +789,19 @@
                                                                     <action selector="starPoint:" destination="y3y-pF-Dyt" eventType="touchUpInside" id="ngu-pj-taG"/>
                                                                 </connections>
                                                             </button>
+                                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="N7w-hd-CdP">
+                                                                <rect key="frame" x="15.5" y="-2.5" width="50" height="50"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="tMF-5G-mfG"/>
+                                                                    <constraint firstAttribute="width" constant="50" id="trk-zF-tI0"/>
+                                                                </constraints>
+                                                                <color key="color" red="0.29928946499999998" green="0.6645519137" blue="0.90592789650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            </activityIndicatorView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
+                                                            <constraint firstItem="N7w-hd-CdP" firstAttribute="centerX" secondItem="0cZ-HY-ou8" secondAttribute="centerX" id="JuI-qz-h6i"/>
+                                                            <constraint firstItem="N7w-hd-CdP" firstAttribute="centerY" secondItem="0cZ-HY-ou8" secondAttribute="centerY" id="Jxy-Kt-i7c"/>
                                                             <constraint firstItem="gaD-d9-36e" firstAttribute="leading" secondItem="1KD-Vz-ylc" secondAttribute="trailing" constant="4" id="PNL-aj-wHF"/>
                                                             <constraint firstItem="1KD-Vz-ylc" firstAttribute="centerY" secondItem="0cZ-HY-ou8" secondAttribute="centerY" id="UVp-xX-cgC"/>
                                                             <constraint firstItem="gaD-d9-36e" firstAttribute="centerY" secondItem="0cZ-HY-ou8" secondAttribute="centerY" id="YNs-zg-mvK"/>
@@ -1002,6 +1012,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="1378"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="N7w-hd-CdP" id="A7s-BA-PaU"/>
                         <outlet property="commentTableView" destination="L7U-cv-7UW" id="Fwe-4X-Dkh"/>
                         <outlet property="displayLike" destination="S1I-Ar-rcH" id="FAF-jv-LTV"/>
                         <outlet property="exhibitionAge" destination="5es-cE-OFf" id="rqr-Cy-0mq"/>
