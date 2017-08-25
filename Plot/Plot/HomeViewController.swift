@@ -66,6 +66,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    
     /*******************************************/
     // MARK: -  CustomCell Delegate Method     //
     /*******************************************/

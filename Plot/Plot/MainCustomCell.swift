@@ -51,6 +51,8 @@ class MainCustomCell: UITableViewCell {
     
     @IBAction func likeBtnClicked(_ sender: UIButton) {
         self.likeButtonAction()
+        
+        print("외않되")
     }
     
     
@@ -142,8 +144,7 @@ class MainCustomCell: UITableViewCell {
                 }
                 }else{
                     guard let json = snapshot.value as? [String:Any] else {return}
-                    
-                    print("좋아요를 눌렀음 \(json)")
+                    print("좋아요 없어요")
                 }
             }, withCancel: { (error) in
                 print(error.localizedDescription)
@@ -156,6 +157,8 @@ class MainCustomCell: UITableViewCell {
     func likeButtonAction() {
         guard let realExhibitionID:Int = self.indexPathRow else {return}
         Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+
+            if snapshot.childrenCount != 0 {
             guard let json = snapshot.value as? [String:[String:Any]] else {return}
             
             let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
@@ -174,19 +177,25 @@ class MainCustomCell: UITableViewCell {
             default:
                 print("좋아요 버튼액션에러: \(filteredLikeData)")
             }
+            }else if snapshot.childrenCount == 0 {
+                Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_UserID:Auth.auth().currentUser?.uid,
+                                                                         Constants.likes_ExhibitionID:self.indexPathRow!])
+                self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
+            }
             
         }, withCancel: { (error) in
             print(error.localizedDescription)
         })
         
         Database.database().reference().child("Likes").queryOrdered(byChild: Constants.likes_UserID).queryEqual(toValue: Auth.auth().currentUser?.uid).observe(.childChanged, with: { (snapshot) in
+            
+            if snapshot.childrenCount != 0 {
             guard let json = snapshot.value as? [String:[String:Any]] else {return}
             
             let filteredLikeData = json.filter({ (dic:(key: String, value: [String : Any])) -> Bool in
                 var exhibitionID:Int = dic.value[Constants.likes_ExhibitionID] as! Int
                 return exhibitionID == realExhibitionID
             })
-            
             
             switch filteredLikeData.count {
             case 0:
@@ -198,6 +207,11 @@ class MainCustomCell: UITableViewCell {
                 Database.database().reference().child("Likes").child(filteredLikeData[0].key).setValue(nil)
             default:
                 print("좋아요 버튼액션에러: \(filteredLikeData)")
+            }
+            }else if snapshot.childrenCount == 0 {
+                Database.database().reference().child("Likes").childByAutoId().setValue([Constants.likes_UserID:Auth.auth().currentUser?.uid,
+                                                                         Constants.likes_ExhibitionID:self.indexPathRow!])
+                self.likeBtnOutlet.image = #imageLiteral(resourceName: "likeBtn_on")
             }
             
         }, withCancel: { (error) in

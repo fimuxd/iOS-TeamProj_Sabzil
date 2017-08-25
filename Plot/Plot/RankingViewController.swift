@@ -142,16 +142,20 @@ class RankingViewController: UIViewController,UICollectionViewDelegate, UICollec
             cell.getExhibitionData(OfGenre: Genre.Installation, itemOfIndexPath: indexPath.item)
         }
         
-        switch indexPath.item {
-        case 0:
-            cell.rankImage.image = #imageLiteral(resourceName: "rangking_1st")
-        case 1:
-            cell.rankImage.image = #imageLiteral(resourceName: "rangking_2nd")
-        case 2:
-            cell.rankImage.image = #imageLiteral(resourceName: "rangking_3rd")
-        default:
-            cell.rankImage.isHidden = true
-        }
+        //TODO: 실제 랭킹의 의미가 있을 때 붙여넣을 것
+        /*
+         switch indexPath.item {
+         case 0:
+         cell.rankImage.image = #imageLiteral(resourceName: "rangking_1st")
+         case 1:
+         cell.rankImage.image = #imageLiteral(resourceName: "rangking_2nd")
+         case 2:
+         cell.rankImage.image = #imageLiteral(resourceName: "rangking_3rd")
+         default:
+         }
+         */
+        
+        cell.rankImage.isHidden = true
         
         return cell
     }
