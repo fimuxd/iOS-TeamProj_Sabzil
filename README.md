@@ -35,7 +35,7 @@
 ## Contact Us
 
 - JOE SeonMi | jemma3136@gmail.com | [Github](http://github.com/joeseonmi)
-- PARK BoYoung | fimuxd@gmail.com | [Github](http://github.com/fimuxd)
+- PARK BoYoung | iosdeveloperkr@gmail.com | [Github](http://github.com/fimuxd)
 
 ***
 
